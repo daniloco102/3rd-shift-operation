@@ -416,7 +416,8 @@
   storageBucket: "quanly-fl.firebasestorage.app",
   messagingSenderId: "133224854570",
   appId: "1:133224854570:web:b112b0f364755cdaa77f53",
-  measurementId: "G-C0EPTS16JW"
+  measurementId: "G-C0EPTS16JW",
+  databaseURL: "https://quanly-fl-default-rtdb.asia-southeast1.firebasedatabase.app"
 };
 
         let db = null;
@@ -476,7 +477,7 @@
                         // Backup to local
                         localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
                     } else {
-                        records = [];
+                        // DB rỗng, không làm mất dữ liệu local
                     }
                     updateDashboard();
                 });
@@ -493,10 +494,12 @@
         });
 
         function saveToCloud() {
+            // Luôn lưu local trước để chống mất dữ liệu khi F5
+            localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
             if(db) {
-                db.ref('freelancer_records').set(records);
-            } else {
-                localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+                db.ref('freelancer_records').set(records).catch(err => {
+                    console.error("Lỗi lưu Firebase:", err);
+                });
             }
         }
 
