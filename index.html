@@ -613,6 +613,26 @@
             });
         }
 
+        // Tự động tính số Nam/Nữ
+        tbody.addEventListener('input', (e) => {
+            if(e.target.tagName === 'INPUT') {
+                const field = e.target.getAttribute('data-field');
+                if(field === 'm' || field === 'f') {
+                    const row = e.target.closest('tr');
+                    const res = parseInt(row.querySelector('input[data-field="res"]').value) || 0;
+                    if(res > 0) {
+                        if(field === 'm') {
+                            const m = parseInt(e.target.value) || 0;
+                            if(m <= res) row.querySelector('input[data-field="f"]').value = res - m;
+                        } else {
+                            const f = parseInt(e.target.value) || 0;
+                            if(f <= res) row.querySelector('input[data-field="m"]').value = res - f;
+                        }
+                    }
+                }
+            }
+        });
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
