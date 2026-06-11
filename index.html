@@ -15,6 +15,7 @@
     
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     
     <!-- Firebase SDK (v8 compat for script tags) -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -852,40 +853,74 @@
             const textColor = isDark ? '#f8fafc' : '#1f2937';
             const gridColor = isDark ? '#334155' : '#e5e7eb';
             
-            // 1. Bar Chart Data
-            const totalReq = {}, totalRes = {}, totalLv = {};
+            // 1. Bar Chart Data (Stacked Nam/Nữ)
+            const totalReq = {}, activeM = {}, activeF = {};
             let sumM = 0, sumF = 0;
-            SUPPLIERS.forEach(s => { totalReq[s] = 0; totalRes[s] = 0; totalLv[s] = 0; });
+            SUPPLIERS.forEach(s => { totalReq[s] = 0; activeM[s] = 0; activeF[s] = 0; });
             
             filtered.forEach(r => {
                 SUPPLIERS.forEach(s => {
                     if(r.data[s]) {
-                        totalReq[s] += r.data[s].req; totalRes[s] += r.data[s].res; totalLv[s] += (r.data[s].lv || 0);
+                        totalReq[s] += r.data[s].req; 
+                        activeM[s] += Math.max(0, r.data[s].m - (r.data[s].lvM || 0));
+                        activeF[s] += Math.max(0, r.data[s].f - (r.data[s].lvF || 0));
                         sumM += r.data[s].m; sumF += r.data[s].f;
                     }
                 });
             });
             
-            const rates = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Math.round(((totalRes[s]-totalLv[s])/totalReq[s])*100));
+            const ratesM = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Number(((activeM[s]/totalReq[s])*100).toFixed(1)));
+            const ratesF = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Number(((activeF[s]/totalReq[s])*100).toFixed(1)));
             
+            Chart.register(ChartDataLabels);
+
             if(responseRateChart) responseRateChart.destroy();
             responseRateChart = new Chart(document.getElementById('responseRateChart').getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: SUPPLIERS,
-                    datasets: [{
-                        label: 'Tỷ lệ đáp ứng (%)',
-                        data: rates,
-                        backgroundColor: rates.map(r => r >= 100 ? '#10b981' : (r >= 80 ? '#3b82f6' : '#ef4444')),
-                        borderRadius: 6
-                    }]
+                    datasets: [
+                        {
+                            label: 'Nam',
+                            data: ratesM,
+                            backgroundColor: '#3b82f6',
+                            borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 6, bottomRight: 6 }
+                        },
+                        {
+                            label: 'Nữ',
+                            data: ratesF,
+                            backgroundColor: '#ec4899',
+                            borderRadius: { topLeft: 6, topRight: 6, bottomLeft: 0, bottomRight: 0 }
+                        }
+                    ]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.raw}%` } } },
+                    plugins: { 
+                        legend: { position: 'bottom', labels: { color: textColor, padding: 15 } },
+                        tooltip: { 
+                            callbacks: { 
+                                label: (ctx) => {
+                                    const sup = ctx.chart.data.labels[ctx.dataIndex];
+                                    const count = ctx.datasetIndex === 0 ? activeM[sup] : activeF[sup];
+                                    return `${ctx.dataset.label}: ${count} người (${ctx.raw}%)`;
+                                }
+                            } 
+                        },
+                        datalabels: {
+                            color: '#ffffff',
+                            font: { weight: 'bold', size: 12 },
+                            formatter: (value, ctx) => {
+                                if(value < 5) return ''; // Ẩn label nếu cột quá bé
+                                const sup = ctx.chart.data.labels[ctx.dataIndex];
+                                const count = ctx.datasetIndex === 0 ? activeM[sup] : activeF[sup];
+                                return `${count} (${Math.round(value)}%)`;
+                            }
+                        }
+                    },
                     scales: {
-                        y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor } },
-                        x: { grid: { display: false }, ticks: { color: textColor, font: {weight: 'bold'} } }
+                        y: { stacked: true, beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor, callback: (v) => v + '%' } },
+                        x: { stacked: true, grid: { display: false }, ticks: { color: textColor, font: {weight: 'bold'} } }
                     }
                 }
             });
@@ -903,7 +938,19 @@
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { color: textColor, padding: 20 } } },
+                    plugins: { 
+                        legend: { position: 'bottom', labels: { color: textColor, padding: 20 } },
+                        datalabels: {
+                            color: '#ffffff',
+                            font: { weight: 'bold', size: 14 },
+                            formatter: (value) => {
+                                if(value === 0) return '';
+                                const total = sumM + sumF;
+                                const percentage = Math.round((value / total) * 100);
+                                return `${value} (${percentage}%)`;
+                            }
+                        }
+                    },
                     cutout: '70%'
                 }
             });
@@ -991,7 +1038,9 @@
                     name: s, 
                     rate: totals[s].req === 0 ? 0 : Math.round(((totals[s].res-totals[s].lv)/totals[s].req)*100),
                     mRate: mRate,
-                    fRate: fRate
+                    fRate: fRate,
+                    mM: totals[s].m,
+                    fF: totals[s].f
                 }
             }).sort((a,b) => b.rate - a.rate);
             
@@ -1002,8 +1051,8 @@
                         <div>
                             <div class="rank-name">${r.name}</div>
                             <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
-                                <i class="fa-solid fa-person" style="color: #3b82f6;"></i> Nam: ${r.mRate}% &nbsp;|&nbsp; 
-                                <i class="fa-solid fa-person-dress" style="color: #ec4899;"></i> Nữ: ${r.fRate}%
+                                <i class="fa-solid fa-person" style="color: #3b82f6;"></i> Nam: ${r.mM} (${r.mRate}%) &nbsp;|&nbsp; 
+                                <i class="fa-solid fa-person-dress" style="color: #ec4899;"></i> Nữ: ${r.fF} (${r.fRate}%)
                             </div>
                         </div>
                     </div>
