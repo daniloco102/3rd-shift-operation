@@ -218,9 +218,36 @@
         .btn-close:hover { color: var(--danger); }
         .modal-body { padding: 1.5rem; max-height: 70vh; overflow-y: auto; }
         .modal-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 1rem; }
+        
+        /* Login Overlay */
+        .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg-main); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+        .login-card { background: var(--bg-card); width: 90%; max-width: 400px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); padding: 2rem; text-align: center; }
+        .login-card h2 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .login-card p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .login-form input { width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; font-size: 1rem; background: var(--bg-main); color: var(--text-main); }
+        .login-form input:focus { border-color: var(--primary); outline: none; }
+        .login-form button { width: 100%; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .login-form button:hover { background: #4338ca; }
+        
+        .user-profile { display: flex; align-items: center; gap: 0.5rem; background: var(--bg-main); padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border-color); }
+        .btn-logout { background: transparent; border: none; color: var(--danger); cursor: pointer; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .btn-logout:hover { background: rgba(239, 68, 68, 0.1); }
     </style>
 </head>
 <body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-overlay">
+        <div class="login-card">
+            <h2><i class="fa-solid fa-shield-halved"></i> Đăng Nhập</h2>
+            <p>Vui lòng cho biết tên của bạn để lưu vết dữ liệu</p>
+            <form id="login-form" class="login-form">
+                <input type="text" id="login-name" placeholder="Tên của bạn (VD: Tuấn, Ngân...)" required autocomplete="off">
+                <input type="password" id="login-pin" placeholder="Mã PIN chung" required autocomplete="off">
+                <button type="submit">Vào Trang Quản Trị</button>
+            </form>
+        </div>
+    </div>
+
     <div class="app-container">
         <!-- Premium Navigation Header -->
         <header class="app-header">
@@ -234,6 +261,10 @@
             
             <div class="header-controls">
                 <span id="sync-status" class="badge badge-warning"><i class="fa-solid fa-cloud"></i> Local Storage</span>
+                <div id="user-info" class="user-profile" style="display: none;">
+                    <i class="fa-solid fa-user-circle"></i> <span id="display-username"></span>
+                    <button class="btn-logout" onclick="logout()" title="Đăng xuất"><i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
                 <button id="theme-toggle" class="btn-theme" title="Chuyển đổi giao diện">
                     <i class="fa-solid fa-moon dark-icon"></i>
                     <i class="fa-solid fa-sun light-icon"></i>
@@ -452,6 +483,46 @@
             syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
         }
 
+        // ==========================================
+        // LOGIN LOGIC
+        // ==========================================
+        const PIN_CODE = "123456"; // Default PIN
+        let currentUser = localStorage.getItem('currentUser');
+        
+        function checkLoginState() {
+            if (currentUser) {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('user-info').style.display = 'flex';
+                document.getElementById('display-username').innerText = currentUser;
+            } else {
+                document.getElementById('login-screen').style.display = 'flex';
+                document.getElementById('user-info').style.display = 'none';
+            }
+        }
+        
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('login-name').value.trim();
+            const pin = document.getElementById('login-pin').value;
+            
+            if (pin !== PIN_CODE) {
+                alert('Mã PIN không chính xác!');
+                return;
+            }
+            if (name) {
+                currentUser = name;
+                localStorage.setItem('currentUser', name);
+                checkLoginState();
+            }
+        });
+        
+        window.logout = function() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            document.getElementById('login-pin').value = '';
+            checkLoginState();
+        };
+
         const SUPPLIERS = ["HOA ANH ĐÀO", "VIECCO", "SKT", "THÀNH TÍN", "KIẾN VÀNG"];
         const SUPPLIER_COLORS = {
             "HOA ANH ĐÀO": "#f43f5e",
@@ -485,6 +556,7 @@
         let trendLineChart = null;
 
         document.addEventListener('DOMContentLoaded', () => {
+            checkLoginState();
             initTheme();
             loadCustomShifts();
             generateSupplierRows();
@@ -685,7 +757,18 @@
                 return; // Ngừng lưu dữ liệu
             }
             
-            const newRecord = { id, date: dateStr, shift: shiftStr, data: data, timestamp: new Date().getTime() };
+            const now = new Date();
+            const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')} ${now.getDate().toString().padStart(2, '0')}/${(now.getMonth()+1).toString().padStart(2, '0')}`;
+            
+            const newRecord = { 
+                id, 
+                date: dateStr, 
+                shift: shiftStr, 
+                data: data, 
+                timestamp: now.getTime(),
+                createdBy: existingIndex > -1 ? records[existingIndex].createdBy : (currentUser || "Khách"),
+                createdAt: existingIndex > -1 ? records[existingIndex].createdAt : timeStr
+            };
             
             if (existingIndex > -1) { records[existingIndex] = newRecord; } 
             else { records.push(newRecord); }
@@ -930,9 +1013,20 @@
                     dropHtml = `<div style="margin-top: 4px;"><span class="badge badge-danger" style="background: rgba(239,68,68,0.2)">${dropRate}% Xin Về</span></div>`;
                 }
                 
+                let auditHtml = '';
+                if (r.createdBy) {
+                    auditHtml += `<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; font-weight: normal;"><i class="fa-solid fa-user-pen"></i> Nhập: ${r.createdBy} (${r.createdAt || ''})</div>`;
+                }
+                if (r.updatedBy) {
+                    auditHtml += `<div style="font-size: 0.75rem; color: var(--warning); margin-top: 2px; font-weight: normal;"><i class="fa-solid fa-clock-rotate-left"></i> Xin về: ${r.updatedBy} (${r.updatedAt || ''})</div>`;
+                }
+                
                 return `
                     <tr>
-                        <td><strong>${formatDate(r.date)}</strong></td>
+                        <td>
+                            <strong>${formatDate(r.date)}</strong>
+                            ${auditHtml}
+                        </td>
                         <td>${r.shift}</td>
                         <td>${tReq}</td>
                         <td>${tRes}</td>
@@ -968,14 +1062,16 @@
 
         document.getElementById('btn-export-csv').addEventListener('click', () => {
             if(records.length === 0) return alert('Không có dữ liệu để xuất!');
-            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Nam Xin Về,Nữ Xin Về,Nam Đáp Ứng,Nữ Đáp Ứng,Tỷ Lệ ĐƯ (%)\n';
+            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Nam Xin Về,Nữ Xin Về,Nam Đáp Ứng,Nữ Đáp Ứng,Tỷ Lệ ĐƯ (%),Người Nhập,Giờ Nhập\n';
             records.forEach(r => {
                 SUPPLIERS.forEach(s => {
                     if(r.data[s]) {
                         const d = r.data[s];
                         const lv = d.lv || 0;
                         const rate = d.req === 0 ? 0 : Math.round(((d.res-lv)/d.req)*100);
-                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${d.lvM||0},${d.lvF||0},${d.m},${d.f},${rate}%\n`;
+                        const creator = r.createdBy || '';
+                        const createdTime = r.createdAt || '';
+                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${d.lvM||0},${d.lvF||0},${d.m},${d.f},${rate}%,${creator},${createdTime}\n`;
                     }
                 });
             });
@@ -1069,6 +1165,11 @@
                     d.lv = (d.lvM || 0) + (d.lvF || 0); 
                 }
             });
+            
+            const now = new Date();
+            const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')} ${now.getDate().toString().padStart(2, '0')}/${(now.getMonth()+1).toString().padStart(2, '0')}`;
+            records[recordIndex].updatedBy = currentUser || "Khách";
+            records[recordIndex].updatedAt = timeStr;
             
             saveToCloud();
             updateDashboard();
