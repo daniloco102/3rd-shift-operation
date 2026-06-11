@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="vi" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Phân Tích Năng Lực Freelancer</title>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Firebase SDK (v8 compat for script tags) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <style>
+        /* Premium Design Variables */
+        :root {
+            --bg-main: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --success: #10b981;
+            --success-hover: #059669;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Dark Mode Variables */
+        html.dark {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --primary: #6366f1;
+            --primary-hover: #818cf8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            transition: var(--transition);
+            min-height: 100vh;
+        }
+
+        .app-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        /* Header */
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .header-logo { display: flex; align-items: center; gap: 1rem; }
+        .logo-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: white;
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+        }
+        .header-logo h1 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; }
+        .subtitle { font-size: 0.85rem; color: var(--text-muted); }
+
+        .header-controls { display: flex; gap: 1rem; align-items: center; }
+
+        /* Buttons */
+        button, .btn-secondary {
+            cursor: pointer; border: none; outline: none; font-weight: 600;
+            border-radius: var(--radius-md); transition: var(--transition);
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+        }
+        .btn-primary { background: var(--primary); color: white; padding: 0.75rem 1.5rem; }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-success { background: var(--success); color: white; padding: 0.5rem 1rem; }
+        .btn-success:hover { background: var(--success-hover); }
+        .btn-secondary { background: var(--bg-main); color: var(--text-main); padding: 0.5rem 1rem; border: 1px solid var(--border-color); text-decoration: none;}
+        .btn-secondary:hover { background: var(--border-color); }
+        .btn-theme { background: transparent; color: var(--text-muted); font-size: 1.25rem; padding: 0.5rem; }
+        .btn-theme:hover { color: var(--text-main); }
+        html.light .light-icon { display: none; }
+        html.dark .dark-icon { display: none; }
+        .w-full { width: 100%; }
+
+        /* Layout */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            overflow: hidden; transition: var(--transition);
+        }
+        .card:hover { box-shadow: var(--shadow-md); }
+        .card-header { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); background: rgba(0,0,0,0.01); display: flex; justify-content: space-between; align-items: center;}
+        html.dark .card-header { background: rgba(255,255,255,0.02); }
+        .card-header h2 { font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+        .card-body { padding: 1.5rem; }
+
+        /* Forms */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-group label { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); }
+        input, select {
+            padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);
+            background: var(--bg-main); color: var(--text-main); font-size: 0.95rem; transition: var(--transition);
+        }
+        input:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); outline: none; }
+
+        /* Supplier Table */
+        .supplier-input-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .supplier-input-table th { text-align: left; padding: 0.5rem; font-size: 0.8rem; color: var(--text-muted); border-bottom: 2px solid var(--border-color); }
+        .supplier-input-table td { padding: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .supplier-input-table input { width: 100%; padding: 0.5rem; text-align: center; font-weight: 600; }
+        .supplier-name { font-weight: 600; font-size: 0.9rem; }
+
+        /* Stats Grid */
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .stat-card {
+            background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1.5rem; transition: var(--transition);
+        }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .stat-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .text-indigo { color: #4f46e5; } .text-emerald { color: #10b981; } .text-amber { color: #f59e0b; }
+        .stat-content h3 { font-size: 1.75rem; font-weight: 800; margin-bottom: 0.25rem; }
+        .stat-content p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+
+        /* Charts */
+        .charts-container { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .chart-filters { display: flex; gap: 0.5rem; }
+        .chart-canvas-container { position: relative; height: 250px; width: 100%; }
+
+        /* Tables */
+        .table-scroll-wrapper { overflow-x: auto; }
+        .data-table { width: 100%; border-collapse: collapse; }
+        .data-table th, .data-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+        .data-table th { font-weight: 600; color: var(--text-muted); background: var(--bg-main); }
+        .data-table tr:hover { background: rgba(0,0,0,0.02); }
+        html.dark .data-table tr:hover { background: rgba(255,255,255,0.02); }
+
+        .badge { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
+        .badge-success { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .badge-danger { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
+        .badge-warning { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+        .badge-info { background: rgba(59, 130, 246, 0.1); color: var(--info); }
+
+        /* Rankings */
+        .ranking-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid var(--border-color); }
+        .ranking-item:last-child { border-bottom: none; }
+        .rank-info { display: flex; align-items: center; gap: 1rem; }
+        .rank-number { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; background: var(--bg-main); color: var(--text-muted); }
+        .rank-1 .rank-number { background: #fef08a; color: #a16207; }
+        .rank-2 .rank-number { background: #e2e8f0; color: #475569; }
+        .rank-3 .rank-number { background: #ffedd5; color: #c2410c; }
+        .rank-name { font-weight: 700; }
+        .rank-score { font-weight: 800; color: var(--primary); }
+
+        @media (max-width: 1200px) { .dashboard-layout { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .stats-grid, .charts-row { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Premium Navigation Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <div class="logo-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="logo-text">
+                    <h1>FREELANCER ANALYTICS</h1>
+                    <p class="subtitle">Hệ thống theo dõi và phân tích tỷ lệ đáp ứng của các nhà cung cấp</p>
+                </div>
+            </div>
+            
+            <div class="header-controls">
+                <span id="sync-status" class="badge badge-warning"><i class="fa-solid fa-cloud"></i> Local Storage</span>
+                <button id="theme-toggle" class="btn-theme" title="Chuyển đổi giao diện">
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                    <i class="fa-solid fa-sun light-icon"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="dashboard-layout">
+            <!-- Left Panel: Data Entry -->
+            <section class="panel-left">
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-keyboard"></i> Nhập Dữ Liệu</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="data-entry-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="record-date">Ngày:</label>
+                                    <input type="date" id="record-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="record-shift">Ca / Khung giờ:</label>
+                                    <div style="display: flex; gap: 0.5rem;">
+                                        <select id="record-shift" required style="flex: 1;">
+                                            <option value="Ca 20:00 - 6:00">Ca 20:00 - 6:00</option>
+                                            <option value="Ca 21:00 - 6:00">Ca 21:00 - 6:00</option>
+                                            <option value="Ca 21:30 - 6:30">Ca 21:30 - 6:30</option>
+                                            <option value="Ca 22:00 - 7:00">Ca 22:00 - 7:00</option>
+                                            <option value="Ca 23:00 - 8:00">Ca 23:00 - 8:00</option>
+                                        </select>
+                                        <button type="button" id="btn-add-shift" class="btn-secondary" style="padding: 0 0.75rem;" title="Thêm ca mới">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row" style="grid-template-columns: 1fr; margin-top: -0.5rem; margin-bottom: 1.5rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--info); font-weight: 600; font-size: 0.9rem;">
+                                    <input type="checkbox" id="is-grouped-shift" style="width: 18px; height: 18px; cursor: pointer;">
+                                    Đánh dấu đây là "Ca Phụ" (Gộp chung Yêu Cầu với ca trước đó trong ngày)
+                                </label>
+                            </div>
+                            
+                            <div class="supplier-table-container">
+                                <table class="supplier-input-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Nhà Cung Cấp</th>
+                                            <th title="Số book yêu cầu">Yêu Cầu</th>
+                                            <th title="Số đáp ứng thực tế">Đáp Ứng</th>
+                                            <th>Nam</th>
+                                            <th>Nữ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="supplier-input-body">
+                                        <!-- Rows generated by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary w-full"><i class="fa-solid fa-floppy-disk"></i> Lưu Dữ Liệu</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Analytics Dashboard -->
+            <section class="panel-right">
+                <!-- Overview Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon text-indigo"><i class="fa-solid fa-clipboard-list"></i></div>
+                        <div class="stat-content">
+                            <h3 id="total-req">0</h3>
+                            <p>Tổng Yêu Cầu (All)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon text-emerald"><i class="fa-solid fa-check-double"></i></div>
+                        <div class="stat-content">
+                            <h3 id="total-res">0</h3>
+                            <p>Tổng Đáp Ứng</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon text-amber"><i class="fa-solid fa-percent"></i></div>
+                        <div class="stat-content">
+                            <h3 id="avg-rate">0%</h3>
+                            <p>Tỷ Lệ Đáp Ứng TB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Area -->
+                <div class="charts-container">
+                    <!-- LINE CHART: TREND OVER TIME -->
+                    <div class="card chart-card full-width">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-chart-line"></i> Xu Hướng Tỷ Lệ Đáp Ứng Theo Thời Gian</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-canvas-container">
+                                <canvas id="trendLineChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BAR CHART: BY SUPPLIER -->
+                    <div class="card chart-card full-width">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-chart-column"></i> Biểu Đồ Tỷ Lệ Đáp Ứng (%)</h2>
+                            <div class="chart-filters">
+                                <select id="chart-filter-date"></select>
+                                <select id="chart-filter-shift"></select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-canvas-container">
+                                <canvas id="responseRateChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-row">
+                        <!-- PIE CHART: GENDER -->
+                        <div class="card chart-card half-width">
+                            <div class="card-header">
+                                <h2><i class="fa-solid fa-chart-pie"></i> Cơ Cấu Giới Tính</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-canvas-container">
+                                    <canvas id="genderPieChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- RANKING -->
+                        <div class="card chart-card half-width">
+                            <div class="card-header">
+                                <h2><i class="fa-solid fa-ranking-star"></i> Xếp Hạng NCC Tốt Nhất</h2>
+                            </div>
+                            <div class="card-body ranking-body" id="ranking-container">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Table Area -->
+                <div class="card history-card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-clock-rotate-left"></i> Lịch Sử Nhập Liệu</h2>
+                        <button id="btn-export-csv" class="btn-success btn-sm"><i class="fa-solid fa-file-csv"></i> Xuất CSV</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-scroll-wrapper">
+                            <table class="data-table" id="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ngày</th>
+                                        <th>Ca</th>
+                                        <th>Tổng YC</th>
+                                        <th>Tổng ĐƯ</th>
+                                        <th>Tỷ Lệ (%)</th>
+                                        <th>Nam / Nữ</th>
+                                        <th>Thao Tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="history-table-body">
+                                    <!-- History Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MAIN LOGIC SCRIPT -->
+    <script>
+        // ==========================================
+        // CẤU HÌNH FIREBASE (DÁN MÃ CỦA BẠN VÀO ĐÂY)
+
+        // ==========================================
+        const firebaseConfig = {
+  apiKey: "AIzaSyAN-9oE5bmzTefW75aqQYrc1nd4FHSanlI",
+  authDomain: "quanly-fl.firebaseapp.com",
+  projectId: "quanly-fl",
+  storageBucket: "quanly-fl.firebasestorage.app",
+  messagingSenderId: "133224854570",
+  appId: "1:133224854570:web:b112b0f364755cdaa77f53",
+  measurementId: "G-C0EPTS16JW"
+};
+
+        let db = null;
+        const syncStatusEl = document.getElementById('sync-status');
+
+        if (firebaseConfig.apiKey) {
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.database();
+            syncStatusEl.className = 'badge badge-success';
+            syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
+        }
+
+        const SUPPLIERS = ["HOA ANH ĐÀO", "VIECCO", "SKT", "THÀNH TÍN", "KIẾN VÀNG"];
+        const SUPPLIER_COLORS = {
+            "HOA ANH ĐÀO": "#f43f5e",
+            "VIECCO": "#3b82f6",
+            "SKT": "#10b981",
+            "THÀNH TÍN": "#f59e0b",
+            "KIẾN VÀNG": "#8b5cf6"
+        };
+        
+        let records = JSON.parse(localStorage.getItem('freelancer_records_v2')) || [];
+        let customShifts = JSON.parse(localStorage.getItem('custom_shifts')) || [];
+
+        // Migrate old data if any exists to the new array to avoid clashes (optional, handled gracefully)
+        if (records.length === 0) {
+            const oldRecords = JSON.parse(localStorage.getItem('freelancer_records'));
+            if (oldRecords && oldRecords.length > 0) {
+                records = oldRecords;
+                localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+            }
+        }
+
+        // DOM Elements
+        const form = document.getElementById('data-entry-form');
+        const tbody = document.getElementById('supplier-input-body');
+        const themeToggle = document.getElementById('theme-toggle');
+        const historyBody = document.getElementById('history-table-body');
+
+        // Charts references
+        let responseRateChart = null;
+        let genderPieChart = null;
+        let trendLineChart = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            loadCustomShifts();
+            generateSupplierRows();
+            document.getElementById('record-date').valueAsDate = new Date();
+            
+            if (db) {
+                // Listen to Firebase data changes
+                db.ref('freelancer_records').on('value', (snapshot) => {
+                    const data = snapshot.val();
+                    if (data) {
+                        records = data;
+                        // Backup to local
+                        localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+                    } else {
+                        records = [];
+                    }
+                    updateDashboard();
+                });
+                
+                // Also upload local data to Firebase if Firebase is empty (Migration phase)
+                db.ref('freelancer_records').once('value').then(snapshot => {
+                    if (!snapshot.exists() && records.length > 0) {
+                        saveToCloud();
+                    }
+                });
+            } else {
+                updateDashboard();
+            }
+        });
+
+        function saveToCloud() {
+            if(db) {
+                db.ref('freelancer_records').set(records);
+            } else {
+                localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+            }
+        }
+
+        function loadCustomShifts() {
+            const shiftSelect = document.getElementById('record-shift');
+            customShifts.forEach(shift => {
+                const opt = document.createElement('option');
+                opt.value = shift;
+                opt.textContent = shift;
+                shiftSelect.appendChild(opt);
+            });
+        }
+
+        document.getElementById('btn-add-shift').addEventListener('click', () => {
+            const newShift = prompt('Nhập tên Ca / Khung giờ mới (Ví dụ: Ca 12:00 - 20:00):');
+            if(newShift && newShift.trim() !== '') {
+                const shiftName = newShift.trim();
+                
+                // Check if already exists in dropdown
+                const shiftSelect = document.getElementById('record-shift');
+                let exists = false;
+                for(let i=0; i<shiftSelect.options.length; i++) {
+                    if(shiftSelect.options[i].value === shiftName) {
+                        exists = true;
+                        break;
+                    }
+                }
+                
+                if(!exists) {
+                    customShifts.push(shiftName);
+                    localStorage.setItem('custom_shifts', JSON.stringify(customShifts));
+                    
+                    const opt = document.createElement('option');
+                    opt.value = shiftName;
+                    opt.textContent = shiftName;
+                    shiftSelect.appendChild(opt);
+                }
+                shiftSelect.value = shiftName;
+            }
+        });
+
+        function initTheme() {
+            const isDark = localStorage.getItem('theme') === 'dark';
+            if (isDark) document.documentElement.classList.add('dark');
+            
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                const darkEnabled = document.documentElement.classList.contains('dark');
+                localStorage.setItem('theme', darkEnabled ? 'dark' : 'light');
+                updateCharts(); 
+            });
+        }
+
+        document.getElementById('is-grouped-shift').addEventListener('change', function() {
+            const isGrouped = this.checked;
+            const reqInputs = document.querySelectorAll('input[data-field="req"]');
+            reqInputs.forEach(input => {
+                if(isGrouped) {
+                    input.value = 0;
+                    input.disabled = true;
+                    input.style.backgroundColor = 'rgba(0,0,0,0.05)';
+                } else {
+                    input.disabled = false;
+                    input.style.backgroundColor = '';
+                }
+            });
+        });
+
+        function generateSupplierRows() {
+            tbody.innerHTML = '';
+            SUPPLIERS.forEach((sup) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="supplier-name">${sup}</td>
+                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="req" placeholder="0"></td>
+                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="res" placeholder="0"></td>
+                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="m" placeholder="0"></td>
+                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="f" placeholder="0"></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const dateStr = document.getElementById('record-date').value;
+            const shiftStr = document.getElementById('record-shift').value;
+            const id = `${dateStr}_${shiftStr}`;
+            
+            const existingIndex = records.findIndex(r => r.id === id);
+            if (existingIndex > -1) {
+                if (!confirm(`Dữ liệu cho ${shiftStr} ngày ${dateStr} đã tồn tại. Bạn có muốn ghi đè?`)) return;
+            }
+            
+            const data = {};
+            const inputs = document.querySelectorAll('#supplier-input-body input');
+            
+            inputs.forEach(input => {
+                const sup = input.getAttribute('data-supplier');
+                const field = input.getAttribute('data-field');
+                if (!data[sup]) data[sup] = { req: 0, res: 0, m: 0, f: 0 };
+                data[sup][field] = parseInt(input.value) || 0;
+            });
+            
+            const newRecord = { id, date: dateStr, shift: shiftStr, data: data, timestamp: new Date().getTime() };
+            
+            if (existingIndex > -1) { records[existingIndex] = newRecord; } 
+            else { records.push(newRecord); }
+            
+            records.sort((a, b) => new Date(b.date) - new Date(a.date));
+            saveToCloud();
+            
+            alert('Đã lưu dữ liệu thành công!');
+            form.reset();
+            document.getElementById('record-date').value = dateStr;
+            
+            // Trigger checkbox reset visually
+            const reqInputs = document.querySelectorAll('input[data-field="req"]');
+            reqInputs.forEach(input => { input.disabled = false; input.style.backgroundColor = ''; });
+            
+            updateDashboard();
+        });
+
+        function updateDashboard() {
+            updateFilters();
+            updateStats();
+            updateCharts();
+            renderHistoryTable();
+            renderRanking();
+        }
+
+        function updateFilters() {
+            const filterDate = document.getElementById('chart-filter-date');
+            const filterShift = document.getElementById('chart-filter-shift');
+            
+            if(filterDate.options.length === 0) {
+                filterDate.innerHTML = '<option value="all">Tất cả ngày</option>';
+                filterShift.innerHTML = '<option value="all">Tất cả ca</option>';
+                filterDate.addEventListener('change', updateCharts);
+                filterShift.addEventListener('change', updateCharts);
+            }
+            
+            const currDate = filterDate.value;
+            const currShift = filterShift.value;
+            
+            const uniqueDates = [...new Set(records.map(r => r.date))].sort((a,b) => new Date(b) - new Date(a));
+            const uniqueShifts = [...new Set(records.map(r => r.shift))];
+            
+            let dateHtml = '<option value="all">Tất cả ngày</option>';
+            uniqueDates.forEach(d => dateHtml += `<option value="${d}">${formatDate(d)}</option>`);
+            filterDate.innerHTML = dateHtml;
+            
+            let shiftHtml = '<option value="all">Tất cả ca</option>';
+            uniqueShifts.forEach(s => shiftHtml += `<option value="${s}">${s}</option>`);
+            filterShift.innerHTML = shiftHtml;
+            
+            if(uniqueDates.includes(currDate)) filterDate.value = currDate;
+            if(uniqueShifts.includes(currShift)) filterShift.value = currShift;
+        }
+
+        function getFilteredRecords() {
+            const d = document.getElementById('chart-filter-date')?.value || 'all';
+            const s = document.getElementById('chart-filter-shift')?.value || 'all';
+            return records.filter(r => {
+                if(d !== 'all' && r.date !== d) return false;
+                if(s !== 'all' && r.shift !== s) return false;
+                return true;
+            });
+        }
+
+        function updateStats() {
+            let tReq = 0, tRes = 0;
+            records.forEach(r => {
+                Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; });
+            });
+            document.getElementById('total-req').innerText = tReq;
+            document.getElementById('total-res').innerText = tRes;
+            const rate = tReq === 0 ? 0 : Math.round((tRes/tReq)*100);
+            document.getElementById('avg-rate').innerText = `${rate}%`;
+        }
+
+        function updateCharts() {
+            const filtered = getFilteredRecords();
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#f8fafc' : '#1f2937';
+            const gridColor = isDark ? '#334155' : '#e5e7eb';
+            
+            // 1. Bar Chart Data
+            const totalReq = {}, totalRes = {};
+            let sumM = 0, sumF = 0;
+            SUPPLIERS.forEach(s => { totalReq[s] = 0; totalRes[s] = 0; });
+            
+            filtered.forEach(r => {
+                SUPPLIERS.forEach(s => {
+                    if(r.data[s]) {
+                        totalReq[s] += r.data[s].req; totalRes[s] += r.data[s].res;
+                        sumM += r.data[s].m; sumF += r.data[s].f;
+                    }
+                });
+            });
+            
+            const rates = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Math.round((totalRes[s]/totalReq[s])*100));
+            
+            if(responseRateChart) responseRateChart.destroy();
+            responseRateChart = new Chart(document.getElementById('responseRateChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: SUPPLIERS,
+                    datasets: [{
+                        label: 'Tỷ lệ đáp ứng (%)',
+                        data: rates,
+                        backgroundColor: rates.map(r => r >= 100 ? '#10b981' : (r >= 80 ? '#3b82f6' : '#ef4444')),
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.raw}%` } } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor } },
+                        x: { grid: { display: false }, ticks: { color: textColor, font: {weight: 'bold'} } }
+                    }
+                }
+            });
+            
+            // 2. Pie Chart Data
+            if(genderPieChart) genderPieChart.destroy();
+            genderPieChart = new Chart(document.getElementById('genderPieChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Nam', 'Nữ'],
+                    datasets: [{
+                        data: [sumM, sumF],
+                        backgroundColor: ['#3b82f6', '#ec4899'], borderWidth: 0, hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { color: textColor, padding: 20 } } },
+                    cutout: '70%'
+                }
+            });
+
+            // 3. Line Chart Data (Trend Over Time)
+            // Group by date (ignoring shift filters to show overall trend across days)
+            const datesMap = {}; // { '2026-03-23': { 'HOA ANH DAO': {req, res}, ... } }
+            records.forEach(r => {
+                if(!datesMap[r.date]) {
+                    datesMap[r.date] = {};
+                    SUPPLIERS.forEach(s => datesMap[r.date][s] = {req:0, res:0});
+                }
+                SUPPLIERS.forEach(s => {
+                    if(r.data[s]) {
+                        datesMap[r.date][s].req += r.data[s].req;
+                        datesMap[r.date][s].res += r.data[s].res;
+                    }
+                });
+            });
+
+            // Sort dates chronologically
+            const sortedDates = Object.keys(datesMap).sort((a,b) => new Date(a) - new Date(b));
+            
+            const datasets = SUPPLIERS.map(s => {
+                return {
+                    label: s,
+                    data: sortedDates.map(d => {
+                        const req = datesMap[d][s].req;
+                        const res = datesMap[d][s].res;
+                        return req === 0 ? 0 : Math.round((res/req)*100);
+                    }),
+                    borderColor: SUPPLIER_COLORS[s],
+                    backgroundColor: SUPPLIER_COLORS[s],
+                    tension: 0.3, // smooth curve
+                    borderWidth: 2,
+                    pointRadius: 4
+                };
+            });
+
+            if(trendLineChart) trendLineChart.destroy();
+            trendLineChart = new Chart(document.getElementById('trendLineChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: sortedDates.map(d => formatDate(d)),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top', labels: { color: textColor, boxWidth: 12, usePointStyle: true } },
+                        tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.raw}%` } }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor, callback: (v) => v + '%' } },
+                        x: { grid: { color: gridColor }, ticks: { color: textColor } }
+                    }
+                }
+            });
+        }
+
+        function renderRanking() {
+            const container = document.getElementById('ranking-container');
+            const filtered = getFilteredRecords();
+            const totals = {};
+            SUPPLIERS.forEach(s => totals[s] = {req: 0, res: 0});
+            
+            filtered.forEach(r => {
+                SUPPLIERS.forEach(s => {
+                    if(r.data[s]) { totals[s].req += r.data[s].req; totals[s].res += r.data[s].res; }
+                });
+            });
+            
+            const ranks = SUPPLIERS.map(s => {
+                return { name: s, rate: totals[s].req === 0 ? 0 : Math.round((totals[s].res/totals[s].req)*100) }
+            }).sort((a,b) => b.rate - a.rate);
+            
+            container.innerHTML = ranks.map((r, i) => `
+                <div class="ranking-item rank-${i+1}">
+                    <div class="rank-info">
+                        <div class="rank-number">${i+1}</div>
+                        <div class="rank-name">${r.name}</div>
+                    </div>
+                    <div class="rank-score">${r.rate}%</div>
+                </div>
+            `).join('');
+        }
+
+        function renderHistoryTable() {
+            historyBody.innerHTML = records.map(r => {
+                let tReq = 0, tRes = 0, tM = 0, tF = 0;
+                Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; tM += d.m; tF += d.f; });
+                
+                let rateHtml = '';
+                if(tReq === 0) {
+                    rateHtml = `<span class="badge badge-info">(Ca Phụ)</span>`;
+                } else {
+                    const rate = Math.round((tRes/tReq)*100);
+                    let badgeClass = rate >= 100 ? 'badge-success' : (rate >= 80 ? 'badge-warning' : 'badge-danger');
+                    rateHtml = `<span class="badge ${badgeClass}">${rate}%</span>`;
+                }
+                
+                return `
+                    <tr>
+                        <td><strong>${formatDate(r.date)}</strong></td>
+                        <td>${r.shift}</td>
+                        <td>${tReq}</td>
+                        <td>${tRes}</td>
+                        <td>${rateHtml}</td>
+                        <td>${tM} / ${tF}</td>
+                        <td>
+                            <button class="btn-theme" onclick="deleteRecord('${r.id}')" title="Xóa">
+                                <i class="fa-solid fa-trash text-danger"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        window.deleteRecord = function(id) {
+            if(confirm('Bạn có chắc chắn muốn xóa bản ghi này?')) {
+                records = records.filter(r => r.id !== id);
+                saveToCloud();
+                if(!db) updateDashboard(); // If DB is connected, 'on value' listener will auto update
+            }
+        }
+
+        function formatDate(dateStr) {
+            const parts = dateStr.split('-');
+            if(parts.length !== 3) return dateStr;
+            return `${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+
+        document.getElementById('btn-export-csv').addEventListener('click', () => {
+            if(records.length === 0) return alert('Không có dữ liệu để xuất!');
+            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Nam,Nữ,Tỷ Lệ ĐƯ (%)\n';
+            records.forEach(r => {
+                SUPPLIERS.forEach(s => {
+                    if(r.data[s]) {
+                        const d = r.data[s];
+                        const rate = d.req === 0 ? 0 : Math.round((d.res/d.req)*100);
+                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${d.m},${d.f},${rate}%\n`;
+                    }
+                });
+            });
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = `freelancer_analytics_${new Date().getTime()}.csv`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
