@@ -153,14 +153,15 @@
         input:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); outline: none; }
 
         /* Supplier Table */
-        .supplier-input-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .supplier-table-container { overflow-x: auto; }
+        .supplier-input-table { width: 100%; min-width: 500px; border-collapse: collapse; margin-bottom: 1.5rem; }
         .supplier-input-table th { text-align: left; padding: 0.5rem; font-size: 0.8rem; color: var(--text-muted); border-bottom: 2px solid var(--border-color); }
         .supplier-input-table td { padding: 0.5rem; border-bottom: 1px solid var(--border-color); }
         .supplier-input-table input { width: 100%; padding: 0.5rem; text-align: center; font-weight: 600; }
         .supplier-name { font-weight: 600; font-size: 0.9rem; }
 
         /* Stats Grid */
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
         .stat-card {
             background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1.5rem; transition: var(--transition);
@@ -272,6 +273,7 @@
                                             <th>Nhà Cung Cấp</th>
                                             <th title="Số book yêu cầu">Yêu Cầu</th>
                                             <th title="Số đáp ứng thực tế">Đáp Ứng</th>
+                                            <th title="Số lượng xin về sớm" style="color: var(--danger);">Xin Về</th>
                                             <th>Nam</th>
                                             <th>Nữ</th>
                                         </tr>
@@ -313,6 +315,13 @@
                         <div class="stat-content">
                             <h3 id="avg-rate">0%</h3>
                             <p>Tỷ Lệ Đáp Ứng TB</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="color: #ef4444;"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+                        <div class="stat-content">
+                            <h3 id="total-lv">0</h3>
+                            <p>Tổng Xin Về</p>
                         </div>
                     </div>
                 </div>
@@ -387,6 +396,7 @@
                                         <th>Ca</th>
                                         <th>Tổng YC</th>
                                         <th>Tổng ĐƯ</th>
+                                        <th style="color: var(--danger);">Tổng XV</th>
                                         <th>Tỷ Lệ (%)</th>
                                         <th>Nam / Nữ</th>
                                         <th>Thao Tác</th>
@@ -576,6 +586,7 @@
                     <td class="supplier-name">${sup}</td>
                     <td><input type="number" min="0" required data-supplier="${sup}" data-field="req" placeholder="0"></td>
                     <td><input type="number" min="0" required data-supplier="${sup}" data-field="res" placeholder="0"></td>
+                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="lv" placeholder="0"></td>
                     <td><input type="number" min="0" required data-supplier="${sup}" data-field="m" placeholder="0"></td>
                     <td><input type="number" min="0" required data-supplier="${sup}" data-field="f" placeholder="0"></td>
                 `;
@@ -601,9 +612,32 @@
             inputs.forEach(input => {
                 const sup = input.getAttribute('data-supplier');
                 const field = input.getAttribute('data-field');
-                if (!data[sup]) data[sup] = { req: 0, res: 0, m: 0, f: 0 };
+                if (!data[sup]) data[sup] = { req: 0, res: 0, lv: 0, m: 0, f: 0 };
                 data[sup][field] = parseInt(input.value) || 0;
             });
+            
+            // VALIDATION: Kiểm tra logic dữ liệu
+            let hasError = false;
+            let errorMsg = "";
+            for (let sup in data) {
+                const d = data[sup];
+                if (d.res > 0 || d.req > 0) {
+                    if (d.lv > d.res) {
+                        hasError = true;
+                        errorMsg = `Lỗi ở Nhà cung cấp ${sup}:\nSố lượng "Xin Về" (${d.lv}) KHÔNG ĐƯỢC LỚN HƠN số lượng "Đáp Ứng" (${d.res}).`;
+                        break;
+                    }
+                    if (d.res > 0 && (d.m + d.f !== d.res)) {
+                        hasError = true;
+                        errorMsg = `Lỗi ở Nhà cung cấp ${sup}:\nTổng Nam + Nữ (${d.m + d.f}) phải bằng đúng với "Đáp Ứng" (${d.res}).`;
+                        break;
+                    }
+                }
+            }
+            if (hasError) {
+                alert(errorMsg);
+                return; // Ngừng lưu dữ liệu
+            }
             
             const newRecord = { id, date: dateStr, shift: shiftStr, data: data, timestamp: new Date().getTime() };
             
@@ -672,13 +706,14 @@
         }
 
         function updateStats() {
-            let tReq = 0, tRes = 0;
+            let tReq = 0, tRes = 0, tLv = 0;
             records.forEach(r => {
-                Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; });
+                Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; tLv += (d.lv || 0); });
             });
             document.getElementById('total-req').innerText = tReq;
-            document.getElementById('total-res').innerText = tRes;
-            const rate = tReq === 0 ? 0 : Math.round((tRes/tReq)*100);
+            document.getElementById('total-res').innerText = tRes - tLv;
+            document.getElementById('total-lv').innerText = tLv;
+            const rate = tReq === 0 ? 0 : Math.round(((tRes-tLv)/tReq)*100);
             document.getElementById('avg-rate').innerText = `${rate}%`;
         }
 
@@ -689,20 +724,20 @@
             const gridColor = isDark ? '#334155' : '#e5e7eb';
             
             // 1. Bar Chart Data
-            const totalReq = {}, totalRes = {};
+            const totalReq = {}, totalRes = {}, totalLv = {};
             let sumM = 0, sumF = 0;
-            SUPPLIERS.forEach(s => { totalReq[s] = 0; totalRes[s] = 0; });
+            SUPPLIERS.forEach(s => { totalReq[s] = 0; totalRes[s] = 0; totalLv[s] = 0; });
             
             filtered.forEach(r => {
                 SUPPLIERS.forEach(s => {
                     if(r.data[s]) {
-                        totalReq[s] += r.data[s].req; totalRes[s] += r.data[s].res;
+                        totalReq[s] += r.data[s].req; totalRes[s] += r.data[s].res; totalLv[s] += (r.data[s].lv || 0);
                         sumM += r.data[s].m; sumF += r.data[s].f;
                     }
                 });
             });
             
-            const rates = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Math.round((totalRes[s]/totalReq[s])*100));
+            const rates = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Math.round(((totalRes[s]-totalLv[s])/totalReq[s])*100));
             
             if(responseRateChart) responseRateChart.destroy();
             responseRateChart = new Chart(document.getElementById('responseRateChart').getContext('2d'), {
@@ -746,16 +781,17 @@
 
             // 3. Line Chart Data (Trend Over Time)
             // Group by date (ignoring shift filters to show overall trend across days)
-            const datesMap = {}; // { '2026-03-23': { 'HOA ANH DAO': {req, res}, ... } }
+            const datesMap = {}; // { '2026-03-23': { 'HOA ANH DAO': {req, res, lv}, ... } }
             records.forEach(r => {
                 if(!datesMap[r.date]) {
                     datesMap[r.date] = {};
-                    SUPPLIERS.forEach(s => datesMap[r.date][s] = {req:0, res:0});
+                    SUPPLIERS.forEach(s => datesMap[r.date][s] = {req:0, res:0, lv:0});
                 }
                 SUPPLIERS.forEach(s => {
                     if(r.data[s]) {
                         datesMap[r.date][s].req += r.data[s].req;
                         datesMap[r.date][s].res += r.data[s].res;
+                        datesMap[r.date][s].lv += (r.data[s].lv || 0);
                     }
                 });
             });
@@ -769,7 +805,8 @@
                     data: sortedDates.map(d => {
                         const req = datesMap[d][s].req;
                         const res = datesMap[d][s].res;
-                        return req === 0 ? 0 : Math.round((res/req)*100);
+                        const lv = datesMap[d][s].lv;
+                        return req === 0 ? 0 : Math.round(((res-lv)/req)*100);
                     }),
                     borderColor: SUPPLIER_COLORS[s],
                     backgroundColor: SUPPLIER_COLORS[s],
@@ -804,16 +841,16 @@
             const container = document.getElementById('ranking-container');
             const filtered = getFilteredRecords();
             const totals = {};
-            SUPPLIERS.forEach(s => totals[s] = {req: 0, res: 0});
+            SUPPLIERS.forEach(s => totals[s] = {req: 0, res: 0, lv: 0});
             
             filtered.forEach(r => {
                 SUPPLIERS.forEach(s => {
-                    if(r.data[s]) { totals[s].req += r.data[s].req; totals[s].res += r.data[s].res; }
+                    if(r.data[s]) { totals[s].req += r.data[s].req; totals[s].res += r.data[s].res; totals[s].lv += (r.data[s].lv || 0); }
                 });
             });
             
             const ranks = SUPPLIERS.map(s => {
-                return { name: s, rate: totals[s].req === 0 ? 0 : Math.round((totals[s].res/totals[s].req)*100) }
+                return { name: s, rate: totals[s].req === 0 ? 0 : Math.round(((totals[s].res-totals[s].lv)/totals[s].req)*100) }
             }).sort((a,b) => b.rate - a.rate);
             
             container.innerHTML = ranks.map((r, i) => `
@@ -829,16 +866,22 @@
 
         function renderHistoryTable() {
             historyBody.innerHTML = records.map(r => {
-                let tReq = 0, tRes = 0, tM = 0, tF = 0;
-                Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; tM += d.m; tF += d.f; });
+                let tReq = 0, tRes = 0, tLv = 0, tM = 0, tF = 0;
+                Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; tLv += (d.lv || 0); tM += d.m; tF += d.f; });
                 
                 let rateHtml = '';
                 if(tReq === 0) {
                     rateHtml = `<span class="badge badge-info">(Ca Phụ)</span>`;
                 } else {
-                    const rate = Math.round((tRes/tReq)*100);
+                    const rate = Math.round(((tRes-tLv)/tReq)*100);
                     let badgeClass = rate >= 100 ? 'badge-success' : (rate >= 80 ? 'badge-warning' : 'badge-danger');
                     rateHtml = `<span class="badge ${badgeClass}">${rate}%</span>`;
+                }
+                
+                let dropHtml = '';
+                if(tLv > 0) {
+                    const dropRate = tRes > 0 ? Math.round((tLv/tRes)*100) : 0;
+                    dropHtml = `<div style="margin-top: 4px;"><span class="badge badge-danger" style="background: rgba(239,68,68,0.2)">${dropRate}% Xin Về</span></div>`;
                 }
                 
                 return `
@@ -847,7 +890,8 @@
                         <td>${r.shift}</td>
                         <td>${tReq}</td>
                         <td>${tRes}</td>
-                        <td>${rateHtml}</td>
+                        <td style="color: var(--danger); font-weight: 600;">${tLv}</td>
+                        <td>${rateHtml}${dropHtml}</td>
                         <td>${tM} / ${tF}</td>
                         <td>
                             <button class="btn-theme" onclick="deleteRecord('${r.id}')" title="Xóa">
@@ -863,7 +907,7 @@
             if(confirm('Bạn có chắc chắn muốn xóa bản ghi này?')) {
                 records = records.filter(r => r.id !== id);
                 saveToCloud();
-                if(!db) updateDashboard(); // If DB is connected, 'on value' listener will auto update
+                updateDashboard(); // Cập nhật giao diện ngay lập tức
             }
         }
 
@@ -875,13 +919,14 @@
 
         document.getElementById('btn-export-csv').addEventListener('click', () => {
             if(records.length === 0) return alert('Không có dữ liệu để xuất!');
-            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Nam,Nữ,Tỷ Lệ ĐƯ (%)\n';
+            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Xin Về,Nam,Nữ,Tỷ Lệ ĐƯ (%)\n';
             records.forEach(r => {
                 SUPPLIERS.forEach(s => {
                     if(r.data[s]) {
                         const d = r.data[s];
-                        const rate = d.req === 0 ? 0 : Math.round((d.res/d.req)*100);
-                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${d.m},${d.f},${rate}%\n`;
+                        const lv = d.lv || 0;
+                        const rate = d.req === 0 ? 0 : Math.round(((d.res-lv)/d.req)*100);
+                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${lv},${d.m},${d.f},${rate}%\n`;
                     }
                 });
             });
