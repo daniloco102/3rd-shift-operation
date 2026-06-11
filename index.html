@@ -123,7 +123,7 @@
         /* Layout */
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 400px 1fr;
+            grid-template-columns: 480px 1fr;
             gap: 1.5rem;
             align-items: start;
         }
@@ -205,6 +205,19 @@
 
         @media (max-width: 1200px) { .dashboard-layout { grid-template-columns: 1fr; } }
         @media (max-width: 768px) { .stats-grid, .charts-row { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+        
+        /* Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(4px); }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: var(--bg-main); width: 95%; max-width: 600px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; animation: modalIn 0.3s ease; }
+        @keyframes modalIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-header { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.02); }
+        html.dark .modal-header { background: rgba(255,255,255,0.02); }
+        .modal-header h2 { font-size: 1.25rem; font-weight: 700; color: var(--danger); display: flex; align-items: center; gap: 0.5rem; }
+        .btn-close { background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
+        .btn-close:hover { color: var(--danger); }
+        .modal-body { padding: 1.5rem; max-height: 70vh; overflow-y: auto; }
+        .modal-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 1rem; }
     </style>
 </head>
 <body>
@@ -273,7 +286,6 @@
                                             <th>Nhà Cung Cấp</th>
                                             <th title="Số book yêu cầu">Yêu Cầu</th>
                                             <th title="Số đáp ứng thực tế">Đáp Ứng</th>
-                                            <th title="Số lượng xin về sớm" style="color: var(--danger);">Xin Về</th>
                                             <th>Nam</th>
                                             <th>Nữ</th>
                                         </tr>
@@ -484,6 +496,14 @@
                     const data = snapshot.val();
                     if (data) {
                         records = data;
+                        // MIGRATION: Chuyển đổi lv cũ sang lvM/lvF
+                        records.forEach(r => {
+                            Object.values(r.data).forEach(d => {
+                                if (d.lv > 0 && d.lvM === undefined && d.lvF === undefined) {
+                                    d.lvM = d.lv; d.lvF = 0;
+                                }
+                            });
+                        });
                         // Backup to local
                         localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
                     } else {
@@ -584,11 +604,10 @@
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td class="supplier-name">${sup}</td>
-                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="req" placeholder="0"></td>
-                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="res" placeholder="0"></td>
-                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="lv" placeholder="0"></td>
-                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="m" placeholder="0"></td>
-                    <td><input type="number" min="0" required data-supplier="${sup}" data-field="f" placeholder="0"></td>
+                    <td><input type="number" min="0" data-supplier="${sup}" data-field="req" placeholder="0"></td>
+                    <td><input type="number" min="0" data-supplier="${sup}" data-field="res" placeholder="0"></td>
+                    <td><input type="number" min="0" data-supplier="${sup}" data-field="m" placeholder="0"></td>
+                    <td><input type="number" min="0" data-supplier="${sup}" data-field="f" placeholder="0"></td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -612,21 +631,28 @@
             inputs.forEach(input => {
                 const sup = input.getAttribute('data-supplier');
                 const field = input.getAttribute('data-field');
-                if (!data[sup]) data[sup] = { req: 0, res: 0, lv: 0, m: 0, f: 0 };
+                if (!data[sup]) data[sup] = { req: 0, res: 0, lv: 0, lvM: 0, lvF: 0, m: 0, f: 0 };
                 data[sup][field] = parseInt(input.value) || 0;
             });
             
-            // VALIDATION: Kiểm tra logic dữ liệu
+            // Nếu ghi đè, phải giữ lại dữ liệu Xin Về cũ
+            if (existingIndex > -1) {
+                const oldRec = records[existingIndex];
+                for(let sup in data) {
+                    if(oldRec.data[sup]) {
+                        data[sup].lv = oldRec.data[sup].lv || 0;
+                        data[sup].lvM = oldRec.data[sup].lvM || 0;
+                        data[sup].lvF = oldRec.data[sup].lvF || 0;
+                    }
+                }
+            }
+            
+            // VALIDATION: Kiểm tra logic dữ liệu (Đã bỏ check lv > res ở đây vì lv nhập ở form khác)
             let hasError = false;
             let errorMsg = "";
             for (let sup in data) {
                 const d = data[sup];
                 if (d.res > 0 || d.req > 0) {
-                    if (d.lv > d.res) {
-                        hasError = true;
-                        errorMsg = `Lỗi ở Nhà cung cấp ${sup}:\nSố lượng "Xin Về" (${d.lv}) KHÔNG ĐƯỢC LỚN HƠN số lượng "Đáp Ứng" (${d.res}).`;
-                        break;
-                    }
                     if (d.res > 0 && (d.m + d.f !== d.res)) {
                         hasError = true;
                         errorMsg = `Lỗi ở Nhà cung cấp ${sup}:\nTổng Nam + Nữ (${d.m + d.f}) phải bằng đúng với "Đáp Ứng" (${d.res}).`;
@@ -894,6 +920,9 @@
                         <td>${rateHtml}${dropHtml}</td>
                         <td>${tM} / ${tF}</td>
                         <td>
+                            <button class="btn-theme" onclick="openLeaveModal('${r.id}')" title="Cập nhật Xin Về">
+                                <i class="fa-solid fa-person-walking-arrow-right text-warning"></i>
+                            </button>
                             <button class="btn-theme" onclick="deleteRecord('${r.id}')" title="Xóa">
                                 <i class="fa-solid fa-trash text-danger"></i>
                             </button>
@@ -919,14 +948,14 @@
 
         document.getElementById('btn-export-csv').addEventListener('click', () => {
             if(records.length === 0) return alert('Không có dữ liệu để xuất!');
-            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Xin Về,Nam,Nữ,Tỷ Lệ ĐƯ (%)\n';
+            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Nam Xin Về,Nữ Xin Về,Nam Đáp Ứng,Nữ Đáp Ứng,Tỷ Lệ ĐƯ (%)\n';
             records.forEach(r => {
                 SUPPLIERS.forEach(s => {
                     if(r.data[s]) {
                         const d = r.data[s];
                         const lv = d.lv || 0;
                         const rate = d.req === 0 ? 0 : Math.round(((d.res-lv)/d.req)*100);
-                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${lv},${d.m},${d.f},${rate}%\n`;
+                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${d.lvM||0},${d.lvF||0},${d.m},${d.f},${rate}%\n`;
                     }
                 });
             });
@@ -938,6 +967,125 @@
             link.click();
             document.body.removeChild(link);
         });
+
+        // MODAL XIN VỀ LOGIC
+        let currentLeaveRecord = null;
+        window.openLeaveModal = function(id) {
+            currentLeaveRecord = records.find(r => r.id === id);
+            if(!currentLeaveRecord) return;
+            
+            document.getElementById('leave-record-id').value = id;
+            document.getElementById('leave-modal-title').innerHTML = `<i class="fa-solid fa-person-walking-arrow-right"></i> Cập Nhật Xin Về - ${currentLeaveRecord.shift} (${formatDate(currentLeaveRecord.date)})`;
+            
+            const tbody = document.getElementById('leave-modal-body');
+            tbody.innerHTML = '';
+            
+            let hasSuppliers = false;
+            SUPPLIERS.forEach(sup => {
+                if(currentLeaveRecord.data[sup] && currentLeaveRecord.data[sup].res > 0) {
+                    hasSuppliers = true;
+                    const d = currentLeaveRecord.data[sup];
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td class="supplier-name">${sup}</td>
+                        <td style="font-size: 0.85rem; color: var(--text-muted);">
+                            <strong>${d.res}</strong> (${d.m} N, ${d.f} Nữ)
+                        </td>
+                        <td><input type="number" min="0" max="${d.m}" data-sup="${sup}" data-leave="m" value="${d.lvM || 0}" style="width: 100%; text-align: center; border: 2px solid var(--danger); font-weight: bold;"></td>
+                        <td><input type="number" min="0" max="${d.f}" data-sup="${sup}" data-leave="f" value="${d.lvF || 0}" style="width: 100%; text-align: center; border: 2px solid var(--danger); font-weight: bold;"></td>
+                    `;
+                    tbody.appendChild(tr);
+                }
+            });
+            
+            if(!hasSuppliers) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center;">Không có đáp ứng nào trong ca này.</td></tr>';
+            }
+            
+            document.getElementById('leave-modal').classList.add('active');
+        };
+
+        window.closeLeaveModal = function() {
+            document.getElementById('leave-modal').classList.remove('active');
+            currentLeaveRecord = null;
+        };
+
+        window.saveLeaveData = function() {
+            if(!currentLeaveRecord) return;
+            const id = document.getElementById('leave-record-id').value;
+            const recordIndex = records.findIndex(r => r.id === id);
+            if(recordIndex === -1) return;
+            
+            const inputsM = document.querySelectorAll('#leave-modal-body input[data-leave="m"]');
+            const inputsF = document.querySelectorAll('#leave-modal-body input[data-leave="f"]');
+            
+            let hasError = false;
+            let errorMsg = "";
+            
+            inputsM.forEach(input => {
+                const sup = input.getAttribute('data-sup');
+                const val = parseInt(input.value) || 0;
+                const max = parseInt(input.getAttribute('max')) || 0;
+                if(val > max) { hasError = true; errorMsg = `Nhà cung cấp ${sup}: Nam xin về (${val}) không được lớn hơn tổng số Nam đang làm (${max})!`; }
+                records[recordIndex].data[sup].lvM = val;
+            });
+            
+            if(hasError) return alert(errorMsg);
+            
+            inputsF.forEach(input => {
+                const sup = input.getAttribute('data-sup');
+                const val = parseInt(input.value) || 0;
+                const max = parseInt(input.getAttribute('max')) || 0;
+                if(val > max) { hasError = true; errorMsg = `Nhà cung cấp ${sup}: Nữ xin về (${val}) không được lớn hơn tổng số Nữ đang làm (${max})!`; }
+                records[recordIndex].data[sup].lvF = val;
+            });
+            
+            if(hasError) return alert(errorMsg);
+            
+            // Recalculate total lv
+            SUPPLIERS.forEach(sup => {
+                if(records[recordIndex].data[sup]) {
+                    const d = records[recordIndex].data[sup];
+                    d.lv = (d.lvM || 0) + (d.lvF || 0); 
+                }
+            });
+            
+            saveToCloud();
+            updateDashboard();
+            closeLeaveModal();
+        };
     </script>
+    
+    <!-- Modal Xin Về -->
+    <div id="leave-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="leave-modal-title"><i class="fa-solid fa-person-walking-arrow-right"></i> Cập Nhật Xin Về</h2>
+                <button class="btn-close" onclick="closeLeaveModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="leave-record-id">
+                <div class="table-scroll-wrapper">
+                    <table class="data-table" style="min-width: 450px;">
+                        <thead>
+                            <tr>
+                                <th>Nhà CC</th>
+                                <th>Đang Làm</th>
+                                <th style="color: var(--danger);">Nam Xin Về</th>
+                                <th style="color: var(--danger);">Nữ Xin Về</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leave-modal-body">
+                            <!-- Rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeLeaveModal()" style="padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Hủy</button>
+                <button class="btn-primary" onclick="saveLeaveData()" style="padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-floppy-disk"></i> Lưu Xin Về</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
