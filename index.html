@@ -363,6 +363,14 @@
 
             <!-- Right Panel: Analytics Dashboard -->
             <section class="panel-right">
+                <!-- Cảnh Báo Xin Về -->
+                <div id="warning-container" class="card" style="display: none; border-left: 4px solid var(--danger); margin-bottom: 1.5rem; background: rgba(239, 68, 68, 0.05);">
+                    <div class="card-body" style="padding: 1rem 1.5rem;">
+                        <h3 style="color: var(--danger); margin-bottom: 0.5rem; font-size: 1.1rem;"><i class="fa-solid fa-triangle-exclamation"></i> CẢNH BÁO: FREELANCER XIN VỀ NHIỀU LẦN (7 NGÀY QUA)</h3>
+                        <div id="warning-list" style="font-size: 0.95rem;"></div>
+                    </div>
+                </div>
+
                 <!-- Overview Stats -->
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -549,13 +557,13 @@
             checkLoginState();
         };
 
-        const SUPPLIERS = ["HOA ANH ĐÀO", "VIECCO", "SKT", "THÀNH TÍN", "KIẾN VÀNG"];
+        const SUPPLIERS = ["HOA ANH ĐÀO", "VIECCO", "SKT", "THÀNH TÍN", "HOA SEN"];
         const SUPPLIER_COLORS = {
             "HOA ANH ĐÀO": "#f43f5e",
             "VIECCO": "#3b82f6",
             "SKT": "#10b981",
             "THÀNH TÍN": "#f59e0b",
-            "KIẾN VÀNG": "#8b5cf6"
+            "HOA SEN": "#8b5cf6"
         };
         
         let records = JSON.parse(localStorage.getItem('freelancer_records_v2')) || [];
@@ -569,6 +577,14 @@
                 localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
             }
         }
+        
+        // Migrate KIẾN VÀNG -> HOA SEN
+        records.forEach(r => {
+            if (r.data["KIẾN VÀNG"]) {
+                r.data["HOA SEN"] = r.data["KIẾN VÀNG"];
+                delete r.data["KIẾN VÀNG"];
+            }
+        });
 
         // DOM Elements
         const form = document.getElementById('data-entry-form');
@@ -594,11 +610,22 @@
                     const data = snapshot.val();
                     if (data) {
                         records = data;
-                        // MIGRATION: Chuyển đổi lv cũ sang lvM/lvF
+                        // MIGRATION: Chuyển đổi lv cũ sang lvM/lvF và KIẾN VÀNG sang HOA SEN
                         records.forEach(r => {
+                            if (r.data["KIẾN VÀNG"]) {
+                                r.data["HOA SEN"] = r.data["KIẾN VÀNG"];
+                                delete r.data["KIẾN VÀNG"];
+                            }
                             Object.values(r.data).forEach(d => {
                                 if (d.lv > 0 && d.lvM === undefined && d.lvF === undefined) {
-                                    d.lvM = d.lv; d.lvF = 0;
+                                    // Chia tỷ lệ rớt nam/nữ theo tỷ lệ hiện diện
+                                    const totalPresent = d.m + d.f;
+                                    if (totalPresent > 0) {
+                                        d.lvM = Math.round((d.m / totalPresent) * d.lv);
+                                        d.lvF = d.lv - d.lvM;
+                                    } else {
+                                        d.lvM = 0; d.lvF = 0;
+                                    }
                                 }
                             });
                         });
@@ -813,7 +840,57 @@
             updateDashboard();
         });
 
+        function checkLeaveWarnings() {
+            const warningContainer = document.getElementById('warning-container');
+            if(!warningContainer) return;
+            if(records.length === 0) {
+                warningContainer.style.display = 'none';
+                return;
+            }
+
+            const today = new Date();
+            today.setHours(0,0,0,0);
+            const sevenDaysAgo = new Date(today);
+            sevenDaysAgo.setDate(today.getDate() - 7);
+            
+            const leaveCounts = {};
+            
+            records.forEach(r => {
+                const parts = r.date.split('-');
+                if(parts.length === 3) {
+                    const rDate = new Date(parts[0], parts[1]-1, parts[2]);
+                    if(rDate >= sevenDaysAgo && rDate <= today) {
+                        if(r.leaveDetails) {
+                            r.leaveDetails.forEach(ld => {
+                                const key = `${ld.name.toLowerCase().trim()}|${ld.sup}`;
+                                if(!leaveCounts[key]) leaveCounts[key] = { name: ld.name, sup: ld.sup, count: 0, dates: [] };
+                                leaveCounts[key].count++;
+                                leaveCounts[key].dates.push(`${parts[2]}/${parts[1]}`);
+                            });
+                        }
+                    }
+                }
+            });
+            
+            const violations = Object.values(leaveCounts).filter(v => v.count >= 2);
+            
+            if(violations.length > 0) {
+                warningContainer.style.display = 'block';
+                const listHtml = violations.filter(v => v.count > 2).map(v => `<li style="margin-bottom: 4px;"><strong>${v.name}</strong> (${v.sup}) - Xin về <strong style="color: var(--danger);">${v.count} lần</strong> (các ngày: ${v.dates.join(', ')})</li>`).join('');
+                const warningHtml = violations.filter(v => v.count === 2).map(v => `<li style="margin-bottom: 4px;"><strong>${v.name}</strong> (${v.sup}) - Xin về <strong>${v.count} lần</strong> (các ngày: ${v.dates.join(', ')})</li>`).join('');
+                
+                let html = '';
+                if(listHtml) html += `<ul style="margin-left: 20px; color: var(--danger);">` + listHtml + `</ul>`;
+                if(warningHtml) html += `<ul style="margin-left: 20px; color: var(--warning); margin-top: 5px;">` + warningHtml + `</ul>`;
+                
+                document.getElementById('warning-list').innerHTML = html;
+            } else {
+                warningContainer.style.display = 'none';
+            }
+        }
+
         function updateDashboard() {
+            checkLeaveWarnings();
             updateFilters();
             updateStats();
             updateCharts();
@@ -1116,10 +1193,19 @@
                     rateHtml = `<span class="badge ${badgeClass}">${rate}%</span>`;
                 }
                 
-                let dropHtml = '';
-                if(tLv > 0) {
-                    const dropRate = tRes > 0 ? Math.round((tLv/tRes)*100) : 0;
-                    dropHtml = `<div style="margin-top: 4px;"><span class="badge badge-danger" style="background: rgba(239,68,68,0.2)">${dropRate}% Xin Về</span></div>`;
+                let lvStr = '';
+                SUPPLIERS.forEach(s => {
+                    if(r.data[s] && r.data[s].res > 0) {
+                        const d = r.data[s];
+                        const lv = (d.lvM||0) + (d.lvF||0);
+                        if(lv > 0) {
+                            lvStr += `<div style="font-size:0.8rem;">${s}: <strong>${lv}</strong> (${d.lvM||0}N, ${d.lvF||0}Nữ)</div>`;
+                        }
+                    }
+                });
+                
+                if (r.leaveNote) {
+                    lvStr += `<div style="font-size:0.75rem; color: var(--text-muted); margin-top: 6px; font-style: italic; white-space: pre-wrap;"><i class="fa-solid fa-note-sticky"></i> ${r.leaveNote}</div>`;
                 }
                 
                 let auditHtml = '';
@@ -1139,8 +1225,8 @@
                         <td>${r.shift}</td>
                         <td>${tReq}</td>
                         <td>${tRes}</td>
-                        <td style="color: var(--danger); font-weight: 600;">${tLv}</td>
-                        <td>${rateHtml}${dropHtml}</td>
+                        <td style="color: var(--danger); font-weight: 600;">${lvStr}</td>
+                        <td>${rateHtml}</td>
                         <td>${tM} / ${tF}</td>
                         <td>
                             <button class="btn-theme" onclick="openLeaveModal('${r.id}')" title="Cập nhật Xin Về">
@@ -1171,16 +1257,22 @@
 
         document.getElementById('btn-export-csv').addEventListener('click', () => {
             if(records.length === 0) return alert('Không có dữ liệu để xuất!');
-            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Nam Xin Về,Nữ Xin Về,Nam Đáp Ứng,Nữ Đáp Ứng,Tỷ Lệ ĐƯ (%),Người Nhập,Giờ Nhập\n';
+            let csv = '\uFEFFNgày,Ca,Nhà Cung Cấp,Yêu Cầu,Đáp Ứng,Nam Xin Về,Nữ Xin Về,Nam Đáp Ứng,Nữ Đáp Ứng,Tỷ Lệ Đáp Ứng (%),Người Nhập,Thời Gian Nhập,Ghi Chú Xin Về\n';
             records.forEach(r => {
                 SUPPLIERS.forEach(s => {
-                    if(r.data[s]) {
+                    if(r.data[s] && r.data[s].req > 0) {
                         const d = r.data[s];
-                        const lv = d.lv || 0;
-                        const rate = d.req === 0 ? 0 : Math.round(((d.res-lv)/d.req)*100);
+                        const rate = Math.round(((d.res - (d.lvM||0) - (d.lvF||0)) / d.req) * 100);
                         const creator = r.createdBy || '';
                         const createdTime = r.createdAt || '';
-                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${d.lvM||0},${d.lvF||0},${d.m},${d.f},${rate}%,${creator},${createdTime}\n`;
+                        let noteStr = "";
+                        if (r.leaveDetails && r.leaveDetails.length > 0) {
+                            noteStr = r.leaveDetails.map(ld => `${ld.name} (${ld.sup} - ${ld.shift} - ${ld.gender==='m'?'Nam':'Nữ'})`).join('; ');
+                        } else if (r.leaveNote) {
+                            noteStr = r.leaveNote;
+                        }
+                        const note = noteStr ? `"${noteStr.replace(/"/g, '""')}"` : '';
+                        csv += `${formatDate(r.date)},${r.shift},${s},${d.req},${d.res},${d.lvM||0},${d.lvF||0},${d.m},${d.f},${rate}%,${creator},${createdTime},${note}\n`;
                     }
                 });
             });
@@ -1195,79 +1287,131 @@
 
         // MODAL XIN VỀ LOGIC
         let currentLeaveRecord = null;
+        let tempLeaveDetails = [];
+
         window.openLeaveModal = function(id) {
             currentLeaveRecord = records.find(r => r.id === id);
             if(!currentLeaveRecord) return;
             
             document.getElementById('leave-record-id').value = id;
-            document.getElementById('leave-modal-title').innerHTML = `<i class="fa-solid fa-person-walking-arrow-right"></i> Cập Nhật Xin Về - ${currentLeaveRecord.shift} (${formatDate(currentLeaveRecord.date)})`;
+            document.getElementById('leave-modal-title').innerHTML = `<i class="fa-solid fa-person-walking-arrow-right"></i> Danh Sách Xin Về - ${currentLeaveRecord.shift} (${formatDate(currentLeaveRecord.date)})`;
             
+            tempLeaveDetails = JSON.parse(JSON.stringify(currentLeaveRecord.leaveDetails || []));
+            
+            const supSelect = document.getElementById('leaver-sup');
+            supSelect.innerHTML = SUPPLIERS.map(s => `<option value="${s}">${s}</option>`).join('');
+            
+            renderLeaveDetails();
+            document.getElementById('leave-modal').classList.add('active');
+        };
+
+        window.renderLeaveDetails = function() {
             const tbody = document.getElementById('leave-modal-body');
             tbody.innerHTML = '';
+            if(tempLeaveDetails.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted); padding: 2rem;">Chưa có người nào xin về trong ca này.</td></tr>';
+                return;
+            }
+            tempLeaveDetails.forEach((ld, idx) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${ld.name}</strong></td>
+                    <td><span class="badge" style="background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-main);">${ld.sup}</span></td>
+                    <td>${ld.shift}</td>
+                    <td>${ld.gender === 'm' ? 'Nam' : 'Nữ'}</td>
+                    <td><button type="button" class="btn-theme" style="color: var(--danger); padding: 4px;" onclick="removeLeaver(${idx})" title="Xóa người này"><i class="fa-solid fa-trash"></i></button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        };
+
+        window.addLeaver = function() {
+            const name = document.getElementById('leaver-name').value.trim();
+            const sup = document.getElementById('leaver-sup').value;
+            const shift = document.getElementById('leaver-shift').value.trim();
+            const gender = document.getElementById('leaver-gender').value;
+
+            if(!name || !shift) {
+                alert("Vui lòng nhập đầy đủ Họ Tên và Ca làm việc!");
+                return;
+            }
+
+            // Check warning history
+            const today = new Date();
+            today.setHours(0,0,0,0);
+            const sevenDaysAgo = new Date(today);
+            sevenDaysAgo.setDate(today.getDate() - 7);
             
-            let hasSuppliers = false;
-            SUPPLIERS.forEach(sup => {
-                if(currentLeaveRecord.data[sup] && currentLeaveRecord.data[sup].res > 0) {
-                    hasSuppliers = true;
-                    const d = currentLeaveRecord.data[sup];
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td class="supplier-name">${sup}</td>
-                        <td style="font-size: 0.85rem; color: var(--text-muted);">
-                            <strong>${d.res}</strong> (${d.m} N, ${d.f} Nữ)
-                        </td>
-                        <td><input type="number" min="0" max="${d.m}" data-sup="${sup}" data-leave="m" value="${d.lvM || 0}" style="width: 100%; text-align: center; border: 2px solid var(--danger); font-weight: bold;"></td>
-                        <td><input type="number" min="0" max="${d.f}" data-sup="${sup}" data-leave="f" value="${d.lvF || 0}" style="width: 100%; text-align: center; border: 2px solid var(--danger); font-weight: bold;"></td>
-                    `;
-                    tbody.appendChild(tr);
+            let pastCount = 0;
+            let pastDates = [];
+            records.forEach(r => {
+                if(r.id === currentLeaveRecord.id) return; // exclude current editing record
+                const parts = r.date.split('-');
+                if(parts.length === 3) {
+                    const rDate = new Date(parts[0], parts[1]-1, parts[2]);
+                    if(rDate >= sevenDaysAgo && rDate <= today) {
+                        if(r.leaveDetails) {
+                            r.leaveDetails.forEach(ld => {
+                                if(ld.name.toLowerCase().trim() === name.toLowerCase().trim() && ld.sup === sup) {
+                                    pastCount++;
+                                    pastDates.push(`${parts[2]}/${parts[1]}`);
+                                }
+                            });
+                        }
+                    }
                 }
             });
             
-            if(!hasSuppliers) {
-                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center;">Không có đáp ứng nào trong ca này.</td></tr>';
+            if(pastCount >= 2) {
+                const proceed = confirm(`⚠️ CẢNH BÁO: Freelancer ${name} (${sup}) đã xin về ${pastCount} lần trong 7 ngày qua (vào ngày: ${pastDates.join(', ')}).\n\nBạn có chắc chắn muốn tiếp tục cho người này xin về hôm nay không?`);
+                if(!proceed) return;
             }
+
+            const currentCount = tempLeaveDetails.filter(l => l.sup === sup && l.gender === gender).length;
+            const maxCount = gender === 'm' ? (currentLeaveRecord.data[sup]?.m || 0) : (currentLeaveRecord.data[sup]?.f || 0);
+
+            if(currentCount >= maxCount) {
+                return alert(`Nhà CC ${sup} chỉ có ${maxCount} ${gender === 'm'?'Nam':'Nữ'}, không thể thêm người xin về nữa!`);
+            }
+
+            tempLeaveDetails.push({ name, sup, shift, gender });
             
-            document.getElementById('leave-modal').classList.add('active');
+            document.getElementById('leaver-name').value = '';
+            document.getElementById('leaver-shift').value = '';
+            
+            renderLeaveDetails();
+        };
+
+        window.removeLeaver = function(idx) {
+            tempLeaveDetails.splice(idx, 1);
+            renderLeaveDetails();
         };
 
         window.closeLeaveModal = function() {
             document.getElementById('leave-modal').classList.remove('active');
             currentLeaveRecord = null;
+            tempLeaveDetails = [];
         };
 
         window.saveLeaveData = function() {
             if(!currentLeaveRecord) return;
-            const id = document.getElementById('leave-record-id').value;
-            const recordIndex = records.findIndex(r => r.id === id);
+            const recordIndex = records.findIndex(r => r.id === currentLeaveRecord.id);
             if(recordIndex === -1) return;
             
-            const inputsM = document.querySelectorAll('#leave-modal-body input[data-leave="m"]');
-            const inputsF = document.querySelectorAll('#leave-modal-body input[data-leave="f"]');
-            
-            let hasError = false;
-            let errorMsg = "";
-            
-            inputsM.forEach(input => {
-                const sup = input.getAttribute('data-sup');
-                const val = parseInt(input.value) || 0;
-                const max = parseInt(input.getAttribute('max')) || 0;
-                if(val > max) { hasError = true; errorMsg = `Nhà cung cấp ${sup}: Nam xin về (${val}) không được lớn hơn tổng số Nam đang làm (${max})!`; }
-                records[recordIndex].data[sup].lvM = val;
+            SUPPLIERS.forEach(s => {
+                if(records[recordIndex].data[s]) {
+                    records[recordIndex].data[s].lvM = 0;
+                    records[recordIndex].data[s].lvF = 0;
+                }
             });
-            
-            if(hasError) return alert(errorMsg);
-            
-            inputsF.forEach(input => {
-                const sup = input.getAttribute('data-sup');
-                const val = parseInt(input.value) || 0;
-                const max = parseInt(input.getAttribute('max')) || 0;
-                if(val > max) { hasError = true; errorMsg = `Nhà cung cấp ${sup}: Nữ xin về (${val}) không được lớn hơn tổng số Nữ đang làm (${max})!`; }
-                records[recordIndex].data[sup].lvF = val;
+
+            tempLeaveDetails.forEach(ld => {
+                if(records[recordIndex].data[ld.sup]) {
+                    if(ld.gender === 'm') records[recordIndex].data[ld.sup].lvM++;
+                    else if(ld.gender === 'f') records[recordIndex].data[ld.sup].lvF++;
+                }
             });
-            
-            if(hasError) return alert(errorMsg);
-            
-            // Recalculate total lv
+
             SUPPLIERS.forEach(sup => {
                 if(records[recordIndex].data[sup]) {
                     const d = records[recordIndex].data[sup];
@@ -1275,6 +1419,10 @@
                 }
             });
             
+            records[recordIndex].leaveDetails = tempLeaveDetails;
+            // Xóa note cũ không cần thiết
+            delete records[recordIndex].leaveNote;
+
             const now = new Date();
             const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')} ${now.getDate().toString().padStart(2, '0')}/${(now.getMonth()+1).toString().padStart(2, '0')}`;
             records[recordIndex].updatedBy = currentUser || "Khách";
@@ -1293,20 +1441,46 @@
                 <h2 id="leave-modal-title"><i class="fa-solid fa-person-walking-arrow-right"></i> Cập Nhật Xin Về</h2>
                 <button class="btn-close" onclick="closeLeaveModal()"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="padding: 1rem 1.5rem;">
                 <input type="hidden" id="leave-record-id">
+                
+                <!-- Form thêm người -->
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; align-items: flex-end; flex-wrap: wrap; background: rgba(0,0,0,0.02); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <div style="flex: 2; min-width: 150px;">
+                        <label style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Họ Tên</label>
+                        <input type="text" id="leaver-name" placeholder="VD: Nguyễn Văn A" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                    </div>
+                    <div style="flex: 1.5; min-width: 120px;">
+                        <label style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Nhà CC</label>
+                        <select id="leaver-sup" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);"></select>
+                    </div>
+                    <div style="flex: 1.5; min-width: 120px;">
+                        <label style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Ca làm việc</label>
+                        <input type="text" id="leaver-shift" placeholder="Ca 20:00..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                    </div>
+                    <div style="width: 80px;">
+                        <label style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Giới tính</label>
+                        <select id="leaver-gender" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                            <option value="m">Nam</option>
+                            <option value="f">Nữ</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-primary" onclick="addLeaver()" style="padding: 0.5rem 1rem; height: 35px;"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
                 <div class="table-scroll-wrapper">
                     <table class="data-table" style="min-width: 450px;">
                         <thead>
                             <tr>
+                                <th>Họ Tên</th>
                                 <th>Nhà CC</th>
-                                <th>Đang Làm</th>
-                                <th style="color: var(--danger);">Nam Xin Về</th>
-                                <th style="color: var(--danger);">Nữ Xin Về</th>
+                                <th>Ca làm việc</th>
+                                <th>Giới tính</th>
+                                <th style="width: 50px;">Xóa</th>
                             </tr>
                         </thead>
                         <tbody id="leave-modal-body">
-                            <!-- Rows -->
+                            <!-- JS gen rows -->
                         </tbody>
                     </table>
                 </div>
