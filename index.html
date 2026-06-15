@@ -1190,7 +1190,7 @@
             // Sort dates chronologically
             const sortedDates = Object.keys(datesMap).sort((a,b) => new Date(a) - new Date(b));
             
-            const datasets = SUPPLIERS.map(s => {
+            const lineDatasets = SUPPLIERS.map(s => {
                 return {
                     label: s,
                     data: sortedDates.map(d => {
@@ -1212,7 +1212,7 @@
                 type: 'line',
                 data: {
                     labels: sortedDates.map(d => formatDate(d)),
-                    datasets: datasets
+                    datasets: lineDatasets
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
