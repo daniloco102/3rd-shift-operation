@@ -460,7 +460,7 @@
                         <!-- WEEKLY TABLE -->
                         <div class="card chart-card half-width">
                             <div class="card-header">
-                                <h2><i class="fa-solid fa-table"></i> Bảng Tỷ Lệ Đáp Ứng Tuần</h2>
+                                <h2><i class="fa-solid fa-venus-mars"></i> Bảng Số Lượng Nam - Nữ Theo Tuần</h2>
                             </div>
                             <div class="card-body" style="overflow-x: auto; padding: 1rem;">
                                 <table class="data-table" style="font-size: 0.85rem; text-align: center; width: 100%;">
@@ -1185,10 +1185,16 @@
                     bodyHtml += `<td style="text-align: left; font-weight: 600; color: ${SUPPLIER_COLORS[s]}">${s}</td>`;
                     weekDates.forEach(wd => {
                         const st = supplierStats[wd.dateStr][s];
-                        if (st.res === 0) {
+                        const totalMF = st.m + st.f;
+                        if (totalMF === 0) {
                             bodyHtml += `<td>-</td>`;
                         } else {
-                            bodyHtml += `<td style="font-weight: 500;">${st.m}N - ${st.f}Nữ</td>`;
+                            const mRate = Math.round((st.m / totalMF) * 100);
+                            const fRate = 100 - mRate;
+                            bodyHtml += `<td>
+                                <div style="font-weight: 500;">${st.m}N - ${st.f}Nữ</div>
+                                <div style="font-size: 0.75rem; color: #6b7280; margin-top: 2px;">(${mRate}% - ${fRate}%)</div>
+                            </td>`;
                         }
                     });
                     bodyHtml += `</tr>`;
