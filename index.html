@@ -375,34 +375,45 @@
                     </div>
                 </div>
 
+                <!-- Global Filters -->
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <div class="card-body" style="padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <h2 style="margin: 0;"><i class="fa-solid fa-filter"></i> Báo Cáo Theo Tuần</h2>
+                        <div class="chart-filters" style="margin: 0;">
+                            <select id="chart-filter-date"></select>
+                            <select id="chart-filter-shift"></select>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Overview Stats -->
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon text-indigo"><i class="fa-solid fa-clipboard-list"></i></div>
                         <div class="stat-content">
                             <h3 id="total-req">0</h3>
-                            <p>Tổng Yêu Cầu (All)</p>
+                            <p>Tổng Yêu Cầu (Tuần)</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon text-emerald"><i class="fa-solid fa-check-double"></i></div>
                         <div class="stat-content">
                             <h3 id="total-res">0</h3>
-                            <p>Tổng Đáp Ứng</p>
+                            <p>Tổng Đáp Ứng (Tuần)</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon text-amber"><i class="fa-solid fa-percent"></i></div>
                         <div class="stat-content">
                             <h3 id="avg-rate">0%</h3>
-                            <p>Tỷ Lệ Đáp Ứng TB</p>
+                            <p>Tỷ Lệ Đáp Ứng TB (Tuần)</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon" style="color: #ef4444;"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
                         <div class="stat-content">
                             <h3 id="total-lv">0</h3>
-                            <p>Tổng Xin Về</p>
+                            <p>Tổng Xin Về (Tuần)</p>
                         </div>
                     </div>
                 </div>
@@ -425,14 +436,22 @@
                     <div class="card chart-card full-width">
                         <div class="card-header">
                             <h2><i class="fa-solid fa-chart-column"></i> Biểu Đồ Tỷ Lệ Đáp Ứng Theo Tuần (%)</h2>
-                            <div class="chart-filters">
-                                <select id="chart-filter-date"></select>
-                                <select id="chart-filter-shift"></select>
-                            </div>
                         </div>
                         <div class="card-body">
                             <div class="chart-canvas-container">
                                 <canvas id="responseRateChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LEAVING CHART: BY SUPPLIER -->
+                    <div class="card chart-card full-width">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-person-walking-arrow-right"></i> Biểu Đồ Số Lượng Xin Về Theo Tuần</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-canvas-container">
+                                <canvas id="leaveChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -958,10 +977,39 @@
                 warningContainer.style.display = 'none';
             }
         }
+        let globalWeekDates = [];
+        let globalChartLabels = [];
 
         function updateDashboard() {
             checkLeaveWarnings();
             updateFilters();
+            
+            let refDate = new Date();
+            const filterDateVal = document.getElementById('chart-filter-date').value;
+            if (filterDateVal && filterDateVal !== 'all') {
+                const parts = filterDateVal.split('-');
+                if(parts.length === 3) refDate = new Date(parts[0], parts[1]-1, parts[2]);
+            }
+            
+            const dayOfWeek = refDate.getDay(); 
+            const sunday = new Date(refDate);
+            sunday.setDate(refDate.getDate() - dayOfWeek);
+            
+            globalWeekDates = [];
+            globalChartLabels = [];
+            for (let i = 0; i < 7; i++) {
+                const d = new Date(sunday);
+                d.setDate(sunday.getDate() + i);
+                const yyyy = d.getFullYear();
+                const mm = String(d.getMonth() + 1).padStart(2, '0');
+                const dd = String(d.getDate()).padStart(2, '0');
+                globalWeekDates.push({
+                    dateStr: `${yyyy}-${mm}-${dd}`,
+                    label: `${['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][i]} (${dd}/${mm})`
+                });
+                globalChartLabels.push(globalWeekDates[i].label);
+            }
+
             updateStats();
             updateCharts();
             renderHistoryTable();
@@ -975,8 +1023,8 @@
             if(filterDate.options.length === 0) {
                 filterDate.innerHTML = '<option value="all">Tất cả ngày</option>';
                 filterShift.innerHTML = '<option value="all">Tất cả ca</option>';
-                filterDate.addEventListener('change', updateCharts);
-                filterShift.addEventListener('change', updateCharts);
+                filterDate.addEventListener('change', updateDashboard);
+                filterShift.addEventListener('change', updateDashboard);
             }
             
             const currDate = filterDate.value;
@@ -998,10 +1046,10 @@
         }
 
         function getFilteredRecords() {
-            const d = document.getElementById('chart-filter-date')?.value || 'all';
             const s = document.getElementById('chart-filter-shift')?.value || 'all';
+            const allowedDates = globalWeekDates.map(wd => wd.dateStr);
             return records.filter(r => {
-                if(d !== 'all' && r.date !== d) return false;
+                if(!allowedDates.includes(r.date)) return false;
                 if(s !== 'all' && r.shift !== s) return false;
                 return true;
             });
@@ -1009,7 +1057,8 @@
 
         function updateStats() {
             let tReq = 0, tRes = 0, tLv = 0;
-            records.forEach(r => {
+            const filtered = getFilteredRecords();
+            filtered.forEach(r => {
                 Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; tLv += (d.lv || 0); });
             });
             document.getElementById('total-req').innerText = tReq;
@@ -1034,45 +1083,23 @@
             });
 
             // 1. Bar Chart Data (Weekly 7 days)
-            let refDate = new Date();
-            const filterDateVal = document.getElementById('chart-filter-date').value;
-            if (filterDateVal !== 'all') {
-                const parts = filterDateVal.split('-');
-                if(parts.length === 3) refDate = new Date(parts[0], parts[1]-1, parts[2]);
-            }
-            
-            const dayOfWeek = refDate.getDay(); 
-            const sunday = new Date(refDate);
-            sunday.setDate(refDate.getDate() - dayOfWeek);
-            
-            const weekDates = [];
-            for (let i = 0; i < 7; i++) {
-                const d = new Date(sunday);
-                d.setDate(sunday.getDate() + i);
-                const yyyy = d.getFullYear();
-                const mm = String(d.getMonth() + 1).padStart(2, '0');
-                const dd = String(d.getDate()).padStart(2, '0');
-                weekDates.push({
-                    dateStr: `${yyyy}-${mm}-${dd}`,
-                    label: `${['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][i]} (${dd}/${mm})`
-                });
-            }
+            const weekDates = globalWeekDates;
+            const chartLabels = globalChartLabels;
             
             const supplierStats = {};
             weekDates.forEach(wd => {
                 supplierStats[wd.dateStr] = {};
-                SUPPLIERS.forEach(s => supplierStats[wd.dateStr][s] = {req: 0, res: 0, lv: 0});
+                SUPPLIERS.forEach(s => supplierStats[wd.dateStr][s] = {req: 0, res: 0, lv: 0, m: 0, f: 0});
             });
             
-            const filterShiftVal = document.getElementById('chart-filter-shift').value;
-            const recordsForBarChart = filterShiftVal === 'all' ? records : records.filter(r => r.shift === filterShiftVal);
-            
-            recordsForBarChart.forEach(r => {
+            filtered.forEach(r => {
                 if (supplierStats[r.date] !== undefined) {
                     SUPPLIERS.forEach(s => {
                         if(r.data[s]) {
                             supplierStats[r.date][s].req += r.data[s].req; 
                             supplierStats[r.date][s].res += r.data[s].res;
+                            supplierStats[r.date][s].m += r.data[s].m;
+                            supplierStats[r.date][s].f += r.data[s].f;
                             const lv = (r.data[s].lvM || 0) + (r.data[s].lvF || 0);
                             supplierStats[r.date][s].lv += lv;
                         }
@@ -1085,7 +1112,9 @@
             const datasets = SUPPLIERS.map(s => {
                 const data = weekDates.map(wd => {
                     const st = supplierStats[wd.dateStr][s];
-                    return st.req === 0 ? 0 : Math.round(((st.res - st.lv)/st.req)*100);
+                    const active = st.res - st.lv;
+                    if (st.req === 0) return active > 0 ? 100 : 0;
+                    return Math.round((active/st.req)*100);
                 });
                 
                 const rawData = weekDates.map(wd => {
@@ -1157,12 +1186,10 @@
                     bodyHtml += `<td style="text-align: left; font-weight: 600; color: ${SUPPLIER_COLORS[s]}">${s}</td>`;
                     weekDates.forEach(wd => {
                         const st = supplierStats[wd.dateStr][s];
-                        if (st.req === 0) {
+                        if (st.res === 0) {
                             bodyHtml += `<td>-</td>`;
                         } else {
-                            const rate = Math.round(((st.res - st.lv)/st.req)*100);
-                            let color = rate >= 100 ? '#10b981' : (rate >= 80 ? '#f59e0b' : '#ef4444');
-                            bodyHtml += `<td style="color: ${color}; font-weight: 600;">${rate}%</td>`;
+                            bodyHtml += `<td style="font-weight: 500;">${st.m}N - ${st.f}Nữ</td>`;
                         }
                     });
                     bodyHtml += `</tr>`;
@@ -1170,34 +1197,15 @@
                 tableBody.innerHTML = bodyHtml;
             }
 
-            // 3. Line Chart Data (Trend Over Time)
-            // Group by date (ignoring shift filters to show overall trend across days)
-            const datesMap = {}; // { '2026-03-23': { 'HOA ANH DAO': {req, res, lv}, ... } }
-            records.forEach(r => {
-                if(!datesMap[r.date]) {
-                    datesMap[r.date] = {};
-                    SUPPLIERS.forEach(s => datesMap[r.date][s] = {req:0, res:0, lv:0});
-                }
-                SUPPLIERS.forEach(s => {
-                    if(r.data[s]) {
-                        datesMap[r.date][s].req += r.data[s].req;
-                        datesMap[r.date][s].res += r.data[s].res;
-                        datesMap[r.date][s].lv += (r.data[s].lv || 0);
-                    }
-                });
-            });
-
-            // Sort dates chronologically
-            const sortedDates = Object.keys(datesMap).sort((a,b) => new Date(a) - new Date(b));
-            
+            // 3. Line Chart Data (Trend Over Time - Weekly 7 days)
             const lineDatasets = SUPPLIERS.map(s => {
                 return {
                     label: s,
-                    data: sortedDates.map(d => {
-                        const req = datesMap[d][s].req;
-                        const res = datesMap[d][s].res;
-                        const lv = datesMap[d][s].lv;
-                        return req === 0 ? 0 : Math.round(((res-lv)/req)*100);
+                    data: weekDates.map(wd => {
+                        const st = supplierStats[wd.dateStr][s];
+                        const active = st.res - st.lv;
+                        if (st.req === 0) return active > 0 ? 100 : 0;
+                        return Math.round((active/st.req)*100);
                     }),
                     borderColor: SUPPLIER_COLORS[s],
                     backgroundColor: SUPPLIER_COLORS[s],
@@ -1211,7 +1219,7 @@
             trendLineChart = new Chart(document.getElementById('trendLineChart').getContext('2d'), {
                 type: 'line',
                 data: {
-                    labels: sortedDates.map(d => formatDate(d)),
+                    labels: chartLabels,
                     datasets: lineDatasets
                 },
                 options: {
@@ -1223,6 +1231,43 @@
                     scales: {
                         y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor, callback: (v) => v + '%' } },
                         x: { grid: { color: gridColor }, ticks: { color: textColor } }
+                    }
+                }
+            });
+
+            // 4. Leaving Chart (Số Lượng Xin Về)
+            const leaveDatasets = SUPPLIERS.map(s => {
+                return {
+                    label: s,
+                    data: weekDates.map(wd => supplierStats[wd.dateStr][s].lv),
+                    backgroundColor: SUPPLIER_COLORS[s],
+                    borderRadius: 4
+                };
+            });
+            
+            if(window.leaveChartInstance) window.leaveChartInstance.destroy();
+            window.leaveChartInstance = new Chart(document.getElementById('leaveChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: chartLabels,
+                    datasets: leaveDatasets
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { position: 'bottom', labels: { color: textColor, padding: 15, usePointStyle: true } },
+                        tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.raw} người` } },
+                        datalabels: {
+                            color: textColor,
+                            anchor: 'end',
+                            align: 'top',
+                            font: { weight: 'bold', size: 10 },
+                            formatter: (value) => value > 0 ? value : ''
+                        }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor, stepSize: 1 } },
+                        x: { grid: { display: false }, ticks: { color: textColor, font: {weight: 'bold'} } }
                     }
                 }
             });
