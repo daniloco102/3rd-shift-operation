@@ -424,7 +424,7 @@
                     <!-- BAR CHART: BY SUPPLIER -->
                     <div class="card chart-card full-width">
                         <div class="card-header">
-                            <h2><i class="fa-solid fa-chart-column"></i> Biểu Đồ Tỷ Lệ Đáp Ứng (%)</h2>
+                            <h2><i class="fa-solid fa-chart-column"></i> Biểu Đồ Tỷ Lệ Đáp Ứng Theo Tuần (%)</h2>
                             <div class="chart-filters">
                                 <select id="chart-filter-date"></select>
                                 <select id="chart-filter-shift"></select>
@@ -1018,25 +1018,63 @@
             const textColor = isDark ? '#f8fafc' : '#1f2937';
             const gridColor = isDark ? '#334155' : '#e5e7eb';
             
-            // 1. Bar Chart Data (Stacked Nam/Nữ)
-            const totalReq = {}, activeM = {}, activeF = {};
+            // 0. Base sums for Pie chart (using the `filtered` data)
             let sumM = 0, sumF = 0;
-            SUPPLIERS.forEach(s => { totalReq[s] = 0; activeM[s] = 0; activeF[s] = 0; });
-            
             filtered.forEach(r => {
                 SUPPLIERS.forEach(s => {
-                    if(r.data[s]) {
-                        totalReq[s] += r.data[s].req; 
-                        activeM[s] += Math.max(0, r.data[s].m - (r.data[s].lvM || 0));
-                        activeF[s] += Math.max(0, r.data[s].f - (r.data[s].lvF || 0));
-                        sumM += r.data[s].m; sumF += r.data[s].f;
-                    }
+                    if(r.data[s]) { sumM += r.data[s].m; sumF += r.data[s].f; }
                 });
             });
+
+            // 1. Bar Chart Data (Weekly 7 days)
+            let refDate = new Date();
+            const filterDateVal = document.getElementById('chart-filter-date').value;
+            if (filterDateVal !== 'all') {
+                const parts = filterDateVal.split('-');
+                if(parts.length === 3) refDate = new Date(parts[0], parts[1]-1, parts[2]);
+            }
             
-            const ratesM = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Number(((activeM[s]/totalReq[s])*100).toFixed(1)));
-            const ratesF = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Number(((activeF[s]/totalReq[s])*100).toFixed(1)));
-            const ratesTotal = SUPPLIERS.map(s => totalReq[s] === 0 ? 0 : Math.round(((activeM[s] + activeF[s])/totalReq[s])*100));
+            const dayOfWeek = refDate.getDay(); 
+            const sunday = new Date(refDate);
+            sunday.setDate(refDate.getDate() - dayOfWeek);
+            
+            const weekDates = [];
+            for (let i = 0; i < 7; i++) {
+                const d = new Date(sunday);
+                d.setDate(sunday.getDate() + i);
+                const yyyy = d.getFullYear();
+                const mm = String(d.getMonth() + 1).padStart(2, '0');
+                const dd = String(d.getDate()).padStart(2, '0');
+                weekDates.push({
+                    dateStr: `${yyyy}-${mm}-${dd}`,
+                    label: `${['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][i]} (${dd}/${mm})`
+                });
+            }
+            
+            const totalReq = {}, activeM = {}, activeF = {};
+            weekDates.forEach(wd => { totalReq[wd.dateStr] = 0; activeM[wd.dateStr] = 0; activeF[wd.dateStr] = 0; });
+            
+            const filterShiftVal = document.getElementById('chart-filter-shift').value;
+            const recordsForBarChart = filterShiftVal === 'all' ? records : records.filter(r => r.shift === filterShiftVal);
+            
+            recordsForBarChart.forEach(r => {
+                if (totalReq[r.date] !== undefined) {
+                    SUPPLIERS.forEach(s => {
+                        if(r.data[s]) {
+                            totalReq[r.date] += r.data[s].req; 
+                            activeM[r.date] += Math.max(0, r.data[s].m - (r.data[s].lvM || 0));
+                            activeF[r.date] += Math.max(0, r.data[s].f - (r.data[s].lvF || 0));
+                        }
+                    });
+                }
+            });
+            
+            const chartLabels = weekDates.map(wd => wd.label);
+            const ratesM = weekDates.map(wd => totalReq[wd.dateStr] === 0 ? 0 : Number(((activeM[wd.dateStr]/totalReq[wd.dateStr])*100).toFixed(1)));
+            const ratesF = weekDates.map(wd => totalReq[wd.dateStr] === 0 ? 0 : Number(((activeF[wd.dateStr]/totalReq[wd.dateStr])*100).toFixed(1)));
+            const ratesTotal = weekDates.map(wd => totalReq[wd.dateStr] === 0 ? 0 : Math.round(((activeM[wd.dateStr] + activeF[wd.dateStr])/totalReq[wd.dateStr])*100));
+            const rawM = weekDates.map(wd => activeM[wd.dateStr]);
+            const rawF = weekDates.map(wd => activeF[wd.dateStr]);
             
             Chart.register(ChartDataLabels);
 
@@ -1044,7 +1082,7 @@
             responseRateChart = new Chart(document.getElementById('responseRateChart').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: SUPPLIERS,
+                    labels: chartLabels,
                     datasets: [
                         {
                             label: 'Nam',
@@ -1076,11 +1114,12 @@
                         tooltip: { 
                             callbacks: { 
                                 label: (ctx) => {
-                                    const sup = ctx.chart.data.labels[ctx.dataIndex];
+                                    const mCount = rawM[ctx.dataIndex];
+                                    const fCount = rawF[ctx.dataIndex];
                                     if(ctx.datasetIndex === 2) {
-                                        return `Tổng: ${activeM[sup] + activeF[sup]} người (${ctx.raw}%)`;
+                                        return `Tổng: ${mCount + fCount} người (${ctx.raw}%)`;
                                     }
-                                    const count = ctx.datasetIndex === 0 ? activeM[sup] : activeF[sup];
+                                    const count = ctx.datasetIndex === 0 ? mCount : fCount;
                                     return `${ctx.dataset.label}: ${count} người (${ctx.raw}%)`;
                                 }
                             } 
@@ -1089,12 +1128,13 @@
                             color: '#ffffff',
                             font: { weight: 'bold', size: 12 },
                             formatter: (value, ctx) => {
-                                if(value < 5) return ''; // Ẩn label nếu cột quá bé
-                                const sup = ctx.chart.data.labels[ctx.dataIndex];
+                                if(value < 5) return ''; 
+                                const mCount = rawM[ctx.dataIndex];
+                                const fCount = rawF[ctx.dataIndex];
                                 if(ctx.datasetIndex === 2) {
-                                    return `${activeM[sup] + activeF[sup]} (${Math.round(value)}%)`;
+                                    return `${mCount + fCount} (${Math.round(value)}%)`;
                                 }
-                                const count = ctx.datasetIndex === 0 ? activeM[sup] : activeF[sup];
+                                const count = ctx.datasetIndex === 0 ? mCount : fCount;
                                 return `${count} (${Math.round(value)}%)`;
                             }
                         }
