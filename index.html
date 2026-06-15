@@ -723,10 +723,33 @@
         });
 
         document.getElementById('record-shift').addEventListener('change', updateFormForShift);
+        document.getElementById('record-date').addEventListener('change', updateFormForShift);
 
         function updateFormForShift() {
             const shift = document.getElementById('record-shift').value;
-            const fixedReqs = FIXED_REQS[shift];
+            const dateStr = document.getElementById('record-date').value;
+            let fixedReqs = null;
+            
+            if (shift === "Ca 20:00 - 6:00" || shift === "Ca 21:30 - 6:30") {
+                const siblingShift = shift === "Ca 20:00 - 6:00" ? "Ca 21:30 - 6:30" : "Ca 20:00 - 6:00";
+                
+                // Kiểm tra xem ca kia (sibling) đã tồn tại trong ngày và đã lấy số yêu cầu chưa?
+                let siblingIsMain = false;
+                const siblingRec = records.find(r => r.date === dateStr && r.shift === siblingShift);
+                if (siblingRec) {
+                    const tReq = Object.values(siblingRec.data).reduce((acc, d) => acc + d.req, 0);
+                    if (tReq > 0) siblingIsMain = true;
+                }
+                
+                if (siblingIsMain) {
+                    fixedReqs = { "HOA ANH ĐÀO": 0, "VIECCO": 0, "SKT": 0 }; // Làm ca phụ
+                } else {
+                    fixedReqs = { "HOA ANH ĐÀO": 85, "VIECCO": 55, "SKT": 38 }; // Làm ca chính
+                }
+            } else if (shift === "Ca 21:00 - 6:00") {
+                fixedReqs = { "HOA ANH ĐÀO": 55, "VIECCO": 40, "SKT": 35 };
+            }
+
             const isGroupedContainer = document.getElementById('grouped-shift-container');
             const isGroupedCheckbox = document.getElementById('is-grouped-shift');
             
