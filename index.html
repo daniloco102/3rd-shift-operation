@@ -462,7 +462,7 @@
                     </div>
                     <div class="charts-row">
                         <!-- TABLE 1: BY SUPPLIER -->
-                        <div class="card chart-card half-width">
+                        <div class="card chart-card full-width">
                             <div class="card-header">
                                 <h2><i class="fa-solid fa-building"></i> Tỷ Lệ Nam - Nữ (Nhà Cung Cấp)</h2>
                             </div>
@@ -479,7 +479,7 @@
                         </div>
 
                         <!-- TABLE 2: BY SHIFT -->
-                        <div class="card chart-card half-width">
+                        <div class="card chart-card full-width">
                             <div class="card-header">
                                 <h2><i class="fa-solid fa-clock"></i> Chi Tiết Theo Ca Làm Việc</h2>
                             </div>
@@ -521,6 +521,11 @@
                                     <!-- History Rows -->
                                 </tbody>
                             </table>
+                        </div>
+                        <div id="history-pagination" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1rem;">
+                            <button id="btn-prev-page" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;"><i class="fa-solid fa-chevron-left"></i> Trang Trước</button>
+                            <span id="history-page-info" style="font-size: 0.9rem; font-weight: 500; color: var(--text-color);">Trang 1 / 1</span>
+                            <button id="btn-next-page" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Trang Sau <i class="fa-solid fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -612,6 +617,8 @@
         
         let records = JSON.parse(localStorage.getItem('freelancer_records_v2')) || [];
         let customShifts = JSON.parse(localStorage.getItem('custom_shifts')) || [];
+        let currentHistoryPage = 1;
+        const HISTORY_PER_PAGE = 30;
 
         // Migrate old data if any exists to the new array to avoid clashes (optional, handled gracefully)
         if (records.length === 0) {
@@ -690,6 +697,20 @@
             } else {
                 updateDashboard();
             }
+
+            document.getElementById('btn-prev-page').addEventListener('click', () => {
+                if (currentHistoryPage > 1) {
+                    currentHistoryPage--;
+                    renderHistoryTable();
+                }
+            });
+            document.getElementById('btn-next-page').addEventListener('click', () => {
+                const totalPages = Math.ceil(records.length / HISTORY_PER_PAGE) || 1;
+                if (currentHistoryPage < totalPages) {
+                    currentHistoryPage++;
+                    renderHistoryTable();
+                }
+            });
         });
 
         function saveToCloud() {
@@ -1398,7 +1419,31 @@
         }
 
         function renderHistoryTable() {
-            historyBody.innerHTML = records.map(r => {
+            const totalPages = Math.ceil(records.length / HISTORY_PER_PAGE) || 1;
+            if (currentHistoryPage > totalPages) currentHistoryPage = totalPages;
+            if (currentHistoryPage < 1) currentHistoryPage = 1;
+            
+            const startIdx = (currentHistoryPage - 1) * HISTORY_PER_PAGE;
+            const endIdx = startIdx + HISTORY_PER_PAGE;
+            const paginatedRecords = records.slice(startIdx, endIdx);
+
+            const pageInfo = document.getElementById('history-page-info');
+            const btnPrev = document.getElementById('btn-prev-page');
+            const btnNext = document.getElementById('btn-next-page');
+            
+            if(pageInfo) pageInfo.innerText = `Trang ${currentHistoryPage} / ${totalPages}`;
+            if(btnPrev) {
+                btnPrev.disabled = currentHistoryPage === 1;
+                btnPrev.style.opacity = currentHistoryPage === 1 ? '0.5' : '1';
+                btnPrev.style.cursor = currentHistoryPage === 1 ? 'not-allowed' : 'pointer';
+            }
+            if(btnNext) {
+                btnNext.disabled = currentHistoryPage === totalPages;
+                btnNext.style.opacity = currentHistoryPage === totalPages ? '0.5' : '1';
+                btnNext.style.cursor = currentHistoryPage === totalPages ? 'not-allowed' : 'pointer';
+            }
+
+            historyBody.innerHTML = paginatedRecords.map(r => {
                 let tReq = 0, tRes = 0, tLv = 0, tM = 0, tF = 0;
                 Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; tLv += (d.lv || 0); tM += d.m; tF += d.f; });
                 
