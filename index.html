@@ -1322,7 +1322,16 @@
                 if (total === 0) return '-';
                 const mRate = Math.round((m / total) * 100);
                 const fRate = 100 - mRate;
-                return `<div style="font-weight: 500;">${m}N - ${f}Nữ</div><div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">(${mRate}% - ${fRate}%)</div>`;
+                return `
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: conic-gradient(#3b82f6 0% ${mRate}%, #ec4899 ${mRate}% 100%); position: relative; flex-shrink: 0;" title="Nam: ${mRate}% | Nữ: ${fRate}%">
+                        <div style="position: absolute; top: 25%; left: 25%; width: 50%; height: 50%; background: var(--card-bg); border-radius: 50%;"></div>
+                    </div>
+                    <div style="text-align: left; line-height: 1.2;">
+                        <div style="font-weight: 600; font-size: 0.8rem;">${m}N - ${f}Nữ</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">${mRate}% - ${fRate}%</div>
+                    </div>
+                </div>`;
             }
 
             let supHtml = '';
