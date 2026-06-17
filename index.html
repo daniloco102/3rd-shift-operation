@@ -301,6 +301,7 @@
         <div class="app-tabs">
             <button class="tab-btn active" onclick="switchTab('tab-freelancer')"><i class="fa-solid fa-users-viewfinder"></i> Nhóm Freelancer</button>
             <button class="tab-btn" onclick="switchTab('tab-operations')"><i class="fa-solid fa-industry"></i> Vận Hành Ca 3</button>
+            <button class="tab-btn" onclick="switchTab('tab-salary')"><i class="fa-solid fa-money-check-dollar"></i> Quản lý Lương</button>
         </div>
 
         <div id="tab-freelancer" class="tab-content active">
@@ -782,6 +783,46 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- QUẢN LÝ LƯONG TAB -->
+        <div id="tab-salary" class="tab-content">
+            <main class="dashboard-layout" style="grid-template-columns: 1fr;">
+                <div class="card form-card">
+                    <div class="card-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">
+                        <h2><i class="fa-solid fa-cloud-arrow-down"></i> Đồng Bộ & Phân Tích Lương Cấp Tối Cao</h2>
+                    </div>
+                    <div class="card-body">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                            Vui lòng click đúp vào file <strong>CapNhatLuong.bat</strong> ở bên ngoài để máy tính tự động lấy dữ liệu. Sau đó ấn nút Đồng Bộ bên dưới để tải bảng lương vào hệ thống phân tích.
+                        </p>
+                        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem;">
+                            <button class="btn-primary" onclick="syncSalaryFromFirebase()" id="btn-sync-salary"><i class="fa-solid fa-rotate"></i> Đồng Bộ Dữ Liệu Lương Mới Nhất</button>
+                        </div>
+
+                        <!-- Dashboard / Overview -->
+                        <div id="salary-dashboard" style="display: none; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                            <div style="background: rgba(99, 102, 241, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(99, 102, 241, 0.2);">
+                                <h3 style="color: #6366f1; font-size: 0.9rem; margin-bottom: 0.5rem;">SORT CA 3</h3>
+                                <div id="salary-count-sort3" style="font-size: 1.5rem; font-weight: 800; color: #4338ca;">0 nv</div>
+                            </div>
+                            <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(16, 185, 129, 0.2);">
+                                <h3 style="color: #10b981; font-size: 0.9rem; margin-bottom: 0.5rem;">INOUT CA 3</h3>
+                                <div id="salary-count-inout3" style="font-size: 1.5rem; font-weight: 800; color: #059669;">0 nv</div>
+                            </div>
+                            <div style="background: rgba(245, 158, 11, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(245, 158, 11, 0.2);">
+                                <h3 style="color: #f59e0b; font-size: 0.9rem; margin-bottom: 0.5rem;">INOUT CA 5</h3>
+                                <div id="salary-count-inout5" style="font-size: 1.5rem; font-weight: 800; color: #b45309;">0 nv</div>
+                            </div>
+                        </div>
+
+                        <!-- Content Area (Rendered by JS) -->
+                        <div id="salary-analysis-content">
+                            <!-- Bảng vinh danh, Bảng lưu ý, Bảng trung bình sẽ được nhét vào đây -->
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
 
@@ -2461,15 +2502,41 @@
 
                 let compareTarget = 'Không có';
                 if(targetVal !== null && targetVal !== 0) {
-                    const ratio = (cVal / targetVal) * 100;
-                    compareTarget = ratio.toFixed(2) + '%';
+                    let ratio = (cVal / targetVal) * 100;
+                    if (ratio > 120) ratio = 120;
+                    if (ratio < 50) ratio = 50;
+                    
+                    if (ratio === 120) {
+                        compareTarget = `<span style="color:var(--success); text-decoration: underline; text-decoration-style: double; text-decoration-color: var(--success);">120.00%</span>`;
+                    } else if (ratio >= 100) {
+                        compareTarget = `<span style="color:var(--success);">${ratio.toFixed(2)}%</span>`;
+                    } else if (ratio >= 80) {
+                        compareTarget = `<span style="color:var(--warning);">${ratio.toFixed(2)}%</span>`;
+                    } else {
+                        compareTarget = `<span style="color:var(--danger);">${ratio.toFixed(2)}%</span>`;
+                    }
                 }
 
                 if(m.id === 'kpi') {
                     // special row
+                    let kpiVal = cVal;
+                    if (kpiVal > 120) kpiVal = 120;
+                    if (kpiVal < 50) kpiVal = 50;
+                    
+                    let kpiHtml = '';
+                    if (kpiVal === 120) {
+                        kpiHtml = `<span style="color:var(--success); text-decoration: underline; text-decoration-style: double; text-decoration-color: var(--success);">120%</span>`;
+                    } else if (kpiVal >= 100) {
+                        kpiHtml = `<span style="color:var(--success);">${kpiVal}%</span>`;
+                    } else if (kpiVal >= 80) {
+                        kpiHtml = `<span style="color:var(--warning);">${kpiVal}%</span>`;
+                    } else {
+                        kpiHtml = `<span style="color:var(--danger);">${kpiVal}%</span>`;
+                    }
+
                     return `<tr>
                         <td colspan="4" style="font-weight:bold;text-align:center;">KPI đạt được</td>
-                        <td colspan="3" style="font-weight:bold;text-align:center;color:var(--danger);">${cVal}%</td>
+                        <td colspan="3" style="font-weight:bold;text-align:center;">${kpiHtml}</td>
                     </tr>`;
                 }
 
@@ -2514,10 +2581,16 @@
             const sortXh = currData.sort?.xh || 0;
             
             let sortAnalysis = ``;
-            if (sortKpi >= 100) {
+            if (sortKpi > 120) {
+                sortAnalysis += `<span style="color:var(--success); font-weight:bold;">Đạt Max KPI (<span style="text-decoration: underline; text-decoration-style: double; text-decoration-color: var(--success);">120%</span>).</span> `;
+            } else if (sortKpi >= 100) {
                 sortAnalysis += `<span style="color:var(--success); font-weight:bold;">Đạt KPI (${sortKpi}%).</span> `;
-            } else if (sortKpi > 0) {
+            } else if (sortKpi >= 80) {
+                sortAnalysis += `<span style="color:var(--warning); font-weight:bold;">Đạt KPI mức khá (${sortKpi}%).</span> `;
+            } else if (sortKpi >= 50) {
                 sortAnalysis += `<span style="color:var(--danger); font-weight:bold;">Chưa đạt KPI (${sortKpi}%).</span> `;
+            } else if (sortKpi > 0) {
+                sortAnalysis += `<span style="color:var(--danger); font-weight:bold;">Chưa đạt KPI (Tối thiểu 50%).</span> `;
             }
 
             if (sortCost > targetFixed.cost) {
@@ -2540,10 +2613,16 @@
             const inoutXh = currData.inout?.xh || 0;
 
             let inoutAnalysis = ``;
-            if (inoutKpi >= 100) {
+            if (inoutKpi > 120) {
+                inoutAnalysis += `<span style="color:var(--success); font-weight:bold;">Đạt Max KPI (<span style="text-decoration: underline; text-decoration-style: double; text-decoration-color: var(--success);">120%</span>).</span> `;
+            } else if (inoutKpi >= 100) {
                 inoutAnalysis += `<span style="color:var(--success); font-weight:bold;">Đạt KPI (${inoutKpi}%).</span> `;
-            } else if (inoutKpi > 0) {
+            } else if (inoutKpi >= 80) {
+                inoutAnalysis += `<span style="color:var(--warning); font-weight:bold;">Đạt KPI mức khá (${inoutKpi}%).</span> `;
+            } else if (inoutKpi >= 50) {
                 inoutAnalysis += `<span style="color:var(--danger); font-weight:bold;">Chưa đạt KPI (${inoutKpi}%).</span> `;
+            } else if (inoutKpi > 0) {
+                inoutAnalysis += `<span style="color:var(--danger); font-weight:bold;">Chưa đạt KPI (Tối thiểu 50%).</span> `;
             }
 
             if (inoutCost > targetFixed.cost) {
@@ -2567,6 +2646,139 @@
             if (val === null || val === undefined || val === '') return '';
             if (!isNaN(val)) return Number(val).toLocaleString('en-US');
             return val;
+        }
+
+        // ==========================================
+        // QUẢN LÝ LƯƠNG LOGIC
+        // ==========================================
+        window.parsedSalaryData = [];
+
+        function syncSalaryFromFirebase() {
+            const btn = document.getElementById('btn-sync-salary');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang đồng bộ...';
+            btn.disabled = true;
+
+            if (!db) {
+                alert("Lỗi: Chưa kết nối Firebase!");
+                btn.innerHTML = '<i class="fa-solid fa-rotate"></i> Đồng Bộ Dữ Liệu Lương Mới Nhất';
+                btn.disabled = false;
+                return;
+            }
+
+            db.ref('salaryData').once('value')
+                .then(snapshot => {
+                    const data = snapshot.val();
+                    if (!data) {
+                        alert("Không tìm thấy dữ liệu trên Firebase! Vui lòng chạy file CapNhatLuong.bat trước.");
+                        return;
+                    }
+
+                    const emps = Object.values(data);
+                    
+                    const groups = {
+                        'sort3': emps.filter(e => e.dept.toLowerCase().includes('sort') && e.shift.toLowerCase().includes('ca 3')),
+                        'inout3': emps.filter(e => (e.dept.toLowerCase().includes('in/ out') || e.dept.toLowerCase().includes('inout')) && e.shift.toLowerCase().includes('ca 3')),
+                        'inout5': emps.filter(e => (e.dept.toLowerCase().includes('in/ out') || e.dept.toLowerCase().includes('inout')) && e.shift.toLowerCase().includes('ca 5'))
+                    };
+
+                    document.getElementById('salary-dashboard').style.display = 'grid';
+                    document.getElementById('salary-count-sort3').innerText = groups['sort3'].length + ' nv';
+                    document.getElementById('salary-count-inout3').innerText = groups['inout3'].length + ' nv';
+                    document.getElementById('salary-count-inout5').innerText = groups['inout5'].length + ' nv';
+
+                    let analysisHtml = '';
+                    const labels = {'sort3': 'SORT CA 3', 'inout3': 'INOUT CA 3', 'inout5': 'INOUT CA 5'};
+
+                    for (const key in labels) {
+                        const label = labels[key];
+                        // Sắp xếp giảm dần theo lương
+                        const list = groups[key].sort((a,b) => b.salary - a.salary);
+                        const n = list.length;
+                        
+                        if (n === 0) continue;
+
+                        const count20 = Math.max(1, Math.floor(n * 0.2));
+                        const top20 = list.slice(0, count20);
+                        const bottom20 = list.slice(n - count20, n);
+                        const mid60 = list.slice(count20, n - count20);
+
+                        const avgTop = top20.reduce((sum, e) => sum + e.salary, 0) / (top20.length || 1);
+                        const avgMid = mid60.reduce((sum, e) => sum + e.salary, 0) / (mid60.length || 1);
+                        const avgBottom = bottom20.reduce((sum, e) => sum + e.salary, 0) / (bottom20.length || 1);
+
+                        analysisHtml += `
+                            <div style="margin-bottom: 2.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--bg-card); box-shadow: var(--shadow-sm);">
+                                <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid rgba(79, 70, 229, 0.2); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-users"></i> PHÂN TÍCH NHÓM: ${label} (Tổng: ${n} NV)</h3>
+                                
+                                <!-- Tổng hợp 3 ý chính -->
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                                    <div style="background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--success);">
+                                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase;">Lương NV Không Off + Tăng Ca</p>
+                                        <p style="font-size: 0.75rem; color: var(--success); margin-bottom: 0.5rem;">(Trung bình của Top 20%)</p>
+                                        <div style="font-size: 1.75rem; color: var(--success); font-weight: 800;">${formatNumber(Math.round(avgTop))} ₫</div>
+                                    </div>
+                                    <div style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--info);">
+                                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase;">Lương NV Đi Làm Đủ Công</p>
+                                        <p style="font-size: 0.75rem; color: var(--info); margin-bottom: 0.5rem;">(Trung bình của 60% số còn lại)</p>
+                                        <div style="font-size: 1.75rem; color: var(--info); font-weight: 800;">${formatNumber(Math.round(avgMid))} ₫</div>
+                                    </div>
+                                    <div style="background: rgba(239, 68, 68, 0.05); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--danger);">
+                                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase;">NV Mới / Nghỉ Việc / Thiếu Công</p>
+                                        <p style="font-size: 0.75rem; color: var(--danger); margin-bottom: 0.5rem;">(Trung bình của Bottom 20%)</p>
+                                        <div style="font-size: 1.75rem; color: var(--danger); font-weight: 800;">${formatNumber(Math.round(avgBottom))} ₫</div>
+                                    </div>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                    <!-- Top 20% -->
+                                    <div>
+                                        <h4 style="color: var(--warning); margin-bottom: 0.75rem; font-size: 1.05rem;"><i class="fa-solid fa-trophy"></i> Bảng Thành Tích (Top ${count20} NV có lương cao nhất)</h4>
+                                        <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                                            <table class="data-table" style="width: 100%; font-size: 0.85rem;">
+                                                <thead style="position: sticky; top: 0; background: var(--bg-card); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                                    <tr><th>Mã NV</th><th>Tên NV</th><th style="text-align:right;">Chi Lương</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    ${top20.map((e, idx) => `<tr><td style="color:var(--text-muted); width: 80px;">${e.id}</td><td style="font-weight: 500;">${idx===0?'🥇':idx===1?'🥈':idx===2?'🥉':''} ${e.name}</td><td style="text-align:right; font-weight:bold; color:var(--warning);">${formatNumber(e.salary)} ₫</td></tr>`).join('')}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bottom 20% -->
+                                    <div>
+                                        <h4 style="color: var(--danger); margin-bottom: 0.75rem; font-size: 1.05rem;"><i class="fa-solid fa-triangle-exclamation"></i> Bảng Lưu Ý (Top ${count20} NV có lương thấp nhất)</h4>
+                                        <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                                            <table class="data-table" style="width: 100%; font-size: 0.85rem;">
+                                                <thead style="position: sticky; top: 0; background: var(--bg-card); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                                    <tr><th>Mã NV</th><th>Tên NV</th><th style="text-align:right;">Chi Lương</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    ${bottom20.map(e => `<tr><td style="color:var(--text-muted); width: 80px;">${e.id}</td><td style="font-weight: 500;">${e.name}</td><td style="text-align:right; font-weight:bold; color:var(--danger);">${formatNumber(e.salary)} ₫</td></tr>`).join('')}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    if (analysisHtml === '') {
+                        analysisHtml = '<div style="text-align:center; padding: 2rem; color: var(--text-muted);">Không có nhân sự nào thuộc các ca: Sort Ca 3, Inout Ca 3, Inout Ca 5.</div>';
+                    }
+
+                    document.getElementById('salary-analysis-content').innerHTML = analysisHtml;
+                    alert("Đồng bộ thành công! Đã cập nhật xong các bảng phân tích.");
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert("Có lỗi xảy ra khi lấy dữ liệu: " + error.message);
+                })
+                .finally(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-rotate"></i> Đồng Bộ Dữ Liệu Lương Mới Nhất';
+                    btn.disabled = false;
+                });
         }
 
     </script>
