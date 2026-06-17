@@ -155,11 +155,14 @@
 
         /* Supplier Table */
         .supplier-table-container { overflow-x: auto; }
-        .supplier-input-table { width: 100%; min-width: 500px; border-collapse: collapse; margin-bottom: 1.5rem; }
-        .supplier-input-table th { text-align: left; padding: 0.5rem; font-size: 0.8rem; color: var(--text-muted); border-bottom: 2px solid var(--border-color); }
-        .supplier-input-table td { padding: 0.5rem; border-bottom: 1px solid var(--border-color); }
-        .supplier-input-table input { width: 100%; padding: 0.5rem; text-align: center; font-weight: 600; }
-        .supplier-name { font-weight: 600; font-size: 0.9rem; }
+        .supplier-input-table { width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .supplier-input-table th:nth-child(1), .supplier-input-table td:nth-child(1) { width: 28%; }
+        .supplier-input-table th:not(:nth-child(1)), .supplier-input-table td:not(:nth-child(1)) { width: 18%; }
+        .supplier-input-table th { text-align: center; padding: 0.5rem 0.2rem; font-size: 0.75rem; color: var(--text-muted); border-bottom: 2px solid var(--border-color); }
+        .supplier-input-table th:nth-child(1) { text-align: left; }
+        .supplier-input-table td { padding: 0.5rem 0.2rem; border-bottom: 1px solid var(--border-color); }
+        .supplier-input-table input { width: 100%; padding: 0.4rem 0; text-align: center; font-weight: 600; font-size: 0.85rem; box-sizing: border-box; }
+        .supplier-name { font-weight: 600; font-size: 0.8rem; word-break: break-word; line-height: 1.2; }
 
         /* Stats Grid */
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
@@ -215,15 +218,7 @@
             .card-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
             .chart-filters { width: 100%; justify-content: space-between; }
             
-            /* Tối ưu bảng nhập liệu không bị cuộn ngang */
-            .supplier-input-table { min-width: 100%; table-layout: fixed; }
-            .supplier-input-table th:nth-child(1), .supplier-input-table td:nth-child(1) { width: 28%; }
-            .supplier-input-table th:not(:nth-child(1)), .supplier-input-table td:not(:nth-child(1)) { width: 18%; }
-            .supplier-input-table th { padding: 0.2rem 0.1rem; font-size: 0.7rem; text-align: center; }
-            .supplier-input-table th:nth-child(1) { text-align: left; }
-            .supplier-input-table td { padding: 0.2rem 0.1rem; }
-            .supplier-input-table input { padding: 0.3rem 0; font-size: 0.8rem; min-width: 0; width: 100%; box-sizing: border-box; text-align: center; }
-            .supplier-name { font-size: 0.75rem; white-space: normal; line-height: 1.2; word-break: break-word; }
+            /* Bảng nhập liệu đã được tối ưu dạng fixed ở css gốc */
         }
         @media (max-width: 480px) {
             .stats-grid { grid-template-columns: 1fr; }
