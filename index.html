@@ -378,8 +378,13 @@
                 <!-- Global Filters -->
                 <div class="card" style="margin-bottom: 1.5rem;">
                     <div class="card-body" style="padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <h2 style="margin: 0;"><i class="fa-solid fa-filter"></i> Báo Cáo Theo Tuần</h2>
-                        <div class="chart-filters" style="margin: 0;">
+                        <h2 style="margin: 0;"><i class="fa-solid fa-filter"></i> Báo Cáo Phân Tích</h2>
+                        <div class="chart-filters" style="margin: 0; display: flex; gap: 10px;">
+                            <select id="chart-filter-timeframe">
+                                <option value="day">Ngày</option>
+                                <option value="week" selected>Tuần</option>
+                                <option value="month">Tháng</option>
+                            </select>
                             <select id="chart-filter-date"></select>
                             <select id="chart-filter-shift"></select>
                         </div>
@@ -392,28 +397,28 @@
                         <div class="stat-icon text-indigo"><i class="fa-solid fa-clipboard-list"></i></div>
                         <div class="stat-content">
                             <h3 id="total-req">0</h3>
-                            <p>Tổng Yêu Cầu (Tuần)</p>
+                            <p class="dynamic-time-label">Tổng Yêu Cầu</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon text-emerald"><i class="fa-solid fa-check-double"></i></div>
                         <div class="stat-content">
                             <h3 id="total-res">0</h3>
-                            <p>Tổng Đáp Ứng (Tuần)</p>
+                            <p class="dynamic-time-label">Tổng Đáp Ứng</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon text-amber"><i class="fa-solid fa-percent"></i></div>
                         <div class="stat-content">
                             <h3 id="avg-rate">0%</h3>
-                            <p>Tỷ Lệ Đáp Ứng TB (Tuần)</p>
+                            <p class="dynamic-time-label">Tỷ Lệ Đáp Ứng TB</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon" style="color: #ef4444;"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
                         <div class="stat-content">
                             <h3 id="total-lv">0</h3>
-                            <p>Tổng Xin Về (Tuần)</p>
+                            <p class="dynamic-time-label">Tổng Xin Về</p>
                         </div>
                     </div>
                 </div>
@@ -435,7 +440,7 @@
                     <!-- BAR CHART: BY SUPPLIER -->
                     <div class="card chart-card full-width">
                         <div class="card-header">
-                            <h2><i class="fa-solid fa-chart-column"></i> Biểu Đồ Tỷ Lệ Đáp Ứng Theo Tuần (%)</h2>
+                            <h2><i class="fa-solid fa-chart-column"></i> Biểu Đồ Tỷ Lệ Đáp Ứng <span class="chart-time-label">Theo Tuần</span> (%)</h2>
                         </div>
                         <div class="card-body">
                             <div class="chart-canvas-container">
@@ -447,7 +452,7 @@
                     <!-- LEAVING CHART: BY SUPPLIER -->
                     <div class="card chart-card full-width">
                         <div class="card-header">
-                            <h2><i class="fa-solid fa-person-walking-arrow-right"></i> Biểu Đồ Số Lượng Xin Về Theo Tuần</h2>
+                            <h2><i class="fa-solid fa-person-walking-arrow-right"></i> Biểu Đồ Số Lượng Xin Về <span class="chart-time-label">Theo Tuần</span></h2>
                         </div>
                         <div class="card-body">
                             <div class="chart-canvas-container">
@@ -466,9 +471,10 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align: left;">NCC</th>
-                                            <th>Ngày</th>
-                                            <th>Tuần</th>
-                                            <th>Tháng</th>
+                                            <th>Yêu Cầu</th>
+                                            <th>Đáp Ứng</th>
+                                            <th>Xin Về</th>
+                                            <th>Tỷ Lệ Nam - Nữ</th>
                                         </tr>
                                     </thead>
                                     <tbody id="supplier-ratio-body">
@@ -481,16 +487,17 @@
                         <!-- TABLE 2: BY SHIFT -->
                         <div class="card chart-card half-width">
                             <div class="card-header">
-                                <h2><i class="fa-solid fa-clock"></i> Tỷ Lệ Nam - Nữ (Ca Làm Việc)</h2>
+                                <h2><i class="fa-solid fa-clock"></i> Chi Tiết Theo Ca Làm Việc</h2>
                             </div>
                             <div class="card-body" style="overflow-x: auto; padding: 1rem;">
                                 <table class="data-table" style="font-size: 0.85rem; text-align: center; width: 100%;">
                                     <thead>
                                         <tr>
                                             <th style="text-align: left;">Ca</th>
-                                            <th>Ngày</th>
-                                            <th>Tuần</th>
-                                            <th>Tháng</th>
+                                            <th>Yêu Cầu</th>
+                                            <th>Đáp Ứng</th>
+                                            <th>Xin Về</th>
+                                            <th>Tỷ Lệ Nam - Nữ</th>
                                         </tr>
                                     </thead>
                                     <tbody id="shift-ratio-body">
@@ -1004,24 +1011,61 @@
                 if(parts.length === 3) refDate = new Date(parts[0], parts[1]-1, parts[2]);
             }
             
-            const dayOfWeek = refDate.getDay(); 
-            const sunday = new Date(refDate);
-            sunday.setDate(refDate.getDate() - dayOfWeek);
+            const filterTimeframe = document.getElementById('chart-filter-timeframe') ? document.getElementById('chart-filter-timeframe').value : 'week';
             
             globalWeekDates = [];
             globalChartLabels = [];
-            for (let i = 0; i < 7; i++) {
-                const d = new Date(sunday);
-                d.setDate(sunday.getDate() + i);
-                const yyyy = d.getFullYear();
-                const mm = String(d.getMonth() + 1).padStart(2, '0');
-                const dd = String(d.getDate()).padStart(2, '0');
+            
+            if (filterTimeframe === 'day') {
+                const yyyy = refDate.getFullYear();
+                const mm = String(refDate.getMonth() + 1).padStart(2, '0');
+                const dd = String(refDate.getDate()).padStart(2, '0');
                 globalWeekDates.push({
                     dateStr: `${yyyy}-${mm}-${dd}`,
-                    label: `${['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][i]} (${dd}/${mm})`
+                    label: `${dd}/${mm}/${yyyy}`
                 });
-                globalChartLabels.push(globalWeekDates[i].label);
+                globalChartLabels.push(globalWeekDates[0].label);
+            } else if (filterTimeframe === 'month') {
+                const yyyy = refDate.getFullYear();
+                const mm = refDate.getMonth();
+                const daysInMonth = new Date(yyyy, mm + 1, 0).getDate();
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const dStr = String(i).padStart(2, '0');
+                    const mStr = String(mm + 1).padStart(2, '0');
+                    globalWeekDates.push({
+                        dateStr: `${yyyy}-${mStr}-${dStr}`,
+                        label: `${dStr}/${mStr}`
+                    });
+                    globalChartLabels.push(`${dStr}/${mStr}`);
+                }
+            } else {
+                // week
+                const dayOfWeek = refDate.getDay(); 
+                const sunday = new Date(refDate);
+                sunday.setDate(refDate.getDate() - dayOfWeek);
+                for (let i = 0; i < 7; i++) {
+                    const d = new Date(sunday);
+                    d.setDate(sunday.getDate() + i);
+                    const yyyy = d.getFullYear();
+                    const mm = String(d.getMonth() + 1).padStart(2, '0');
+                    const dd = String(d.getDate()).padStart(2, '0');
+                    globalWeekDates.push({
+                        dateStr: `${yyyy}-${mm}-${dd}`,
+                        label: `${['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][i]} (${dd}/${mm})`
+                    });
+                    globalChartLabels.push(globalWeekDates[i].label);
+                }
             }
+
+            const timeLabels = document.querySelectorAll('.dynamic-time-label');
+            const timeText = filterTimeframe === 'day' ? '(Ngày)' : (filterTimeframe === 'month' ? '(Tháng)' : '(Tuần)');
+            timeLabels.forEach(el => {
+                const baseText = el.innerText.split('(')[0].trim();
+                el.innerText = `${baseText} ${timeText}`;
+            });
+            const chartTimeLabels = document.querySelectorAll('.chart-time-label');
+            const chartTimeText = filterTimeframe === 'day' ? 'Theo Ngày' : (filterTimeframe === 'month' ? 'Theo Tháng' : 'Theo Tuần');
+            chartTimeLabels.forEach(el => el.innerText = chartTimeText);
 
             updateStats();
             updateCharts();
@@ -1032,12 +1076,14 @@
         function updateFilters() {
             const filterDate = document.getElementById('chart-filter-date');
             const filterShift = document.getElementById('chart-filter-shift');
+            const filterTimeframe = document.getElementById('chart-filter-timeframe');
             
             if(filterDate.options.length === 0) {
                 filterDate.innerHTML = '<option value="all">Tất cả ngày</option>';
                 filterShift.innerHTML = '<option value="all">Tất cả ca</option>';
                 filterDate.addEventListener('change', updateDashboard);
                 filterShift.addEventListener('change', updateDashboard);
+                if (filterTimeframe) filterTimeframe.addEventListener('change', updateDashboard);
             }
             
             const currDate = filterDate.value;
@@ -1264,60 +1310,64 @@
             const shiftBody = document.getElementById('shift-ratio-body');
             if (!supplierBody || !shiftBody) return;
 
-            let refDate = new Date();
-            const filterDateVal = document.getElementById('chart-filter-date').value;
-            if (filterDateVal && filterDateVal !== 'all') {
-                const parts = filterDateVal.split('-');
-                if(parts.length === 3) refDate = new Date(parts[0], parts[1]-1, parts[2]);
-            }
-            
-            const dayStr = `${refDate.getFullYear()}-${String(refDate.getMonth()+1).padStart(2,'0')}-${String(refDate.getDate()).padStart(2,'0')}`;
-            const monthStr = `${refDate.getFullYear()}-${String(refDate.getMonth()+1).padStart(2,'0')}`;
             const weekStrs = globalWeekDates.map(wd => wd.dateStr);
-            
             const filterShiftVal = document.getElementById('chart-filter-shift').value;
             const isAllShift = !filterShiftVal || filterShiftVal === 'all';
 
             // Supplier Data
             const supData = {};
-            SUPPLIERS.forEach(s => supData[s] = { day: {m:0, f:0}, week: {m:0, f:0}, month: {m:0, f:0} });
+            SUPPLIERS.forEach(s => supData[s] = { req:0, res:0, lv:0, m:0, f:0 });
             
             // Shift Data
             const shiftSet = new Set();
             records.forEach(r => shiftSet.add(r.shift));
             const allShifts = Array.from(shiftSet).sort();
             const shfData = {};
-            allShifts.forEach(sh => shfData[sh] = { day: {m:0, f:0}, week: {m:0, f:0}, month: {m:0, f:0} });
+            allShifts.forEach(sh => shfData[sh] = { req:0, res:0, lv:0, m:0, f:0 });
 
             records.forEach(r => {
-                const rDate = r.date;
-                const isDay = rDate === dayStr;
-                const isWeek = weekStrs.includes(rDate);
-                const isMonth = rDate.startsWith(monthStr);
+                if (!weekStrs.includes(r.date)) return;
                 const isMatchShift = isAllShift || r.shift === filterShiftVal;
 
                 // For Table 1 (Supplier)
                 if (isMatchShift) {
                     SUPPLIERS.forEach(s => {
                         if (r.data[s]) {
-                            if (isDay) { supData[s].day.m += r.data[s].m; supData[s].day.f += r.data[s].f; }
-                            if (isWeek) { supData[s].week.m += r.data[s].m; supData[s].week.f += r.data[s].f; }
-                            if (isMonth) { supData[s].month.m += r.data[s].m; supData[s].month.f += r.data[s].f; }
+                            supData[s].req += (r.data[s].req || 0);
+                            supData[s].res += (r.data[s].res || 0);
+                            supData[s].lv += (r.data[s].lv || 0);
+                            supData[s].m += (r.data[s].m || 0);
+                            supData[s].f += (r.data[s].f || 0);
                         }
                     });
                 }
 
                 // For Table 2 (Shift)
                 if (shfData[r.shift]) {
-                    let rM = 0, rF = 0;
-                    Object.values(r.data).forEach(d => { rM += d.m; rF += d.f; });
-                    if (isDay) { shfData[r.shift].day.m += rM; shfData[r.shift].day.f += rF; }
-                    if (isWeek) { shfData[r.shift].week.m += rM; shfData[r.shift].week.f += rF; }
-                    if (isMonth) { shfData[r.shift].month.m += rM; shfData[r.shift].month.f += rF; }
+                    let rReq=0, rRes=0, rLv=0, rM=0, rF=0;
+                    Object.values(r.data).forEach(d => {
+                        rReq += (d.req||0);
+                        rRes += (d.res||0);
+                        rLv += (d.lv||0);
+                        rM += (d.m||0);
+                        rF += (d.f||0);
+                    });
+                    shfData[r.shift].req += rReq;
+                    shfData[r.shift].res += rRes;
+                    shfData[r.shift].lv += rLv;
+                    shfData[r.shift].m += rM;
+                    shfData[r.shift].f += rF;
                 }
             });
 
-            function formatCell(m, f) {
+            function formatRateCell(req, res) {
+                if (req === 0) return res > 0 ? `<div style="font-weight: 600;">${res}</div><div style="font-size: 0.75rem; color: var(--success); margin-top: 2px;">(Ca Phụ)</div>` : '-';
+                const rate = Math.round((res/req)*100);
+                const color = rate >= 100 ? 'var(--success)' : (rate >= 80 ? 'var(--warning)' : 'var(--danger)');
+                return `<div style="font-weight: 600;">${res}</div><div style="font-size: 0.75rem; color: ${color}; margin-top: 2px;">(${rate}%)</div>`;
+            }
+
+            function formatGenderCell(m, f) {
                 const total = m + f;
                 if (total === 0) return '-';
                 const mRate = Math.round((m / total) * 100);
@@ -1339,9 +1389,10 @@
                 supHtml += `
                     <tr>
                         <td style="text-align: left; font-weight: 600; color: ${SUPPLIER_COLORS[s]}">${s}</td>
-                        <td>${formatCell(supData[s].day.m, supData[s].day.f)}</td>
-                        <td>${formatCell(supData[s].week.m, supData[s].week.f)}</td>
-                        <td>${formatCell(supData[s].month.m, supData[s].month.f)}</td>
+                        <td style="font-weight: 500;">${supData[s].req > 0 ? supData[s].req : '-'}</td>
+                        <td>${formatRateCell(supData[s].req, supData[s].res)}</td>
+                        <td style="font-weight: 500; color: var(--danger);">${supData[s].lv > 0 ? supData[s].lv : '-'}</td>
+                        <td>${formatGenderCell(supData[s].m, supData[s].f)}</td>
                     </tr>
                 `;
             });
@@ -1352,9 +1403,10 @@
                 shfHtml += `
                     <tr>
                         <td style="text-align: left; font-weight: 600; color: var(--text-color);">${sh}</td>
-                        <td>${formatCell(shfData[sh].day.m, shfData[sh].day.f)}</td>
-                        <td>${formatCell(shfData[sh].week.m, shfData[sh].week.f)}</td>
-                        <td>${formatCell(shfData[sh].month.m, shfData[sh].month.f)}</td>
+                        <td style="font-weight: 500;">${shfData[sh].req > 0 ? shfData[sh].req : '-'}</td>
+                        <td>${formatRateCell(shfData[sh].req, shfData[sh].res)}</td>
+                        <td style="font-weight: 500; color: var(--danger);">${shfData[sh].lv > 0 ? shfData[sh].lv : '-'}</td>
+                        <td>${formatGenderCell(shfData[sh].m, shfData[sh].f)}</td>
                     </tr>
                 `;
             });
