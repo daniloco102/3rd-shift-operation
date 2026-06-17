@@ -20,6 +20,9 @@
     <!-- Firebase SDK (v8 compat for script tags) -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <!-- SheetJS (xlsx) for reading Excel files -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     
     <style>
         /* Premium Design Variables */
@@ -257,22 +260,19 @@
         .user-profile { display: flex; align-items: center; gap: 0.5rem; background: var(--bg-main); padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border-color); }
         .btn-logout { background: transparent; border: none; color: var(--danger); cursor: pointer; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .btn-logout:hover { background: rgba(239, 68, 68, 0.1); }
+
+        /* Tabs Navigation */
+        .app-tabs { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding: 0 0.5rem; }
+        .tab-btn { padding: 0.75rem 0.5rem; font-weight: 700; font-size: 1.05rem; color: var(--text-muted); background: transparent; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: var(--transition); border-radius: 0; margin-bottom: -2px; }
+        .tab-btn:hover { color: var(--text-main); }
+        .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
-    <!-- Login Screen -->
-    <div id="login-screen" class="login-overlay">
-        <div class="login-card">
-            <h2><i class="fa-solid fa-shield-halved"></i> Đăng Nhập</h2>
-            <p>Vui lòng cho biết tên của bạn để lưu vết dữ liệu</p>
-            <form id="login-form" class="login-form">
-                <input type="text" id="login-name" placeholder="Tên của bạn (VD: Tuấn, Ngân...)" required autocomplete="off">
-                <input type="password" id="login-pin" placeholder="Mã PIN chung" required autocomplete="off">
-                <button type="submit">Vào Trang Quản Trị</button>
-            </form>
-        </div>
-    </div>
-
+    <div id="login-screen" style="display: none;"></div>
     <div class="app-container">
         <!-- Premium Navigation Header -->
         <header class="app-header">
@@ -297,7 +297,14 @@
             </div>
         </header>
 
-        <main class="dashboard-layout">
+        <!-- Tabs Navigation -->
+        <div class="app-tabs">
+            <button class="tab-btn active" onclick="switchTab('tab-freelancer')"><i class="fa-solid fa-users-viewfinder"></i> Nhóm Freelancer</button>
+            <button class="tab-btn" onclick="switchTab('tab-operations')"><i class="fa-solid fa-industry"></i> Vận Hành Ca 3</button>
+        </div>
+
+        <div id="tab-freelancer" class="tab-content active">
+            <main class="dashboard-layout">
             <!-- Left Panel: Data Entry -->
             <section class="panel-left">
                 <div class="card form-card">
@@ -525,6 +532,257 @@
                 </div>
             </section>
         </main>
+        </div> <!-- End of tab-freelancer -->
+
+        <!-- TAB 2: VẬN HÀNH CA 3 -->
+        <div id="tab-operations" class="tab-content">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                
+                <!-- Khu vực Nhập liệu -->
+                <div class="card form-card">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2><i class="fa-solid fa-pen-to-square"></i> Nhập Dữ Liệu Tuần</h2>
+                        <button type="button" class="badge badge-info" style="cursor: pointer; border: none;" onclick="fillTestW24()"><i class="fa-solid fa-vial"></i> Điền Dữ Liệu Test W24</button>
+                    </div>
+                    <div class="card-body">
+                        <form id="ops-form">
+                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                                <div>
+                                    <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.3rem;">Tên Tuần (VD: Tuần 24)</label>
+                                    <input type="text" id="ops-week-name" required placeholder="Tuần 24" style="width:100%; padding:0.6rem; border:1px solid var(--border-color); border-radius:var(--radius-md);">
+                                </div>
+                                <div>
+                                    <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.3rem;">Ngày bắt đầu</label>
+                                    <input type="date" id="ops-start-date" required onchange="generateOpsDates()" style="width:100%; padding:0.6rem; border:1px solid var(--border-color); border-radius:var(--radius-md);">
+                                </div>
+                            </div>
+
+                            <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--primary);">1. Nhân sự</h3>
+                            <table class="supplier-input-table" style="margin-bottom: 1.5rem;">
+                                <thead><tr><th>Chỉ số</th><th>Inout Ca 3</th><th>Inout Ca 5</th><th>Sort Ca 3</th></tr></thead>
+                                <tbody>
+                                    <tr style="background: rgba(0,0,0,0.02);">
+                                        <td style="text-align:left; font-weight:600;">Tổng nhân sự</td>
+                                        <td id="ops-hr-inout3-total" style="font-weight:bold; color:var(--primary);">0</td>
+                                        <td id="ops-hr-inout5-total" style="font-weight:bold; color:var(--primary);">0</td>
+                                        <td id="ops-hr-sort3-total" style="font-weight:bold; color:var(--primary);">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:left; padding-left: 1.5rem;">- Năng suất</td>
+                                        <td><input type="number" id="ops-hr-inout3-ns" oninput="calcHrTotal()"></td>
+                                        <td><input type="number" id="ops-hr-inout5-ns" oninput="calcHrTotal()"></td>
+                                        <td><input type="number" id="ops-hr-sort3-ns" oninput="calcHrTotal()"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:left; padding-left: 1.5rem;">- Giờ công</td>
+                                        <td><input type="number" id="ops-hr-inout3-gc" oninput="calcHrTotal()"></td>
+                                        <td><input type="number" id="ops-hr-inout5-gc" oninput="calcHrTotal()"></td>
+                                        <td><input type="number" id="ops-hr-sort3-gc" oninput="calcHrTotal()"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:left; font-weight:600;">Tuyển mới</td>
+                                        <td><input type="number" id="ops-hr-inout3-new"></td>
+                                        <td><input type="number" id="ops-hr-inout5-new"></td>
+                                        <td><input type="number" id="ops-hr-sort3-new"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:left; font-weight:600; color:var(--danger);">Xin nghỉ việc</td>
+                                        <td><input type="number" id="ops-hr-inout3-quit"></td>
+                                        <td><input type="number" id="ops-hr-inout5-quit"></td>
+                                        <td><input type="number" id="ops-hr-sort3-quit"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:left; font-weight:600; color:var(--warning);">Dự kiến nghỉ</td>
+                                        <td><input type="number" id="ops-hr-inout3-planquit"></td>
+                                        <td><input type="number" id="ops-hr-inout5-planquit"></td>
+                                        <td><input type="number" id="ops-hr-sort3-planquit"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <script>
+                                function calcHrTotal() {
+                                    const deps = ['inout3', 'inout5', 'sort3'];
+                                    deps.forEach(dep => {
+                                        const ns = Number(document.getElementById(`ops-hr-${dep}-ns`).value) || 0;
+                                        const gc = Number(document.getElementById(`ops-hr-${dep}-gc`).value) || 0;
+                                        document.getElementById(`ops-hr-${dep}-total`).innerText = ns + gc;
+                                    });
+                                }
+                            </script>
+
+                            <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--primary);">2. Nhập liệu SORT</h3>
+                            <div class="supplier-table-container">
+                                <table class="supplier-input-table" id="ops-sort-table" style="min-width: 800px; margin-bottom: 1.5rem;">
+                                    <thead><tr id="ops-sort-thead"><th>Chỉ số \ Ngày</th><!-- JS --></tr></thead>
+                                    <tbody id="ops-sort-tbody"><!-- JS --></tbody>
+                                </table>
+                            </div>
+
+                            <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--primary);">3. Nhập liệu INOUT</h3>
+                            <div class="supplier-table-container">
+                                <table class="supplier-input-table" id="ops-inout-table" style="min-width: 800px; margin-bottom: 1.5rem;">
+                                    <thead><tr id="ops-inout-thead"><th>Chỉ số \ Ngày</th><!-- JS --></tr></thead>
+                                    <tbody id="ops-inout-tbody"><!-- JS --></tbody>
+                                </table>
+                            </div>
+
+                            <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--primary);">4. Chỉ số Tuần (So sánh Target)</h3>
+                            <table class="supplier-input-table" style="margin-bottom: 1.5rem;">
+                                <thead>
+                                    <tr>
+                                        <th>Chỉ số</th>
+                                        <th>Thực Tế SORT</th>
+                                        <th>Thực Tế INOUT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight:600; text-align:left;">Volume (DRNX/4)</td>
+                                        <td><input type="number" step="any" id="ops-target-sort-vol"></td>
+                                        <td><input type="number" step="any" id="ops-target-inout-vol"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:600; text-align:left;">Chi phí cost/đơn</td>
+                                        <td><input type="number" step="any" id="ops-target-sort-cost"></td>
+                                        <td><input type="number" step="any" id="ops-target-inout-cost"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:600; text-align:left;">Năng suất (DRNX/4)</td>
+                                        <td><input type="number" step="any" id="ops-target-sort-ns"></td>
+                                        <td><input type="number" step="any" id="ops-target-inout-ns"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:600; text-align:left;">Tỉ lệ xuất hàng > 24% (%)</td>
+                                        <td><input type="number" step="any" id="ops-target-sort-xh"></td>
+                                        <td><input type="number" step="any" id="ops-target-inout-xh"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:600; text-align:left;">Tỷ lệ nghỉ việc (%)</td>
+                                        <td><input type="number" step="any" id="ops-target-sort-nv"></td>
+                                        <td><input type="number" step="any" id="ops-target-inout-nv"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:600; text-align:left;">KPI đạt được (%)</td>
+                                        <td><input type="number" step="any" id="ops-target-sort-kpi"></td>
+                                        <td><input type="number" step="any" id="ops-target-inout-kpi"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button type="submit" class="btn-primary w-full" style="margin-top: 1rem;">
+                                <i class="fa-solid fa-floppy-disk"></i> Lưu Dữ Liệu Vận Hành
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Khu vực Biểu đồ & Báo cáo -->
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <div class="card-body" style="padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <label style="font-weight: 600; font-size: 1.1rem; color: var(--primary);"><i class="fa-solid fa-calendar-week"></i> Xem Báo Cáo Tuần:</label>
+                        <select id="ops-dashboard-week" style="min-width: 250px; font-weight: 700; font-size: 1.1rem; background: var(--bg-main); border: 2px solid var(--primary); color: var(--primary); cursor: pointer;" onchange="renderOpsDashboard()">
+                            <option value="">-- Chưa có dữ liệu --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="ops-charts-container" style="display:none; flex-direction: column; gap: 1.5rem;">
+                    
+                    <!-- Bảng Nhân Sự -->
+                    <div class="card chart-card full-width">
+                        <div class="card-header"><h2><i class="fa-solid fa-users"></i> TÌNH HÌNH NHÂN SỰ TRONG TUẦN</h2></div>
+                        <div class="card-body" style="padding: 1.5rem; overflow-x: auto;">
+                            <table class="data-table" style="font-size: 0.95rem; text-align: center; width: 100%; max-width: 600px; margin: 0 auto;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Bộ phận / Ca làm việc</th>
+                                        <th>Inout Ca 3</th>
+                                        <th>Inout Ca 5</th>
+                                        <th>Sort Ca 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: rgba(0,0,0,0.02);">
+                                        <td style="font-weight: 600; text-align: left;">Tổng nhân sự</td>
+                                        <td id="ops-dash-hr-inout3-total" style="font-weight: bold; color: var(--primary); font-size: 1.1rem;">0</td>
+                                        <td id="ops-dash-hr-inout5-total" style="font-weight: bold; color: var(--primary); font-size: 1.1rem;">0</td>
+                                        <td id="ops-dash-hr-sort3-total" style="font-weight: bold; color: var(--primary); font-size: 1.1rem;">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 1.5rem;">- Nhân sự Năng suất</td>
+                                        <td id="ops-dash-hr-inout3-ns">0</td>
+                                        <td id="ops-dash-hr-inout5-ns">0</td>
+                                        <td id="ops-dash-hr-sort3-ns">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 1.5rem;">- Nhân sự Giờ công</td>
+                                        <td id="ops-dash-hr-inout3-gc">0</td>
+                                        <td id="ops-dash-hr-inout5-gc">0</td>
+                                        <td id="ops-dash-hr-sort3-gc">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600; text-align: left;">Tuyển mới</td>
+                                        <td id="ops-dash-hr-inout3-new">0</td>
+                                        <td id="ops-dash-hr-inout5-new">0</td>
+                                        <td id="ops-dash-hr-sort3-new">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600; color: var(--danger); text-align: left;">Xin nghỉ việc</td>
+                                        <td id="ops-dash-hr-inout3-quit">0</td>
+                                        <td id="ops-dash-hr-inout5-quit">0</td>
+                                        <td id="ops-dash-hr-sort3-quit">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600; color: var(--warning); text-align: left;">Dự kiến nghỉ</td>
+                                        <td id="ops-dash-hr-inout3-planquit">0</td>
+                                        <td id="ops-dash-hr-inout5-planquit">0</td>
+                                        <td id="ops-dash-hr-sort3-planquit">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(59, 130, 246, 0.05); border-left: 4px solid var(--info); border-radius: 4px;">
+                                <h3 style="font-size: 1.05rem; color: var(--info); margin-bottom: 0.5rem;"><i class="fa-solid fa-robot"></i> AI Phân Tích Tình Hình Nhân Sự</h3>
+                                <div id="ops-hr-analysis-content" style="line-height: 1.6; font-size: 0.95rem;">Đang phân tích dữ liệu...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart 1: Sort -->
+                    <div class="card chart-card full-width">
+                        <div class="card-header"><h2><i class="fa-solid fa-chart-column"></i> NĂNG SUẤT THEO CA SORT</h2></div>
+                        <div class="card-body chart-canvas-container" style="height: 450px;"><canvas id="opsSortChart"></canvas></div>
+                    </div>
+
+                    <!-- Chart 2: InOut -->
+                    <div class="card chart-card full-width">
+                        <div class="card-header"><h2><i class="fa-solid fa-chart-column"></i> NĂNG SUẤT THEO CA INOUT</h2></div>
+                        <div class="card-body chart-canvas-container" style="height: 450px;"><canvas id="opsInoutChart"></canvas></div>
+                    </div>
+                    
+                    <!-- Target Comparison -->
+                    <div class="card chart-card full-width">
+                        <div class="card-header"><h2><i class="fa-solid fa-table"></i> Bảng So Sánh Chỉ Số Tuần</h2></div>
+                        <div class="card-body" style="overflow-x: auto; padding: 1.5rem;">
+                            <h3 style="font-size:1rem; margin-bottom: 0.5rem; color: var(--primary);">1. Sort</h3>
+                            <table class="data-table" style="font-size: 0.85rem; text-align: center; width: 100%; margin-bottom: 2rem;">
+                                <thead id="ops-compare-sort-head"></thead>
+                                <tbody id="ops-compare-sort-body"></tbody>
+                            </table>
+
+                            <h3 style="font-size:1rem; margin-bottom: 0.5rem; color: var(--primary);">2. InOut</h3>
+                            <table class="data-table" style="font-size: 0.85rem; text-align: center; width: 100%;">
+                                <thead id="ops-compare-inout-head"></thead>
+                                <tbody id="ops-compare-inout-body"></tbody>
+                            </table>
+                            <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success); border-radius: 4px;">
+                                <h3 style="font-size: 1.05rem; color: var(--success); margin-bottom: 0.5rem;"><i class="fa-solid fa-robot"></i> AI Phân Tích Hiệu Quả Vận Hành</h3>
+                                <div id="ops-target-analysis-content" style="line-height: 1.6; font-size: 0.95rem;">Đang phân tích dữ liệu...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- MAIN LOGIC SCRIPT -->
@@ -555,44 +813,38 @@
         }
 
         // ==========================================
-        // LOGIN LOGIC
+        // LOGIN LOGIC (Đã bị vô hiệu hóa theo yêu cầu nội bộ)
         // ==========================================
-        const PIN_CODE = "123456"; // Default PIN
-        let currentUser = localStorage.getItem('currentUser');
+        let currentUser = "Quản lý ca";
         
         function checkLoginState() {
-            if (currentUser) {
-                document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('user-info').style.display = 'flex';
-                document.getElementById('display-username').innerText = currentUser;
-            } else {
-                document.getElementById('login-screen').style.display = 'flex';
-                document.getElementById('user-info').style.display = 'none';
-            }
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('user-info').style.display = 'flex';
+            document.getElementById('display-username').innerText = currentUser;
         }
         
-        document.getElementById('login-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('login-name').value.trim();
-            const pin = document.getElementById('login-pin').value;
-            
-            if (pin !== PIN_CODE) {
-                alert('Mã PIN không chính xác!');
-                return;
-            }
-            if (name) {
-                currentUser = name;
-                localStorage.setItem('currentUser', name);
-                checkLoginState();
-            }
-        });
-        
         window.logout = function() {
-            currentUser = null;
-            localStorage.removeItem('currentUser');
-            document.getElementById('login-pin').value = '';
-            checkLoginState();
+            // Đã vô hiệu hóa đăng xuất
+        }
+
+        // ==========================================
+        // TABS LOGIC
+        // ==========================================
+        window.switchTab = function(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
         };
+
+
+
+        // ==========================================
+        // OPERATIONS DATA (VẬN HÀNH CA 3)
+        // ==========================================
+        let opsData = { weeks: {} };
 
         const SUPPLIERS = ["HOA ANH ĐÀO", "VIECCO", "SKT", "THÀNH TÍN", "HOA SEN"];
         const SUPPLIER_COLORS = {
@@ -651,6 +903,7 @@
             
             if (db) {
                 // Listen to Firebase data changes
+                loadOpsData(); // Load Operations Data
                 db.ref('freelancer_records').on('value', (snapshot) => {
                     const data = snapshot.val();
                     if (data) {
@@ -1689,6 +1942,633 @@
             updateDashboard();
             closeLeaveModal();
         };
+
+        // ==========================================
+        // OPERATIONS LOGIC (VẬN HÀNH CA 3) - MANUAL ENTRY
+        // ==========================================
+        function fillTestW24() {
+            document.getElementById('ops-week-name').value = 'W24';
+            document.getElementById('ops-start-date').value = '2024-06-10'; // Thứ 2, 10/06/2024
+            generateOpsDates();
+
+            // Nhân sự theo docx
+            document.getElementById('ops-hr-inout3-ns').value = 83;
+            document.getElementById('ops-hr-inout5-ns').value = 62;
+            document.getElementById('ops-hr-sort3-ns').value = 37;
+            document.getElementById('ops-hr-inout3-gc').value = 0;
+            document.getElementById('ops-hr-inout5-gc').value = 1;
+            document.getElementById('ops-hr-sort3-gc').value = 3;
+            document.getElementById('ops-hr-inout3-new').value = 1;
+            document.getElementById('ops-hr-inout5-new').value = 1;
+            document.getElementById('ops-hr-sort3-new').value = 0;
+            document.getElementById('ops-hr-inout3-quit').value = 3; // (giả sử tổng 3 InOut)
+            document.getElementById('ops-hr-inout5-quit').value = 0;
+            document.getElementById('ops-hr-sort3-quit').value = 4;
+            document.getElementById('ops-hr-inout3-planquit').value = 1;
+            document.getElementById('ops-hr-inout5-planquit').value = 0;
+            document.getElementById('ops-hr-sort3-planquit').value = 0;
+            calcHrTotal();
+
+            // Target theo docx
+            document.getElementById('ops-target-sort-xh').value = 0.9;
+            document.getElementById('ops-target-inout-xh').value = 0.9;
+            document.getElementById('ops-target-sort-nv').value = 4.24;
+            document.getElementById('ops-target-inout-nv').value = 4.24;
+            document.getElementById('ops-target-sort-kpi').value = 102.4;
+            document.getElementById('ops-target-inout-kpi').value = 102.4;
+            
+            // Random Daily SORT data
+            const sortRa = [11020, 10500, 12050, 9800, 10700, 11400, 10100];
+            const sortDong = [10500, 10000, 11500, 9500, 10200, 11000, 9700];
+            const sortNs = [34.4, 33.8, 38.2, 31.6, 33.4, 36.1, 31.5];
+            const sortChiphi = [410, 415, 395, 430, 420, 405, 425];
+
+            // Random Daily INOUT data
+            const inoutNhap = [15000, 16200, 15500, 17100, 14900, 16800, 15300];
+            const inoutXuat = [14800, 16000, 15300, 17000, 14500, 16500, 15000];
+            const inoutNs = [12.9, 14.0, 13.3, 14.7, 12.9, 14.4, 13.3];
+            const inoutChiphi = [310, 305, 315, 300, 320, 305, 315];
+
+            for(let i=0; i<7; i++) {
+                if(document.getElementById(`sort-ra-${i}`)) document.getElementById(`sort-ra-${i}`).value = sortRa[i];
+                if(document.getElementById(`sort-dong-${i}`)) document.getElementById(`sort-dong-${i}`).value = sortDong[i];
+                if(document.getElementById(`sort-ns-${i}`)) document.getElementById(`sort-ns-${i}`).value = sortNs[i];
+                if(document.getElementById(`sort-chiphi-${i}`)) document.getElementById(`sort-chiphi-${i}`).value = sortChiphi[i];
+
+                if(document.getElementById(`inout-nhap-${i}`)) document.getElementById(`inout-nhap-${i}`).value = inoutNhap[i];
+                if(document.getElementById(`inout-xuat-${i}`)) document.getElementById(`inout-xuat-${i}`).value = inoutXuat[i];
+                if(document.getElementById(`inout-ns-${i}`)) document.getElementById(`inout-ns-${i}`).value = inoutNs[i];
+                if(document.getElementById(`inout-chiphi-${i}`)) document.getElementById(`inout-chiphi-${i}`).value = inoutChiphi[i];
+            }
+            alert("Đã điền tự động số liệu W24 (Dựa trên báo cáo docx). Bạn hãy cuộn xuống và nhấn 'Lưu Dữ Liệu Vận Hành'!");
+        }
+
+        function loadOpsData() {
+            if (!db) return;
+            db.ref('operations').on('value', snapshot => {
+                const data = snapshot.val() || {};
+                opsData.weeks = data;
+                
+                // Cập nhật Select box
+                const weekFilter = document.getElementById('ops-dashboard-week');
+                const currentVal = weekFilter.value;
+                const weeks = Object.keys(data).sort();
+                
+                if (weeks.length === 0) {
+                    weekFilter.innerHTML = '<option value="">-- Chưa có dữ liệu --</option>';
+                    document.getElementById('ops-charts-container').style.display = 'none';
+                } else {
+                    weekFilter.innerHTML = weeks.map(w => `<option value="${w}">${w}</option>`).join('');
+                    if (weeks.includes(currentVal)) {
+                        weekFilter.value = currentVal;
+                    } else {
+                        weekFilter.value = weeks[weeks.length - 1]; // Chọn tuần mới nhất
+                    }
+                    renderOpsDashboard();
+                }
+            });
+        }
+
+        function generateOpsDates() {
+            const startDateInput = document.getElementById('ops-start-date').value;
+            if (!startDateInput) return;
+            
+            const startDate = new Date(startDateInput);
+            const dates = [];
+            for (let i = 0; i < 7; i++) {
+                const d = new Date(startDate);
+                d.setDate(d.getDate() + i);
+                dates.push(`${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getFullYear()}`);
+            }
+
+            // Render Header & Body for SORT
+            const sortThead = document.getElementById('ops-sort-thead');
+            sortThead.innerHTML = `<th>Chỉ số \\ Ngày</th>${dates.map(d => `<th>${d}</th>`).join('')}`;
+            
+            const sortTbody = document.getElementById('ops-sort-tbody');
+            const sortFields = [
+                {id: 'ra', label: 'Rã'}, {id: 'dong', label: 'Đóng'}, 
+                {id: 'ns', label: 'Năng suất'}, {id: 'chiphi', label: 'Chi phí'}
+            ];
+            sortTbody.innerHTML = sortFields.map(f => `
+                <tr>
+                    <td style="font-weight:bold;text-align:left;">${f.label}</td>
+                    ${dates.map((d, i) => `<td><input type="number" id="sort-${f.id}-${i}" step="any" style="width:100%;text-align:center;padding:0.4rem;border:1px solid #ddd;border-radius:4px;"></td>`).join('')}
+                </tr>
+            `).join('');
+
+            // Render Header & Body for INOUT
+            const inoutThead = document.getElementById('ops-inout-thead');
+            inoutThead.innerHTML = `<th>Chỉ số \\ Ngày</th>${dates.map(d => `<th>${d}</th>`).join('')}`;
+            
+            const inoutTbody = document.getElementById('ops-inout-tbody');
+            const inoutFields = [
+                {id: 'nhap', label: 'Nhập'}, {id: 'xuat', label: 'Xuất'}, 
+                {id: 'ns', label: 'Năng suất'}, {id: 'chiphi', label: 'Chi phí'}
+            ];
+            inoutTbody.innerHTML = inoutFields.map(f => `
+                <tr>
+                    <td style="font-weight:bold;text-align:left;">${f.label}</td>
+                    ${dates.map((d, i) => `<td><input type="number" id="inout-${f.id}-${i}" step="any" style="width:100%;text-align:center;padding:0.4rem;border:1px solid #ddd;border-radius:4px;"></td>`).join('')}
+                </tr>
+            `).join('');
+            
+            // Tự động load lại nếu tuần này đã có trên Cloud
+            const weekName = document.getElementById('ops-week-name').value.trim();
+            if(weekName && opsData.weeks[weekName]) {
+                fillOpsForm(weekName);
+            }
+        }
+
+        document.getElementById('ops-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (!db) return alert("Chưa kết nối Cloud!");
+            
+            const weekName = document.getElementById('ops-week-name').value.trim();
+            const startDate = document.getElementById('ops-start-date').value;
+            
+            if (!weekName || !startDate) return alert("Vui lòng nhập Tên Tuần và Ngày Bắt Đầu");
+
+            const dates = [];
+            const sd = new Date(startDate);
+            for (let i = 0; i < 7; i++) {
+                const d = new Date(sd);
+                d.setDate(d.getDate() + i);
+                dates.push(`${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getFullYear()}`);
+            }
+            
+            // Thu thập SORT
+            const sort = { dates, ra: [], dong: [], gcong: [], ns: [], chiphi: [] };
+            // Thu thập INOUT
+            const inout = { dates, nhap: [], xuat: [], gcong: [], ns: [], chiphi: [] };
+            
+            for(let i=0; i<7; i++) {
+                sort.ra.push(Number(document.getElementById(`sort-ra-${i}`)?.value) || null);
+                sort.dong.push(Number(document.getElementById(`sort-dong-${i}`)?.value) || null);
+                sort.gcong.push(Number(document.getElementById(`sort-gcong-${i}`)?.value) || null);
+                sort.ns.push(Number(document.getElementById(`sort-ns-${i}`)?.value) || null);
+                sort.chiphi.push(Number(document.getElementById(`sort-chiphi-${i}`)?.value) || null);
+
+                inout.nhap.push(Number(document.getElementById(`inout-nhap-${i}`)?.value) || null);
+                inout.xuat.push(Number(document.getElementById(`inout-xuat-${i}`)?.value) || null);
+                inout.gcong.push(Number(document.getElementById(`inout-gcong-${i}`)?.value) || null);
+                inout.ns.push(Number(document.getElementById(`inout-ns-${i}`)?.value) || null);
+                inout.chiphi.push(Number(document.getElementById(`inout-chiphi-${i}`)?.value) || null);
+            }
+
+            // Thu thập Target
+            const targetMetrics = {
+                sort: {
+                    vol: Number(document.getElementById('ops-target-sort-vol').value) || null,
+                    cost: Number(document.getElementById('ops-target-sort-cost').value) || null,
+                    ns: Number(document.getElementById('ops-target-sort-ns').value) || null,
+                    xh: Number(document.getElementById('ops-target-sort-xh').value) || null,
+                    nv: Number(document.getElementById('ops-target-sort-nv').value) || null,
+                    kpi: Number(document.getElementById('ops-target-sort-kpi').value) || null,
+                },
+                inout: {
+                    vol: Number(document.getElementById('ops-target-inout-vol').value) || null,
+                    cost: Number(document.getElementById('ops-target-inout-cost').value) || null,
+                    ns: Number(document.getElementById('ops-target-inout-ns').value) || null,
+                    xh: Number(document.getElementById('ops-target-inout-xh').value) || null,
+                    nv: Number(document.getElementById('ops-target-inout-nv').value) || null,
+                    kpi: Number(document.getElementById('ops-target-inout-kpi').value) || null,
+                }
+            };
+
+            const personnel = {
+                inout3: {
+                    ns: Number(document.getElementById('ops-hr-inout3-ns').value) || 0,
+                    gc: Number(document.getElementById('ops-hr-inout3-gc').value) || 0,
+                    newH: Number(document.getElementById('ops-hr-inout3-new').value) || 0,
+                    quit: Number(document.getElementById('ops-hr-inout3-quit').value) || 0,
+                    planquit: Number(document.getElementById('ops-hr-inout3-planquit').value) || 0,
+                },
+                inout5: {
+                    ns: Number(document.getElementById('ops-hr-inout5-ns').value) || 0,
+                    gc: Number(document.getElementById('ops-hr-inout5-gc').value) || 0,
+                    newH: Number(document.getElementById('ops-hr-inout5-new').value) || 0,
+                    quit: Number(document.getElementById('ops-hr-inout5-quit').value) || 0,
+                    planquit: Number(document.getElementById('ops-hr-inout5-planquit').value) || 0,
+                },
+                sort3: {
+                    ns: Number(document.getElementById('ops-hr-sort3-ns').value) || 0,
+                    gc: Number(document.getElementById('ops-hr-sort3-gc').value) || 0,
+                    newH: Number(document.getElementById('ops-hr-sort3-new').value) || 0,
+                    quit: Number(document.getElementById('ops-hr-sort3-quit').value) || 0,
+                    planquit: Number(document.getElementById('ops-hr-sort3-planquit').value) || 0,
+                }
+            };
+
+            const dataToSave = {
+                startDate,
+                sort,
+                inout,
+                targetMetrics,
+                personnel,
+                updatedAt: new Date().toISOString()
+            };
+
+            db.ref(`operations/${weekName}`).set(dataToSave)
+                .then(() => {
+                    alert("Lưu dữ liệu Vận Hành thành công!");
+                })
+                .catch(err => alert("Lỗi lưu dữ liệu: " + err.message));
+        });
+
+        function fillOpsForm(weekName) {
+            const data = opsData.weeks[weekName];
+            if(!data) return;
+            
+            // Fill target
+            if(data.targetMetrics) {
+                document.getElementById('ops-target-sort-vol').value = data.targetMetrics.sort.vol || '';
+                document.getElementById('ops-target-sort-cost').value = data.targetMetrics.sort.cost || '';
+                document.getElementById('ops-target-sort-ns').value = data.targetMetrics.sort.ns || '';
+                document.getElementById('ops-target-sort-xh').value = data.targetMetrics.sort.xh || '';
+                document.getElementById('ops-target-sort-nv').value = data.targetMetrics.sort.nv || '';
+                document.getElementById('ops-target-sort-kpi').value = data.targetMetrics.sort.kpi || '';
+
+                document.getElementById('ops-target-inout-vol').value = data.targetMetrics.inout.vol || '';
+                document.getElementById('ops-target-inout-cost').value = data.targetMetrics.inout.cost || '';
+                document.getElementById('ops-target-inout-ns').value = data.targetMetrics.inout.ns || '';
+                document.getElementById('ops-target-inout-xh').value = data.targetMetrics.inout.xh || '';
+                document.getElementById('ops-target-inout-nv').value = data.targetMetrics.inout.nv || '';
+                document.getElementById('ops-target-inout-kpi').value = data.targetMetrics.inout.kpi || '';
+            }
+
+            // Fill personnel
+
+            // Fill HR Data
+            if(data.personnel) {
+                const deps = ['inout3', 'inout5', 'sort3'];
+                deps.forEach(dep => {
+                    const p = data.personnel[dep];
+                    if (p && typeof p === 'object') {
+                        if(document.getElementById(`ops-hr-${dep}-ns`)) document.getElementById(`ops-hr-${dep}-ns`).value = p.ns || '';
+                        if(document.getElementById(`ops-hr-${dep}-gc`)) document.getElementById(`ops-hr-${dep}-gc`).value = p.gc || '';
+                        if(document.getElementById(`ops-hr-${dep}-new`)) document.getElementById(`ops-hr-${dep}-new`).value = p.newH || '';
+                        if(document.getElementById(`ops-hr-${dep}-quit`)) document.getElementById(`ops-hr-${dep}-quit`).value = p.quit || '';
+                        if(document.getElementById(`ops-hr-${dep}-planquit`)) document.getElementById(`ops-hr-${dep}-planquit`).value = p.planquit || '';
+                    } else if (p) {
+                        if(document.getElementById(`ops-hr-${dep}-ns`)) document.getElementById(`ops-hr-${dep}-ns`).value = p;
+                    }
+                });
+                calcHrTotal();
+            }
+            
+            // Fill daily
+            if(data.sort && data.sort.dates) {
+                for(let i=0; i<7; i++) {
+                    if(document.getElementById(`sort-ra-${i}`)) document.getElementById(`sort-ra-${i}`).value = data.sort.ra[i] || '';
+                    if(document.getElementById(`sort-dong-${i}`)) document.getElementById(`sort-dong-${i}`).value = data.sort.dong[i] || '';
+                    if(document.getElementById(`sort-ns-${i}`)) document.getElementById(`sort-ns-${i}`).value = data.sort.ns[i] || '';
+                    if(document.getElementById(`sort-chiphi-${i}`)) document.getElementById(`sort-chiphi-${i}`).value = data.sort.chiphi[i] || '';
+
+                    if(document.getElementById(`inout-nhap-${i}`)) document.getElementById(`inout-nhap-${i}`).value = data.inout.nhap[i] || '';
+                    if(document.getElementById(`inout-xuat-${i}`)) document.getElementById(`inout-xuat-${i}`).value = data.inout.xuat[i] || '';
+                    if(document.getElementById(`inout-ns-${i}`)) document.getElementById(`inout-ns-${i}`).value = data.inout.ns[i] || '';
+                    if(document.getElementById(`inout-chiphi-${i}`)) document.getElementById(`inout-chiphi-${i}`).value = data.inout.chiphi[i] || '';
+                }
+            }
+        }
+
+        // Dashboard logic sẽ được build bằng Chart.js
+        function renderOpsDashboard() {
+            const week = document.getElementById('ops-dashboard-week').value;
+            if(!week || !opsData.weeks[week]) {
+                document.getElementById('ops-charts-container').style.display = 'none';
+                return;
+            }
+            document.getElementById('ops-charts-container').style.display = 'flex';
+            
+            const data = opsData.weeks[week];
+            
+            // Populate HR Data
+            if (data.personnel) {
+                const deps = ['inout3', 'inout5', 'sort3'];
+                deps.forEach(dep => {
+                    const p = data.personnel[dep];
+                    if (p && typeof p === 'object') {
+                        document.getElementById(`ops-dash-hr-${dep}-total`).innerText = (p.ns || 0) + (p.gc || 0);
+                        document.getElementById(`ops-dash-hr-${dep}-ns`).innerText = p.ns || 0;
+                        document.getElementById(`ops-dash-hr-${dep}-gc`).innerText = p.gc || 0;
+                        document.getElementById(`ops-dash-hr-${dep}-new`).innerText = p.newH || 0;
+                        document.getElementById(`ops-dash-hr-${dep}-quit`).innerText = p.quit || 0;
+                        document.getElementById(`ops-dash-hr-${dep}-planquit`).innerText = p.planquit || 0;
+                    } else if (p) {
+                        document.getElementById(`ops-dash-hr-${dep}-total`).innerText = p;
+                        document.getElementById(`ops-dash-hr-${dep}-ns`).innerText = p;
+                    }
+                });
+                generateHrAnalysis(data.personnel);
+            } else {
+                ['inout3', 'inout5', 'sort3'].forEach(dep => {
+                    document.getElementById(`ops-dash-hr-${dep}-total`).innerText = 0;
+                    document.getElementById(`ops-dash-hr-${dep}-ns`).innerText = 0;
+                    document.getElementById(`ops-dash-hr-${dep}-gc`).innerText = 0;
+                    document.getElementById(`ops-dash-hr-${dep}-new`).innerText = 0;
+                    document.getElementById(`ops-dash-hr-${dep}-quit`).innerText = 0;
+                    document.getElementById(`ops-dash-hr-${dep}-planquit`).innerText = 0;
+                });
+                document.getElementById('ops-hr-analysis-content').innerHTML = "Chưa có dữ liệu nhân sự để phân tích.";
+            }
+            
+            // Draw Chart for SORT
+            drawOpsChart('opsSortChart', 'NĂNG SUẤT THEO CA SORT', data.sort, 
+                {bar1: 'Rã', bar2: 'Đóng', c1: '#4CAF50', c2: '#42a5f5'});
+            
+            // Draw Chart for INOUT
+            drawOpsChart('opsInoutChart', 'NĂNG SUẤT THEO CA INOUT', data.inout, 
+                {bar1: 'Nhập', bar2: 'Xuất', c1: '#42a5f5', c2: '#4CAF50'});
+            
+            // Draw Target Comparison Tables
+            renderTargetComparisonTable(week);
+        }
+
+        function generateHrAnalysis(personnel) {
+            let totalHr = 0;
+            let totalQuit = 0;
+            let totalNew = 0;
+            let totalPlanQuit = 0;
+            
+            const deps = ['inout3', 'inout5', 'sort3'];
+            deps.forEach(dep => {
+                const p = personnel[dep] || {};
+                const t = (p.ns || 0) + (p.gc || 0);
+                totalHr += t;
+                totalQuit += p.quit || 0;
+                totalNew += p.newH || 0;
+                totalPlanQuit += p.planquit || 0;
+            });
+            
+            let analysis = `<p><strong>Tổng quan:</strong> Tuần này vận hành với tổng số <strong>${totalHr}</strong> nhân sự.</p>`;
+            
+            if (totalQuit > 0) {
+                const quitRate = ((totalQuit / (totalHr + totalQuit)) * 100).toFixed(1);
+                analysis += `<p><strong>Biến động:</strong> Có <strong style="color:var(--danger)">${totalQuit}</strong> nhân sự nghỉ việc, chiếm <strong>${quitRate}%</strong>. `;
+                if (quitRate > 4) {
+                    analysis += `<span style="color:var(--danger);">Đây là mức biến động tương đối cao, cần rà soát lại nguyên nhân và có phương án giữ chân nhân sự.</span>`;
+                } else {
+                    analysis += `Tỷ lệ biến động nhân sự ở mức ổn định dưới 4%.`;
+                }
+                analysis += `</p>`;
+            }
+            
+            if (totalNew > 0) {
+                analysis += `<p><strong>Tuyển dụng bù đắp:</strong> Đã tuyển mới <strong>${totalNew}</strong> nhân sự. `;
+                if (totalNew < totalQuit) {
+                    analysis += `<span style="color:var(--warning);">Tốc độ bù đắp vẫn đang chậm hơn tốc độ nghỉ việc (${totalNew}/${totalQuit}), có nguy cơ thiếu hụt nhân sự trong tuần tiếp theo nếu sản lượng tăng.</span></p>`;
+                } else {
+                    analysis += `<span style="color:var(--success);">Tốc độ tuyển mới đảm bảo bù đắp đủ lượng nhân sự hao hụt.</span></p>`;
+                }
+            }
+            
+            if (totalPlanQuit > 0) {
+                analysis += `<p><strong>Cảnh báo tương lai:</strong> Đã ghi nhận <strong>${totalPlanQuit}</strong> trường hợp dự kiến nghỉ. Cần báo ngay cho bộ phận Tuyển dụng chuẩn bị trước nguồn lực thay thế để tránh gãy ca.</p>`;
+            }
+            
+            if (totalQuit === 0 && totalPlanQuit === 0) {
+                analysis += `<p><strong>Kết luận:</strong> Tình hình nhân sự cực kỳ ổn định, không có biến động bất lợi nào.</p>`;
+            }
+            
+            document.getElementById('ops-hr-analysis-content').innerHTML = analysis;
+        }
+
+        let opsCharts = {};
+
+        function drawOpsChart(canvasId, title, data, config) {
+            if (typeof ChartDataLabels !== 'undefined') {
+                Chart.register(ChartDataLabels);
+            }
+
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            if(opsCharts[canvasId]) {
+                opsCharts[canvasId].destroy();
+            }
+
+            const dates = data.dates || [];
+            const bar1Data = data.ra || data.nhap || [];
+            const bar2Data = data.dong || data.xuat || [];
+            const nsData = data.ns || [];
+            const costData = data.chiphi || [];
+
+            opsCharts[canvasId] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'Năng suất',
+                            data: nsData,
+                            borderColor: '#F44336',
+                            backgroundColor: '#F44336',
+                            borderWidth: 2,
+                            yAxisID: 'y1',
+                            pointStyle: 'rect',
+                            pointRadius: 5
+                        },
+                        {
+                            type: 'line',
+                            label: 'Chi phí',
+                            data: costData,
+                            borderColor: '#FF9800',
+                            backgroundColor: '#FF9800',
+                            borderWidth: 2,
+                            yAxisID: 'y1',
+                            pointStyle: 'triangle',
+                            pointRadius: 6
+                        },
+                        {
+                            type: 'bar',
+                            label: config.bar1,
+                            data: bar1Data,
+                            backgroundColor: config.c1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            type: 'bar',
+                            label: config.bar2,
+                            data: bar2Data,
+                            backgroundColor: config.c2,
+                            yAxisID: 'y'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: 'Sản lượng' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            title: { display: true, text: 'Năng suất / Chi phí' }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        title: { display: false }
+                    }
+                }
+            });
+        }
+
+        function renderTargetComparisonTable(week) {
+            // Need to calculate comparison with week - 1
+            const sortedWeeks = Object.keys(opsData.weeks).sort();
+            const currIdx = sortedWeeks.indexOf(week);
+            const prevWeek = currIdx > 0 ? sortedWeeks[currIdx - 1] : null;
+            
+            const currData = opsData.weeks[week].targetMetrics || {};
+            const prevData = prevWeek ? (opsData.weeks[prevWeek].targetMetrics || {}) : {};
+
+            const targetFixed = {
+                vol: null, cost: 475, ns: null, xh: 0.9, nv: 5, kpi: null
+            }; // 0.9 = 0.9%, 5 = 5%
+
+            const metrics = [
+                {id: 'vol', label: 'Volume (DRNX/4)'},
+                {id: 'cost', label: 'Chi phí cost/đơn'},
+                {id: 'ns', label: 'Năng suất (DRNX/4)'},
+                {id: 'xh', label: 'Tỉ lệ xuất hàng > 24%'},
+                {id: 'nv', label: 'Tỷ lệ nghỉ việc'},
+                {id: 'kpi', label: 'KPI đạt được'}
+            ];
+
+            const renderRow = (m, type) => {
+                const cVal = currData[type]?.[m.id] || 0;
+                const pVal = prevData[type]?.[m.id] || 0;
+                const diff = cVal - pVal;
+                const diffStr = diff > 0 ? `+${formatNumber(diff)}` : formatNumber(diff);
+                const diffColor = diff < 0 ? 'color:var(--danger);' : '';
+
+                let targetVal = targetFixed[m.id];
+                let targetStr = targetVal === null ? 'Không có' : targetVal;
+                if(m.id === 'xh' || m.id === 'nv') targetStr += '%';
+
+                let compareTarget = 'Không có';
+                if(targetVal !== null && targetVal !== 0) {
+                    const ratio = (cVal / targetVal) * 100;
+                    compareTarget = ratio.toFixed(2) + '%';
+                }
+
+                if(m.id === 'kpi') {
+                    // special row
+                    return `<tr>
+                        <td colspan="4" style="font-weight:bold;text-align:center;">KPI đạt được</td>
+                        <td colspan="3" style="font-weight:bold;text-align:center;color:var(--danger);">${cVal}%</td>
+                    </tr>`;
+                }
+
+                return `<tr>
+                    <td style="font-weight:600; text-align:left;">${m.label}</td>
+                    <td>Ca 3</td>
+                    <td>${formatNumber(pVal)}</td>
+                    <td>${formatNumber(cVal)}</td>
+                    <td style="${diffColor}">${diffStr}</td>
+                    <td>${targetStr}</td>
+                    <td>${compareTarget}</td>
+                </tr>`;
+            };
+
+            const headerHTML = `<tr>
+                <th>Chỉ số</th>
+                <th>Ca làm việc</th>
+                <th>${prevWeek || 'Tuần trước'}</th>
+                <th>${week}</th>
+                <th>So sánh</th>
+                <th>Target</th>
+                <th>So sánh với target</th>
+            </tr>`;
+
+            // Sort
+            document.getElementById('ops-compare-sort-head').innerHTML = headerHTML;
+            document.getElementById('ops-compare-sort-body').innerHTML = metrics.map(m => renderRow(m, 'sort')).join('');
+            
+            // InOut
+            document.getElementById('ops-compare-inout-head').innerHTML = headerHTML;
+            document.getElementById('ops-compare-inout-body').innerHTML = metrics.map(m => renderRow(m, 'inout')).join('');
+
+            generateTargetAnalysis(currData, prevData, targetFixed);
+        }
+
+        function generateTargetAnalysis(currData, prevData, targetFixed) {
+            let analysis = '';
+            
+            // Analyze SORT
+            const sortKpi = currData.sort?.kpi || 0;
+            const sortCost = currData.sort?.cost || 0;
+            const sortXh = currData.sort?.xh || 0;
+            
+            let sortAnalysis = ``;
+            if (sortKpi >= 100) {
+                sortAnalysis += `<span style="color:var(--success); font-weight:bold;">Đạt KPI (${sortKpi}%).</span> `;
+            } else if (sortKpi > 0) {
+                sortAnalysis += `<span style="color:var(--danger); font-weight:bold;">Chưa đạt KPI (${sortKpi}%).</span> `;
+            }
+
+            if (sortCost > targetFixed.cost) {
+                sortAnalysis += `Tuy nhiên, chi phí/đơn đang <span style="color:var(--danger)">vượt Target (${sortCost} > ${targetFixed.cost})</span>, cần kiểm soát lại giờ công. `;
+            } else if (sortCost > 0) {
+                sortAnalysis += `Chi phí/đơn <span style="color:var(--success)">được kiểm soát tốt (${sortCost} <= ${targetFixed.cost})</span>. `;
+            }
+
+            if (sortXh > targetFixed.xh) {
+                sortAnalysis += `Tỉ lệ xuất hàng > 24h đang <span style="color:var(--danger)">cao hơn mức cho phép (${sortXh}% > ${targetFixed.xh}%)</span>, cần đẩy nhanh tiến độ xử lý hàng tồn. `;
+            } else if (sortXh > 0) {
+                sortAnalysis += `Tỉ lệ rớt hàng > 24h <span style="color:var(--success)">rất tốt (${sortXh}% <= ${targetFixed.xh}%)</span>. `;
+            }
+            
+            analysis += `<p style="margin-bottom: 0.5rem;"><strong>👉 Phân tích SORT:</strong> ${sortAnalysis || 'Chưa có đủ dữ liệu để phân tích.'}</p>`;
+
+            // Analyze INOUT
+            const inoutKpi = currData.inout?.kpi || 0;
+            const inoutCost = currData.inout?.cost || 0;
+            const inoutXh = currData.inout?.xh || 0;
+
+            let inoutAnalysis = ``;
+            if (inoutKpi >= 100) {
+                inoutAnalysis += `<span style="color:var(--success); font-weight:bold;">Đạt KPI (${inoutKpi}%).</span> `;
+            } else if (inoutKpi > 0) {
+                inoutAnalysis += `<span style="color:var(--danger); font-weight:bold;">Chưa đạt KPI (${inoutKpi}%).</span> `;
+            }
+
+            if (inoutCost > targetFixed.cost) {
+                inoutAnalysis += `Chi phí/đơn đang <span style="color:var(--danger)">vượt Target (${inoutCost} > ${targetFixed.cost})</span>. `;
+            } else if (inoutCost > 0) {
+                inoutAnalysis += `Chi phí/đơn <span style="color:var(--success)">được tối ưu tốt (${inoutCost} <= ${targetFixed.cost})</span>. `;
+            }
+
+            if (inoutXh > targetFixed.xh) {
+                inoutAnalysis += `Tỉ lệ xuất hàng > 24h <span style="color:var(--danger)">bị vượt ngưỡng (${inoutXh}% > ${targetFixed.xh}%)</span>. `;
+            } else if (inoutXh > 0) {
+                inoutAnalysis += `Tỉ lệ rớt hàng > 24h <span style="color:var(--success)">vẫn trong tầm kiểm soát (${inoutXh}% <= ${targetFixed.xh}%)</span>. `;
+            }
+
+            analysis += `<p><strong>👉 Phân tích INOUT:</strong> ${inoutAnalysis || 'Chưa có đủ dữ liệu để phân tích.'}</p>`;
+
+            document.getElementById('ops-target-analysis-content').innerHTML = analysis;
+        }
+
+        function formatNumber(val) {
+            if (val === null || val === undefined || val === '') return '';
+            if (!isNaN(val)) return Number(val).toLocaleString('en-US');
+            return val;
+        }
+
     </script>
     
     <!-- Modal Xin Về -->
