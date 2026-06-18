@@ -250,6 +250,32 @@
         /* Login Overlay */
         .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg-main); display: flex; align-items: center; justify-content: center; z-index: 9999; }
         .login-card { background: var(--bg-card); width: 90%; max-width: 400px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); padding: 2rem; text-align: center; }
+
+        .three-col-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .three-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .three-col-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .three-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
         .login-card h2 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--primary); }
         .login-card p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
         .login-form input { width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; font-size: 1rem; background: var(--bg-main); color: var(--text-main); }
@@ -807,8 +833,8 @@
                             <button class="btn-primary" onclick="syncSalaryFromFirebase()" id="btn-sync-salary"><i class="fa-solid fa-rotate"></i> Đồng Bộ Dữ Liệu Lương Mới Nhất</button>
                         </div>
 
-                        <!-- Dashboard / Overview -->
-                        <div id="salary-dashboard" style="display: none; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                        <!-- Layout Phân Tích Tổng Quan -->
+                        <div id="salary-dashboard" class="three-col-grid" style="display: none; gap: 1.5rem; margin-bottom: 2rem;">
                             <div style="background: rgba(99, 102, 241, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(99, 102, 241, 0.2);">
                                 <h3 style="color: #6366f1; font-size: 0.9rem; margin-bottom: 0.5rem;">SORT CA 3</h3>
                                 <div id="salary-count-sort3" style="font-size: 1.5rem; font-weight: 800; color: #4338ca;">0 nv</div>
@@ -1131,14 +1157,28 @@
 
         function initTheme() {
             const isDark = localStorage.getItem('theme') === 'dark';
-            if (isDark) document.documentElement.classList.add('dark');
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
             
             themeToggle.addEventListener('click', () => {
                 document.documentElement.classList.toggle('dark');
                 const darkEnabled = document.documentElement.classList.contains('dark');
+                themeToggle.innerHTML = darkEnabled ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
                 localStorage.setItem('theme', darkEnabled ? 'dark' : 'light');
                 updateCharts(); 
             });
+        }
+
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
         }
 
         document.getElementById('is-grouped-shift').addEventListener('change', function() {
@@ -2582,7 +2622,13 @@
 
                 let compareTarget = 'Không có';
                 if(targetVal !== null && targetVal !== 0) {
-                    let ratio = (cVal / targetVal) * 100;
+                    let ratio = 0;
+                    if (m.id === 'cost' || m.id === 'xh' || m.id === 'nv') {
+                        ratio = 200 - ((cVal / targetVal) * 100);
+                    } else {
+                        ratio = (cVal / targetVal) * 100;
+                    }
+
                     if (ratio > 120) ratio = 120;
                     if (ratio < 50) ratio = 50;
                     
@@ -2784,7 +2830,7 @@
                                 <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid rgba(79, 70, 229, 0.2); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-users"></i> PHÂN TÍCH NHÓM: ${label} (Tổng: ${n} NV)</h3>
                                 
                                 <!-- Tổng hợp 3 ý chính -->
-                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                                <div class="three-col-grid">
                                     <div style="background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--success);">
                                         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase;">Lương NV Không Off + Tăng Ca</p>
                                         <p style="font-size: 0.75rem; color: var(--success); margin-bottom: 0.5rem;">(Trung bình của Top 20%)</p>
@@ -2812,7 +2858,7 @@
                                                     <tr><th>Mã NV</th><th>Tên NV</th><th style="text-align:right;">Chi Lương</th></tr>
                                                 </thead>
                                                 <tbody>
-                                                    ${top20.map((e, idx) => `<tr><td style="color:var(--text-muted); width: 80px;">${e.id}</td><td style="font-weight: 500;">${idx===0?'🥇':idx===1?'🥈':idx===2?'🥉':''} ${e.name}</td><td style="text-align:right; font-weight:bold; color:var(--warning);">${formatNumber(e.salary)} ₫</td></tr>`).join('')}
+                                                    ${top20.map((e, idx) => `<tr><td style="color:var(--text-muted); width: 80px;">${e.id}</td><td style="font-weight: 500;">${idx===0?'🥇':idx===1?'🥈':idx===2?'🥉':''} ${escapeHTML(e.name)}</td><td style="text-align:right; font-weight:bold; color:var(--warning);">${formatNumber(e.salary)} ₫</td></tr>`).join('')}
                                                 </tbody>
                                             </table>
                                         </div>
@@ -2827,7 +2873,7 @@
                                                     <tr><th>Mã NV</th><th>Tên NV</th><th style="text-align:right;">Chi Lương</th></tr>
                                                 </thead>
                                                 <tbody>
-                                                    ${bottom20.map(e => `<tr><td style="color:var(--text-muted); width: 80px;">${e.id}</td><td style="font-weight: 500;">${e.name}</td><td style="text-align:right; font-weight:bold; color:var(--danger);">${formatNumber(e.salary)} ₫</td></tr>`).join('')}
+                                                    ${bottom20.map(e => `<tr><td style="color:var(--text-muted); width: 80px;">${e.id}</td><td style="font-weight: 500;">${escapeHTML(e.name)}</td><td style="text-align:right; font-weight:bold; color:var(--danger);">${formatNumber(e.salary)} ₫</td></tr>`).join('')}
                                                 </tbody>
                                             </table>
                                         </div>
@@ -2908,10 +2954,10 @@
                 const badge = e.status === 'Đã nghỉ việc' ? '<span class="badge badge-danger">Đã nghỉ</span>' : '<span class="badge badge-success">Đang làm</span>';
                 html += `
                     <tr style="${rowStyle}">
-                        <td style="font-weight:600;">${e.id}</td>
-                        <td>${e.name}</td>
-                        <td>${e.dept}</td>
-                        <td>${e.shift}</td>
+                        <td style="font-weight:600;">${escapeHTML(e.id)}</td>
+                        <td>${escapeHTML(e.name)}</td>
+                        <td>${escapeHTML(e.dept)}</td>
+                        <td>${escapeHTML(e.shift)}</td>
                         <td>${e.joinDateStr} ${e.status === 'Đã nghỉ việc' ? '<br><small style="color:var(--danger); font-weight:600;">Nghỉ: '+e.leaveDateStr+'</small>' : ''}</td>
                         <td>${badge}</td>
                         <td style="color: var(--primary); font-weight: 600;">${e.daysWorked} ngày <br><small style="color:var(--text-muted);">(${e.monthsWorked} tháng)</small></td>
@@ -2934,12 +2980,12 @@
                 const color = e.daysWorked >= 60 ? 'var(--danger)' : 'var(--warning)';
                 html += `
                     <tr>
-                        <td style="font-weight:600;">${e.id}</td>
-                        <td style="font-weight:600;">${e.name}</td>
-                        <td>${e.dept} <br> <small style="color:var(--text-muted);">${e.shift}</small></td>
+                        <td style="font-weight:600;">${escapeHTML(e.id)}</td>
+                        <td style="font-weight:600;">${escapeHTML(e.name)}</td>
+                        <td>${escapeHTML(e.dept)} <br> <small style="color:var(--text-muted);">${escapeHTML(e.shift)}</small></td>
                         <td>${e.joinDateStr}</td>
                         <td style="color: var(--danger); font-weight:600;">${e.leaveDateStr}</td>
-                        <td style="font-style: italic; color: var(--text-muted); max-width: 200px; word-wrap: break-word;">${e.leaveReason || 'Không có ghi chú'}</td>
+                        <td style="font-style: italic; color: var(--text-muted); max-width: 200px; word-wrap: break-word;">${escapeHTML(e.leaveReason) || 'Không có ghi chú'}</td>
                         <td style="color: ${color}; font-weight: 800; font-size: 1.1rem;">${e.daysWorked} ngày</td>
                     </tr>
                 `;
