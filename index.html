@@ -269,7 +269,11 @@
         .tab-content { display: none; animation: fadeIn 0.3s ease; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
+    <!-- Tự động load dữ liệu nhân sự -->
+    <script src="data_hr.js"></script>
+    <script src="data_salary.js"></script>
 </head>
 <body>
     <div id="login-screen" style="display: none;"></div>
@@ -285,7 +289,9 @@
             </div>
             
             <div class="header-controls">
-                <span id="sync-status" class="badge badge-warning"><i class="fa-solid fa-cloud"></i> Local Storage</span>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Trạng thái dữ liệu: 
+                    <span id="sync-status" class="badge badge-warning"><i class="fa-solid fa-cloud"></i> Local Storage</span>
+                </div>
                 <div id="user-info" class="user-profile" style="display: none;">
                     <i class="fa-solid fa-user-circle"></i> <span id="display-username"></span>
                     <button class="btn-logout" onclick="logout()" title="Đăng xuất"><i class="fa-solid fa-right-from-bracket"></i></button>
@@ -302,6 +308,7 @@
             <button class="tab-btn active" onclick="switchTab('tab-freelancer')"><i class="fa-solid fa-users-viewfinder"></i> Nhóm Freelancer</button>
             <button class="tab-btn" onclick="switchTab('tab-operations')"><i class="fa-solid fa-industry"></i> Vận Hành Ca 3</button>
             <button class="tab-btn" onclick="switchTab('tab-salary')"><i class="fa-solid fa-money-check-dollar"></i> Quản lý Lương</button>
+            <button class="tab-btn" onclick="switchTab('tab-hr')"><i class="fa-solid fa-id-card-clip"></i> Nhân Sự Kho</button>
         </div>
 
         <div id="tab-freelancer" class="tab-content active">
@@ -826,22 +833,86 @@
         </div>
     </div>
 
+        <div id="tab-hr" class="tab-content">
+            <main class="dashboard-layout" style="grid-template-columns: 1fr;">
+                <section class="panel-full" style="width: 100%;">
+                    <div class="card form-card">
+                        <div class="card-header" style="background: linear-gradient(135deg, #0ea5e9, #2563eb);">
+                            <h2><i class="fa-solid fa-id-card-clip"></i> Quản Trị Nhân Sự Kho (Tình Trạng)</h2>
+                            <p style="color: white; opacity: 0.8; font-size: 0.85rem;">Phân tích từ file nhân sự (Lọc riêng In/Out Ca 3, 5 và Sort Ca 3)</p>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: flex-end;">
+                                <button class="btn-primary" onclick="exportHRData()" style="background: linear-gradient(135deg, #f59e0b, #d97706); display: none; padding: 0.8rem 1.5rem;" id="btn-hr-export">
+                                    <i class="fa-solid fa-file-excel"></i> Xuất Excel Báo Cáo
+                                </button>
+                            </div>
+                            
+                            <div id="hr-stats" class="stats-grid" style="display: none;">
+                                <div class="stat-card">
+                                    <div class="stat-icon text-indigo"><i class="fa-solid fa-users"></i></div>
+                                    <div class="stat-content">
+                                        <h3 id="hr-total">0</h3>
+                                        <p>Tổng Nhân Sự Thuộc Nhóm</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon text-emerald"><i class="fa-solid fa-user-check"></i></div>
+                                    <div class="stat-content">
+                                        <h3 id="hr-active">0</h3>
+                                        <p>Đang Làm Việc</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card" style="cursor: pointer; border: 2px solid transparent; transition: 0.3s;" onmouseover="this.style.borderColor='var(--danger)'" onmouseout="this.style.borderColor='transparent'" onclick="showResignedModal()" title="Bấm vào để xem danh sách chi tiết và lý do nghỉ việc">
+                                    <div class="stat-icon text-danger"><i class="fa-solid fa-user-slash"></i></div>
+                                    <div class="stat-content">
+                                        <h3 id="hr-resigned">0</h3>
+                                        <p>Đã Nghỉ Việc</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-scroll-wrapper" id="hr-table-container" style="display: none; max-height: 500px; overflow-y: auto; margin-top: 1.5rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                    <h3 style="color: var(--primary); margin: 0;"><i class="fa-solid fa-list-check"></i> Danh Sách Chi Tiết</h3>
+                                    <div style="display: flex; gap: 0.5rem;">
+                                        <select id="hr-filter-dept" onchange="renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem;">
+                                            <option value="all">Tất cả phòng ban</option>
+                                        </select>
+                                        <select id="hr-filter-shift" onchange="renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem;">
+                                            <option value="all">Tất cả các ca</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã NV</th>
+                                            <th>Họ Tên</th>
+                                            <th>Phòng Ban</th>
+                                            <th>Ca</th>
+                                            <th>Ngày Vào Làm</th>
+                                            <th>Trạng Thái</th>
+                                            <th>Thâm Niên</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="hr-table-body">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
     <!-- MAIN LOGIC SCRIPT -->
     <script>
         // ==========================================
-        // CẤU HÌNH FIREBASE (DÁN MÃ CỦA BẠN VÀO ĐÂY)
-
+        // CẤU HÌNH FIREBASE 
+        // (Đã tắt theo yêu cầu, hệ thống sẽ tự dùng Local Storage)
         // ==========================================
-        const firebaseConfig = {
-  apiKey: "AIzaSyAN-9oE5bmzTefW75aqQYrc1nd4FHSanlI",
-  authDomain: "quanly-fl.firebaseapp.com",
-  projectId: "quanly-fl",
-  storageBucket: "quanly-fl.firebasestorage.app",
-  messagingSenderId: "133224854570",
-  appId: "1:133224854570:web:b112b0f364755cdaa77f53",
-  measurementId: "G-C0EPTS16JW",
-  databaseURL: "https://quanly-fl-default-rtdb.asia-southeast1.firebasedatabase.app"
-};
+        const firebaseConfig = {};
 
         let db = null;
         const syncStatusEl = document.getElementById('sync-status');
@@ -2651,29 +2722,22 @@
         // ==========================================
         // QUẢN LÝ LƯƠNG LOGIC
         // ==========================================
+
         window.parsedSalaryData = [];
 
         function syncSalaryFromFirebase() {
             const btn = document.getElementById('btn-sync-salary');
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang đồng bộ...';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tải dữ liệu...';
             btn.disabled = true;
 
-            if (!db) {
-                alert("Lỗi: Chưa kết nối Firebase!");
-                btn.innerHTML = '<i class="fa-solid fa-rotate"></i> Đồng Bộ Dữ Liệu Lương Mới Nhất';
-                btn.disabled = false;
-                return;
-            }
-
-            db.ref('salaryData').once('value')
-                .then(snapshot => {
-                    const data = snapshot.val();
-                    if (!data) {
-                        alert("Không tìm thấy dữ liệu trên Firebase! Vui lòng chạy file CapNhatLuong.bat trước.");
+            setTimeout(() => {
+                try {
+                    if (!window.SALARY_DATA) {
+                        alert("Không tìm thấy dữ liệu nội bộ! Vui lòng chạy file CapNhatLuong.bat trước.");
                         return;
                     }
 
-                    const emps = Object.values(data);
+                    const emps = Object.values(window.SALARY_DATA);
                     
                     const groups = {
                         'sort3': emps.filter(e => e.dept.toLowerCase().includes('sort') && e.shift.toLowerCase().includes('ca 3')),
@@ -2769,16 +2833,152 @@
                     }
 
                     document.getElementById('salary-analysis-content').innerHTML = analysisHtml;
-                    alert("Đồng bộ thành công! Đã cập nhật xong các bảng phân tích.");
-                })
-                .catch(error => {
+                    alert("Đồng bộ thành công! Đã cập nhật xong các bảng phân tích từ file nội bộ.");
+                } catch (error) {
                     console.error(error);
                     alert("Có lỗi xảy ra khi lấy dữ liệu: " + error.message);
-                })
-                .finally(() => {
+                } finally {
                     btn.innerHTML = '<i class="fa-solid fa-rotate"></i> Đồng Bộ Dữ Liệu Lương Mới Nhất';
                     btn.disabled = false;
-                });
+                }
+            }, 500);
+        }
+
+        // ==========================================
+        // HR DASHBOARD LOGIC
+        // ==========================================
+        let hrActiveData = [];
+        let hrResignedData = [];
+
+        function renderHRDashboard() {
+            if (!window.HR_DATA) {
+                console.warn("Chưa có dữ liệu window.HR_DATA");
+                document.getElementById('hr-table-container').innerHTML = '<div style="padding: 2rem; text-align: center; color: var(--text-muted);">Chưa có dữ liệu nhân sự. Vui lòng chạy file CapNhatNhanSu.bat</div>';
+                document.getElementById('hr-table-container').style.display = 'block';
+                return;
+            }
+
+            hrActiveData = window.HR_DATA.active || [];
+            hrResignedData = window.HR_DATA.resigned || [];
+
+            const deptSelect = document.getElementById('hr-filter-dept');
+            const shiftSelect = document.getElementById('hr-filter-shift');
+            
+            if (deptSelect.options.length <= 1) {
+                const depts = [...new Set([...hrActiveData, ...hrResignedData].map(e => e.dept))].filter(Boolean).sort();
+                const shifts = [...new Set([...hrActiveData, ...hrResignedData].map(e => e.shift))].filter(Boolean).sort();
+                depts.forEach(d => deptSelect.add(new Option(d, d)));
+                shifts.forEach(s => shiftSelect.add(new Option(s, s)));
+            }
+
+            const selDept = deptSelect.value;
+            const selShift = shiftSelect.value;
+
+            const allData = [...hrActiveData, ...hrResignedData].sort((a,b) => b.daysWorked - a.daysWorked);
+            const filteredData = allData.filter(e => {
+                const matchDept = selDept === 'all' || e.dept === selDept;
+                const matchShift = selShift === 'all' || e.shift === selShift;
+                return matchDept && matchShift;
+            });
+
+            const activeCount = filteredData.filter(e => e.status !== 'Đã nghỉ việc').length;
+            const resignedCount = filteredData.filter(e => e.status === 'Đã nghỉ việc').length;
+
+            // Update UI
+            document.getElementById('hr-stats').style.display = 'grid';
+            document.getElementById('hr-table-container').style.display = 'block';
+            document.getElementById('btn-hr-export').style.display = 'inline-flex';
+
+            document.getElementById('hr-total').innerText = filteredData.length;
+            document.getElementById('hr-active').innerText = activeCount;
+            document.getElementById('hr-resigned').innerText = resignedCount;
+
+            let html = '';
+            filteredData.forEach(e => {
+                const rowStyle = e.status === 'Đã nghỉ việc' ? 'opacity: 0.7; background: rgba(239, 68, 68, 0.05);' : '';
+                const badge = e.status === 'Đã nghỉ việc' ? '<span class="badge badge-danger">Đã nghỉ</span>' : '<span class="badge badge-success">Đang làm</span>';
+                html += `
+                    <tr style="${rowStyle}">
+                        <td style="font-weight:600;">${e.id}</td>
+                        <td>${e.name}</td>
+                        <td>${e.dept}</td>
+                        <td>${e.shift}</td>
+                        <td>${e.joinDateStr} ${e.status === 'Đã nghỉ việc' ? '<br><small style="color:var(--danger); font-weight:600;">Nghỉ: '+e.leaveDateStr+'</small>' : ''}</td>
+                        <td>${badge}</td>
+                        <td style="color: var(--primary); font-weight: 600;">${e.daysWorked} ngày <br><small style="color:var(--text-muted);">(${e.monthsWorked} tháng)</small></td>
+                    </tr>
+                `;
+            });
+            document.getElementById('hr-table-body').innerHTML = html;
+        }
+
+        function showResignedModal() {
+            if (!hrResignedData || hrResignedData.length === 0) {
+                alert("Hiện không có nhân sự nào đã nghỉ việc.");
+                return;
+            }
+            
+            let html = '';
+            const sorted = [...hrResignedData].sort((a,b) => b.daysWorked - a.daysWorked);
+            
+            sorted.forEach(e => {
+                const color = e.daysWorked >= 60 ? 'var(--danger)' : 'var(--warning)';
+                html += `
+                    <tr>
+                        <td style="font-weight:600;">${e.id}</td>
+                        <td style="font-weight:600;">${e.name}</td>
+                        <td>${e.dept} <br> <small style="color:var(--text-muted);">${e.shift}</small></td>
+                        <td>${e.joinDateStr}</td>
+                        <td style="color: var(--danger); font-weight:600;">${e.leaveDateStr}</td>
+                        <td style="font-style: italic; color: var(--text-muted); max-width: 200px; word-wrap: break-word;">${e.leaveReason || 'Không có ghi chú'}</td>
+                        <td style="color: ${color}; font-weight: 800; font-size: 1.1rem;">${e.daysWorked} ngày</td>
+                    </tr>
+                `;
+            });
+            
+            document.getElementById('hr-resigned-modal-body').innerHTML = html;
+            document.getElementById('hr-resigned-modal').classList.add('active');
+        }
+
+        function closeResignedModal() {
+            document.getElementById('hr-resigned-modal').classList.remove('active');
+        }
+
+        // Tự động render khi tải trang
+        setTimeout(() => {
+            renderHRDashboard();
+        }, 500);
+
+        function exportHRData() {
+            if (hrActiveData.length === 0 && hrResignedData.length === 0) {
+                alert("Không có dữ liệu để xuất!");
+                return;
+            }
+
+            const formatForExcel = (arr) => arr.map(e => ({
+                "Mã NV": e.id,
+                "Họ Tên": e.name,
+                "Phòng Ban": e.dept,
+                "Ca Làm Việc": e.shift,
+                "Ngày Vào Làm": e.joinDateStr,
+                "Ngày Nghỉ Việc": e.leaveDateStr,
+                "Trạng Thái": e.status,
+                "Số Ngày Làm Việc": e.daysWorked,
+                "Số Tháng Làm Việc": e.monthsWorked
+            }));
+
+            const wb = XLSX.utils.book_new();
+            
+            if (hrActiveData.length > 0) {
+                const wsActive = XLSX.utils.json_to_sheet(formatForExcel(hrActiveData));
+                XLSX.utils.book_append_sheet(wb, wsActive, "DS_Đang_Làm_Việc");
+            }
+            if (hrResignedData.length > 0) {
+                const wsResigned = XLSX.utils.json_to_sheet(formatForExcel(hrResignedData));
+                XLSX.utils.book_append_sheet(wb, wsResigned, "DS_Đã_Nghỉ_Việc");
+            }
+
+            XLSX.writeFile(wb, "Bao_Cao_Nhan_Su_Kho.xlsx");
         }
 
     </script>
@@ -2837,6 +3037,36 @@
             <div class="modal-footer">
                 <button class="btn-secondary" onclick="closeLeaveModal()" style="padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Hủy</button>
                 <button class="btn-primary" onclick="saveLeaveData()" style="padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-floppy-disk"></i> Lưu Xin Về</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Nghỉ Việc HR -->
+    <div id="hr-resigned-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-user-slash"></i> Danh Sách Nhân Sự Đã Nghỉ Việc</h2>
+                <button class="btn-close" onclick="closeResignedModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="padding: 1rem 1.5rem;">
+                <div class="table-scroll-wrapper">
+                    <table class="data-table" style="min-width: 700px;">
+                        <thead>
+                            <tr>
+                                <th>Mã NV</th>
+                                <th>Họ Tên</th>
+                                <th>Phòng Ban</th>
+                                <th>Ngày Vào</th>
+                                <th>Ngày Nghỉ</th>
+                                <th>Lý Do Nghỉ</th>
+                                <th>Thâm Niên</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hr-resigned-modal-body">
+                            <!-- JS gen rows -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
