@@ -2715,7 +2715,7 @@
 
         function formatNumber(val) {
             if (val === null || val === undefined || val === '') return '';
-            if (!isNaN(val)) return Number(val).toLocaleString('en-US');
+            if (!isNaN(val)) return Math.round(Number(val)).toLocaleString('en-US');
             return val;
         }
 
