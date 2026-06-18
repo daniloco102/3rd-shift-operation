@@ -910,9 +910,18 @@
     <script>
         // ==========================================
         // CẤU HÌNH FIREBASE 
-        // (Đã tắt theo yêu cầu, hệ thống sẽ tự dùng Local Storage)
+        // (Đã mở lại kết nối Cloud theo yêu cầu)
         // ==========================================
-        const firebaseConfig = {};
+        const firebaseConfig = {
+            apiKey: "AIzaSyBxESuSWcx0FiaSfra2voSQSdCkSk9GgG8",
+            authDomain: "check-luong-daily.firebaseapp.com",
+            databaseURL: "https://check-luong-daily-default-rtdb.firebaseio.com",
+            projectId: "check-luong-daily",
+            storageBucket: "check-luong-daily.firebasestorage.app",
+            messagingSenderId: "31422532387",
+            appId: "1:31422532387:web:05badc76c15aa1cf4f9a96",
+            measurementId: "G-2XHR0WXQ2Q"
+        };
 
         let db = null;
         const syncStatusEl = document.getElementById('sync-status');
