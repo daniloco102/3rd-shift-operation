@@ -2881,8 +2881,8 @@
                                         <div style="font-size: 1.75rem; color: var(--danger); font-weight: 800;">${formatNumber(Math.round(avgBottom))} ₫</div>
                                     </div>
                                 </div>
-
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
                                     <!-- Top 20% -->
                                     <div>
                                         <h4 style="color: var(--warning); margin-bottom: 0.75rem; font-size: 1.05rem;"><i class="fa-solid fa-trophy"></i> Bảng Thành Tích (Top ${count20} NV có lương cao nhất)</h4>
