@@ -580,7 +580,7 @@
                     </div>
                     <div class="card-body">
                         <form id="ops-form">
-                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="form-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
                                 <div>
                                     <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:0.3rem;">Tên Tuần (VD: Tuần 24)</label>
                                     <input type="text" id="ops-week-name" required placeholder="Tuần 24" style="width:100%; padding:0.6rem; border:1px solid var(--border-color); border-radius:var(--radius-md);">
@@ -592,7 +592,8 @@
                             </div>
 
                             <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--primary);">1. Nhân sự</h3>
-                            <table class="supplier-input-table" style="margin-bottom: 1.5rem;">
+                            <div class="table-scroll-wrapper">
+                                <table class="supplier-input-table" style="margin-bottom: 1.5rem; min-width: 600px;">
                                 <thead><tr><th>Chỉ số</th><th>Inout Ca 3</th><th>Inout Ca 5</th><th>Sort Ca 3</th></tr></thead>
                                 <tbody>
                                     <tr style="background: rgba(0,0,0,0.02);">
@@ -633,6 +634,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            </div>
                             <script>
                                 function calcHrTotal() {
                                     const deps = ['inout3', 'inout5', 'sort3'];
@@ -661,7 +663,8 @@
                             </div>
 
                             <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--primary);">4. Chỉ số Tuần (So sánh Target)</h3>
-                            <table class="supplier-input-table" style="margin-bottom: 1.5rem;">
+                            <div class="table-scroll-wrapper">
+                                <table class="supplier-input-table" style="margin-bottom: 1.5rem; min-width: 600px;">
                                 <thead>
                                     <tr>
                                         <th>Chỉ số</th>
@@ -702,6 +705,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            </div>
 
                             <button type="submit" class="btn-primary w-full" style="margin-top: 1rem;">
                                 <i class="fa-solid fa-floppy-disk"></i> Lưu Dữ Liệu Vận Hành
@@ -712,7 +716,7 @@
 
                 <!-- Khu vực Biểu đồ & Báo cáo -->
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <div class="card-body" style="padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <div class="card-body" style="padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
                         <label style="font-weight: 600; font-size: 1.1rem; color: var(--primary);"><i class="fa-solid fa-calendar-week"></i> Xem Báo Cáo Tuần:</label>
                         <select id="ops-dashboard-week" style="min-width: 250px; font-weight: 700; font-size: 1.1rem; background: var(--bg-main); border: 2px solid var(--primary); color: var(--primary); cursor: pointer;" onchange="renderOpsDashboard()">
                             <option value="">-- Chưa có dữ liệu --</option>
@@ -829,8 +833,16 @@
                         <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
                             Vui lòng click đúp vào file <strong>CapNhatLuong.bat</strong> ở bên ngoài để máy tính tự động lấy dữ liệu. Sau đó ấn nút Đồng Bộ bên dưới để tải bảng lương vào hệ thống phân tích.
                         </p>
-                        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem;">
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
                             <button class="btn-primary" onclick="syncSalaryFromFirebase()" id="btn-sync-salary"><i class="fa-solid fa-rotate"></i> Đồng Bộ Dữ Liệu Lương Mới Nhất</button>
+                            
+                            <!-- Widget Đổi PIN -->
+                            <div style="background: rgba(0,0,0,0.02); padding: 0.5rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-left: auto;">
+                                <label style="font-size:0.85rem; font-weight:600; color: var(--primary);"><i class="fa-solid fa-key"></i> Đổi Mã PIN NV:</label>
+                                <input type="text" id="admin-pin-id" placeholder="Nhập Mã NV" style="width: 120px; padding: 0.5rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.9rem;">
+                                <input type="text" id="admin-pin-new" placeholder="Nhập PIN Mới" style="width: 120px; padding: 0.5rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.9rem;">
+                                <button type="button" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="updateEmpPin()"><i class="fa-solid fa-floppy-disk"></i> Cập nhật</button>
+                            </div>
                         </div>
 
                         <!-- Layout Phân Tích Tổng Quan -->
@@ -2779,6 +2791,28 @@
         // ==========================================
 
         window.parsedSalaryData = [];
+
+        function updateEmpPin() {
+            if (!db) return alert("Chưa kết nối Cloud Firebase!");
+            const empId = document.getElementById('admin-pin-id').value.trim();
+            const newPin = document.getElementById('admin-pin-new').value.trim();
+            if (!empId || !newPin) return alert("Vui lòng nhập Mã NV và PIN mới!");
+            
+            if (!window.SALARY_DATA || !window.SALARY_DATA[empId]) {
+                if(!confirm(`Mã NV ${empId} hiện tại không có trong bảng lương tháng này. Bạn có chắc chắn muốn ép tạo mới/đổi PIN trên Cloud không?`)) return;
+            }
+
+            db.ref('salaryData/' + empId).update({ pin: newPin }).then(() => {
+                alert(`✅ Đã cập nhật thành công mã PIN mới (${newPin}) cho NV: ${empId}`);
+                document.getElementById('admin-pin-id').value = '';
+                document.getElementById('admin-pin-new').value = '';
+                if (window.SALARY_DATA && window.SALARY_DATA[empId]) {
+                    window.SALARY_DATA[empId].pin = newPin;
+                }
+            }).catch(e => {
+                alert("Lỗi khi cập nhật PIN: " + e.message);
+            });
+        }
 
         function syncSalaryFromFirebase() {
             const btn = document.getElementById('btn-sync-salary');
