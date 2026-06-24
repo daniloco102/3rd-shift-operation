@@ -913,12 +913,21 @@
                             <div class="table-scroll-wrapper" id="hr-table-container" style="display: none; max-height: 500px; overflow-y: auto; margin-top: 1.5rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem;">
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
                                     <h3 style="color: var(--primary); margin: 0;"><i class="fa-solid fa-list-check"></i> Danh Sách Chi Tiết</h3>
-                                    <div style="display: flex; gap: 0.5rem;">
-                                        <select id="hr-filter-dept" onchange="renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem;">
+                                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                        <select id="hr-filter-dept" onchange="renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem; background: var(--bg-card); color: var(--text-main);">
                                             <option value="all">Tất cả phòng ban</option>
                                         </select>
-                                        <select id="hr-filter-shift" onchange="renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem;">
+                                        <select id="hr-filter-shift" onchange="renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem; background: var(--bg-card); color: var(--text-main);">
                                             <option value="all">Tất cả các ca</option>
+                                        </select>
+                                        <select id="hr-filter-criteria" onchange="document.getElementById('hr-filter-week').style.display = (this.value==='new_this_week' || this.value==='resigned_this_week') ? 'inline-block' : 'none'; renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--primary); font-weight: 600; font-size: 0.85rem; background: rgba(139, 92, 246, 0.1); color: var(--text-main);">
+                                            <option value="all">Tất cả tiêu chí</option>
+                                            <option value="new_this_week">Tuyển mới</option>
+                                            <option value="resigned_this_week">Nghỉ việc</option>
+                                            <option value="under_60_days">Làm việc ≤ 60 ngày</option>
+                                        </select>
+                                        <select id="hr-filter-week" onchange="renderHRDashboard()" style="display:none; padding: 0.4rem; border-radius: 6px; border: 1px solid var(--accent); font-weight: 600; font-size: 0.85rem; background: rgba(14, 165, 233, 0.1); color: var(--text-main);">
+                                            <option value="all">Mọi thời điểm</option>
                                         </select>
                                     </div>
                                 </div>
@@ -2958,16 +2967,60 @@
                 const shifts = [...new Set([...hrActiveData, ...hrResignedData].map(e => e.shift))].filter(Boolean).sort();
                 depts.forEach(d => deptSelect.add(new Option(d, d)));
                 shifts.forEach(s => shiftSelect.add(new Option(s, s)));
+
+                const weekSelect = document.getElementById('hr-filter-week');
+                const now = new Date();
+                const startOfYear = new Date(now.getFullYear(), 0, 1);
+                const pastDays = (now - startOfYear) / 86400000;
+                const currentW = Math.ceil((pastDays + startOfYear.getDay() + 1) / 7);
+                for (let i = 0; i < 15; i++) {
+                    const w = currentW - i;
+                    if (w > 0) {
+                        weekSelect.add(new Option(i === 0 ? `Tuần ${w} (Hiện tại)` : `Tuần ${w}`, w));
+                    }
+                }
             }
 
             const selDept = deptSelect.value;
             const selShift = shiftSelect.value;
+            const selCriteria = document.getElementById('hr-filter-criteria').value;
+            const selWeek = document.getElementById('hr-filter-week').value;
+
+            const parseDate = (dStr) => {
+                if (!dStr) return 0;
+                const parts = dStr.split('/');
+                if(parts.length === 3) return new Date(parts[2], parts[1]-1, parts[0]).getTime();
+                return 0;
+            };
+
+            const getWeekNumber = (timestamp) => {
+                if (!timestamp) return 0;
+                const d = new Date(timestamp);
+                const start = new Date(d.getFullYear(), 0, 1);
+                return Math.ceil(((d - start) / 86400000 + start.getDay() + 1) / 7);
+            };
 
             const allData = [...hrActiveData, ...hrResignedData].sort((a,b) => b.daysWorked - a.daysWorked);
             const filteredData = allData.filter(e => {
                 const matchDept = selDept === 'all' || e.dept === selDept;
                 const matchShift = selShift === 'all' || e.shift === selShift;
-                return matchDept && matchShift;
+                
+                let matchCriteria = true;
+                if (selCriteria === 'new_this_week') {
+                    const ts = parseDate(e.joinDateStr);
+                    const w = getWeekNumber(ts);
+                    const isCurrentYear = new Date(ts).getFullYear() === new Date().getFullYear();
+                    matchCriteria = selWeek === 'all' ? true : (w === parseInt(selWeek) && isCurrentYear);
+                } else if (selCriteria === 'resigned_this_week') {
+                    const ts = parseDate(e.leaveDateStr);
+                    const w = getWeekNumber(ts);
+                    const isCurrentYear = new Date(ts).getFullYear() === new Date().getFullYear();
+                    matchCriteria = e.status === 'Đã nghỉ việc' && (selWeek === 'all' ? true : (w === parseInt(selWeek) && isCurrentYear));
+                } else if (selCriteria === 'under_60_days') {
+                    matchCriteria = (e.daysWorked <= 60);
+                }
+
+                return matchDept && matchShift && matchCriteria;
             });
 
             const activeCount = filteredData.filter(e => e.status !== 'Đã nghỉ việc').length;

@@ -6,7 +6,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 7754719.243364089,
+    "salary": 9132382.195593258,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -68,6 +68,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 458542.19368452404
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 235140.59722916663
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 621495.05325
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 521027.30175
       }
     ]
   },
@@ -77,7 +89,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 7229874.991142957,
+    "salary": 9787679.188142959,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -139,6 +151,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 1032236.5907500001
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 1096391.6602500002
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 907301.3452499999
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 554111.1915
       }
     ]
   },
@@ -148,7 +172,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7830779.655164002,
+    "salary": 9415350.118005209,
     "pin": "080099005435",
     "dailyDetails": [
       {
@@ -210,6 +234,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 672847.8978827308
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 465324.11781130946
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 488298.52885608975
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 630947.8161738093
       }
     ]
   },
@@ -219,7 +255,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8585366.302023746,
+    "salary": 10301261.836124934,
     "pin": "079097040634",
     "dailyDetails": [
       {
@@ -293,6 +329,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 449293.18254166667
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 527372.1650071429
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 620642.8924273809
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 567880.4766666667
       }
     ]
   },
@@ -302,7 +350,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 11278791.816113139,
+    "salary": 12419608.996613137,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -376,6 +424,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 189673.27283333332
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 163609.596
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 605352.7655
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 371854.819
       }
     ]
   },
@@ -385,7 +445,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9617916.086062223,
+    "salary": 10996595.791234786,
     "pin": "080089016745",
     "dailyDetails": [
       {
@@ -459,6 +519,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 840664.1601341715
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 501984.38136236253
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 520240.8474224688
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 356454.4763877288
       }
     ]
   },
@@ -468,7 +540,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10138466.794416664,
+    "salary": 11609826.642416667,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -542,6 +614,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 246973.08825
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 279551.8
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 429913.5655
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 761894.4824999999
       }
     ]
   },
@@ -551,7 +635,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10044373.072366076,
+    "salary": 13054672.959866066,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -625,6 +709,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 398380.27472916665
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 1075690.1997500001
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 1182004.436
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 752605.2517499998
       }
     ]
   },
@@ -634,7 +730,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9419646.5404956,
+    "salary": 10825537.106472097,
     "pin": "089305017225",
     "dailyDetails": [
       {
@@ -708,6 +804,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 107214.01254191608
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 511983.644739542
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 405936.6874995912
       }
     ]
   },
@@ -717,7 +825,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8405735.748387164,
+    "salary": 8875366.407077638,
     "pin": "089304011918",
     "dailyDetails": [
       {
@@ -791,6 +899,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 460023.090993268
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 392028.0043571429
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 77602.65433333332
       }
     ]
   },
@@ -800,7 +916,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 7994528.6788921645,
+    "salary": 8756141.14285465,
     "pin": "079098020264",
     "dailyDetails": [
       {
@@ -870,6 +986,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 570071.3735416668
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 383113.6068634116
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 378498.8570990775
       }
     ]
   },
@@ -879,7 +1003,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9861946.579807175,
+    "salary": 11027725.587280484,
     "pin": "094067001596",
     "dailyDetails": [
       {
@@ -953,6 +1077,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 365246.8771915168
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 183420.5886744833
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 540805.9995637607
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 441552.4192350649
       }
     ]
   },
@@ -962,7 +1098,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9275189.00563927,
+    "salary": 10442379.533178335,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -1032,6 +1168,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 474875.00833333336
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 646919.783013423
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 375265.72744230775
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 145005.0170833333
       }
     ]
   },
@@ -1041,7 +1189,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7904033.04215856,
+    "salary": 9343891.46907248,
     "pin": "080082011024",
     "dailyDetails": [
       {
@@ -1115,6 +1263,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 320895.270625
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 486705.06653367664
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 486989.77906944446
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 466163.5813107983
       }
     ]
   },
@@ -1124,7 +1284,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9761870.451136032,
+    "salary": 11075385.807679735,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -1190,6 +1350,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 378796.6128367074
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 350730.7360383772
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 533096.4801923077
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 429688.1403130252
       }
     ]
   },
@@ -1199,7 +1371,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8353778.224453967,
+    "salary": 9732333.699975032,
     "pin": "080096011264",
     "dailyDetails": [
       {
@@ -1273,6 +1445,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 167919.72983333335
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 533679.3923286893
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 471857.05325137917
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 373019.0299410045
       }
     ]
   },
@@ -1282,7 +1466,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9908886.272364523,
+    "salary": 10822862.870147862,
     "pin": "080078003015",
     "dailyDetails": [
       {
@@ -1356,6 +1540,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 531846.6197741446
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 508107.32510315714
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 293882.3729115271
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 111986.89976865372
       }
     ]
   },
@@ -1365,7 +1561,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9954572.920858305,
+    "salary": 11116801.28623086,
     "pin": "067204000367",
     "dailyDetails": [
       {
@@ -1439,6 +1635,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 427290.858228416
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 426262.1107070624
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 480664.5361954267
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 255301.71847007575
       }
     ]
   },
@@ -1448,7 +1656,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 11279661.432436416,
+    "salary": 13154402.348875962,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -1522,6 +1730,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 663527.0495063502
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 581153.9139342105
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 597858.5801923077
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 695728.4223130252
       }
     ]
   },
@@ -1531,7 +1751,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 11164883.81240977,
+    "salary": 12526527.127993107,
     "pin": "080099004754",
     "dailyDetails": [
       {
@@ -1601,6 +1821,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 345001.54500000004
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 326433.55500000005
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 451709.83512500004
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 583499.9254583332
       }
     ]
   },
@@ -1610,7 +1842,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9889142.113442542,
+    "salary": 10590620.561881728,
     "pin": "080095002881",
     "dailyDetails": [
       {
@@ -1684,6 +1916,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 351752.5323471572
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 375931.2996921814
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 275190.93708034744
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 50356.21166666667
       }
     ]
   },
@@ -1693,7 +1937,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9897108.080186045,
+    "salary": 11440474.969210822,
     "pin": "080194011004",
     "dailyDetails": [
       {
@@ -1767,6 +2011,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 669800.2870524891
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 528679.3908404763
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 529991.4244343055
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 484696.0737500001
       }
     ]
   },
@@ -1776,7 +2032,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9986769.489981899,
+    "salary": 10912547.442821264,
     "pin": "089083032107",
     "dailyDetails": [
       {
@@ -1850,6 +2106,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 713675.2262731425
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 470983.45184047625
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 366670.1943322222
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 88124.30666666667
       }
     ]
   },
@@ -1859,7 +2127,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8515942.8180675,
+    "salary": 9961192.699528519,
     "pin": "082195005011",
     "dailyDetails": [
       {
@@ -1929,6 +2197,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 503874.59802702715
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 449712.5864630148
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 670675.901884792
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 324861.3931132269
       }
     ]
   },
@@ -1969,7 +2249,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8174710.533591955,
+    "salary": 8865710.049312884,
     "pin": "087190015790",
     "dailyDetails": [
       {
@@ -2043,6 +2323,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 348110.1831239428
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 371181.0488588481
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 269462.2551954268
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 50356.21166666667
       }
     ]
   },
@@ -2052,7 +2344,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7757737.57440434,
+    "salary": 9253379.071252422,
     "pin": "086087008309",
     "dailyDetails": [
       {
@@ -2122,6 +2414,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 106303.2303922444
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 568012.8654497598
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 448410.2344720395
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 479218.3969262876
       }
     ]
   },
@@ -2131,7 +2435,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10801862.921891069,
+    "salary": 12496335.166753208,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -2205,6 +2509,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 429187.55525000003
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 697091.0603292126
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 675036.266373839
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 322344.9181590909
       }
     ]
   },
@@ -2214,7 +2530,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8126387.917083253,
+    "salary": 9118124.863725904,
     "pin": "089195003259",
     "dailyDetails": [
       {
@@ -2284,6 +2600,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 396114.58637499996
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 111800.13399999999
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 431739.611233631
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 448197.20140902523
       }
     ]
   },
@@ -2293,7 +2621,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 8401191.609831216,
+    "salary": 9380682.944081215,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -2359,6 +2687,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 275013.72975
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 282288.481
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 380758.94275
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 316443.91050000006
       }
     ]
   },
@@ -2368,7 +2708,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8812248.589775795,
+    "salary": 9641013.31071582,
     "pin": "079085003228",
     "dailyDetails": [
       {
@@ -2438,6 +2778,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 419026.0966719587
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 237498.3439005148
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 290238.6585
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 301027.7185395203
       }
     ]
   },
@@ -2447,7 +2799,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8841937.084743777,
+    "salary": 9702166.637851369,
     "pin": "079095016116",
     "dailyDetails": [
       {
@@ -2521,6 +2873,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 430734.22935952374
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 118452.3724753554
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 417927.2862572329
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 323849.89437500003
       }
     ]
   },
@@ -2530,7 +2894,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8906807.664505342,
+    "salary": 10336458.445158206,
     "pin": "083082021780",
     "dailyDetails": [
       {
@@ -2604,6 +2968,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 113294.25340277774
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 467984.8945712301
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 506562.4545208334
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 455103.43156079814
       }
     ]
   },
@@ -2613,7 +2989,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8588942.787380269,
+    "salary": 9995369.162917402,
     "pin": "089179004715",
     "dailyDetails": [
       {
@@ -2687,6 +3063,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 475575.1621373326
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 494351.28933056426
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 477992.03484554566
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 434083.05136102013
       }
     ]
   },
@@ -2696,7 +3084,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8297878.214689269,
+    "salary": 9779178.76122881,
     "pin": "080183018565",
     "dailyDetails": [
       {
@@ -2766,6 +3154,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 113294.25340277774
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 462489.85034092714
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 550030.8027815477
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 468779.8934170663
       }
     ]
   },
@@ -2775,7 +3175,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9170305.03161183,
+    "salary": 9282291.931380484,
     "pin": "072073000034",
     "dailyDetails": [
       {
@@ -2849,6 +3249,10 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 205112.2874284747
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 111986.89976865372
       }
     ]
   },
@@ -2858,7 +3262,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7915878.559772602,
+    "salary": 9394605.133149635,
     "pin": "064198007346",
     "dailyDetails": [
       {
@@ -2916,6 +3320,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 558032.839536017
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 431319.9474687049
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 486787.529625
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 560619.0962833335
       }
     ]
   },
@@ -2925,7 +3341,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7268185.589546673,
+    "salary": 9067102.032814529,
     "pin": "064302013767",
     "dailyDetails": [
       {
@@ -2983,6 +3399,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 419724.77346458833
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 367358.5066428573
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 773535.522
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 658022.4146250001
       }
     ]
   },
@@ -2992,7 +3420,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8036174.631612372,
+    "salary": 9530610.592985244,
     "pin": "079090031842",
     "dailyDetails": [
       {
@@ -3062,6 +3490,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 97817.47798611107
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 463513.78934092715
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 562142.278614881
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 468779.8934170663
       }
     ]
   },
@@ -3071,7 +3511,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9883450.213950818,
+    "salary": 11464637.193207512,
     "pin": "079306007634",
     "dailyDetails": [
       {
@@ -3145,6 +3585,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 553291.6873847012
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 568784.3294612453
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 540805.9995637607
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 471596.650231685
       }
     ]
   },
@@ -3154,7 +3606,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8387136.236862302,
+    "salary": 9367221.46143849,
     "pin": "079200006080",
     "dailyDetails": [
       {
@@ -3228,6 +3680,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 536522.0368511905
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 323449.8578928572
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 89649.99354166667
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 566985.3731416668
       }
     ]
   },
@@ -3237,7 +3701,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7962272.109088063,
+    "salary": 9318947.38573164,
     "pin": "080090015998",
     "dailyDetails": [
       {
@@ -3311,6 +3775,101 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 107214.01254191608
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 501984.3813623626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 420607.8439201945
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 434083.05136102013
+      }
+    ]
+  },
+  "3120078": {
+    "id": "3120078",
+    "name": "Lư Hồng Sang",
+    "title": "CTV phân hàng cồng kềnh",
+    "dept": "In/ Out Staff",
+    "shift": "Ca 3",
+    "salary": 6440000,
+    "pin": "123456",
+    "dailyDetails": [
+      {
+        "date": "01/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "02/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "03/06/2026",
+        "amount": 340000
+      },
+      {
+        "date": "05/06/2026",
+        "amount": 340000
+      },
+      {
+        "date": "07/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "08/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "10/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "11/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "12/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "13/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "14/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "15/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "16/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "17/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "18/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 300000
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 300000
       }
     ]
   },
@@ -3320,7 +3879,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8948495.586978069,
+    "salary": 10096638.242069481,
     "pin": "089173000218",
     "dailyDetails": [
       {
@@ -3394,6 +3953,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 482386.2391017249
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 183420.5886744833
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 517700.4407939194
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 447021.6256230122
       }
     ]
   },
@@ -3403,7 +3974,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10788011.694296066,
+    "salary": 12720706.230979636,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -3477,6 +4048,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 474913.0264438502
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 690859.3048292124
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 636149.0636238389
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 605686.1682305194
       }
     ]
   },
@@ -3486,7 +4069,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9086728.810855612,
+    "salary": 10320488.574223675,
     "pin": "093180015383",
     "dailyDetails": [
       {
@@ -3560,6 +4143,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 502741.8037082531
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 462856.6564971176
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 282932.8731335803
       }
     ]
   },
@@ -3569,7 +4164,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7847930.993329584,
+    "salary": 9140293.290790064,
     "pin": "089076009157",
     "dailyDetails": [
       {
@@ -3643,6 +4238,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 443456.9445824955
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 511983.6447395419
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 292408.4189835803
       }
     ]
   },
@@ -3652,7 +4259,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9610125.5080298,
+    "salary": 11014135.172097577,
     "pin": "095090002141",
     "dailyDetails": [
       {
@@ -3726,6 +4333,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.8897334329
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 481913.2398184482
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 434126.1905119634
       }
     ]
   },
@@ -3735,7 +4354,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8201200.036321147,
+    "salary": 9541057.79671687,
     "pin": "080205012029",
     "dailyDetails": [
       {
@@ -3805,6 +4424,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 402598.71929166664
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 430019.2479166667
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 424674.8873290578
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 485163.6251499999
       }
     ]
   },
@@ -3814,7 +4445,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 11094246.171210414,
+    "salary": 12103303.555460412,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -3888,6 +4519,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 170727.9184375
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 165586.10275000002
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 484963.66025
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 358507.62124999997
       }
     ]
   },
@@ -3897,7 +4540,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8601110.643616151,
+    "salary": 9637266.39893891,
     "pin": "080198008003",
     "dailyDetails": [
       {
@@ -3971,6 +4614,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 349798.4225304998
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 183420.5886744833
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 517700.4407939194
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 335034.72585435846
       }
     ]
   },
@@ -3980,7 +4635,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8148839.886342703,
+    "salary": 9064613.600239052,
     "pin": "080204006539",
     "dailyDetails": [
       {
@@ -4046,6 +4701,18 @@ window.SALARY_DATA = {
       {
         "date": "17/06/2026",
         "amount": 207860.6628231421
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 41412.655
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 469968.2253164586
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 404392.8335798933
       }
     ]
   },
@@ -4055,7 +4722,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 7688678.772292061,
+    "salary": 8529626.288111735,
     "pin": "080202006892",
     "dailyDetails": [
       {
@@ -4121,6 +4788,18 @@ window.SALARY_DATA = {
       {
         "date": "17/06/2026",
         "amount": 246763.42721493513
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 41412.655
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 444977.6352370935
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 354557.22558257554
       }
     ]
   },
@@ -4130,7 +4809,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 10837354.07245628,
+    "salary": 12573435.297007155,
     "pin": "080203013477",
     "dailyDetails": [
       {
@@ -4204,6 +4883,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 613479.6436868021
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 586543.0564694508
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 574622.7001964351
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 574915.4678849941
       }
     ]
   },
@@ -4213,7 +4904,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8451111.36173494,
+    "salary": 9686780.55467973,
     "pin": "033076014607",
     "dailyDetails": [
       {
@@ -4283,6 +4974,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 422643.7176422444
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 427484.74899999995
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 484334.54956979584
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 323849.89437500003
       }
     ]
   },
@@ -4292,7 +4995,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 10270477.584788237,
+    "salary": 10713627.623697434,
     "pin": "040187089876",
     "dailyDetails": [
       {
@@ -4366,6 +5069,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 496440.47785346897
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 340655.4044366103
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 102494.63447258371
       }
     ]
   },
@@ -4375,7 +5086,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 6681773.343003338,
+    "salary": 7214844.480698149,
     "pin": "087082019551",
     "dailyDetails": [
       {
@@ -4441,6 +5152,14 @@ window.SALARY_DATA = {
       {
         "date": "17/06/2026",
         "amount": 355307.4838486413
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 127666.25015485194
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 405404.887539958
       }
     ]
   },
@@ -4450,7 +5169,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 10050915.4671397,
+    "salary": 11683090.547788292,
     "pin": "096080009905",
     "dailyDetails": [
       {
@@ -4524,6 +5243,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 625164.8963014216
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 654855.6356845238
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 489414.10295692465
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 487905.3420071428
       }
     ]
   },
@@ -4533,7 +5264,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 10009619.657000383,
+    "salary": 11516690.839754852,
     "pin": "094181002299",
     "dailyDetails": [
       {
@@ -4607,6 +5338,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 526736.8536686671
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 534871.3114158303
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 532173.2603505868
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 440026.6109880524
       }
     ]
   },
@@ -4616,7 +5359,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 7561889.069467976,
+    "salary": 8892976.837698855,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -4678,6 +5421,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 356926.0340625
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 392691.1231842105
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 544487.8938161468
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 393908.75123051944
       }
     ]
   },
@@ -4687,7 +5442,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7662359.880939534,
+    "salary": 8943496.131693859,
     "pin": "079205036974",
     "dailyDetails": [
       {
@@ -4757,6 +5512,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 114936.52145833333
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 367982.75497619057
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 367999.5314715079
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 545153.9643066247
       }
     ]
   },
@@ -4766,7 +5533,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9746141.107533108,
+    "salary": 9897802.413099775,
     "pin": "080204008083",
     "dailyDetails": [
       {
@@ -4840,6 +5607,10 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 501603.93737500004
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 151661.3055666667
       }
     ]
   },
@@ -4849,7 +5620,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 292821.0878645833,
+    "salary": 8820000,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -4867,6 +5638,10 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 2566.5
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 649
       }
     ]
   },
@@ -4876,7 +5651,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8376015.954222057,
+    "salary": 9360769.015575146,
     "pin": "079081024925",
     "dailyDetails": [
       {
@@ -4950,6 +5725,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 710832.4055711955
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 474229.1164345239
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 127666.25015485195
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 382857.6947637161
       }
     ]
   },
@@ -4959,7 +5746,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8466362.719600685,
+    "salary": 9365175.025755357,
     "pin": "080302007959",
     "dailyDetails": [
       {
@@ -5029,6 +5816,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.8897334329
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 410842.0724173063
       }
     ]
   },
@@ -5038,7 +5833,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 10810166.367436124,
+    "salary": 12457675.464186803,
     "pin": "080189007718",
     "dailyDetails": [
       {
@@ -5112,6 +5907,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 656830.1795692253
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 429383.53609623015
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 518661.37803052645
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 699464.1826239289
       }
     ]
   },
@@ -5121,7 +5928,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8700062.753265152,
+    "salary": 10109445.408383738,
     "pin": "080076014550",
     "dailyDetails": [
       {
@@ -5195,6 +6002,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 522690.86750815343
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 395174.441
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 362548.2540769231
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 651659.9600416668
       }
     ]
   },
@@ -5204,7 +6023,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8969192.45080783,
+    "salary": 10495714.733389113,
     "pin": "080205011937",
     "dailyDetails": [
       {
@@ -5274,6 +6093,18 @@ window.SALARY_DATA = {
       {
         "date": "17/06/2026",
         "amount": 442678.4942978871
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 592132.9036360694
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 493005.8634697006
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 441383.5154755104
       }
     ]
   },
@@ -5283,7 +6114,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 5423290.614870337,
+    "salary": 6832691.903095941,
     "pin": "036301001345",
     "dailyDetails": [
       {
@@ -5329,6 +6160,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.8897334329
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 501984.38136236253
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 469734.8321626188
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 437682.07470062154
       }
     ]
   },
@@ -5338,7 +6181,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9442887.746730652,
+    "salary": 10390004.416321896,
     "pin": "095098004551",
     "dailyDetails": [
       {
@@ -5412,6 +6255,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 493223.401578671
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 501984.3813623626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 350325.7846906937
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 94806.50353818493
       }
     ]
   },
@@ -5421,7 +6276,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9155285.612604823,
+    "salary": 10550000.996386176,
     "pin": "092099007303",
     "dailyDetails": [
       {
@@ -5495,6 +6350,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 189710.2290588182
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 502163.95583204774
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 517805.684171367
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 374745.74377794005
       }
     ]
   },
@@ -5634,7 +6501,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9161165.342544839,
+    "salary": 10429030.058495026,
     "pin": "083180000524",
     "dailyDetails": [
       {
@@ -5708,6 +6575,93 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 247388.1395940591
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 215240.43629824568
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 498955.7761221748
+      }
+    ]
+  },
+  "3138133": {
+    "id": "3138133",
+    "name": "Phan Thanh Hạnh",
+    "title": "CTV phân hàng",
+    "dept": "Sorting Staff",
+    "shift": "Ca 3",
+    "salary": 6720000,
+    "pin": "123456",
+    "dailyDetails": [
+      {
+        "date": "01/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "03/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "04/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "05/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "06/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "07/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "08/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "09/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "11/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "12/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "13/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "14/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "15/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "16/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "18/06/2026",
+        "amount": 420000
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 420000
       }
     ]
   },
@@ -5717,7 +6671,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9138358.797831658,
+    "salary": 9576053.021550292,
     "pin": "080306008414",
     "dailyDetails": [
       {
@@ -5791,6 +6745,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 526304.4935688856
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 369541.19459534046
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 68153.0291232913
       }
     ]
   },
@@ -5800,7 +6762,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8850418.450018225,
+    "salary": 10550238.028648365,
     "pin": "080086001775",
     "dailyDetails": [
       {
@@ -5874,6 +6836,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 547399.0089289682
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 552441.603580808
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 613691.8702381854
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 533686.1048111481
       }
     ]
   },
@@ -5883,7 +6857,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 6915860.482503971,
+    "salary": 8215932.200753973,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -5941,6 +6915,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 447179.6325
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 411925.044
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 444604.44625
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 443542.228
       }
     ]
   },
@@ -5950,7 +6936,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8832205.903260212,
+    "salary": 9651523.514085988,
     "pin": "070183005077",
     "dailyDetails": [
       {
@@ -6024,6 +7010,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 370050.6067969922
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 525763.3709248626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 225401.21077761985
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 68153.0291232913
       }
     ]
   },
@@ -6033,7 +7031,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 13796174.378693782,
+    "salary": 15655168.112496829,
     "pin": "089089004939",
     "dailyDetails": [
       {
@@ -6107,6 +7105,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 633816.1592671517
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 529770.4966455848
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 746759.4420592005
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 582463.7950982631
       }
     ]
   },
@@ -6131,7 +7141,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8487900.859035855,
+    "salary": 9844443.997674938,
     "pin": "048080001365",
     "dailyDetails": [
       {
@@ -6201,6 +7211,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 393472.10050000006
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 527111.3255010945
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 522390.6638042617
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 307041.1493337329
       }
     ]
   },
@@ -6210,7 +7232,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7880140.421616495,
+    "salary": 9250562.924106129,
     "pin": "092188005895",
     "dailyDetails": [
       {
@@ -6280,6 +7302,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.88973343285
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 501984.3813623626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 511983.644739542
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 356454.4763877288
       }
     ]
   },
@@ -6289,7 +7323,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8897190.980345156,
+    "salary": 10060908.889255665,
     "pin": "083080003340",
     "dailyDetails": [
       {
@@ -6363,6 +7397,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 211627.212125906
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 166450.5702126752
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297686
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 443598.83516806294
       }
     ]
   },
@@ -6372,7 +7418,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8975162.87388767,
+    "salary": 10340257.09537681,
     "pin": "075203018633",
     "dailyDetails": [
       {
@@ -6442,6 +7488,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 463164.94797777775
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 554538.648268308
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 573216.8566458335
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 237338.71657500003
       }
     ]
   },
@@ -6451,7 +7509,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 12109183.111037286,
+    "salary": 13333660.743395146,
     "pin": "079203041555",
     "dailyDetails": [
       {
@@ -6525,6 +7583,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 610705.6727909611
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 499819.139933175
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 494750.2901126595
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 229908.20231202908
       }
     ]
   },
@@ -6534,7 +7604,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8233217.530621351,
+    "salary": 9507054.067552088,
     "pin": "080088007877",
     "dailyDetails": [
       {
@@ -6600,6 +7670,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 400331.52077181236
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 443145.6958633241
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 511983.6447395419
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 318707.1963278703
       }
     ]
   },
@@ -6609,7 +7691,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9498605.06989612,
+    "salary": 10853155.119555831,
     "pin": "080194010857",
     "dailyDetails": [
       {
@@ -6683,6 +7765,105 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.8897334329
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 525763.3709248626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 462856.6564971177
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 365930.0222377288
+      }
+    ]
+  },
+  "3141461": {
+    "id": "3141461",
+    "name": "Trần Bảo Khang",
+    "title": "CTV phân hàng",
+    "dept": "Sorting Staff",
+    "shift": "Ca 3",
+    "salary": 8740000,
+    "pin": "123456",
+    "dailyDetails": [
+      {
+        "date": "01/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "02/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "03/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "04/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "05/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "06/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "08/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "09/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "10/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "11/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "13/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "14/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "15/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "16/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "17/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "18/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 460000
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 460000
       }
     ]
   },
@@ -6692,7 +7873,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8830192.765064964,
+    "salary": 9832550.526552122,
     "pin": "079197005956",
     "dailyDetails": [
       {
@@ -6766,6 +7947,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 365246.8771915168
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 118429.03914202205
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 477992.03484554566
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 405936.6874995912
       }
     ]
   },
@@ -6775,7 +7968,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8620686.95843589,
+    "salary": 9530551.435541991,
     "pin": "079189030735",
     "dailyDetails": [
       {
@@ -6849,6 +8042,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 166599.7425826277
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 590901.4538681749
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 318963.0232379256
       }
     ]
   },
@@ -6858,7 +8059,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9310611.466261422,
+    "salary": 9680152.660856765,
     "pin": "087082016288",
     "dailyDetails": [
       {
@@ -6932,6 +8133,10 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 616895.2061868024
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 369541.19459534046
       }
     ]
   },
@@ -6941,7 +8146,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7983830.427463945,
+    "salary": 9413678.218537563,
     "pin": "079085016434",
     "dailyDetails": [
       {
@@ -7015,6 +8220,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 503328.59891691606
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 403754.75956289686
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 491081.02966071427
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 535012.0018500001
       }
     ]
   },
@@ -7024,7 +8241,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 11371581.317925332,
+    "salary": 13092749.71979568,
     "pin": "038082019761",
     "dailyDetails": [
       {
@@ -7094,6 +8311,18 @@ window.SALARY_DATA = {
       {
         "date": "17/06/2026",
         "amount": 537424.1142738095
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 165128.3180116279
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 753847.3906131136
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 802192.6932456098
       }
     ]
   },
@@ -7103,7 +8332,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7120449.063902388,
+    "salary": 8525931.988904448,
     "pin": "058306000239",
     "dailyDetails": [
       {
@@ -7165,6 +8394,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 494049.8279209127
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 525763.3709248626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 480109.2752991871
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 399610.2787780134
       }
     ]
   },
@@ -7205,7 +8446,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 11627058.688646222,
+    "salary": 13529184.666415706,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -7279,6 +8520,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 628941.4683179262
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 644145.6235055794
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 693938.4338055762
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 564041.9204583331
       }
     ]
   },
@@ -7288,7 +8541,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8001333.426847808,
+    "salary": 8903460.56362212,
     "pin": "091305011861",
     "dailyDetails": [
       {
@@ -7362,6 +8615,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 386009.3890367549
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 118429.03914202205
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 417768.07539456524
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 365930.0222377288
       }
     ]
   },
@@ -7371,7 +8636,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9823647.170367898,
+    "salary": 11723976.071367899,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -7445,6 +8710,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 627198.37375
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 627173.9789999999
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 646550.324
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 626604.598
       }
     ]
   },
@@ -7454,7 +8731,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9867913.129193805,
+    "salary": 10861299.896732995,
     "pin": "083092010110",
     "dailyDetails": [
       {
@@ -7528,6 +8805,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 593784.7197106117
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 580339.1545485217
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 293824.11766
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 119223.49533066947
       }
     ]
   },
@@ -7537,7 +8826,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8408351.182532385,
+    "salary": 9755154.032715209,
     "pin": "080074015145",
     "dailyDetails": [
       {
@@ -7611,6 +8900,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 415867.36542717903
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 443397.1008215856
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 447040.0990112286
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 456365.6503500001
       }
     ]
   },
@@ -7620,7 +8921,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 10321117.676907787,
+    "salary": 11157085.688327001,
     "pin": "080200004223",
     "dailyDetails": [
       {
@@ -7694,6 +8995,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 609633.4611482758
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 476323.4176666666
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 198737.41755599377
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 160907.1761965529
       }
     ]
   },
@@ -7703,7 +9016,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8574758.995268364,
+    "salary": 9923969.394256357,
     "pin": "080189018400",
     "dailyDetails": [
       {
@@ -7777,6 +9090,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 392320.4095640204
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 552961.7832698239
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 461257.0290147528
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 334991.5867034151
       }
     ]
   },
@@ -7786,7 +9111,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9321634.73008036,
+    "salary": 10038680.215872023,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -7860,6 +9185,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 299260.03849999997
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 257415.81524999999
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 283767.132375
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 175862.53816666667
       }
     ]
   },
@@ -7869,7 +9206,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8358543.877383576,
+    "salary": 9764346.142269578,
     "pin": "080207005888",
     "dailyDetails": [
       {
@@ -7943,6 +9280,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 107214.01254191608
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 501984.38136236253
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 469734.8321626188
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 434083.05136102013
       }
     ]
   },
@@ -7952,7 +9301,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10451423.065378707,
+    "salary": 12537879.790524531,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -8026,6 +9375,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 67654.82774702381
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 392449.0810625
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 1141734.85675
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 552272.7873333333
       }
     ]
   },
@@ -8035,7 +9396,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9658391.247483475,
+    "salary": 10171141.748941815,
     "pin": "091099002467",
     "dailyDetails": [
       {
@@ -8109,6 +9470,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 459576.38353333325
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 402871.1369583333
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 109879.36449999997
       }
     ]
   },
@@ -8118,7 +9487,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9655034.080169348,
+    "salary": 11023962.48435292,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -8192,6 +9561,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 607742.49925
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 546841.3843292126
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 415568.80337383907
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 406518.21648051945
       }
     ]
   },
@@ -8201,7 +9582,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9093799.521404352,
+    "salary": 10402091.276167115,
     "pin": "082075018718",
     "dailyDetails": [
       {
@@ -8275,6 +9656,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 349798.4225304998
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 215240.43629824568
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 597737.7048328866
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 495313.61363163014
       }
     ]
   },
@@ -8284,7 +9677,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8546195.438754678,
+    "salary": 9757168.561519263,
     "pin": "080302006869",
     "dailyDetails": [
       {
@@ -8358,6 +9751,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 189710.2290588182
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 354849.1265312955
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 497225.09175060183
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 358898.9044826879
       }
     ]
   },
@@ -8367,7 +9772,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7161704.992010563,
+    "salary": 8615088.730822708,
     "pin": "079303034024",
     "dailyDetails": [
       {
@@ -8429,6 +9834,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 502741.803708253
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 540805.9995637606
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 424607.50551102014
       }
     ]
   },
@@ -8438,7 +9855,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 4049269.4619868044,
+    "salary": 5443470.954038937,
     "pin": "038182033914",
     "dailyDetails": [
       {
@@ -8472,6 +9889,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 502741.803708253
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 525763.3709248626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 511983.644739542
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 356454.4763877288
       }
     ]
   },
@@ -8481,7 +9910,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9922508.908365203,
+    "salary": 11533255.58795825,
     "pin": "048304007832",
     "dailyDetails": [
       {
@@ -8555,6 +9984,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 443964.290373212
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 552961.7832698239
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 586585.306700212
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 471199.5896230121
       }
     ]
   },
@@ -8564,7 +10005,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9433300.832008433,
+    "salary": 10631139.209155576,
     "pin": "087188017939",
     "dailyDetails": [
       {
@@ -8638,6 +10079,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 445056.9241635665
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 215240.43629824568
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 428929.4373191299
       }
     ]
   },
@@ -8647,7 +10100,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10466406.06218011,
+    "salary": 10660851.43093011,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -8721,6 +10174,10 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 551125.13
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 194445.36875000002
       }
     ]
   },
@@ -8730,7 +10187,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9754323.054579739,
+    "salary": 11233816.915277436,
     "pin": "084088005873",
     "dailyDetails": [
       {
@@ -8804,6 +10261,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 624212.5943266012
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 518838.68351785716
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 475959.1034298412
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 484696.0737500001
       }
     ]
   },
@@ -8813,7 +10282,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9652213.682050986,
+    "salary": 10604913.83238878,
     "pin": "083098006118",
     "dailyDetails": [
       {
@@ -8887,6 +10356,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 536296.7570416667
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 495429.5285
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 339476.4083377977
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 117794.2135
       }
     ]
   },
@@ -8896,7 +10377,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8452793.604243094,
+    "salary": 9921884.918900194,
     "pin": "064193013077",
     "dailyDetails": [
       {
@@ -8970,6 +10451,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 107214.01254191608
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 616167.9564039573
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 443728.97265485197
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 409194.3855982912
       }
     ]
   },
@@ -8979,7 +10472,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9249828.422993086,
+    "salary": 10840664.479400199,
     "pin": "079304026521",
     "dailyDetails": [
       {
@@ -9049,6 +10542,18 @@ window.SALARY_DATA = {
       {
         "date": "17/06/2026",
         "amount": 365020.9071593336
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 570002.5002250376
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 549063.2022466875
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 471770.35393538873
       }
     ]
   },
@@ -9058,7 +10563,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9236322.204293525,
+    "salary": 10106757.135827852,
     "pin": "080086009020",
     "dailyDetails": [
       {
@@ -9132,6 +10637,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 524132.9136267682
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 414727.4747795636
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 370710.39133809524
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 84997.06541666666
       }
     ]
   },
@@ -9141,7 +10658,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9884576.200801356,
+    "salary": 11425814.415520752,
     "pin": "080180017262",
     "dailyDetails": [
       {
@@ -9215,6 +10732,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 539508.6515893181
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 516463.96154735604
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 471105.74964227626
       }
     ]
   },
@@ -9224,7 +10753,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 11240454.920152443,
+    "salary": 12821796.60537837,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -9298,6 +10827,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 480708.61974999995
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 646919.783013423
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 547300.1438161469
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 387121.75839635846
       }
     ]
   },
@@ -9307,7 +10848,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 12253635.71245535,
+    "salary": 13184719.168372015,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -9381,6 +10922,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 368201.28475
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 82527.50720833334
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 303886.45120833337
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 544669.4975
       }
     ]
   },
@@ -9390,7 +10943,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9223450.564749725,
+    "salary": 10997010.522630034,
     "pin": "072197009330",
     "dailyDetails": [
       {
@@ -9464,6 +11017,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 189710.2290588182
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 653854.2251488619
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 629399.5397769425
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 490306.19295450125
       }
     ]
   },
@@ -9473,7 +11038,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9162632.972762803,
+    "salary": 10752331.219172608,
     "pin": "079090018280",
     "dailyDetails": [
       {
@@ -9547,6 +11112,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 40980.4475
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 586319.4053045635
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553548.5076944444
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 449830.3334107982
       }
     ]
   },
@@ -9556,7 +11133,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7627679.11342856,
+    "salary": 9264206.718242051,
     "pin": "089099008319",
     "dailyDetails": [
       {
@@ -9630,6 +11207,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 530369.1523750001
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 473917.26155
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 541915.099363492
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 620695.2438999999
       }
     ]
   },
@@ -9639,7 +11228,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 8724692.841782117,
+    "salary": 9627510.860888323,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -9705,6 +11294,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 723155.3969999999
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 331157.17614254385
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 394887.19831730775
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 176773.64464635853
       }
     ]
   },
@@ -9714,7 +11315,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9548866.663601309,
+    "salary": 10577357.646657359,
     "pin": "087204017916",
     "dailyDetails": [
       {
@@ -9788,6 +11389,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 517052.392036017
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 109066.7665
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 438771.44928224204
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 480652.7672738095
       }
     ]
   },
@@ -9797,7 +11410,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9285971.887004467,
+    "salary": 10753105.798985347,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -9871,6 +11484,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 426317.05289583345
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 528171.9879342105
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 544487.8938161468
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 394474.0302305195
       }
     ]
   },
@@ -9880,7 +11505,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8629588.012005735,
+    "salary": 9467215.452145565,
     "pin": "086099004613",
     "dailyDetails": [
       {
@@ -9954,6 +11579,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 541499.227375
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 389504.5674687049
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 351962.9378377977
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 96159.93483333333
       }
     ]
   },
@@ -9963,7 +11600,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 10944330.074738849,
+    "salary": 12541662.447743813,
     "pin": "084206004488",
     "dailyDetails": [
       {
@@ -10037,6 +11674,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 709941.6923062627
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 655296.4630078167
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 580965.8730096056
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 361070.03698754514
       }
     ]
   },
@@ -10046,7 +11695,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8436666.015658157,
+    "salary": 9866497.790425315,
     "pin": "079202027640",
     "dailyDetails": [
       {
@@ -10112,6 +11761,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 516398.16511312756
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 552961.7832698238
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 517700.44079391944
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 359169.5507034151
       }
     ]
   },
@@ -10121,7 +11782,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9386410.965686832,
+    "salary": 10304966.82239104,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -10195,6 +11856,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 642481.977
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 502148.1942458792
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 269214.1179583333
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 147193.5445
       }
     ]
   },
@@ -10204,7 +11877,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9469175.848426756,
+    "salary": 11056625.258602647,
     "pin": "052092014741",
     "dailyDetails": [
       {
@@ -10278,6 +11951,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 380491.8686305555
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 608355.5580058082
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 543123.8531634919
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 435969.99900659657
       }
     ]
   },
@@ -10287,7 +11972,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9335801.131825086,
+    "salary": 10178840.148174107,
     "pin": "095192009855",
     "dailyDetails": [
       {
@@ -10361,6 +12046,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 538653.3597876523
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 524075.99311109364
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 318963.0232379256
       }
     ]
   },
@@ -10370,7 +12063,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7961547.91813015,
+    "salary": 9646137.06063763,
     "pin": "079083006406",
     "dailyDetails": [
       {
@@ -10444,6 +12137,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 157292.2172083333
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 568747.4405279763
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 616031.9149626372
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 499809.7870168674
       }
     ]
   },
@@ -10453,7 +12158,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9248501.486914976,
+    "salary": 10856137.65827786,
     "pin": "080181018324",
     "dailyDetails": [
       {
@@ -10527,6 +12232,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 544096.3120638942
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 555895.8407348561
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 498071.8270982598
       }
     ]
   },
@@ -10536,7 +12253,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9833017.440632848,
+    "salary": 10819450.371960588,
     "pin": "079307036702",
     "dailyDetails": [
       {
@@ -10610,6 +12327,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 531846.6197741446
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 340655.4044366103
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 198737.41755599377
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 447040.1093351333
       }
     ]
   },
@@ -10619,7 +12348,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9875077.344988946,
+    "salary": 11039742.947144244,
     "pin": "079207047951",
     "dailyDetails": [
       {
@@ -10693,6 +12422,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 481757.28823918215
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 415314.41585416667
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 232149.76622266046
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 517201.4200784716
       }
     ]
   },
@@ -10702,7 +12443,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 9170462.579446333,
+    "salary": 10761183.420491502,
     "pin": "096090008439",
     "dailyDetails": [
       {
@@ -10776,6 +12517,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 519914.6299176772
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 561922.0196224748
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 540893.4794155556
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 487905.3420071428
       }
     ]
   },
@@ -10785,7 +12538,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 11965443.686727196,
+    "salary": 12342954.295602193,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -10859,6 +12612,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 1019487.4745
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 320668.6124166667
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 56841.99645833333
       }
     ]
   },
@@ -10868,7 +12629,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10989786.960422345,
+    "salary": 12534905.910089733,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -10942,6 +12703,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 568988.7617563503
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 566140.6497500001
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 576673.348123839
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 402304.95179354463
       }
     ]
   },
@@ -10951,7 +12724,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 11672832.942111554,
+    "salary": 12888166.789573722,
     "pin": "079202032068",
     "dailyDetails": [
       {
@@ -11021,6 +12794,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 496002.392332869
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 430694.1776501418
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 554731.4675
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 229908.20231202908
       }
     ]
   },
@@ -11030,7 +12815,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8601501.670730526,
+    "salary": 9646830.221986772,
     "pin": "080205008415",
     "dailyDetails": [
       {
@@ -11104,6 +12889,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 426869.02118452376
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 344536.65505158744
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 176522.0514262061
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 524269.84477846033
       }
     ]
   },
@@ -11113,7 +12910,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9445156.620185148,
+    "salary": 10086399.36934146,
     "pin": "094184013323",
     "dailyDetails": [
       {
@@ -11187,6 +12984,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 278564.23545054055
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 183420.5886744833
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 318963.0232379256
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 138859.1372439013
       }
     ]
   },
@@ -11196,7 +13005,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9162955.703262022,
+    "salary": 10015781.750418944,
     "pin": "093073001566",
     "dailyDetails": [
       {
@@ -11270,6 +13079,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 268763.8906511323
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 215240.43629824568
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 498726.47361477534
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 138859.1372439013
       }
     ]
   },
@@ -11279,7 +13100,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9207316.240302661,
+    "salary": 10221034.241519345,
     "pin": "080077008814",
     "dailyDetails": [
       {
@@ -11353,6 +13174,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 442807.56031092646
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 555895.8407348561
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 318963.0232379256
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 138859.13724390132
       }
     ]
   },
@@ -11362,7 +13195,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8995094.185733905,
+    "salary": 9933765.372403547,
     "pin": "087090013444",
     "dailyDetails": [
       {
@@ -11436,6 +13269,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 372076.48122557777
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 327733.63875
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 68942.15631944446
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 541995.3916002004
       }
     ]
   },
@@ -11445,7 +13290,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8352665.437423723,
+    "salary": 9431174.968030864,
     "pin": "049202000762",
     "dailyDetails": [
       {
@@ -11519,6 +13364,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 396114.58637499996
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 107432.3102439516
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 589409.8168215186
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 381667.40354166675
       }
     ]
   },
@@ -11528,7 +13385,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 11496582.519248076,
+    "salary": 13233046.290122965,
     "pin": "087201007276",
     "dailyDetails": [
       {
@@ -11602,6 +13459,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 470049.67050370236
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 586467.3140424645
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 697095.7193829389
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 452900.73744948616
       }
     ]
   },
@@ -11611,7 +13480,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 7586402.150169356,
+    "salary": 9047309.587623926,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -11677,6 +13546,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 540167.1430063503
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 613576.9978050897
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 547300.1438161469
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 300030.2958333333
       }
     ]
   },
@@ -11686,7 +13567,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9062213.237014348,
+    "salary": 10360155.736761592,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -11760,6 +13641,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 538295.2217563502
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 528711.2286842106
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 495593.87775000004
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 273637.3933130251
       }
     ]
   },
@@ -11769,7 +13662,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9662077.439953499,
+    "salary": 10637390.182153096,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -11843,6 +13736,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 525241.4267563501
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 246998.00416666665
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 206636.498873839
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 521678.2391590909
       }
     ]
   },
@@ -11852,7 +13757,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10014271.54733297,
+    "salary": 11251717.624395998,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -11926,6 +13831,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 542255.1340063503
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 515004.34949999995
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 396900.045
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 325541.6825630252
       }
     ]
   },
@@ -11935,7 +13852,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 6011738.432963921,
+    "salary": 7304802.228861464,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -11993,6 +13910,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 601547.6212500001
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 433362.4128508772
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 544487.8938161468
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 315213.48923051945
       }
     ]
   },
@@ -12002,7 +13931,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8610317.787907377,
+    "salary": 9988654.19896286,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -12076,6 +14005,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 673166.0221766708
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 517064.45456811786
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 373301.72275
       }
     ]
   },
@@ -12085,7 +14026,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 10734255.663439648,
+    "salary": 12839632.468444983,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -12155,6 +14096,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 459949.29208333336
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 832249.8286923077
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 825876.2602499999
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 447250.7160630252
       }
     ]
   },
@@ -12164,7 +14117,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 1264064.559670092,
+    "salary": 1895192.3076923075,
     "pin": "087198000456",
     "dailyDetails": [
       {
@@ -12206,7 +14159,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8389399.183815002,
+    "salary": 9934151.915815849,
     "pin": "082302000178",
     "dailyDetails": [
       {
@@ -12280,6 +14233,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 542991.4601491445
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 555895.8407348561
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 517700.4407939194
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 471156.45047206874
       }
     ]
   },
@@ -12289,7 +14254,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7336218.051362604,
+    "salary": 8750582.953429041,
     "pin": "083067013313",
     "dailyDetails": [
       {
@@ -12347,6 +14312,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 502741.8037082531
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 469734.8321626188
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 456659.83616645844
       }
     ]
   },
@@ -12356,7 +14333,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9368968.564182086,
+    "salary": 10370347.99451808,
     "pin": "079206017617",
     "dailyDetails": [
       {
@@ -12430,6 +14407,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 443964.2903732121
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 340655.4044366103
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 198737.41755599377
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 461986.6083433951
       }
     ]
   },
@@ -12439,7 +14428,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 8623675.370947406,
+    "salary": 9157094.865938056,
     "pin": "096301006712",
     "dailyDetails": [
       {
@@ -12513,6 +14502,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 502741.8037082531
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 314022.7221970353
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 219396.77279361186
       }
     ]
   },
@@ -12522,7 +14519,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9341634.777596531,
+    "salary": 9849886.83424534,
     "pin": "046208003300",
     "dailyDetails": [
       {
@@ -12596,6 +14593,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 552331.4146518101
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 265486.6118407926
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 139844.6578106813
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 102920.78699733612
       }
     ]
   },
@@ -12605,7 +14614,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8410891.61179483,
+    "salary": 9959835.698058704,
     "pin": "038171003736",
     "dailyDetails": [
       {
@@ -12679,6 +14688,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 539508.6515893181
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 524075.99311109364
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 471199.5896230121
       }
     ]
   },
@@ -12688,7 +14709,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9991871.975422429,
+    "salary": 11540816.061686303,
     "pin": "038175005743",
     "dailyDetails": [
       {
@@ -12762,6 +14783,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 539508.6515893181
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 524075.99311109364
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 471199.5896230121
       }
     ]
   },
@@ -12834,7 +14867,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7850068.645948293,
+    "salary": 8967024.037896354,
     "pin": "093308002378",
     "dailyDetails": [
       {
@@ -12908,6 +14941,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 406040.7124298615
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 525763.3709248626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 410842.0724173063
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 180349.94860589848
       }
     ]
   },
@@ -12917,7 +14962,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 9974561.40345223,
+    "salary": 10973469.978952229,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -12991,6 +15036,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 465450.34924999997
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 371254.621
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 396157.15575000003
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 231496.79875000002
       }
     ]
   },
@@ -13000,7 +15057,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 7777128.285098919,
+    "salary": 8224773.942348919,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -13070,6 +15127,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 236053.76625000002
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 215036.11524999997
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 232609.54200000002
       }
     ]
   },
@@ -13079,7 +15144,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9470128.726463422,
+    "salary": 10491919.289376859,
     "pin": "038081017653",
     "dailyDetails": [
       {
@@ -13153,6 +15218,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 428996.0205978178
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 572727.1229847842
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 337076.54016000003
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 111986.89976865372
       }
     ]
   },
@@ -13162,7 +15239,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9977857.442839662,
+    "salary": 10473443.150607308,
     "pin": "089206018841",
     "dailyDetails": [
       {
@@ -13236,6 +15313,14 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 661433.6037122656
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 459617.6450317982
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 35968.06273584905
       }
     ]
   },
@@ -13272,7 +15357,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 5304767.445795991,
+    "salary": 6133413.461538463,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -13338,6 +15423,18 @@ window.SALARY_DATA = {
       {
         "date": "17/06/2026",
         "amount": 224240.08512499998
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 118429.03914202208
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 455648.0716666667
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 142870.56916495797
       }
     ]
   },
@@ -13347,7 +15444,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 6728812.2618343225,
+    "salary": 7398321.418973919,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -13413,6 +15510,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 539508.6515893181
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 199169.1235834052
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 234705.48029184283
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 235634.5532643455
       }
     ]
   },
@@ -13485,7 +15594,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8859495.646744441,
+    "salary": 10060877.899992988,
     "pin": "080085006801",
     "dailyDetails": [
       {
@@ -13559,6 +15668,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 277212.88112391776
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 215240.43629824568
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 517700.44079391944
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 468441.37615638244
       }
     ]
   },
@@ -13568,7 +15689,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 6510995.539942466,
+    "salary": 7842602.836903431,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -13634,6 +15755,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 107214.01254191608
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 409510.8727116384
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 434126.1905119635
       }
     ]
   },
@@ -13662,7 +15795,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 9259813.744397828,
+    "salary": 10688573.11393483,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -13736,6 +15869,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 516398.16511312756
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 552961.7832698239
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 540805.9995637607
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 334991.5867034151
       }
     ]
   },
@@ -13745,7 +15890,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 8591810.594529925,
+    "salary": 10420311.35159165,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -13819,6 +15964,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 476865.4967492944
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 560400.850129618
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 870874.9066222879
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 397225.0003098179
       }
     ]
   },
@@ -13847,7 +16004,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 8103270.257162465,
+    "salary": 9560336.538461544,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -13921,6 +16078,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 571154.6280063502
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 727672.4791842104
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 337851.3949423077
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 87091.46256302518
       }
     ]
   },
@@ -13930,7 +16099,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 7766932.961056881,
+    "salary": 8711873.42882065,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14000,6 +16169,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.8897334329
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 342068.5820077669
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 114901.65201864038
       }
     ]
   },
@@ -14009,7 +16190,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 6870668.049614174,
+    "salary": 8282804.2783960225,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14075,6 +16256,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 155240.64064265968
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 604390.658566842
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 661649.8374090911
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 146095.73280591704
       }
     ]
   },
@@ -14122,7 +16315,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 6602112.656045607,
+    "salary": 7985284.597483128,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14176,6 +16369,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 454812.6502920945
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 487970.23373736255
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 511983.644739542
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 383218.0629606168
       }
     ]
   },
@@ -14185,7 +16390,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 6262314.710807283,
+    "salary": 6631855.905402624,
     "pin": "000000140217",
     "dailyDetails": [
       {
@@ -14231,6 +16436,10 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 539508.6515893181
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 369541.19459534046
       }
     ]
   },
@@ -14240,7 +16449,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 5097800.872040833,
+    "salary": 6490377.753288069,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14286,6 +16495,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 487475.1016938502
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 568532.2494342105
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 495648.16075000004
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 328396.4710630252
       }
     ]
   },
@@ -14295,7 +16516,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân hàng",
     "dept": "Sorting Staff",
     "shift": "Ca 3",
-    "salary": 2510457.267009861,
+    "salary": 3362019.230769231,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14325,6 +16546,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 264361.1130658741
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 130328.34864583332
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 146920.36769736843
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 259054.4944090909
       }
     ]
   },
@@ -14334,7 +16567,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 2281800.113576526,
+    "salary": 3123666.301717752,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14364,6 +16597,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 133271.89082660136
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 156222.17632952204
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 247918.79796013795
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 437725.2138515649
       }
     ]
   },
@@ -14373,7 +16618,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 2431113.080442288,
+    "salary": 4038749.2518051737,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14395,6 +16640,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 539508.6515893181
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 555895.8407348561
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 498071.8270982597
       }
     ]
   },
@@ -14404,7 +16661,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
-    "salary": 1733877.3367355885,
+    "salary": 3350104.1439432343,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14426,6 +16683,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 531149.6368675918
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 586207.5264057169
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 553668.5035297684
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 476350.77727215824
       }
     ]
   },
@@ -14435,7 +16704,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 610531.413125916,
+    "salary": 1814172.456892784,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14445,6 +16714,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.8897334329
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 525763.3709248626
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 290619.6111692972
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 387258.0616727086
       }
     ]
   },
@@ -14454,7 +16735,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 664945.2258580424,
+    "salary": 1620212.467773597,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14464,6 +16745,18 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 526874.7024655592
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 238839.8513910605
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 438037.2174625
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 278390.17306199437
       }
     ]
   },
@@ -14473,7 +16766,7 @@ window.SALARY_DATA = {
     "title": "Nhân viên phân kiện",
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
-    "salary": 610531.413125916,
+    "salary": 1731791.3197800238,
     "pin": "123456",
     "dailyDetails": [
       {
@@ -14483,6 +16776,71 @@ window.SALARY_DATA = {
       {
         "date": "18/06/2026",
         "amount": 472460.8897334329
+      },
+      {
+        "date": "19/06/2026",
+        "amount": 412019.4723593342
+      },
+      {
+        "date": "20/06/2026",
+        "amount": 321982.3726220653
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 387258.0616727086
+      }
+    ]
+  },
+  "3175471": {
+    "id": "3175471",
+    "name": "Phạm Thị Cẩm Thanh",
+    "title": "Nhân viên phân hàng",
+    "dept": "Sorting Staff",
+    "shift": "Ca 3",
+    "salary": 480288.46153846156,
+    "pin": "123456",
+    "dailyDetails": [
+      {
+        "date": "20/06/2026",
+        "amount": 68282.60225000001
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 79526.77725
+      }
+    ]
+  },
+  "3175473": {
+    "id": "3175473",
+    "name": "Phạm Văn Quang",
+    "title": "Nhân viên phân hàng",
+    "dept": "Sorting Staff",
+    "shift": "Ca 3",
+    "salary": 915144.2307692308,
+    "pin": "123456",
+    "dailyDetails": [
+      {
+        "date": "20/06/2026",
+        "amount": 206636.498873839
+      },
+      {
+        "date": "21/06/2026",
+        "amount": 402304.95179354463
+      }
+    ]
+  },
+  "3175574": {
+    "id": "3175574",
+    "name": "Trần Thanh Tuấn",
+    "title": "Nhân viên phân kiện",
+    "dept": "In/ Out Staff",
+    "shift": "Ca 3",
+    "salary": 68153.0291232913,
+    "pin": "123456",
+    "dailyDetails": [
+      {
+        "date": "21/06/2026",
+        "amount": 68153.0291232913
       }
     ]
   }
