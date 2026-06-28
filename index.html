@@ -2959,6 +2959,7 @@
         // ==========================================
         let hrActiveData = [];
         let hrResignedData = [];
+        let currentFilteredResigned = [];
 
         function renderHRDashboard() {
             if (!window.HR_DATA) {
@@ -2969,7 +2970,18 @@
             }
 
             hrActiveData = window.HR_DATA.active || [];
-            hrResignedData = window.HR_DATA.resigned || [];
+            const rawResigned = window.HR_DATA.resigned || [];
+            
+            // Chỉ lấy những người nghỉ việc trong NĂM NAY (tránh hiện người từ 2023, 2024, 2025)
+            const currentYear = new Date().getFullYear();
+            hrResignedData = rawResigned.filter(e => {
+                if (!e.leaveDateStr) return false;
+                const parts = e.leaveDateStr.split('/');
+                if (parts.length === 3) {
+                    return parseInt(parts[2]) === currentYear;
+                }
+                return false;
+            });
 
             const deptSelect = document.getElementById('hr-filter-dept');
             const shiftSelect = document.getElementById('hr-filter-shift');
@@ -3037,6 +3049,9 @@
 
             const activeCount = filteredData.filter(e => e.status !== 'Đã nghỉ việc').length;
             const resignedCount = filteredData.filter(e => e.status === 'Đã nghỉ việc').length;
+            
+            // Lưu lại danh sách nghỉ việc đã lọc để hiện lên Modal khi bấm vào
+            currentFilteredResigned = filteredData.filter(e => e.status === 'Đã nghỉ việc');
 
             // Update UI
             document.getElementById('hr-stats').style.display = 'grid';
@@ -3067,13 +3082,13 @@
         }
 
         function showResignedModal() {
-            if (!hrResignedData || hrResignedData.length === 0) {
-                alert("Hiện không có nhân sự nào đã nghỉ việc.");
+            if (!currentFilteredResigned || currentFilteredResigned.length === 0) {
+                alert("Hiện không có nhân sự nào đã nghỉ việc (theo bộ lọc hiện tại).");
                 return;
             }
             
             let html = '';
-            const sorted = [...hrResignedData].sort((a,b) => b.daysWorked - a.daysWorked);
+            const sorted = [...currentFilteredResigned].sort((a,b) => b.daysWorked - a.daysWorked);
             
             sorted.forEach(e => {
                 const color = e.daysWorked >= 60 ? 'var(--danger)' : 'var(--warning)';

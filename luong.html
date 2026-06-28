@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra Cứu Lương Cá Nhân - G-Talk</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <!-- SheetJS for Admin Excel Upload -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <style>
+        :root {
+            --bg-grad-1: #0f172a;
+            --bg-grad-2: #1e1b4b;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --accent: #0ea5e9;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Outfit', 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2));
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            padding: 1rem;
+        }
+
+        /* Abstract shapes background */
+        .shape-1 { position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%); z-index: -1; filter: blur(40px); }
+        .shape-2 { position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw; border-radius: 50%; background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%); z-index: -1; filter: blur(40px); }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            perspective: 1000px;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .header-icon {
+            width: 70px; height: 70px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: white;
+            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.2rem 1rem 1.2rem 3rem;
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        }
+
+        .btn-search {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-search:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -5px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-search:active { transform: translateY(0); }
+
+        /* Salary Slip Style */
+        #salary-result { display: none; animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px) rotateX(-10deg); }
+            to { opacity: 1; transform: translateY(0) rotateX(0); }
+        }
+
+        .slip-header {
+            text-align: center; border-bottom: 1px dashed rgba(255,255,255,0.2);
+            padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+        }
+
+        .slip-header h2 { font-size: 1.2rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;}
+        .slip-header h3 { font-size: 2rem; background: linear-gradient(to right, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        
+        .slip-row { display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: center;}
+        .slip-label { color: var(--text-muted); font-size: 0.95rem; }
+        .slip-value { color: white; font-weight: 600; font-size: 1.05rem; text-align: right; }
+        
+        .slip-total {
+            margin-top: 1.5rem; padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background: rgba(16, 185, 129, 0.05);
+            border-radius: 12px; padding: 1.5rem;
+        }
+        
+        .slip-total .slip-label { color: var(--success); text-transform: uppercase; font-weight: 700; font-size: 1rem;}
+        .slip-total .slip-value { color: var(--success); font-size: 2.2rem; font-weight: 800; text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);}
+
+        .back-btn {
+            background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white;
+            width: 100%; padding: 1rem; border-radius: 12px; margin-top: 1.5rem;
+            cursor: pointer; transition: all 0.3s; font-weight: 500;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.05); }
+        
+        .error-msg {
+            color: var(--danger); text-align: center; margin-top: 1rem; font-size: 0.9rem;
+            display: none; background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 8px;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        .theme-toggle:hover { background: rgba(255,255,255,0.2); transform: scale(1.1); }
+        
+        /* Light Theme Styles */
+        :root.light-theme {
+            --bg-grad-1: #f1f5f9;
+            --bg-grad-2: #e2e8f0;
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --card-border: rgba(0, 0, 0, 0.1);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+        }
+        :root.light-theme body { color: var(--text-main); }
+        :root.light-theme .theme-toggle { background: rgba(0,0,0,0.05); color: #1e293b; border-color: rgba(0,0,0,0.1); }
+        :root.light-theme .theme-toggle:hover { background: rgba(0,0,0,0.1); }
+        :root.light-theme .header h1 { background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        :root.light-theme .input-group input { background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.1); color: var(--text-main); }
+        :root.light-theme .input-group input:focus { background: #fff; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
+        :root.light-theme .slip-value { color: var(--text-main); }
+        :root.light-theme .back-btn { border-color: rgba(0,0,0,0.2); color: var(--text-main); }
+        :root.light-theme .back-btn:hover { background: rgba(0,0,0,0.05); }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .glass-card { padding: 1.5rem 1rem; border-radius: 20px; }
+            .header h1 { font-size: 1.5rem; }
+            .header-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+            .slip-total .slip-value { font-size: 1.8rem; }
+            .theme-toggle { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 1rem; }
+            #admin-view { max-width: 100vw; border-radius: 0; min-height: 100vh; padding: 1.5rem 1rem; }
+            #admin-view .header { margin-top: 3rem; }
+            .input-group input { padding: 1rem 1rem 1rem 2.8rem; font-size: 1rem; }
+            .btn-search { padding: 1rem; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện Sáng/Tối">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+    </button>
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+
+    <div class="container">
+        <!-- Search Form -->
+        <div id="search-view" class="glass-card">
+            <div class="header">
+                <div class="header-icon"><i class="fa-solid fa-wallet"></i></div>
+                <h1>Tra Cứu Lương Cá Nhân</h1>
+                <p>Hệ thống tự động đồng bộ - Bảo mật tuyệt đối</p>
+            </div>
+            
+            <form id="search-form" onsubmit="event.preventDefault(); searchSalary();">
+                <div class="input-group">
+                    <i class="fa-solid fa-id-badge"></i>
+                    <input type="text" id="emp-id" placeholder="Nhập Mã Nhân Viên của bạn..." required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="emp-pin" placeholder="Nhập Mã PIN của bạn..." required autocomplete="off">
+                </div>
+                <button type="submit" class="btn-search" id="btn-submit">
+                    <i class="fa-solid fa-magnifying-glass"></i> Tra Cứu Ngay
+                </button>
+                <div id="error-msg" class="error-msg"><i class="fa-solid fa-circle-exclamation"></i> Không tìm thấy dữ liệu cho Mã NV này!</div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#" onclick="showRegister()" style="color: var(--accent); text-decoration: none; font-size: 0.95rem; font-weight: 500;"><i class="fa-solid fa-user-plus"></i> Đăng ký tài khoản mới</a>
+                </div>
+                
+                <button type="button" class="btn-search" onclick="showLeaveForm()" style="margin-top: 1.5rem; background: linear-gradient(135deg, #f59e0b, #d97706); font-size: 1.2rem; padding: 1.2rem; border-radius: 16px;">
+                    <i class="fa-solid fa-calendar-minus"></i> Đăng Ký Lịch Off
+                </button>
+            </form>
+        </div>
+
+        <!-- Leave Registration View -->
+        <div id="leave-view" class="glass-card" style="display: none;">
+            <div class="header">
+                <div class="header-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i class="fa-solid fa-calendar-minus"></i></div>
+                <h1>Đăng Ký Lịch Off</h1>
+                <p>Nhập các ngày bạn muốn xin nghỉ</p>
+            </div>
+            
+            <form id="leave-form" onsubmit="event.preventDefault(); submitLeave();">
+                <div class="input-group">
+                    <i class="fa-solid fa-id-badge"></i>
+                    <input type="text" id="lv-emp-id" placeholder="Nhập Mã Nhân Viên..." required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="lv-emp-pin" placeholder="Mã PIN của bạn..." required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="flex: 1; text-align: left;">
+                            <label style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.5rem;">Nghỉ từ ngày:</label>
+                            <input type="date" id="lv-date-from" required>
+                        </div>
+                        <div style="flex: 1; text-align: left;">
+                            <label style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.5rem;">Đến ngày:</label>
+                            <input type="date" id="lv-date-to" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <input type="text" id="lv-reason" placeholder="Lý do xin Off (Tùy chọn)..." autocomplete="off">
+                </div>
+                <button type="submit" class="btn-search" id="btn-lv-submit" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    <i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu
+                </button>
+                <div id="lv-error-msg" class="error-msg"></div>
+                <div id="lv-success-msg" class="error-msg" style="color: var(--success); background: rgba(16,185,129,0.1);"></div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#" onclick="showLogin()" style="color: var(--text-muted); text-decoration: none; font-size: 0.95rem;"><i class="fa-solid fa-arrow-left"></i> Quay lại Đăng nhập</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register View -->
+        <div id="register-view" class="glass-card" style="display: none;">
+            <div class="header">
+                <div class="header-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <h1>Đăng Ký Tài Khoản</h1>
+                <p>Thiết lập mã PIN cá nhân (Đúng 12 số)</p>
+            </div>
+            
+            <form id="register-form" onsubmit="event.preventDefault(); registerPin();">
+                <div class="input-group">
+                    <i class="fa-solid fa-id-badge"></i>
+                    <input type="text" id="reg-emp-id" placeholder="Nhập Mã Nhân Viên..." required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-signature"></i>
+                    <input type="text" id="reg-emp-name" placeholder="Họ và Tên..." required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="reg-emp-pin" placeholder="Mã PIN (Đúng 12 chữ số)" required autocomplete="off">
+                </div>
+                <button type="submit" class="btn-search" id="btn-reg-submit" style="background: linear-gradient(135deg, #10b981, #059669);">
+                    <i class="fa-solid fa-check"></i> Tạo Mã PIN
+                </button>
+                <div id="reg-error-msg" class="error-msg"></div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#" onclick="showLogin()" style="color: var(--text-muted); text-decoration: none; font-size: 0.95rem;"><i class="fa-solid fa-arrow-left"></i> Quay lại Đăng nhập</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Admin View -->
+        <div id="admin-view" class="glass-card" style="display: none; max-width: 800px; width: 100%; margin: auto; padding: 2rem;">
+            <div class="header" style="margin-bottom: 1.5rem;">
+                <div class="header-icon" style="background: linear-gradient(135deg, #ef4444, #b91c1c);"><i class="fa-solid fa-crown"></i></div>
+                <h1>Quản Trị Hệ Thống Lương</h1>
+            </div>
+            
+            <!-- Admin Tabs Navigation -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; overflow-x: auto;">
+                <button id="btn-tab-acc" class="btn-search" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); width: auto; padding: 0.8rem 1.5rem;" onclick="switchAdminTab('acc')"><i class="fa-solid fa-users-gear"></i> Tài khoản & Lịch Off</button>
+                <button id="btn-tab-sal" class="btn-search" style="background: rgba(0,0,0,0.3); color: var(--text-muted); width: auto; padding: 0.8rem 1.5rem;" onclick="switchAdminTab('sal')"><i class="fa-solid fa-money-check-dollar"></i> Bảng Lương Tổng</button>
+            </div>
+
+            <!-- TAB: TÀI KHOẢN & LỊCH OFF -->
+            <div id="admin-tab-acc">
+                <div style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <h3 style="color: var(--success); margin: 0; font-size: 1.1rem; width: 100%;"><i class="fa-solid fa-key"></i> Đổi Mã PIN Nhân Viên</h3>
+                    <input type="text" id="admin-pin-id" placeholder="Mã NV" style="flex: 1; min-width: 150px; padding: 0.8rem; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+                    <input type="text" id="admin-pin-new" placeholder="PIN Mới" style="flex: 1; min-width: 150px; padding: 0.8rem; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+                    <button class="btn-search" onclick="updateEmpPin()" style="width: auto; background: linear-gradient(135deg, #10b981, #059669); padding: 0.8rem 2rem;">
+                        <i class="fa-solid fa-floppy-disk"></i> Cập nhật
+                    </button>
+                </div>
+
+            <div style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1rem; max-height: 400px; overflow-y: auto;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="color: var(--accent); margin: 0;"><i class="fa-solid fa-users"></i> Danh Sách Tài Khoản & PIN</h3>
+                    <button class="btn-search" onclick="exportRegisteredUsers()" style="width: auto; padding: 0.5rem 1rem; font-size: 0.9rem; background: linear-gradient(135deg, #0ea5e9, #2563eb);">
+                        <i class="fa-solid fa-file-excel"></i> Xuất Excel
+                    </button>
+                </div>
+                <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; min-width: 400px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                                <th style="padding: 0.5rem;">Mã NV</th>
+                                <th style="padding: 0.5rem;">Họ Tên</th>
+                                <th style="padding: 0.5rem;">Mã PIN</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-users-body">
+                            <!-- Render via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Admin Leaves Table -->
+            <div style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1rem; max-height: 400px; overflow-y: auto; margin-top: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="color: #f59e0b; margin: 0;"><i class="fa-solid fa-calendar-minus"></i> Danh Sách Đăng Ký Off</h3>
+                    <button class="btn-search" onclick="exportLeavesExcel()" style="width: auto; padding: 0.5rem 1rem; font-size: 0.9rem; background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <i class="fa-solid fa-file-excel"></i> Xuất Excel Lịch Off
+                    </button>
+                </div>
+                <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; min-width: 500px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                                <th style="padding: 0.5rem;">Thời gian gửi</th>
+                                <th style="padding: 0.5rem;">Mã NV</th>
+                                <th style="padding: 0.5rem;">Họ Tên</th>
+                                <th style="padding: 0.5rem;">Ngày Off</th>
+                                <th style="padding: 0.5rem;">Lý do</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-leaves-body">
+                            <!-- Render via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            </div> <!-- End Tab Acc -->
+
+            <!-- TAB: BẢNG LƯƠNG TỔNG -->
+            <div id="admin-tab-sal" style="display: none;">
+                <div style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1rem; max-height: 500px; overflow-y: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="color: var(--primary); margin: 0;"><i class="fa-solid fa-sack-dollar"></i> Bảng Lương Tổng Hợp</h3>
+                        <button class="btn-search" onclick="exportAdminSalary()" style="width: auto; padding: 0.5rem 1rem; font-size: 0.9rem; background: linear-gradient(135deg, #10b981, #059669);">
+                            <i class="fa-solid fa-file-excel"></i> Xuất Excel
+                        </button>
+                    </div>
+                    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; min-width: 700px;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                                    <th style="padding: 0.5rem;">Mã NV</th>
+                                    <th style="padding: 0.5rem;">Họ Tên</th>
+                                    <th style="padding: 0.5rem;">Phòng Ban</th>
+                                    <th style="padding: 0.5rem;">Ca</th>
+                                    <th style="padding: 0.5rem; text-align: right;">Chi Lương</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-salary-body">
+                                <!-- Render via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="back-btn" style="width: auto; padding: 0.8rem 2rem;" onclick="showLogin()"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất Admin</button>
+            </div>
+        </div>
+
+        <!-- Result Slip -->
+        <div id="salary-result" class="glass-card">
+            <div class="slip-header">
+                <h2>Phiếu Lương Kỳ Này</h2>
+                <h3 id="res-name">Nguyễn Văn A</h3>
+                <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #fbbf24; background: rgba(245, 158, 11, 0.1); display: inline-block; padding: 0.2rem 0.8rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                    <i class="fa-solid fa-clock-rotate-left"></i> Cập nhật lần cuối: <strong id="res-date">N/A</strong>
+                </div>
+            </div>
+            
+            <div class="slip-row">
+                <span class="slip-label">Mã Nhân Viên</span>
+                <span class="slip-value" id="res-id">---</span>
+            </div>
+            <div class="slip-row">
+                <span class="slip-label">Chức Danh</span>
+                <span class="slip-value" id="res-title">---</span>
+            </div>
+            <div class="slip-row">
+                <span class="slip-label">Phòng Ban</span>
+                <span class="slip-value" id="res-dept">---</span>
+            </div>
+            <div class="slip-row">
+                <span class="slip-label">Ca Làm Việc</span>
+                <span class="slip-value" id="res-shift">---</span>
+            </div>
+            
+            <div class="slip-total slip-row">
+                <span class="slip-label">Thực Nhận Tổng</span>
+                <span class="slip-value" id="res-salary">0 ₫</span>
+            </div>
+
+            <!-- Bảng chi tiết ngày phát sinh lương -->
+            <div style="margin-top: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1rem;">
+                <h4 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-regular fa-calendar-days"></i> Chi tiết ngày phát sinh lương</h4>
+                <div id="res-daily" style="max-height: 150px; overflow-y: auto; padding-right: 0.5rem; font-size: 0.95rem;">
+                    <!-- Sẽ được thêm bằng JS -->
+                </div>
+            </div>
+            
+            <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i> Tra cứu mã khác</button>
+        </div>
+    </div>
+
+    <script>
+        // Copy your Firebase config from index.html here
+        const firebaseConfig = {
+            apiKey: "AIzaSyBxESuSWcx0FiaSfra2voSQSdCkSk9GgG8",
+            authDomain: "check-luong-daily.firebaseapp.com",
+            databaseURL: "https://check-luong-daily-default-rtdb.firebaseio.com",
+            projectId: "check-luong-daily",
+            storageBucket: "check-luong-daily.firebasestorage.app",
+            messagingSenderId: "31422532387",
+            appId: "1:31422532387:web:05badc76c15aa1cf4f9a96",
+            measurementId: "G-2XHR0WXQ2Q"
+        };
+
+        // Initialize Firebase ONLY IF config is provided (prevents error on blank template)
+        let db;
+        if(firebaseConfig.projectId) {
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.database();
+        }
+
+        function formatCurrency(val) {
+            return Math.round(Number(val)).toLocaleString('vi-VN') + ' ₫';
+        }
+
+        // View Navigation
+        function showLogin() {
+            document.getElementById('search-view').style.display = 'block';
+            document.getElementById('register-view').style.display = 'none';
+            document.getElementById('admin-view').style.display = 'none';
+            document.getElementById('salary-result').style.display = 'none';
+            document.getElementById('leave-view').style.display = 'none';
+            document.getElementById('emp-pin').value = '';
+            document.querySelector('.container').style.maxWidth = '500px';
+        }
+
+        function showRegister() {
+            document.getElementById('search-view').style.display = 'none';
+            document.getElementById('register-view').style.display = 'block';
+            document.getElementById('admin-view').style.display = 'none';
+            document.getElementById('salary-result').style.display = 'none';
+            document.getElementById('leave-view').style.display = 'none';
+            document.getElementById('reg-error-msg').style.display = 'none';
+        }
+
+        function showLeaveForm() {
+            document.getElementById('search-view').style.display = 'none';
+            document.getElementById('register-view').style.display = 'none';
+            document.getElementById('admin-view').style.display = 'none';
+            document.getElementById('salary-result').style.display = 'none';
+            document.getElementById('leave-view').style.display = 'block';
+            
+            document.getElementById('lv-emp-id').value = '';
+            document.getElementById('lv-emp-pin').value = '';
+            document.getElementById('lv-dates').value = '';
+            document.getElementById('lv-reason').value = '';
+            document.getElementById('lv-error-msg').style.display = 'none';
+            document.getElementById('lv-success-msg').style.display = 'none';
+        }
+
+        function showAdmin() {
+            document.getElementById('search-view').style.display = 'none';
+            document.getElementById('admin-view').style.display = 'block';
+            document.querySelector('.container').style.maxWidth = '800px';
+            loadAdminUsers();
+            loadAdminLeaves();
+        }
+
+        function showError(msg, elId = 'error-msg') {
+            const errEl = document.getElementById(elId);
+            errEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${msg}`;
+            errEl.style.display = 'block';
+        }
+
+        function showSuccess(msg, elId = 'error-msg') {
+            const errEl = document.getElementById(elId);
+            errEl.innerHTML = `<i class="fa-solid fa-check-circle"></i> ${msg}`;
+            errEl.style.background = 'rgba(16, 185, 129, 0.1)';
+            errEl.style.color = 'var(--success)';
+            errEl.style.display = 'block';
+            
+            // Revert style after hide
+            setTimeout(() => {
+                errEl.style.background = 'rgba(239, 68, 68, 0.1)';
+                errEl.style.color = 'var(--danger)';
+            }, 5000);
+        }
+
+        // =====================================
+        // REGISTER LOGIC
+        // =====================================
+        function registerPin() {
+            const empId = document.getElementById('reg-emp-id').value.trim();
+            const empName = document.getElementById('reg-emp-name').value.trim();
+            const empPin = document.getElementById('reg-emp-pin').value.trim();
+            
+            if (!empId || !empName || !empPin) return;
+
+            // Kiểm tra PIN đúng 12 số
+            const pinRegex = /^\d{12}$/;
+            if (!pinRegex.test(empPin)) {
+                showError("Mã PIN không hợp lệ! Vui lòng nhập ĐÚNG 12 KÝ TỰ SỐ (0-9).", 'reg-error-msg');
+                return;
+            }
+
+            const btn = document.getElementById('btn-reg-submit');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...';
+            btn.disabled = true;
+
+            db.ref('salaryData/' + empId).once('value')
+                .then(snapshot => {
+                    const data = snapshot.val();
+                    if (data) {
+                        // Tài khoản đã tồn tại
+                        if (data.pin !== '123456') {
+                            // Đã đổi PIN riêng rồi
+                            showError("Không xử lý được, liên hệ quản lý ca của bạn!", 'reg-error-msg');
+                            return;
+                        } else {
+                            // Đang dùng 123456, cho phép đổi
+                            return db.ref('salaryData/' + empId).update({
+                                name: empName,
+                                pin: empPin
+                            }).then(() => {
+                                showSuccess("Tạo mã PIN thành công! Vui lòng quay lại Đăng Nhập.", 'reg-error-msg');
+                                document.getElementById('register-form').reset();
+                            });
+                        }
+                    } else {
+                        // Tài khoản chưa tồn tại (nhân viên mới hoàn toàn)
+                        return db.ref('salaryData/' + empId).set({
+                            id: empId,
+                            name: empName,
+                            pin: empPin,
+                            dept: '',
+                            shift: '',
+                            salary: 0,
+                            dailyDetails: []
+                        }).then(() => {
+                            showSuccess("Đăng ký thành công! Dữ liệu lương sẽ được quản lý cập nhật sau.", 'reg-error-msg');
+                            document.getElementById('register-form').reset();
+                        });
+                    }
+                })
+                .catch(err => {
+                    showError("Lỗi hệ thống: " + err.message, 'reg-error-msg');
+                })
+                .finally(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Tạo Mã PIN';
+                    btn.disabled = false;
+                });
+        }
+
+        // =====================================
+        // LOGIN LOGIC
+        // =====================================
+        function searchSalary() {
+            const empId = document.getElementById('emp-id').value.trim();
+            const empPin = document.getElementById('emp-pin').value.trim();
+            
+            if (!empId || !empPin) return;
+
+            // ADMIN LOGIN
+            if (empId === 'ADMIN' && empPin === 'ADMIN') {
+                showAdmin();
+                return;
+            }
+
+            const btn = document.getElementById('btn-submit');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tìm kiếm...';
+            btn.disabled = true;
+            document.getElementById('error-msg').style.display = 'none';
+
+            db.ref('salaryData/' + empId).once('value')
+                .then(snapshot => {
+                    const data = snapshot.val();
+                    if (data) {
+                        if (data.pin !== empPin) {
+                            showError("Sai Mã PIN! Vui lòng thử lại.");
+                            return;
+                        }
+
+                        // Found
+                        document.getElementById('res-name').innerText = data.name;
+                        document.getElementById('res-id').innerText = data.id;
+                        document.getElementById('res-title').innerText = data.title || '---';
+                        document.getElementById('res-dept').innerText = data.dept || '---';
+                        document.getElementById('res-shift').innerText = data.shift || '---';
+                        document.getElementById('res-salary').innerText = formatCurrency(data.salary);
+
+                        let dailyHtml = '';
+                        let lastUpdatedStr = 'N/A';
+                        if (data.dailyDetails && data.dailyDetails.length > 0) {
+                            lastUpdatedStr = data.dailyDetails[data.dailyDetails.length - 1].date;
+                            data.dailyDetails.forEach(d => {
+                                dailyHtml += `
+                                    <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.1); padding: 0.4rem 0;">
+                                        <span style="color: #cbd5e1;">${d.date}</span>
+                                        <span style="color: #34d399; font-weight: 500;">+${formatCurrency(d.amount)}</span>
+                                    </div>
+                                `;
+                            });
+                        } else {
+                            dailyHtml = `<div style="text-align:center; color: var(--text-muted); padding: 1rem 0;">Không có chi tiết ngày phát sinh</div>`;
+                        }
+                        document.getElementById('res-daily').innerHTML = dailyHtml;
+                        document.getElementById('res-date').innerText = lastUpdatedStr;
+
+                        document.getElementById('search-view').style.display = 'none';
+                        document.getElementById('salary-result').style.display = 'block';
+                    } else {
+                        showError("Không tìm thấy dữ liệu lương cho Mã NV: " + empId);
+                    }
+                })
+                .catch(error => {
+                    showError("Lỗi kết nối: " + error.message);
+                })
+                .finally(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i> Tra Cứu Ngay';
+                    btn.disabled = false;
+                });
+        }
+
+        // =====================================
+        // LEAVE LOGIC
+        // =====================================
+        function submitLeave() {
+            const id = document.getElementById('lv-emp-id').value.trim();
+            const pin = document.getElementById('lv-emp-pin').value.trim();
+            const dateFrom = document.getElementById('lv-date-from').value;
+            const dateTo = document.getElementById('lv-date-to').value;
+            const reason = document.getElementById('lv-reason').value.trim();
+            
+            if (!dateFrom || !dateTo) {
+                showError("Vui lòng chọn Từ ngày và Đến ngày!", 'lv-error-msg');
+                return;
+            }
+
+            if (new Date(dateTo) < new Date(dateFrom)) {
+                showError("Ngày kết thúc không được nhỏ hơn ngày bắt đầu!", 'lv-error-msg');
+                return;
+            }
+
+            const partsFrom = dateFrom.split('-');
+            const partsTo = dateTo.split('-');
+            const fromStr = `${partsFrom[2]}/${partsFrom[1]}/${partsFrom[0]}`;
+            const toStr = `${partsTo[2]}/${partsTo[1]}/${partsTo[0]}`;
+
+            const dates = fromStr === toStr ? fromStr : `Từ ${fromStr} đến ${toStr}`;
+            
+            const btn = document.getElementById('btn-lv-submit');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
+            btn.disabled = true;
+
+            db.ref('salaryData/' + id).once('value').then(snap => {
+                const user = snap.val();
+                if(!user || user.pin !== pin) {
+                    showError("Mã NV hoặc PIN không đúng!", 'lv-error-msg');
+                    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
+                    btn.disabled = false;
+                    return;
+                }
+                
+                db.ref('leaveRequests').push({
+                    id: id,
+                    name: user.name,
+                    dates: dates,
+                    reason: reason,
+                    timestamp: new Date().toLocaleString('vi-VN'),
+                    serverTime: firebase.database.ServerValue.TIMESTAMP
+                }).then(() => {
+                    showSuccess("Đã gửi yêu cầu nghỉ!", 'lv-success-msg');
+                    document.getElementById('leave-form').reset();
+                    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
+                    btn.disabled = false;
+                });
+            });
+        }
+
+        function goBack() {
+            document.getElementById('search-view').style.display = 'block';
+            document.getElementById('salary-result').style.display = 'none';
+            document.getElementById('emp-pin').value = '';
+        }
+
+        // =====================================
+        // ADMIN LOGIC
+        // =====================================
+        function loadAdminUsers() {
+            db.ref('salaryData').once('value').then(snapshot => {
+                const data = snapshot.val();
+                if(!data) return;
+                
+                let html = '';
+                Object.values(data).forEach(u => {
+                    html += `
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 0.5rem; color: var(--text-muted);">${u.id}</td>
+                            <td style="padding: 0.5rem; font-weight: 500;">${u.name}</td>
+                            <td style="padding: 0.5rem; font-family: monospace; color: var(--warning);">${u.pin}</td>
+                        </tr>
+                    `;
+                });
+                document.getElementById('admin-users-body').innerHTML = html;
+            });
+        }
+
+        function exportRegisteredUsers() {
+            db.ref('salaryData').once('value').then(snapshot => {
+                const data = snapshot.val();
+                if(!data) {
+                    alert("Chưa có nhân viên nào đăng ký!");
+                    return;
+                }
+                
+                const exportData = [];
+                Object.values(data).forEach(u => {
+                    exportData.push({
+                        "Mã NV": u.id,
+                        "Họ và Tên": u.name,
+                        "Mã PIN": u.pin
+                    });
+                });
+                
+                const ws = XLSX.utils.json_to_sheet(exportData);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Da_Dang_Ky");
+                XLSX.writeFile(wb, "Danh_Sach_Da_Dang_Ky.xlsx");
+            });
+        }
+
+        function loadAdminLeaves() {
+            db.ref('leaveRequests').orderByChild('serverTime').on('value', snapshot => {
+                const data = snapshot.val();
+                let html = '';
+                if(data) {
+                    // Sort ascending by time (Ai đăng ký trước lên đầu)
+                    const reqs = Object.values(data).sort((a,b) => (a.serverTime || 0) - (b.serverTime || 0));
+                    reqs.forEach(r => {
+                        html += `
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <td style="padding: 0.5rem; color: var(--text-muted); font-size: 0.85rem;">${r.timestamp || ''}</td>
+                                <td style="padding: 0.5rem; font-weight: 500;">${r.id}</td>
+                                <td style="padding: 0.5rem; color: var(--accent);">${r.name}</td>
+                                <td style="padding: 0.5rem; font-weight: 600;">${r.dates}</td>
+                                <td style="padding: 0.5rem; color: var(--text-muted);">${r.reason || ''}</td>
+                            </tr>
+                        `;
+                    });
+                } else {
+                    html = '<tr><td colspan="5" style="text-align: center; padding: 1rem; color: var(--text-muted);">Chưa có yêu cầu đăng ký Off nào</td></tr>';
+                }
+                document.getElementById('admin-leaves-body').innerHTML = html;
+            });
+        }
+
+        function exportLeavesExcel() {
+            db.ref('leaveRequests').orderByChild('serverTime').once('value').then(snapshot => {
+                const data = snapshot.val();
+                if(!data) {
+                    alert("Chưa có yêu cầu Off nào!");
+                    return;
+                }
+                
+                const exportData = [];
+                // Sắp xếp tăng dần theo thời gian (Ai đăng ký trước nằm ở trên)
+                const reqs = Object.values(data).sort((a,b) => (a.serverTime || 0) - (b.serverTime || 0));
+                reqs.forEach(r => {
+                    exportData.push({
+                        "Thời gian gửi": r.timestamp || '',
+                        "Mã NV": r.id,
+                        "Họ Tên": r.name,
+                        "Ngày Off": r.dates || '',
+                        "Lý do": r.reason || ''
+                    });
+                });
+                
+                const ws = XLSX.utils.json_to_sheet(exportData);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Lich_Off");
+                XLSX.writeFile(wb, "Danh_Sach_Dang_Ky_Off.xlsx");
+            });
+        }
+
+        function formatExcelDate(dateCode) {
+            if (!dateCode || isNaN(dateCode)) return null;
+            const d = XLSX.SSF.parse_date_code(dateCode);
+            if (!d) return null;
+            const day = String(d.d).padStart(2, '0');
+            const month = String(d.m).padStart(2, '0');
+            return `${day}/${month}/${d.y}`;
+        }
+
+        function switchAdminTab(tab) {
+            document.getElementById('admin-tab-acc').style.display = tab === 'acc' ? 'block' : 'none';
+            document.getElementById('admin-tab-sal').style.display = tab === 'sal' ? 'block' : 'none';
+            
+            const btnAcc = document.getElementById('btn-tab-acc');
+            const btnSal = document.getElementById('btn-tab-sal');
+            
+            if (tab === 'acc') {
+                btnAcc.style.background = 'linear-gradient(135deg, #8b5cf6, #7c3aed)';
+                btnAcc.style.color = 'white';
+                btnSal.style.background = 'rgba(0,0,0,0.3)';
+                btnSal.style.color = 'var(--text-muted)';
+            } else {
+                btnSal.style.background = 'linear-gradient(135deg, #8b5cf6, #7c3aed)';
+                btnSal.style.color = 'white';
+                btnAcc.style.background = 'rgba(0,0,0,0.3)';
+                btnAcc.style.color = 'var(--text-muted)';
+                loadAdminSalaries();
+            }
+        }
+
+        function updateEmpPin() {
+            if (!db) return alert("Chưa kết nối Firebase!");
+            const empId = document.getElementById('admin-pin-id').value.trim();
+            const newPin = document.getElementById('admin-pin-new').value.trim();
+            if (!empId || !newPin) return alert("Vui lòng nhập Mã NV và PIN mới!");
+
+            db.ref('salaryData/' + empId).once('value').then(snap => {
+                const data = snap.val();
+                if (!data) {
+                    if(!confirm(`Mã NV ${empId} không tồn tại trong hệ thống. Bạn có chắc chắn muốn ép tạo mã PIN cho người này không?`)) return;
+                }
+                
+                db.ref('salaryData/' + empId).update({ pin: newPin }).then(() => {
+                    alert(`✅ Đã cập nhật thành công mã PIN mới (${newPin}) cho NV: ${empId}`);
+                    document.getElementById('admin-pin-id').value = '';
+                    document.getElementById('admin-pin-new').value = '';
+                    loadAdminUsers();
+                }).catch(e => {
+                    alert("Lỗi khi cập nhật PIN: " + e.message);
+                });
+            });
+        }
+
+        function loadAdminSalaries() {
+            db.ref('salaryData').once('value').then(snapshot => {
+                const data = snapshot.val();
+                if(!data) return;
+                
+                let html = '';
+                const sortedEmployees = Object.values(data).sort((a,b) => (b.salary || 0) - (a.salary || 0));
+                sortedEmployees.forEach(u => {
+                    html += `
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 0.5rem; color: var(--text-muted);">${u.id}</td>
+                            <td style="padding: 0.5rem; font-weight: 500;">${u.name}</td>
+                            <td style="padding: 0.5rem;">${u.dept || ''}</td>
+                            <td style="padding: 0.5rem;">${u.shift || ''}</td>
+                            <td style="padding: 0.5rem; text-align: right; color: var(--success); font-weight: bold;">${formatCurrency(u.salary || 0)}</td>
+                        </tr>
+                    `;
+                });
+                document.getElementById('admin-salary-body').innerHTML = html;
+            });
+        }
+
+        function exportAdminSalary() {
+            db.ref('salaryData').once('value').then(snapshot => {
+                const data = snapshot.val();
+                if(!data) return alert("Không có dữ liệu!");
+                
+                const exportData = [];
+                const sortedEmployees = Object.values(data).sort((a,b) => (b.salary || 0) - (a.salary || 0));
+                sortedEmployees.forEach(u => {
+                    exportData.push({
+                        "Mã NV": u.id,
+                        "Họ Tên": u.name,
+                        "Phòng Ban": u.dept || '',
+                        "Ca": u.shift || '',
+                        "Chi Lương": u.salary || 0
+                    });
+                });
+                
+                const ws = XLSX.utils.json_to_sheet(exportData);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Bang_Luong_Tong");
+                XLSX.writeFile(wb, "Bang_Luong_Tong_G-Talk.xlsx");
+            });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const root = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            
+            root.classList.toggle('light-theme');
+            
+            if (root.classList.contains('light-theme')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('luong-theme', 'light');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('luong-theme', 'dark');
+            }
+        }
+
+        // Check saved theme on load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('luong-theme') === 'light') {
+                document.documentElement.classList.add('light-theme');
+                document.getElementById('theme-icon').classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+    </script>
+</body>
+</html>
