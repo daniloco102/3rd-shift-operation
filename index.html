@@ -1030,7 +1030,7 @@
         const FIXED_REQS = {
             "Ca 20:00 - 6:00": { "HOA ANH ĐÀO": 85, "VIECCO": 55, "SKT": 38 },
             "Ca 21:30 - 6:30": { "HOA ANH ĐÀO": 85, "VIECCO": 55, "SKT": 38 },
-            "Ca 21:00 - 6:00": { "HOA ANH ĐÀO": 55, "VIECCO": 40, "SKT": 35 }
+            "Ca 21:00 - 6:00": { "HOA ANH ĐÀO": 54, "VIECCO": 41, "SKT": 38 }
         };
         
         let records = JSON.parse(localStorage.getItem('freelancer_records_v2')) || [];
@@ -1235,7 +1235,7 @@
                     fixedReqs = { "HOA ANH ĐÀO": 85, "VIECCO": 55, "SKT": 38 }; // Làm ca chính
                 }
             } else if (shift === "Ca 21:00 - 6:00") {
-                fixedReqs = { "HOA ANH ĐÀO": 55, "VIECCO": 40, "SKT": 35 };
+                fixedReqs = { "HOA ANH ĐÀO": 54, "VIECCO": 41, "SKT": 38 };
             }
 
             const isGroupedContainer = document.getElementById('grouped-shift-container');
@@ -2606,7 +2606,23 @@
                     },
                     plugins: {
                         legend: { position: 'top' },
-                        title: { display: false }
+                        title: { display: false },
+                        datalabels: {
+                            color: '#ffffff',
+                            backgroundColor: (ctx) => ctx.dataset.type === 'line' ? 'rgba(0, 0, 0, 0.7)' : 'transparent',
+                            textStrokeColor: (ctx) => ctx.dataset.type === 'bar' ? 'rgba(0,0,0,0.6)' : 'transparent',
+                            textStrokeWidth: (ctx) => ctx.dataset.type === 'bar' ? 3 : 0,
+                            borderRadius: 4,
+                            padding: 4,
+                            font: { weight: 'bold', size: 11 },
+                            anchor: 'center',
+                            align: (ctx) => {
+                                if (ctx.dataset.type === 'bar') return 'center';
+                                return ctx.datasetIndex === 0 ? 'top' : 'bottom';
+                            },
+                            offset: (ctx) => ctx.dataset.type === 'line' ? 6 : 0,
+                            formatter: (value) => value > 0 ? value : ''
+                        }
                     }
                 }
             });
