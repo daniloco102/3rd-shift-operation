@@ -889,8 +889,39 @@
                                     <i class="fa-solid fa-file-excel"></i> Xuất Excel Báo Cáo
                                 </button>
                             </div>
+
+                            <div id="hr-overview-chart-container" class="card" style="display: none; margin-bottom: 1.5rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-card);">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                    <h3 style="color: var(--primary); margin: 0; font-size: 1.1rem;"><i class="fa-solid fa-chart-line"></i> Biểu đồ Tổng Quan Nhân Sự (4 tuần)</h3>
+                                    <select id="hr-overview-filter" onchange="renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem; background: var(--bg-card); color: var(--text-main);">
+                                        <option value="all">Tất cả phòng ban</option>
+                                        <option value="Inout 3">Inout Ca 3</option>
+                                        <option value="Inout 5">Inout Ca 5</option>
+                                        <option value="Sort 3">Sort Ca 3</option>
+                                    </select>
+                                </div>
+                                <div style="height: 350px;">
+                                    <canvas id="hrOverviewChart"></canvas>
+                                </div>
+                            </div>
                             
-                            <div id="hr-stats" class="stats-grid" style="display: none;">
+                            <div id="hr-new-chart-container" class="card" style="display: none; margin-bottom: 1.5rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-card);">
+                                <h3 style="color: var(--success); margin: 0 0 1rem 0; font-size: 1.1rem;"><i class="fa-solid fa-user-plus"></i> Biểu đồ Nhân sự Tuyển mới theo Bộ phận (4 tuần)</h3>
+                                <div style="height: 300px;">
+                                    <canvas id="hrNewChart"></canvas>
+                                </div>
+                            </div>
+                            
+
+
+                            <div id="hr-chart-container" class="card" style="display: none; margin-top: 1.5rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-card);">
+                                <h3 style="color: var(--primary); margin: 0 0 1rem 0; font-size: 1.1rem;"><i class="fa-solid fa-chart-column"></i> Biểu đồ Nhân sự Nghỉ việc theo Bộ phận (4 tuần)</h3>
+                                <div style="height: 300px;">
+                                    <canvas id="hrResignChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div id="hr-stats" class="stats-grid" style="display: none; margin-top: 1.5rem;">
                                 <div class="stat-card">
                                     <div class="stat-icon text-indigo"><i class="fa-solid fa-users"></i></div>
                                     <div class="stat-content">
@@ -1380,6 +1411,8 @@
             records.sort((a, b) => new Date(b.date) - new Date(a.date));
             saveToCloud();
             
+
+
             alert('Đã lưu dữ liệu thành công!');
             form.reset();
             document.getElementById('record-date').value = dateStr;
@@ -2976,6 +3009,9 @@
         let hrActiveData = [];
         let hrResignedData = [];
         let currentFilteredResigned = [];
+        let hrResignChartInstance = null;
+        let hrNewChartInstance = null;
+        let hrOverviewChartInstance = null;
 
         function renderHRDashboard() {
             if (!window.HR_DATA) {
@@ -3039,6 +3075,14 @@
                 const start = new Date(d.getFullYear(), 0, 1);
                 return Math.ceil(((d - start) / 86400000 + start.getDay() + 1) / 7);
             };
+            
+            const getYearWeek = (timestamp) => {
+                if (!timestamp) return 0;
+                const d = new Date(timestamp);
+                const start = new Date(d.getFullYear(), 0, 1);
+                const w = Math.ceil(((d - start) / 86400000 + start.getDay() + 1) / 7);
+                return d.getFullYear() * 100 + w;
+            };
 
             const allData = [...hrActiveData, ...hrResignedData].sort((a,b) => b.daysWorked - a.daysWorked);
             const filteredData = allData.filter(e => {
@@ -3077,6 +3121,251 @@
             document.getElementById('hr-total').innerText = filteredData.length;
             document.getElementById('hr-active').innerText = activeCount;
             document.getElementById('hr-resigned').innerText = resignedCount;
+
+            // --- Xử lý 3 Biểu đồ ---
+            document.getElementById('hr-overview-chart-container').style.display = 'block';
+            document.getElementById('hr-new-chart-container').style.display = 'block';
+            document.getElementById('hr-chart-container').style.display = 'block'; // resign chart
+
+            const nowChart = new Date();
+            const startOfYearChart = new Date(nowChart.getFullYear(), 0, 1);
+            const pastDaysChart = (nowChart - startOfYearChart) / 86400000;
+            const currentWChart = Math.ceil((pastDaysChart + startOfYearChart.getDay() + 1) / 7);
+            
+            const last4Weeks = [currentWChart-3, currentWChart-2, currentWChart-1, currentWChart].filter(w => w > 0);
+            const weekLabels = last4Weeks.map(w => `Tuần ${w}`);
+            
+            // 1. Dữ liệu cho Biểu đồ Tổng Quan
+            const getHrCat = (d) => {
+                if(!d) return 'other';
+                const l = d.toLowerCase();
+                if(l.includes('cồng kềnh')) return 'gc';
+                if(l.includes('in')) return 'ns_in';
+                if(l.includes('sort')) return 'ns_sort';
+                return 'other';
+            };
+            const isStaff = (d) => {
+                if (!d) return false;
+                const l = d.toLowerCase();
+                return !l.includes('supervisor') && !l.includes('coordinator');
+            };
+            const formatDeptLabel = (dept, shift) => {
+                if (!dept) return '';
+                const d = dept.toLowerCase();
+                const s = shift ? shift.toLowerCase().replace('ca', '').trim() : '';
+                
+                // Inout: in/ out, phân kiện, cồng kềnh
+                if (d.includes('in/ out') || d.includes('phân kiện') || d.includes('cồng kềnh')) return `Inout ${s}`;
+                
+                // Sort: sort, phân hàng
+                if (d.includes('sort') || d.includes('phân hàng')) return `Sort ${s}`;
+                
+                return `${dept} ${shift}`;
+            };
+            
+            const deptShiftsOverview = new Set();
+            const activeDataByDeptShift = {};
+            const totalNewData = last4Weeks.map(()=>0);
+            const totalResignData = last4Weeks.map(()=>0);
+            
+            const curYearChart = new Date().getFullYear();
+            const last4WeeksYW = last4Weeks.map(w => curYearChart * 100 + w);
+            
+            filteredData.forEach(e => {
+                if (!isStaff(e.dept)) return; // Bỏ qua Supervisor
+                
+                const joinW = getWeekNumber(parseDate(e.joinDateStr));
+                const leaveW = e.leaveDateStr ? getWeekNumber(parseDate(e.leaveDateStr)) : 9999;
+                
+                const joinYW = getYearWeek(parseDate(e.joinDateStr));
+                const leaveYW = e.leaveDateStr ? getYearWeek(parseDate(e.leaveDateStr)) : 999999;
+                
+                const label = formatDeptLabel(e.dept, e.shift);
+                
+                deptShiftsOverview.add(label);
+                if (!activeDataByDeptShift[label]) {
+                    activeDataByDeptShift[label] = { 'ns': [0,0,0,0], 'gc': [0,0,0,0], 'new': [0,0,0,0], 'resign': [0,0,0,0] };
+                }
+                
+                const dLower = e.dept ? e.dept.toLowerCase() : '';
+                const pLower = e.position ? e.position.toLowerCase() : '';
+                const isGC = dLower.includes('ctv') || dLower.includes('cồng kềnh') || pLower.includes('ctv') || pLower.includes('cồng kềnh');
+                
+                last4Weeks.forEach((w, i) => {
+                    const wYW = last4WeeksYW[i];
+                    if (joinYW <= wYW && leaveYW > wYW) activeDataByDeptShift[label][isGC ? 'gc' : 'ns'][i]++;
+                    if (joinYW === wYW) {
+                        totalNewData[i]++;
+                        activeDataByDeptShift[label]['new'][i]++;
+                    }
+                    if (leaveYW === wYW) {
+                        totalResignData[i]++;
+                        activeDataByDeptShift[label]['resign'][i]++;
+                    }
+                });
+            });
+
+            // Dữ liệu cho 2 Biểu đồ Grouped Bar (Tuyển mới, Nghỉ việc)
+            const deptsResign = new Set();
+            const deptsNew = new Set();
+            
+            filteredData.forEach(e => {
+                if (!isStaff(e.dept)) return;
+                
+                const joinYW = getYearWeek(parseDate(e.joinDateStr));
+                const leaveYW = e.leaveDateStr ? getYearWeek(parseDate(e.leaveDateStr)) : 999999;
+                const label = formatDeptLabel(e.dept, e.shift);
+                
+                last4Weeks.forEach((w, i) => {
+                    const wYW = last4WeeksYW[i];
+                    if (joinYW === wYW) deptsNew.add(label);
+                    if (leaveYW === wYW) deptsResign.add(label);
+                });
+            });
+            
+            const uniqueDeptsNew = Array.from(deptsNew).sort();
+            const uniqueDeptsResign = Array.from(deptsResign).sort();
+            const chartColors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#06b6d4', '#ec4899', '#f97316'];
+            
+            const datasetsNewGrp = uniqueDeptsNew.map((dept, idx) => ({
+                label: dept, data: last4Weeks.map(() => 0),
+                backgroundColor: chartColors[idx % chartColors.length], borderRadius: 4
+            }));
+            const datasetsResignGrp = uniqueDeptsResign.map((dept, idx) => ({
+                label: dept, data: last4Weeks.map(() => 0),
+                backgroundColor: chartColors[idx % chartColors.length], borderRadius: 4
+            }));
+            
+            filteredData.forEach(e => {
+                if (!isStaff(e.dept)) return;
+                
+                const joinYW = getYearWeek(parseDate(e.joinDateStr));
+                const leaveYW = e.leaveDateStr ? getYearWeek(parseDate(e.leaveDateStr)) : 999999;
+                const label = formatDeptLabel(e.dept, e.shift);
+                
+                const wIdxJoin = last4WeeksYW.indexOf(joinYW);
+                if (wIdxJoin > -1) {
+                    const dIdx = uniqueDeptsNew.indexOf(label);
+                    if (dIdx > -1) datasetsNewGrp[dIdx].data[wIdxJoin]++;
+                }
+                const wIdxLeave = last4WeeksYW.indexOf(leaveYW);
+                if (wIdxLeave > -1) {
+                    const dIdx = uniqueDeptsResign.indexOf(label);
+                    if (dIdx > -1) datasetsResignGrp[dIdx].data[wIdxLeave]++;
+                }
+            });
+
+            if (typeof ChartDataLabels !== 'undefined') Chart.register(ChartDataLabels);
+            
+            const ctxOverview = document.getElementById('hrOverviewChart').getContext('2d');
+            if (hrOverviewChartInstance) hrOverviewChartInstance.destroy();
+            
+            const overviewFilter = document.getElementById('hr-overview-filter') ? document.getElementById('hr-overview-filter').value : 'all';
+            let allDatasetsOverview = [];
+            
+            if (overviewFilter === 'all') {
+                allDatasetsOverview = [
+                    { type: 'line', label: 'Tuyển mới (Tổng)', data: totalNewData, borderColor: '#06b6d4', backgroundColor: '#06b6d4', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 },
+                    { type: 'line', label: 'Nghỉ việc (Tổng)', data: totalResignData, borderColor: '#ef4444', backgroundColor: '#ef4444', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 }
+                ];
+                
+                let totalNs = [0,0,0,0];
+                let totalGc = [0,0,0,0];
+                Object.values(activeDataByDeptShift).forEach(v => {
+                    for(let i=0; i<4; i++) { totalNs[i]+=v.ns[i]; totalGc[i]+=v.gc[i]; }
+                });
+                
+                if (totalNs.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: 'Tổng Năng Suất', data: totalNs, backgroundColor: '#3b82f6', stack: 'all', yAxisID: 'y' });
+                if (totalGc.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: 'Tổng Giờ Công', data: totalGc, backgroundColor: '#93c5fd', stack: 'all', yAxisID: 'y' });
+            } else {
+                const lbl = overviewFilter;
+                if (activeDataByDeptShift[lbl]) {
+                    const v = activeDataByDeptShift[lbl];
+                    allDatasetsOverview = [
+                        { type: 'line', label: `Tuyển mới (${lbl})`, data: v.new, borderColor: '#06b6d4', backgroundColor: '#06b6d4', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 },
+                        { type: 'line', label: `Nghỉ việc (${lbl})`, data: v.resign, borderColor: '#ef4444', backgroundColor: '#ef4444', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 }
+                    ];
+                    if (v.ns.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: `${lbl} NS`, data: v.ns, backgroundColor: '#3b82f6', stack: lbl, yAxisID: 'y' });
+                    if (v.gc.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: `${lbl} GC`, data: v.gc, backgroundColor: '#93c5fd', stack: lbl, yAxisID: 'y' });
+                }
+            }
+            
+            const activeDatasetsOverview = allDatasetsOverview;
+            
+            hrOverviewChartInstance = new Chart(ctxOverview, {
+                type: 'bar',
+                data: { labels: weekLabels, datasets: activeDatasetsOverview },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Tổng nhân sự', color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' }, stacked: true, ticks: { color: '#9ca3af' } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Tuyển mới / Nghỉ việc', color: '#9ca3af' }, grid: { drawOnChartArea: false }, stacked: false, ticks: { color: '#9ca3af', stepSize: 1 } },
+                        x: { stacked: true, ticks: { color: '#9ca3af', font: {weight: 'bold'} }, grid: { display: false } }
+                    },
+                    plugins: {
+                        legend: { position: 'top', labels: { color: '#e5e7eb', usePointStyle: true, boxWidth: 10 } },
+                        datalabels: {
+                            color: '#ffffff', textStrokeColor: 'rgba(0,0,0,0.6)', textStrokeWidth: 3,
+                            font: { weight: 'bold', size: 12 },
+                            anchor: 'center', 
+                            align: (ctx) => {
+                                if (ctx.dataset.type === 'line') return ctx.datasetIndex === 0 ? 'top' : 'bottom';
+                                return 'center';
+                            },
+                            offset: (ctx) => ctx.dataset.type === 'line' ? 6 : 0,
+                            backgroundColor: (ctx) => (ctx.dataset.type === 'line' && ctx.dataset.data[ctx.dataIndex] > 0) ? ctx.dataset.backgroundColor : 'transparent',
+                            borderRadius: 3,
+                            padding: { top: 2, bottom: 2, left: 4, right: 4 },
+                            formatter: (val) => val > 0 ? val : ''
+                        }
+                    }
+                }
+            });
+
+            // --- Render Biểu đồ Tuyển Mới ---
+            const ctxNew = document.getElementById('hrNewChart').getContext('2d');
+            if (hrNewChartInstance) hrNewChartInstance.destroy();
+            hrNewChartInstance = new Chart(ctxNew, {
+                type: 'bar',
+                data: { labels: weekLabels, datasets: datasetsNewGrp.length > 0 ? datasetsNewGrp : [{ label: 'Không có dữ liệu', data: [0,0,0,0], backgroundColor: '#333' }] },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1, color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        x: { ticks: { color: '#9ca3af', font: {weight: 'bold'} }, grid: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: true, position: 'top', labels: { color: '#e5e7eb', usePointStyle: true, boxWidth: 10 } },
+                        datalabels: {
+                            color: '#ffffff', textStrokeColor: 'rgba(0,0,0,0.6)', textStrokeWidth: 3, font: { weight: 'bold', size: 14 },
+                            anchor: 'end', align: 'bottom', formatter: (val) => val > 0 ? val : ''
+                        }
+                    }
+                }
+            });
+
+            // --- Render Biểu đồ Nghỉ việc ---
+            const ctxHr = document.getElementById('hrResignChart').getContext('2d');
+            if (hrResignChartInstance) hrResignChartInstance.destroy();
+            hrResignChartInstance = new Chart(ctxHr, {
+                type: 'bar',
+                data: { labels: weekLabels, datasets: datasetsResignGrp.length > 0 ? datasetsResignGrp : [{ label: 'Không có dữ liệu', data: [0,0,0,0], backgroundColor: '#333' }] },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1, color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        x: { ticks: { color: '#9ca3af', font: {weight: 'bold'} }, grid: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: true, position: 'top', labels: { color: '#e5e7eb', usePointStyle: true, boxWidth: 10 } },
+                        datalabels: {
+                            color: '#ffffff', textStrokeColor: 'rgba(0,0,0,0.6)', textStrokeWidth: 3, font: { weight: 'bold', size: 14 },
+                            anchor: 'end', align: 'bottom', formatter: (val) => val > 0 ? val : ''
+                        }
+                    }
+                }
+            });
 
             let html = '';
             filteredData.forEach(e => {

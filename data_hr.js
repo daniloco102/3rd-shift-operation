@@ -4,201 +4,231 @@ window.HR_DATA = {
     {
       "id": 3048826,
       "name": "Nguyễn Kim Tứ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/02/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1234,
+      "daysWorked": 1235,
       "monthsWorked": 41,
       "leaveReason": ""
     },
     {
       "id": 3039601,
       "name": "Từ Quang Nghĩa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/10/2022",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1370,
+      "daysWorked": 1371,
       "monthsWorked": 45,
       "leaveReason": ""
     },
     {
       "id": 3039600,
       "name": "Nguyễn Tiền Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/10/2022",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1370,
+      "daysWorked": 1371,
       "monthsWorked": 45,
       "leaveReason": ""
     },
     {
       "id": 3059627,
       "name": "H Mưng Bkrông",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/06/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1102,
+      "daysWorked": 1103,
       "monthsWorked": 37,
       "leaveReason": ""
     },
     {
       "id": 1868009,
       "name": "Văn Thị Kim Thúy",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/04/2019",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 2622,
+      "daysWorked": 2623,
       "monthsWorked": 87,
       "leaveReason": ""
     },
     {
       "id": 3018838,
       "name": "Nguyễn Huỳnh Minh Thư",
+      "position": "Điều phối phân loại hàng hóa",
       "dept": "Sorting Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "23/12/2021",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1653,
+      "daysWorked": 1654,
       "monthsWorked": 55,
       "leaveReason": ""
     },
     {
       "id": 3000692,
       "name": "Tô Thùy Dung",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/03/2021",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1949,
+      "daysWorked": 1950,
       "monthsWorked": 64,
       "leaveReason": ""
     },
     {
       "id": 3048823,
       "name": "Bùi Thanh Ngân",
+      "position": "Giám sát phân loại hàng hóa",
       "dept": "In/ Out Supervisor",
       "shift": "Ca 5",
       "joinDateStr": "15/02/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1234,
+      "daysWorked": 1235,
       "monthsWorked": 41,
       "leaveReason": ""
     },
     {
       "id": 3040929,
       "name": "Lê Thị Minh Hiền",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/10/2022",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1354,
+      "daysWorked": 1355,
       "monthsWorked": 45,
       "leaveReason": ""
     },
     {
       "id": 2033453,
       "name": "Phan Trọng Nhân",
+      "position": "Giám sát phân loại hàng hóa",
       "dept": "In/ Out Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "08/05/2020",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 2247,
+      "daysWorked": 2248,
       "monthsWorked": 74,
       "leaveReason": ""
     },
     {
       "id": 3067532,
       "name": "Nguyễn Thị Kim Hiền",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/09/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1032,
+      "daysWorked": 1033,
       "monthsWorked": 34,
       "leaveReason": ""
     },
     {
       "id": 3072857,
       "name": "Nguyễn Minh Thiện",
+      "position": "Giám sát phân loại hàng hóa",
       "dept": "In/ Out Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "16/10/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 991,
+      "daysWorked": 992,
       "monthsWorked": 33,
       "leaveReason": ""
     },
     {
       "id": 3075239,
       "name": "Phạm Thị Kim Hạnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 972,
+      "daysWorked": 973,
       "monthsWorked": 32,
       "leaveReason": ""
     },
     {
       "id": 3076376,
       "name": "Lê Thị Như Ý",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/11/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 964,
+      "daysWorked": 965,
       "monthsWorked": 32,
       "leaveReason": ""
     },
     {
       "id": 3082865,
       "name": "Võ Công Nam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "04/01/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 911,
+      "daysWorked": 912,
       "monthsWorked": 30,
       "leaveReason": ""
     },
     {
       "id": 3083079,
       "name": "Phạm Văn Xuyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/01/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 909,
+      "daysWorked": 910,
       "monthsWorked": 30,
       "leaveReason": ""
     },
     {
       "id": 3083678,
       "name": "Nguyễn Hồng Hưng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/01/2024",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 905,
+      "monthsWorked": 30,
+      "leaveReason": ""
+    },
+    {
+      "id": 3083829,
+      "name": "Mai Thành Trí",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "12/01/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 904,
@@ -206,47 +236,64 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3083829,
-      "name": "Mai Thành Trí",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "12/01/2024",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 903,
-      "monthsWorked": 30,
-      "leaveReason": ""
-    },
-    {
       "id": 3088620,
       "name": "Nguyễn Duy Thanh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 854,
+      "daysWorked": 855,
       "monthsWorked": 28,
       "leaveReason": ""
     },
     {
       "id": 3088412,
       "name": "Trương Ngọc Sơn",
+      "position": "Điều phối phân loại hàng hóa",
       "dept": "Sorting Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "29/02/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 855,
+      "daysWorked": 856,
       "monthsWorked": 29,
       "leaveReason": ""
     },
     {
       "id": 3090653,
       "name": "Phạm Lý Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "13/03/2024",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 843,
+      "monthsWorked": 28,
+      "leaveReason": ""
+    },
+    {
+      "id": 3091048,
+      "name": "Y Đăng",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "16/03/2024",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 840,
+      "monthsWorked": 28,
+      "leaveReason": ""
+    },
+    {
+      "id": 3090780,
+      "name": "Nguyễn Văn Hồng",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "14/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 842,
@@ -254,335 +301,350 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3091048,
-      "name": "Y Đăng",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "16/03/2024",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 839,
-      "monthsWorked": 28,
-      "leaveReason": ""
-    },
-    {
-      "id": 3090780,
-      "name": "Nguyễn Văn Hồng",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "14/03/2024",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 841,
-      "monthsWorked": 28,
-      "leaveReason": ""
-    },
-    {
       "id": 3091931,
       "name": "Nguyễn Văn Nghĩa",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 832,
+      "daysWorked": 833,
       "monthsWorked": 28,
       "leaveReason": ""
     },
     {
       "id": 3093263,
       "name": "Phan Văn Cường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "04/04/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 820,
+      "daysWorked": 821,
       "monthsWorked": 27,
       "leaveReason": ""
     },
     {
       "id": 3094705,
       "name": "Mang Văn Tiền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "19/04/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 805,
+      "daysWorked": 806,
       "monthsWorked": 27,
       "leaveReason": ""
     },
     {
       "id": 3096064,
       "name": "Nguyễn Thúy Ngọc",
+      "position": "Giám sát phân loại hàng hóa",
       "dept": "In/ Out Supervisor",
       "shift": "Ca 5",
       "joinDateStr": "05/05/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 789,
+      "daysWorked": 790,
       "monthsWorked": 26,
       "leaveReason": ""
     },
     {
       "id": 3098491,
       "name": "Ngô Thị Ngọc Thao",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "30/05/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 764,
+      "daysWorked": 765,
       "monthsWorked": 26,
       "leaveReason": ""
     },
     {
       "id": 3098865,
       "name": "Lê Hồ Kiệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/06/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 760,
+      "daysWorked": 761,
       "monthsWorked": 25,
       "leaveReason": ""
     },
     {
       "id": 3100336,
       "name": "Nguyễn Thị Ngọc Trâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "21/06/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 742,
+      "daysWorked": 743,
       "monthsWorked": 25,
       "leaveReason": ""
     },
     {
       "id": 3100735,
       "name": "Trương Xuân Định",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "26/06/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 737,
+      "daysWorked": 738,
       "monthsWorked": 25,
       "leaveReason": ""
     },
     {
       "id": 3102481,
       "name": "Võ Trường Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/07/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 719,
+      "daysWorked": 720,
       "monthsWorked": 24,
       "leaveReason": ""
     },
     {
       "id": 3108880,
       "name": "Thành Minh Hoàng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/09/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 657,
+      "daysWorked": 658,
       "monthsWorked": 22,
       "leaveReason": ""
     },
     {
       "id": 3111373,
       "name": "Phạm Thị Kim Chi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 632,
+      "daysWorked": 633,
       "monthsWorked": 21,
       "leaveReason": ""
     },
     {
       "id": 3111663,
       "name": "Bùi Hữu Đức",
+      "position": "Giám sát phân loại hàng hóa",
       "dept": "Sorting Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "11/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 630,
+      "daysWorked": 631,
       "monthsWorked": 21,
       "leaveReason": ""
     },
     {
       "id": 3111664,
       "name": "Mai Kim Duyên",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 630,
+      "daysWorked": 631,
       "monthsWorked": 21,
       "leaveReason": ""
     },
     {
       "id": 3111894,
       "name": "Trương Quốc Khanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "14/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 627,
+      "daysWorked": 628,
       "monthsWorked": 21,
       "leaveReason": ""
     },
     {
       "id": 3113405,
       "name": "Nguyễn Hữu Hiền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 612,
+      "daysWorked": 613,
       "monthsWorked": 21,
       "leaveReason": ""
     },
     {
       "id": 3113725,
       "name": "Trần Thị Loan",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 609,
+      "daysWorked": 610,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3113720,
       "name": "Nguyễn Văn Nguyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 609,
+      "daysWorked": 610,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3113772,
       "name": "Nguyễn Thị Bích Thủy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 609,
+      "daysWorked": 610,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3113782,
       "name": "Đặng Thanh Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 609,
+      "daysWorked": 610,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3114099,
       "name": "Ksor H'Hăn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 606,
+      "daysWorked": 607,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3114100,
       "name": "Ksor H' Lin",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 606,
+      "daysWorked": 607,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3114299,
       "name": "Lý Hồng Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 601,
+      "daysWorked": 602,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3115013,
       "name": "Lê Ngọc Thiên Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 598,
+      "daysWorked": 599,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3115772,
       "name": "Nguyễn Quan Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 586,
+      "daysWorked": 587,
       "monthsWorked": 20,
       "leaveReason": ""
     },
     {
       "id": 3119410,
       "name": "Nguyễn Văn Thuyện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/12/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 554,
+      "daysWorked": 555,
       "monthsWorked": 19,
       "leaveReason": ""
     },
     {
       "id": 3120078,
       "name": "Lư Hồng Sang",
+      "position": "CTV phân hàng cồng kềnh",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/01/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 545,
+      "monthsWorked": 18,
+      "leaveReason": ""
+    },
+    {
+      "id": 3120259,
+      "name": "Lương Thị Minh Phương",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "06/01/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 544,
@@ -590,107 +652,90 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3120259,
-      "name": "Lương Thị Minh Phương",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "06/01/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 543,
-      "monthsWorked": 18,
-      "leaveReason": ""
-    },
-    {
       "id": 3125055,
       "name": "Lê Văn Quí",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/02/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 493,
+      "daysWorked": 494,
       "monthsWorked": 17,
       "leaveReason": ""
     },
     {
       "id": 3126195,
       "name": "Võ Thị Mỹ Tho",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 485,
+      "daysWorked": 486,
       "monthsWorked": 16,
       "leaveReason": ""
     },
     {
       "id": 3126196,
       "name": "Lê Văn Dũng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 485,
+      "daysWorked": 486,
       "monthsWorked": 16,
       "leaveReason": ""
     },
     {
       "id": 3126807,
       "name": "Sơn Nanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 480,
+      "daysWorked": 481,
       "monthsWorked": 16,
       "leaveReason": ""
     },
     {
       "id": 3127306,
       "name": "Đặng Thành Phát",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 476,
+      "daysWorked": 477,
       "monthsWorked": 16,
       "leaveReason": ""
     },
     {
       "id": 3127885,
       "name": "Nguyễn Thị Kim Chi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "20/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 470,
+      "daysWorked": 471,
       "monthsWorked": 16,
       "leaveReason": ""
     },
     {
       "id": 3128012,
       "name": "Võ Văn Sin",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "21/03/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 469,
-      "monthsWorked": 16,
-      "leaveReason": ""
-    },
-    {
-      "id": 3127884,
-      "name": "Trần Thị Lan Phương",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "20/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 470,
@@ -698,23 +743,25 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3128573,
-      "name": "Hoàng Thị Tính",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "27/03/2025",
+      "id": 3127884,
+      "name": "Trần Thị Lan Phương",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "20/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 463,
+      "daysWorked": 471,
       "monthsWorked": 16,
       "leaveReason": ""
     },
     {
-      "id": 3128491,
-      "name": "Nguyễn Hữu Ba",
+      "id": 3128573,
+      "name": "Hoàng Thị Tính",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "26/03/2025",
+      "shift": "Ca 5",
+      "joinDateStr": "27/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 464,
@@ -722,47 +769,77 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
+      "id": 3128491,
+      "name": "Nguyễn Hữu Ba",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "26/03/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 465,
+      "monthsWorked": 16,
+      "leaveReason": ""
+    },
+    {
       "id": 3130404,
       "name": "Nguyễn Kim Tiến",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 441,
+      "daysWorked": 442,
       "monthsWorked": 15,
       "leaveReason": ""
     },
     {
       "id": 3130401,
       "name": "Nguyễn Văn Thừa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 441,
+      "daysWorked": 442,
       "monthsWorked": 15,
       "leaveReason": ""
     },
     {
       "id": 3129888,
       "name": "Nguyễn Thanh Bình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 447,
+      "daysWorked": 448,
       "monthsWorked": 15,
       "leaveReason": ""
     },
     {
       "id": 3130739,
       "name": "Đỗ Tuấn Vũ",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/04/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 437,
+      "monthsWorked": 15,
+      "leaveReason": ""
+    },
+    {
+      "id": 3130860,
+      "name": "Trần Bảo Minh",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "24/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 436,
@@ -770,95 +847,77 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3130860,
-      "name": "Trần Bảo Minh",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "24/04/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 435,
-      "monthsWorked": 15,
-      "leaveReason": ""
-    },
-    {
       "id": 3131589,
       "name": "Lý Trung Nhị",
+      "position": "CTV phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 423,
+      "daysWorked": 424,
       "monthsWorked": 14,
       "leaveReason": ""
     },
     {
       "id": 3131568,
       "name": "Lê Khải Triều",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 423,
+      "daysWorked": 424,
       "monthsWorked": 14,
       "leaveReason": ""
     },
     {
       "id": 3132418,
       "name": "Nguyễn Ngọc Thơ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 414,
+      "daysWorked": 415,
       "monthsWorked": 14,
       "leaveReason": ""
     },
     {
       "id": 3132016,
       "name": "Phan Văn Minh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 418,
+      "daysWorked": 419,
       "monthsWorked": 14,
       "leaveReason": ""
     },
     {
       "id": 3133162,
       "name": "Trần Thị Duyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 406,
+      "daysWorked": 407,
       "monthsWorked": 14,
       "leaveReason": ""
     },
     {
       "id": 3136041,
       "name": "Võ Nhật Hào",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/06/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 377,
-      "monthsWorked": 13,
-      "leaveReason": ""
-    },
-    {
-      "id": 3135928,
-      "name": "Nguyễn Thế Kiệt",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "20/06/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 378,
@@ -866,35 +925,38 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
+      "id": 3135928,
+      "name": "Nguyễn Thế Kiệt",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "20/06/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 379,
+      "monthsWorked": 13,
+      "leaveReason": ""
+    },
+    {
       "id": 3136773,
       "name": "Nguyễn Thị Quỳnh Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 366,
+      "daysWorked": 367,
       "monthsWorked": 12,
       "leaveReason": ""
     },
     {
       "id": 3137619,
       "name": "Phạm Minh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "11/07/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 357,
-      "monthsWorked": 12,
-      "leaveReason": ""
-    },
-    {
-      "id": 3137444,
-      "name": "Thân Thanh Tùng",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "10/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 358,
@@ -902,35 +964,64 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
+      "id": 3137444,
+      "name": "Thân Thanh Tùng",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "10/07/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 359,
+      "monthsWorked": 12,
+      "leaveReason": ""
+    },
+    {
       "id": 3137694,
       "name": "Nguyễn Thị Đan Phượng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "13/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 355,
+      "daysWorked": 356,
       "monthsWorked": 12,
       "leaveReason": ""
     },
     {
       "id": 3137730,
       "name": "Nguyễn Thị Thanh Hồng Phương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "13/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 355,
+      "daysWorked": 356,
       "monthsWorked": 12,
       "leaveReason": ""
     },
     {
       "id": 3138133,
       "name": "Phan Thanh Hạnh",
+      "position": "CTV phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/07/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 352,
+      "monthsWorked": 12,
+      "leaveReason": ""
+    },
+    {
+      "id": 3138325,
+      "name": "Nguyễn Thị Thanh Thảo",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "18/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 351,
@@ -938,47 +1029,25 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3138325,
-      "name": "Nguyễn Thị Thanh Thảo",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "18/07/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 350,
-      "monthsWorked": 12,
-      "leaveReason": ""
-    },
-    {
       "id": 3137691,
       "name": "Nguyễn Trọng Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 355,
+      "daysWorked": 356,
       "monthsWorked": 12,
       "leaveReason": ""
     },
     {
       "id": 3138786,
       "name": "Nguyễn Thị Phương Dung",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/07/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 345,
-      "monthsWorked": 12,
-      "leaveReason": ""
-    },
-    {
-      "id": 3138665,
-      "name": "Nguyễn Văn Vũ",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "22/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 346,
@@ -986,23 +1055,155 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
+      "id": 3138665,
+      "name": "Nguyễn Văn Vũ",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "22/07/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 347,
+      "monthsWorked": 12,
+      "leaveReason": ""
+    },
+    {
       "id": 3139577,
       "name": "Trần Thị Mỹ Lộc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 336,
+      "daysWorked": 337,
       "monthsWorked": 11,
       "leaveReason": ""
     },
     {
       "id": 3140004,
       "name": "Phạm Quang Vinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "06/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 332,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3140393,
+      "name": "Đào Thị Mộng Thu",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "11/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 327,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3140392,
+      "name": "Nguyễn Thanh Châu",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "11/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 327,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3140907,
+      "name": "Nguyễn Thanh Trường",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "14/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 324,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3140914,
+      "name": "Nguyễn Đông Quân",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "14/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 324,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3141010,
+      "name": "Vũ Phước Thiên",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "15/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 323,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3141020,
+      "name": "Lê Minh Hận",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "15/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 323,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3141022,
+      "name": "Lê Thị Trắng",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "15/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 323,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3141461,
+      "name": "Trần Bảo Khang",
+      "position": "CTV phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "20/08/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 318,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3140102,
+      "name": "Lê Hoàng Vũ Hảo",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "07/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 331,
@@ -1010,131 +1211,38 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3140393,
-      "name": "Đào Thị Mộng Thu",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "11/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 326,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3140392,
-      "name": "Nguyễn Thanh Châu",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "11/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 326,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3140907,
-      "name": "Nguyễn Thanh Trường",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "14/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 323,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3140914,
-      "name": "Nguyễn Đông Quân",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "14/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 323,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3141010,
-      "name": "Vũ Phước Thiên",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "15/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 322,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3141020,
-      "name": "Lê Minh Hận",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "15/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 322,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3141022,
-      "name": "Lê Thị Trắng",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "15/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 322,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3141461,
-      "name": "Trần Bảo Khang",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "20/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 317,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
-      "id": 3140102,
-      "name": "Lê Hoàng Vũ Hảo",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "07/08/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 330,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
       "id": 3142822,
       "name": "Nguyễn Thị Thuỳ Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/09/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 301,
+      "daysWorked": 302,
       "monthsWorked": 10,
       "leaveReason": ""
     },
     {
       "id": 3145283,
       "name": "Phùng Văn Trường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/09/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 283,
+      "monthsWorked": 10,
+      "leaveReason": ""
+    },
+    {
+      "id": 3145336,
+      "name": "Quách Mạnh Hà",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "25/09/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 282,
@@ -1142,179 +1250,155 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3145336,
-      "name": "Quách Mạnh Hà",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "25/09/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 281,
-      "monthsWorked": 10,
-      "leaveReason": ""
-    },
-    {
       "id": 3144409,
       "name": "Trần Thanh Tú",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "16/09/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 290,
+      "daysWorked": 291,
       "monthsWorked": 10,
       "leaveReason": ""
     },
     {
       "id": 3146223,
       "name": "Đặng Thị Thanh Phone",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 272,
+      "daysWorked": 273,
       "monthsWorked": 9,
       "leaveReason": ""
     },
     {
       "id": 3146936,
       "name": "Nguyễn Hữu Khương",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 266,
+      "daysWorked": 267,
       "monthsWorked": 9,
       "leaveReason": ""
     },
     {
       "id": 3147695,
       "name": "Nguyễn Lê Khang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "17/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 259,
+      "daysWorked": 260,
       "monthsWorked": 9,
       "leaveReason": ""
     },
     {
       "id": 3147850,
       "name": "Huỳnh Thị Tú Trinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 257,
+      "daysWorked": 258,
       "monthsWorked": 9,
       "leaveReason": ""
     },
     {
       "id": 3148336,
       "name": "Phan Thị Khoa",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 253,
+      "daysWorked": 254,
       "monthsWorked": 9,
       "leaveReason": ""
     },
     {
       "id": 3148549,
       "name": "Lê Hoài Quốc Thắng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "25/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 251,
+      "daysWorked": 252,
       "monthsWorked": 9,
       "leaveReason": ""
     },
     {
       "id": 3149557,
       "name": "Nguyễn Minh Thắng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 242,
+      "daysWorked": 243,
       "monthsWorked": 8,
       "leaveReason": ""
     },
     {
       "id": 3149974,
       "name": "Cao Thành Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "06/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 239,
+      "daysWorked": 240,
       "monthsWorked": 8,
       "leaveReason": ""
     },
     {
       "id": 3150778,
       "name": "Võ Thị Bích Hân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "14/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 231,
+      "daysWorked": 232,
       "monthsWorked": 8,
       "leaveReason": ""
     },
     {
       "id": 3151361,
       "name": "Trần Văn Hùng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 227,
+      "daysWorked": 228,
       "monthsWorked": 8,
       "leaveReason": ""
     },
     {
       "id": 3151615,
       "name": "Nguyễn Thị Cô Thắm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/11/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 225,
-      "monthsWorked": 8,
-      "leaveReason": ""
-    },
-    {
-      "id": 3151750,
-      "name": "Trần Văn Chí Khương",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "21/11/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 224,
-      "monthsWorked": 8,
-      "leaveReason": ""
-    },
-    {
-      "id": 3151533,
-      "name": "Nguyễn Văn Tùng",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "19/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 226,
@@ -1322,23 +1406,64 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
+      "id": 3151750,
+      "name": "Trần Văn Chí Khương",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "21/11/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 225,
+      "monthsWorked": 8,
+      "leaveReason": ""
+    },
+    {
+      "id": 3151533,
+      "name": "Nguyễn Văn Tùng",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "19/11/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 227,
+      "monthsWorked": 8,
+      "leaveReason": ""
+    },
+    {
       "id": 3151930,
       "name": "Lê Tấn Vinh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 223,
+      "daysWorked": 224,
       "monthsWorked": 8,
       "leaveReason": ""
     },
     {
       "id": 3153081,
       "name": "Ngô Quốc Thông",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "03/12/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 213,
+      "monthsWorked": 7,
+      "leaveReason": ""
+    },
+    {
+      "id": 3153253,
+      "name": "Nguyễn Hồng Phi Yến",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "04/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 212,
@@ -1346,47 +1471,51 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3153253,
-      "name": "Nguyễn Hồng Phi Yến",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "04/12/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 211,
-      "monthsWorked": 7,
-      "leaveReason": ""
-    },
-    {
       "id": 3153275,
       "name": "Trương Thị Hồng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 211,
+      "daysWorked": 212,
       "monthsWorked": 7,
       "leaveReason": ""
     },
     {
       "id": 3153264,
       "name": "Nguyễn Thị Cindy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 210,
+      "daysWorked": 211,
       "monthsWorked": 7,
       "leaveReason": ""
     },
     {
       "id": 3153781,
       "name": "Lê Thị Ánh Tuyết",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "09/12/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 207,
+      "monthsWorked": 7,
+      "leaveReason": ""
+    },
+    {
+      "id": 3153904,
+      "name": "Nguyễn Thị Kiều",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "10/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 206,
@@ -1394,47 +1523,64 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3153904,
-      "name": "Nguyễn Thị Kiều",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "10/12/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 205,
-      "monthsWorked": 7,
-      "leaveReason": ""
-    },
-    {
       "id": 3154682,
       "name": "Lâm Quốc Cường",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 197,
+      "daysWorked": 198,
       "monthsWorked": 7,
       "leaveReason": ""
     },
     {
       "id": 3154988,
       "name": "Nguyễn Trường Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 193,
+      "daysWorked": 194,
       "monthsWorked": 7,
       "leaveReason": ""
     },
     {
       "id": 3154905,
       "name": "Lâm Mu Ni",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/12/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 194,
+      "monthsWorked": 7,
+      "leaveReason": ""
+    },
+    {
+      "id": 3155231,
+      "name": "Quách Khả Ái Như",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "25/12/2025",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 191,
+      "monthsWorked": 7,
+      "leaveReason": ""
+    },
+    {
+      "id": 3155069,
+      "name": "Hồ Thị Thanh Thuỷ",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "23/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 193,
@@ -1442,155 +1588,155 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3155231,
-      "name": "Quách Khả Ái Như",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "25/12/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 190,
-      "monthsWorked": 7,
-      "leaveReason": ""
-    },
-    {
-      "id": 3155069,
-      "name": "Hồ Thị Thanh Thuỷ",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "23/12/2025",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 192,
-      "monthsWorked": 7,
-      "leaveReason": ""
-    },
-    {
       "id": 3155628,
       "name": "Nguyễn Tấn Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 184,
+      "daysWorked": 185,
       "monthsWorked": 7,
       "leaveReason": ""
     },
     {
       "id": 3155757,
       "name": "Nguyễn Thị Cẩm Ngân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "02/01/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 182,
+      "daysWorked": 183,
       "monthsWorked": 6,
       "leaveReason": ""
     },
     {
       "id": 3157328,
       "name": "Triệu Quốc An",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/01/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 164,
+      "daysWorked": 165,
       "monthsWorked": 6,
       "leaveReason": ""
     },
     {
       "id": 3158631,
       "name": "Trương Kiều Nhiệm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/02/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 133,
+      "daysWorked": 134,
       "monthsWorked": 5,
       "leaveReason": ""
     },
     {
       "id": 3159178,
       "name": "Nguyễn Thị Lan",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "26/02/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 127,
+      "daysWorked": 128,
       "monthsWorked": 5,
       "leaveReason": ""
     },
     {
       "id": 3159800,
       "name": "Ngô Thái Sơn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 124,
+      "daysWorked": 125,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3159794,
       "name": "Cao Quốc Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 124,
+      "daysWorked": 125,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3160539,
       "name": "Trịnh Nguyên Khang",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 121,
+      "daysWorked": 122,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3162296,
       "name": "Võ Cao Kỳ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 111,
+      "daysWorked": 112,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3162583,
       "name": "Lê Đăng Quang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "16/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 109,
+      "daysWorked": 110,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3162511,
       "name": "Lâm Hữu Hậu",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/03/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 110,
+      "monthsWorked": 4,
+      "leaveReason": ""
+    },
+    {
+      "id": 3162582,
+      "name": "Võ Văn Chánh",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "17/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 109,
@@ -1598,11 +1744,25 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3162582,
-      "name": "Võ Văn Chánh",
+      "id": 3162760,
+      "name": "Phan Nguyễn Trung Thành",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "16/03/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 110,
+      "monthsWorked": 4,
+      "leaveReason": ""
+    },
+    {
+      "id": 3162957,
+      "name": "Cao Trường Giang",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
       "shift": "Ca 3",
-      "joinDateStr": "17/03/2026",
+      "joinDateStr": "18/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 108,
@@ -1610,107 +1770,103 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3162760,
-      "name": "Phan Nguyễn Trung Thành",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "16/03/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 109,
-      "monthsWorked": 4,
-      "leaveReason": ""
-    },
-    {
-      "id": 3162957,
-      "name": "Cao Trường Giang",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "18/03/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 107,
-      "monthsWorked": 4,
-      "leaveReason": ""
-    },
-    {
       "id": 3163260,
       "name": "Nguyễn Thị Hoằng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "20/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 105,
+      "daysWorked": 106,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3163271,
       "name": "Phùng Xuân Vũ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 105,
+      "daysWorked": 106,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3164001,
       "name": "Nguyễn Thị Tập",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "25/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 100,
+      "daysWorked": 101,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3162994,
       "name": "Nguyễn Văn Phước",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 102,
+      "daysWorked": 103,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3164260,
       "name": "Huỳnh Thị Ngọc Tuyền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "27/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 98,
+      "daysWorked": 99,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3164261,
       "name": "Nguyễn Hoàng Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "27/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 98,
+      "daysWorked": 99,
       "monthsWorked": 4,
       "leaveReason": ""
     },
     {
       "id": 3164928,
       "name": "Nguyễn Vũ Ẩn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/04/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 94,
+      "monthsWorked": 3,
+      "leaveReason": ""
+    },
+    {
+      "id": 3165038,
+      "name": "Lâm Thị Phượng Uyên",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "02/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 93,
@@ -1718,11 +1874,25 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3165038,
-      "name": "Lâm Thị Phượng Uyên",
+      "id": 3165353,
+      "name": "Diệp Anh Khoa",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "05/04/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 90,
+      "monthsWorked": 3,
+      "leaveReason": ""
+    },
+    {
+      "id": 3165166,
+      "name": "Nguyễn Đoàn Thanh Vũ",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
-      "joinDateStr": "02/04/2026",
+      "joinDateStr": "03/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 92,
@@ -1730,131 +1900,77 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3165353,
-      "name": "Diệp Anh Khoa",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "05/04/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 89,
-      "monthsWorked": 3,
-      "leaveReason": ""
-    },
-    {
-      "id": 3165166,
-      "name": "Nguyễn Đoàn Thanh Vũ",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "03/04/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 91,
-      "monthsWorked": 3,
-      "leaveReason": ""
-    },
-    {
       "id": 3165760,
       "name": "Phạm Đức Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 86,
+      "daysWorked": 87,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3165767,
       "name": "Tạ Thị Nương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "08/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 86,
+      "daysWorked": 87,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3165768,
       "name": "Trần Vĩ Phương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "08/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 86,
+      "daysWorked": 87,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3166557,
       "name": "Nguyễn Văn Khoẻ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "14/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 80,
+      "daysWorked": 81,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3166701,
       "name": "Nguyễn Văn Pháp",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 80,
+      "daysWorked": 81,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3167129,
       "name": "Lê Công Hậu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "18/04/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 76,
-      "monthsWorked": 3,
-      "leaveReason": ""
-    },
-    {
-      "id": 3167180,
-      "name": "Bùi Quốc Thái",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "19/04/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 75,
-      "monthsWorked": 3,
-      "leaveReason": ""
-    },
-    {
-      "id": 3167200,
-      "name": "Nguyễn Tuấn Khang",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "19/04/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 75,
-      "monthsWorked": 3,
-      "leaveReason": ""
-    },
-    {
-      "id": 3167057,
-      "name": "Đỗ Xuân Quang",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "17/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 77,
@@ -1862,11 +1978,64 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
+      "id": 3167180,
+      "name": "Bùi Quốc Thái",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "19/04/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 76,
+      "monthsWorked": 3,
+      "leaveReason": ""
+    },
+    {
+      "id": 3167200,
+      "name": "Nguyễn Tuấn Khang",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "19/04/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 76,
+      "monthsWorked": 3,
+      "leaveReason": ""
+    },
+    {
+      "id": 3167057,
+      "name": "Đỗ Xuân Quang",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "17/04/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 78,
+      "monthsWorked": 3,
+      "leaveReason": ""
+    },
+    {
       "id": 3167750,
       "name": "Trần Văn Tèo",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/04/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 72,
+      "monthsWorked": 3,
+      "leaveReason": ""
+    },
+    {
+      "id": 3167898,
+      "name": "Ngô Thái Bảo",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "24/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 71,
@@ -1874,83 +2043,64 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3167898,
-      "name": "Ngô Thái Bảo",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "24/04/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 70,
-      "monthsWorked": 3,
-      "leaveReason": ""
-    },
-    {
       "id": 3167903,
       "name": "Bùi Thanh Đạt",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 70,
+      "daysWorked": 71,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3168141,
       "name": "Nguyễn Văn Nam",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 67,
+      "daysWorked": 68,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3167899,
       "name": "Nguyễn Hoàng Thiện",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 67,
+      "daysWorked": 68,
       "monthsWorked": 3,
       "leaveReason": ""
     },
     {
       "id": 3169083,
       "name": "Dương Thụy Ngọc Thảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "06/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 58,
+      "daysWorked": 59,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3169289,
       "name": "Nguyễn Thị Thảo My",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/05/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 57,
-      "monthsWorked": 2,
-      "leaveReason": ""
-    },
-    {
-      "id": 3169135,
-      "name": "Nguyễn Văn Thắng",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "06/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 58,
@@ -1958,59 +2108,90 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
+      "id": 3169135,
+      "name": "Nguyễn Văn Thắng",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "06/05/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 59,
+      "monthsWorked": 2,
+      "leaveReason": ""
+    },
+    {
       "id": 3169319,
       "name": "Đỗ Thị Lam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 57,
+      "daysWorked": 58,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3169317,
       "name": "Vũ Thị Hoa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 57,
+      "daysWorked": 58,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3169273,
       "name": "Lương Thế Vinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 57,
+      "daysWorked": 58,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3169299,
       "name": "Trần Đăng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 57,
+      "daysWorked": 58,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3169846,
       "name": "Lê Thị Thuý An",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/05/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 54,
+      "monthsWorked": 2,
+      "leaveReason": ""
+    },
+    {
+      "id": 3170045,
+      "name": "Nguyễn Thị Ngọc Lan",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "12/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 53,
@@ -2018,119 +2199,129 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3170045,
-      "name": "Nguyễn Thị Ngọc Lan",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "12/05/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 52,
-      "monthsWorked": 2,
-      "leaveReason": ""
-    },
-    {
       "id": 3170048,
       "name": "Trần Thị Thuỳ Trang",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 52,
+      "daysWorked": 53,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3170527,
       "name": "Vũ Bá Cương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "15/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 49,
+      "daysWorked": 50,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3172263,
       "name": "Trương Thị Ngọc Tuyến",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "29/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 35,
+      "daysWorked": 36,
       "monthsWorked": 2,
       "leaveReason": ""
     },
     {
       "id": 3172671,
       "name": "Nguyễn Hữu Phước",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 32,
+      "daysWorked": 33,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3172665,
       "name": "Lưu Thị Kim Cương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 32,
+      "daysWorked": 33,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3172658,
       "name": "Quách Văn Toàn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 32,
+      "daysWorked": 33,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3172660,
       "name": "Trần Thanh Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 32,
+      "daysWorked": 33,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3172661,
       "name": "Lê Quang Nhẩn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 32,
+      "daysWorked": 33,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3172687,
       "name": "Nguyễn Phúc Đại",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/06/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 33,
+      "monthsWorked": 1,
+      "leaveReason": ""
+    },
+    {
+      "id": 3172912,
+      "name": "Nguyễn Trần Nhựt Duy",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "02/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 32,
@@ -2138,155 +2329,168 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3172912,
-      "name": "Nguyễn Trần Nhựt Duy",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "02/06/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 31,
-      "monthsWorked": 1,
-      "leaveReason": ""
-    },
-    {
       "id": 3172824,
       "name": "Nguyễn Thanh Tùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 29,
+      "daysWorked": 30,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3173342,
       "name": "Hoàng Công Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 27,
+      "daysWorked": 28,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3173641,
       "name": "Huỳnh Chí Kha",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 25,
+      "daysWorked": 26,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3174417,
       "name": "Trịnh Tiến Dũng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "14/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 19,
+      "daysWorked": 20,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3174416,
       "name": "Nguyễn Thu Hiểu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "14/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 19,
+      "daysWorked": 20,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3174151,
       "name": "Cao Trọng Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 21,
+      "daysWorked": 22,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3174143,
       "name": "Trần Trung Hiếu",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 21,
+      "daysWorked": 22,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3175010,
       "name": "Huỳnh Công Danh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 16,
+      "daysWorked": 17,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3175006,
       "name": "Nguyễn Thị Ngọc Như",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 16,
+      "daysWorked": 17,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3175024,
       "name": "Thị Dân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 16,
+      "daysWorked": 17,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3175473,
       "name": "Phạm Văn Quang",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 13,
+      "daysWorked": 14,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3175471,
       "name": "Phạm Thị Cẩm Thanh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/06/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 14,
+      "monthsWorked": 1,
+      "leaveReason": ""
+    },
+    {
+      "id": 3175574,
+      "name": "Trần Thanh Tuấn",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "21/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 13,
@@ -2294,11 +2498,12 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3175574,
-      "name": "Trần Thanh Tuấn",
+      "id": 3175693,
+      "name": "Phan Ngọc Diễm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "21/06/2026",
+      "shift": "Ca 5",
+      "joinDateStr": "22/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 12,
@@ -2306,11 +2511,12 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3175693,
-      "name": "Phan Ngọc Diễm",
+      "id": 3175883,
+      "name": "Lâm Minh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "22/06/2026",
+      "shift": "Ca 3",
+      "joinDateStr": "23/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 11,
@@ -2318,11 +2524,12 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3175883,
-      "name": "Lâm Minh Tuấn",
+      "id": 3175993,
+      "name": "Thạch Minh Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "23/06/2026",
+      "shift": "Ca 5",
+      "joinDateStr": "24/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 10,
@@ -2330,47 +2537,51 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3175993,
-      "name": "Thạch Minh Đạt",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "24/06/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 9,
-      "monthsWorked": 1,
-      "leaveReason": ""
-    },
-    {
       "id": 3175989,
       "name": "Nguyễn Mỹ Quyên",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 9,
+      "daysWorked": 10,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3175961,
       "name": "Lý Văn Vũ",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 9,
+      "daysWorked": 10,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3175850,
       "name": "Hồ Hùng Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/06/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 10,
+      "monthsWorked": 1,
+      "leaveReason": ""
+    },
+    {
+      "id": 3176117,
+      "name": "Võ Anh Hào",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "25/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
       "daysWorked": 9,
@@ -2378,122 +2589,119 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3176117,
-      "name": "Võ Anh Hào",
-      "dept": "In/ Out Staff",
-      "shift": "Ca 5",
-      "joinDateStr": "25/06/2026",
-      "leaveDateStr": "",
-      "status": "Đang làm việc",
-      "daysWorked": 8,
-      "monthsWorked": 1,
-      "leaveReason": ""
-    },
-    {
       "id": 3176254,
       "name": "Phan Nguyễn Hoàng Tâm",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "27/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 6,
+      "daysWorked": 7,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3176265,
       "name": "Trần Thị Lanh",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "27/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 6,
+      "daysWorked": 7,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3176282,
       "name": "Đỗ Thị Thanh Thúy",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 6,
+      "daysWorked": 7,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3176296,
       "name": "Phan Thị Tuyết Mai",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 6,
+      "daysWorked": 7,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3176236,
       "name": "Trần Bích Chăm",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 6,
+      "daysWorked": 7,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3176618,
       "name": "Nguyễn Thị Huyền Trân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "29/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 4,
+      "daysWorked": 5,
       "monthsWorked": 1,
       "leaveReason": ""
     },
     {
       "id": 3176976,
       "name": "Hồ Quang Thịnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 2,
+      "daysWorked": 3,
       "monthsWorked": 0,
       "leaveReason": ""
     },
     {
       "id": 3176730,
       "name": "Đinh Chí Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 2,
+      "daysWorked": 3,
       "monthsWorked": 0,
       "leaveReason": ""
     },
     {
       "id": 3177115,
       "name": "Nguyễn Minh Thuận",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "02/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1,
+      "daysWorked": 2,
       "monthsWorked": 0,
       "leaveReason": ""
     }
@@ -2502,6 +2710,7 @@ window.HR_DATA = {
     {
       "id": 3027575,
       "name": "Nguyễn Xuân Hoàng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/04/2022",
@@ -2514,6 +2723,7 @@ window.HR_DATA = {
     {
       "id": 3016868,
       "name": "Nguyễn Minh Danh",
+      "position": "Nhân viên phân kiện",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/10/2021",
@@ -2526,6 +2736,7 @@ window.HR_DATA = {
     {
       "id": 3011864,
       "name": "Văn Tân Quang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/10/2021",
@@ -2538,6 +2749,7 @@ window.HR_DATA = {
     {
       "id": 3067553,
       "name": "Phan Văn Liêu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/09/2023",
@@ -2550,6 +2762,7 @@ window.HR_DATA = {
     {
       "id": 3032390,
       "name": "Lê Tiến Dũng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/07/2022",
@@ -2562,6 +2775,7 @@ window.HR_DATA = {
     {
       "id": 3021974,
       "name": "Trương Quốc Kháng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/02/2022",
@@ -2574,6 +2788,7 @@ window.HR_DATA = {
     {
       "id": 3049423,
       "name": "Nguyễn Thanh Khải",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2586,6 +2801,7 @@ window.HR_DATA = {
     {
       "id": 3038971,
       "name": "Đồng Quốc Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/09/2022",
@@ -2598,6 +2814,7 @@ window.HR_DATA = {
     {
       "id": 3050694,
       "name": "Đặng Hoàng Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2610,6 +2827,7 @@ window.HR_DATA = {
     {
       "id": 3050603,
       "name": "Nguyễn Hoài Tân Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2622,6 +2840,7 @@ window.HR_DATA = {
     {
       "id": 3050595,
       "name": "Trần Trọng Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2634,6 +2853,7 @@ window.HR_DATA = {
     {
       "id": 3051075,
       "name": "Nguyễn Văn Cương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2646,6 +2866,7 @@ window.HR_DATA = {
     {
       "id": 3051005,
       "name": "Huỳnh Văn Thảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2658,6 +2879,7 @@ window.HR_DATA = {
     {
       "id": 3050476,
       "name": "Chu Hải Nam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/03/2023",
@@ -2670,6 +2892,7 @@ window.HR_DATA = {
     {
       "id": 3049939,
       "name": "Văn Hữu Thái",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2682,6 +2905,7 @@ window.HR_DATA = {
     {
       "id": 3012169,
       "name": "Nguyễn Hữu Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/10/2021",
@@ -2694,6 +2918,7 @@ window.HR_DATA = {
     {
       "id": 3039161,
       "name": "Trần Hoàng Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/09/2022",
@@ -2706,6 +2931,7 @@ window.HR_DATA = {
     {
       "id": 3035315,
       "name": "Võ Văn Hưng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/08/2022",
@@ -2718,6 +2944,7 @@ window.HR_DATA = {
     {
       "id": 3051089,
       "name": "Mạch Kiếm Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2730,6 +2957,7 @@ window.HR_DATA = {
     {
       "id": 3034010,
       "name": "Thái Kim Ngọc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "",
@@ -2742,6 +2970,7 @@ window.HR_DATA = {
     {
       "id": 3038969,
       "name": "Huỳnh Minh Tân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "",
@@ -2754,6 +2983,7 @@ window.HR_DATA = {
     {
       "id": 3049030,
       "name": "Hồ Duy Thích",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/02/2022",
@@ -2766,6 +2996,7 @@ window.HR_DATA = {
     {
       "id": 3051144,
       "name": "Văn Tân Quang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2778,6 +3009,7 @@ window.HR_DATA = {
     {
       "id": 3033047,
       "name": "Võ Đức Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/07/2022",
@@ -2790,6 +3022,7 @@ window.HR_DATA = {
     {
       "id": 3044142,
       "name": "Lê Quốc Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/12/2022",
@@ -2802,6 +3035,7 @@ window.HR_DATA = {
     {
       "id": 3052412,
       "name": "Nguyễn Văn Phước",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "",
@@ -2814,6 +3048,7 @@ window.HR_DATA = {
     {
       "id": 3048828,
       "name": "Phan Kim Khải",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/02/2023",
@@ -2826,6 +3061,7 @@ window.HR_DATA = {
     {
       "id": 3048827,
       "name": "Phạm Tú Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/02/2023",
@@ -2838,6 +3074,7 @@ window.HR_DATA = {
     {
       "id": 3051090,
       "name": "Trương Tấn Phát",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2850,6 +3087,7 @@ window.HR_DATA = {
     {
       "id": 3050600,
       "name": "Lưu Hồng Đậm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2862,6 +3100,7 @@ window.HR_DATA = {
     {
       "id": 3012162,
       "name": "Nguyễn Duy Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/10/2021",
@@ -2874,6 +3113,7 @@ window.HR_DATA = {
     {
       "id": 3024229,
       "name": "Huỳnh Quốc Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/03/2022",
@@ -2886,6 +3126,7 @@ window.HR_DATA = {
     {
       "id": 3052061,
       "name": "Trương Quốc Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "",
@@ -2898,6 +3139,7 @@ window.HR_DATA = {
     {
       "id": 3053028,
       "name": "Nguyễn Văn Phước",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "",
@@ -2910,6 +3152,7 @@ window.HR_DATA = {
     {
       "id": 3049032,
       "name": "Đào Thị Thanh Thúy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2922,6 +3165,7 @@ window.HR_DATA = {
     {
       "id": 3048829,
       "name": "Lê Hồng Quân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/02/2023",
@@ -2934,6 +3178,7 @@ window.HR_DATA = {
     {
       "id": 3050994,
       "name": "Lê Thanh Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -2946,6 +3191,7 @@ window.HR_DATA = {
     {
       "id": 3026067,
       "name": "Trần Văn Lâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/04/2022",
@@ -2958,6 +3204,7 @@ window.HR_DATA = {
     {
       "id": 1719204,
       "name": "Nguyễn Viết Hoàng Thắng",
+      "position": "Điều phối xuất nhập hàng hóa",
       "dept": "In/ Out Coordinator",
       "shift": "Ca 3",
       "joinDateStr": "02/10/2018",
@@ -2970,6 +3217,7 @@ window.HR_DATA = {
     {
       "id": 3029571,
       "name": "Nguyễn Thị Bảy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "",
@@ -2982,6 +3230,7 @@ window.HR_DATA = {
     {
       "id": 3056052,
       "name": "Nguyễn Tấn Nhơn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "",
@@ -2994,6 +3243,7 @@ window.HR_DATA = {
     {
       "id": 3049176,
       "name": "Trần Đức Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/02/2023",
@@ -3006,6 +3256,7 @@ window.HR_DATA = {
     {
       "id": 3049175,
       "name": "Trần Thị Thu Hà",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/02/2023",
@@ -3018,6 +3269,7 @@ window.HR_DATA = {
     {
       "id": 3052934,
       "name": "Nguyễn Văn Muội",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/04/2023",
@@ -3030,6 +3282,7 @@ window.HR_DATA = {
     {
       "id": 3052413,
       "name": "Đào Quang Lâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/03/2023",
@@ -3042,6 +3295,7 @@ window.HR_DATA = {
     {
       "id": 3049029,
       "name": "Hồ Quốc Toàn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/02/2023",
@@ -3054,6 +3308,7 @@ window.HR_DATA = {
     {
       "id": 3035314,
       "name": "Lê Lâm Thành",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/08/2022",
@@ -3066,6 +3321,7 @@ window.HR_DATA = {
     {
       "id": 3053661,
       "name": "Nguyễn Văn Khang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/04/2023",
@@ -3078,6 +3334,7 @@ window.HR_DATA = {
     {
       "id": 3051139,
       "name": "Phạm Hữu Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/03/2023",
@@ -3090,6 +3347,7 @@ window.HR_DATA = {
     {
       "id": 3049666,
       "name": "Nguyễn Văn Thọ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -3102,6 +3360,7 @@ window.HR_DATA = {
     {
       "id": 3049031,
       "name": "Huỳnh Thị Bích Tuyền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/02/2023",
@@ -3114,6 +3373,7 @@ window.HR_DATA = {
     {
       "id": 3056184,
       "name": "Nguyễn Thanh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/05/2023",
@@ -3126,6 +3386,7 @@ window.HR_DATA = {
     {
       "id": 3051503,
       "name": "Phạm Nhật Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/03/2023",
@@ -3138,6 +3399,7 @@ window.HR_DATA = {
     {
       "id": 3049018,
       "name": "Nguyễn Minh Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/02/2023",
@@ -3150,6 +3412,7 @@ window.HR_DATA = {
     {
       "id": 3053664,
       "name": "Nguyễn Thanh Tài",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/04/2023",
@@ -3162,6 +3425,7 @@ window.HR_DATA = {
     {
       "id": 3055891,
       "name": "Lê Anh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/05/2023",
@@ -3174,6 +3438,7 @@ window.HR_DATA = {
     {
       "id": 3048825,
       "name": "Huỳnh Ngọc Gia Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/02/2023",
@@ -3186,6 +3451,7 @@ window.HR_DATA = {
     {
       "id": 3060219,
       "name": "Nguyễn Quang Giàu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/07/2023",
@@ -3198,6 +3464,7 @@ window.HR_DATA = {
     {
       "id": 3049665,
       "name": "Bùi Ngọc Thịnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -3210,6 +3477,7 @@ window.HR_DATA = {
     {
       "id": 3049664,
       "name": "Thái Thị Ngọc Hà",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -3222,6 +3490,7 @@ window.HR_DATA = {
     {
       "id": 3051003,
       "name": "Phan Hoàng Quí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/03/2023",
@@ -3234,6 +3503,7 @@ window.HR_DATA = {
     {
       "id": 3052084,
       "name": "Trương Quốc Kháng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/03/2023",
@@ -3246,6 +3516,7 @@ window.HR_DATA = {
     {
       "id": 3050385,
       "name": "Phan Dương Thành Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/03/2023",
@@ -3258,6 +3529,7 @@ window.HR_DATA = {
     {
       "id": 3050384,
       "name": "Nguyễn Tấn Hải Long",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/03/2023",
@@ -3270,6 +3542,7 @@ window.HR_DATA = {
     {
       "id": 3038434,
       "name": "Vòng Quay Minh",
+      "position": "CTV B2B",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/09/2022",
@@ -3282,6 +3555,7 @@ window.HR_DATA = {
     {
       "id": 3059669,
       "name": "Trần Anh Hào",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/06/2023",
@@ -3294,6 +3568,7 @@ window.HR_DATA = {
     {
       "id": 3059671,
       "name": "Trần Trung Nghĩa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/06/2023",
@@ -3306,6 +3581,7 @@ window.HR_DATA = {
     {
       "id": 3062723,
       "name": "Nguyễn Văn Đậm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/07/2023",
@@ -3318,6 +3594,7 @@ window.HR_DATA = {
     {
       "id": 3063361,
       "name": "Lê Hữu An Nguyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/08/2023",
@@ -3330,6 +3607,7 @@ window.HR_DATA = {
     {
       "id": 3050386,
       "name": "Nguyễn Văn Nguyện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/03/2023",
@@ -3342,6 +3620,7 @@ window.HR_DATA = {
     {
       "id": 3062724,
       "name": "Nguyễn Văn Trường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/07/2023",
@@ -3354,6 +3633,7 @@ window.HR_DATA = {
     {
       "id": 3055106,
       "name": "Trần Diệp Mẫn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/05/2023",
@@ -3366,6 +3646,7 @@ window.HR_DATA = {
     {
       "id": 3063412,
       "name": "Nguyễn Chí Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/07/2023",
@@ -3378,6 +3659,7 @@ window.HR_DATA = {
     {
       "id": 3066875,
       "name": "Nguyễn Văn Quý",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/08/2023",
@@ -3390,6 +3672,7 @@ window.HR_DATA = {
     {
       "id": 3065135,
       "name": "Đỗ Minh Trí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/08/2023",
@@ -3402,6 +3685,7 @@ window.HR_DATA = {
     {
       "id": 3058598,
       "name": "Lê Văn Bình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/05/2023",
@@ -3414,6 +3698,7 @@ window.HR_DATA = {
     {
       "id": 3007703,
       "name": "Võ Hoàng Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/07/2021",
@@ -3426,6 +3711,7 @@ window.HR_DATA = {
     {
       "id": 3000847,
       "name": "Hữu Chí Nguyện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/03/2021",
@@ -3438,6 +3724,7 @@ window.HR_DATA = {
     {
       "id": 3057410,
       "name": "Nguyễn Thành Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/06/2023",
@@ -3450,6 +3737,7 @@ window.HR_DATA = {
     {
       "id": 256927,
       "name": "Vũ Quốc Việt",
+      "position": "Giám sát xuất nhập hàng hóa",
       "dept": "In/ Out Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "05/09/2016",
@@ -3462,6 +3750,7 @@ window.HR_DATA = {
     {
       "id": 3065288,
       "name": "Lê Bá Hồng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/08/2023",
@@ -3474,6 +3763,7 @@ window.HR_DATA = {
     {
       "id": 3058506,
       "name": "Thái Ngọc Hoàng Châu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/05/2023",
@@ -3486,6 +3776,7 @@ window.HR_DATA = {
     {
       "id": 3069034,
       "name": "Trần Trương Thanh Thủy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/09/2023",
@@ -3498,6 +3789,7 @@ window.HR_DATA = {
     {
       "id": 3048831,
       "name": "Võ Đức Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/02/2023",
@@ -3510,6 +3802,7 @@ window.HR_DATA = {
     {
       "id": 3011592,
       "name": "Trần Tấn Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/10/2021",
@@ -3522,6 +3815,7 @@ window.HR_DATA = {
     {
       "id": 3043895,
       "name": "Phạm Minh Đức",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2022",
@@ -3534,6 +3828,7 @@ window.HR_DATA = {
     {
       "id": 3059458,
       "name": "Nguyễn Văn Thọ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/06/2023",
@@ -3546,6 +3841,7 @@ window.HR_DATA = {
     {
       "id": 1872619,
       "name": "Trần Ngọc Minh Hoàng",
+      "position": "Điều phối xuất nhập hàng hóa",
       "dept": "In/ Out Coordinator",
       "shift": "Ca 3",
       "joinDateStr": "20/02/2019",
@@ -3558,6 +3854,7 @@ window.HR_DATA = {
     {
       "id": 3052410,
       "name": "Cao Phong Phú",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/03/2023",
@@ -3570,6 +3867,7 @@ window.HR_DATA = {
     {
       "id": 3072334,
       "name": "Hữu Chí Nguyện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/10/2023",
@@ -3582,6 +3880,7 @@ window.HR_DATA = {
     {
       "id": 3069796,
       "name": "Phạm Khánh Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/09/2023",
@@ -3594,6 +3893,7 @@ window.HR_DATA = {
     {
       "id": 3036590,
       "name": "Nguyễn Đại",
+      "position": "CTV B2B",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "30/08/2022",
@@ -3606,6 +3906,7 @@ window.HR_DATA = {
     {
       "id": 3012414,
       "name": "Tăng Trần Vũ Kiệt",
+      "position": "CTV B2B",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/10/2021",
@@ -3618,6 +3919,7 @@ window.HR_DATA = {
     {
       "id": 3011745,
       "name": "Trần Hoàng Phi Long",
+      "position": "CTV B2B",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/10/2021",
@@ -3630,6 +3932,7 @@ window.HR_DATA = {
     {
       "id": 3062505,
       "name": "Nguyễn Hồ Công Lượng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/07/2023",
@@ -3642,6 +3945,7 @@ window.HR_DATA = {
     {
       "id": 3073480,
       "name": "Hồ Mỹ Xuân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/10/2023",
@@ -3654,6 +3958,7 @@ window.HR_DATA = {
     {
       "id": 3065134,
       "name": "Trần Minh Điền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/08/2023",
@@ -3666,6 +3971,7 @@ window.HR_DATA = {
     {
       "id": 3075165,
       "name": "Danh Khươl",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2023",
@@ -3678,6 +3984,7 @@ window.HR_DATA = {
     {
       "id": 3076859,
       "name": "Thòng Hoài Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/11/2023",
@@ -3690,6 +3997,7 @@ window.HR_DATA = {
     {
       "id": 3075240,
       "name": "Đỗ Duy Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2023",
@@ -3702,6 +4010,7 @@ window.HR_DATA = {
     {
       "id": 3076488,
       "name": "Lê Thị Diễm My",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/11/2023",
@@ -3714,6 +4023,7 @@ window.HR_DATA = {
     {
       "id": 3079126,
       "name": "Lê Long Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/12/2023",
@@ -3726,6 +4036,7 @@ window.HR_DATA = {
     {
       "id": 3050381,
       "name": "Nguyễn Minh Thuận",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/03/2023",
@@ -3738,6 +4049,7 @@ window.HR_DATA = {
     {
       "id": 3061558,
       "name": "Nguyễn Văn Lộc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/06/2023",
@@ -3750,6 +4062,7 @@ window.HR_DATA = {
     {
       "id": 3051979,
       "name": "Nguyễn Tường Vi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/03/2023",
@@ -3762,6 +4075,7 @@ window.HR_DATA = {
     {
       "id": 3079454,
       "name": "Mạch Kiếm Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2023",
@@ -3774,6 +4088,7 @@ window.HR_DATA = {
     {
       "id": 3076819,
       "name": "Phạm Tuấn Khanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/11/2023",
@@ -3786,6 +4101,7 @@ window.HR_DATA = {
     {
       "id": 3080806,
       "name": "Trần Minh Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/12/2023",
@@ -3798,6 +4114,7 @@ window.HR_DATA = {
     {
       "id": 3080406,
       "name": "Trần Bé Thái",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2023",
@@ -3810,6 +4127,7 @@ window.HR_DATA = {
     {
       "id": 3075586,
       "name": "Hoàng Văn Sáng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/11/2023",
@@ -3822,6 +4140,7 @@ window.HR_DATA = {
     {
       "id": 3082386,
       "name": "Thái Thị Ngọc Hà",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/12/2023",
@@ -3834,6 +4153,7 @@ window.HR_DATA = {
     {
       "id": 3069635,
       "name": "Thái Thanh Phước",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/09/2023",
@@ -3846,6 +4166,7 @@ window.HR_DATA = {
     {
       "id": 3076827,
       "name": "Nguyễn Hoàng Trúc Thanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/11/2023",
@@ -3858,6 +4179,7 @@ window.HR_DATA = {
     {
       "id": 3081901,
       "name": "Trần Hửu Lợi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/12/2023",
@@ -3870,6 +4192,7 @@ window.HR_DATA = {
     {
       "id": 3068326,
       "name": "Hà Lê Yến Xuân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/09/2023",
@@ -3882,6 +4205,7 @@ window.HR_DATA = {
     {
       "id": 3076377,
       "name": "Mai Trương Quỳnh Như",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/11/2023",
@@ -3894,6 +4218,7 @@ window.HR_DATA = {
     {
       "id": 3080281,
       "name": "Lê Nguyễn Hoàng Dinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2023",
@@ -3906,6 +4231,7 @@ window.HR_DATA = {
     {
       "id": 3081367,
       "name": "Nguyễn Thế Bằng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/12/2023",
@@ -3918,6 +4244,7 @@ window.HR_DATA = {
     {
       "id": 3082498,
       "name": "Nguyễn Văn Quốc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/12/2023",
@@ -3930,6 +4257,7 @@ window.HR_DATA = {
     {
       "id": 3079451,
       "name": "Giang Thành Nhơn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2023",
@@ -3942,6 +4270,7 @@ window.HR_DATA = {
     {
       "id": 3077415,
       "name": "Mai Thị Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/11/2023",
@@ -3954,6 +4283,7 @@ window.HR_DATA = {
     {
       "id": 3077418,
       "name": "Trần Văn Lâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/11/2023",
@@ -3966,6 +4296,7 @@ window.HR_DATA = {
     {
       "id": 3079213,
       "name": "Phan Thành Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/12/2023",
@@ -3978,6 +4309,7 @@ window.HR_DATA = {
     {
       "id": 3068066,
       "name": "Nguyễn Thị Tú Quyên",
+      "position": "CTV phân hàng cồng kềnh",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/09/2023",
@@ -3990,6 +4322,7 @@ window.HR_DATA = {
     {
       "id": 3068906,
       "name": "Hoàng Thị Trà My",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/09/2023",
@@ -4002,6 +4335,7 @@ window.HR_DATA = {
     {
       "id": 3079074,
       "name": "Danh Quốc Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/12/2023",
@@ -4014,6 +4348,7 @@ window.HR_DATA = {
     {
       "id": 3079078,
       "name": "Danh Quốc Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/12/2023",
@@ -4026,6 +4361,7 @@ window.HR_DATA = {
     {
       "id": 3079453,
       "name": "Đặng Phúc Minh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2023",
@@ -4038,6 +4374,7 @@ window.HR_DATA = {
     {
       "id": 3081738,
       "name": "Nguyễn Ngọc Hoàng Hải",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/12/2023",
@@ -4050,6 +4387,7 @@ window.HR_DATA = {
     {
       "id": 3081740,
       "name": "Thái Hoàng Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/12/2023",
@@ -4062,6 +4400,7 @@ window.HR_DATA = {
     {
       "id": 3059001,
       "name": "Lê Duy Khánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/06/2023",
@@ -4074,6 +4413,7 @@ window.HR_DATA = {
     {
       "id": 3073210,
       "name": "Võ Minh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/10/2023",
@@ -4086,6 +4426,7 @@ window.HR_DATA = {
     {
       "id": 2038412,
       "name": "Huỳnh Minh Hưng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/02/2020",
@@ -4098,6 +4439,7 @@ window.HR_DATA = {
     {
       "id": 3070798,
       "name": "Trương Quốc Kháng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/10/2023",
@@ -4110,6 +4452,7 @@ window.HR_DATA = {
     {
       "id": 3077409,
       "name": "Ngô Thúy Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2023",
@@ -4122,6 +4465,7 @@ window.HR_DATA = {
     {
       "id": 3082267,
       "name": "Nguyễn Minh Tiển",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/12/2023",
@@ -4134,6 +4478,7 @@ window.HR_DATA = {
     {
       "id": 3087389,
       "name": "Trần Vũ Luân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/02/2024",
@@ -4146,6 +4491,7 @@ window.HR_DATA = {
     {
       "id": 3075064,
       "name": "Nguyễn Hoàng Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2023",
@@ -4158,6 +4504,7 @@ window.HR_DATA = {
     {
       "id": 3085853,
       "name": "Đặng Nguyễn Anh Quân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/02/2024",
@@ -4170,6 +4517,7 @@ window.HR_DATA = {
     {
       "id": 3091038,
       "name": "Phạm Thị Mỹ Xuyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/03/2024",
@@ -4182,6 +4530,7 @@ window.HR_DATA = {
     {
       "id": 2046591,
       "name": "Lê Quang Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/09/2020",
@@ -4194,6 +4543,7 @@ window.HR_DATA = {
     {
       "id": 3069919,
       "name": "Dương Thị Cẩm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/09/2023",
@@ -4206,6 +4556,7 @@ window.HR_DATA = {
     {
       "id": 3080285,
       "name": "Nguyễn Phước Dũng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2023",
@@ -4218,6 +4569,7 @@ window.HR_DATA = {
     {
       "id": 3081358,
       "name": "Tạ Anh Thái",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/12/2023",
@@ -4230,6 +4582,7 @@ window.HR_DATA = {
     {
       "id": 3085736,
       "name": "Đào Minh Thuận",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/02/2024",
@@ -4242,6 +4595,7 @@ window.HR_DATA = {
     {
       "id": 3091121,
       "name": "Hồ Thị Kim Hoàng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/03/2024",
@@ -4254,6 +4608,7 @@ window.HR_DATA = {
     {
       "id": 3091100,
       "name": "Nguyễn Thị Thủy Tiên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/03/2024",
@@ -4266,6 +4621,7 @@ window.HR_DATA = {
     {
       "id": 3088374,
       "name": "Nguyễn Minh Hoàng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/03/2024",
@@ -4278,6 +4634,7 @@ window.HR_DATA = {
     {
       "id": 3094003,
       "name": "Nguyễn Linh Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/04/2024",
@@ -4290,6 +4647,7 @@ window.HR_DATA = {
     {
       "id": 3073892,
       "name": "Nguyễn Hải Đăng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/10/2023",
@@ -4302,6 +4660,7 @@ window.HR_DATA = {
     {
       "id": 3079591,
       "name": "Lưu Hồ Tuấn Kiệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/12/2023",
@@ -4314,6 +4673,7 @@ window.HR_DATA = {
     {
       "id": 3091039,
       "name": "Ngô Thúy Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/03/2024",
@@ -4326,6 +4686,7 @@ window.HR_DATA = {
     {
       "id": 3092643,
       "name": "Mai Thành Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "30/03/2024",
@@ -4338,6 +4699,7 @@ window.HR_DATA = {
     {
       "id": 3086649,
       "name": "Nguyễn Thị Huyền Trân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/02/2024",
@@ -4350,6 +4712,7 @@ window.HR_DATA = {
     {
       "id": 3092317,
       "name": "Trần Thị Mỹ Dung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/03/2024",
@@ -4362,6 +4725,7 @@ window.HR_DATA = {
     {
       "id": 3092316,
       "name": "Phan Văn Hiền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/03/2024",
@@ -4374,6 +4738,7 @@ window.HR_DATA = {
     {
       "id": 3094022,
       "name": "Trương Thị Diệu Hiền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/04/2024",
@@ -4386,6 +4751,7 @@ window.HR_DATA = {
     {
       "id": 3094004,
       "name": "Phạm Thị Mỹ Xuyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/04/2024",
@@ -4398,6 +4764,7 @@ window.HR_DATA = {
     {
       "id": 3086880,
       "name": "Lương Thị Kim Sa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/02/2024",
@@ -4410,6 +4777,7 @@ window.HR_DATA = {
     {
       "id": 3053658,
       "name": "Nguyễn Thanh Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/04/2023",
@@ -4422,6 +4790,7 @@ window.HR_DATA = {
     {
       "id": 3063411,
       "name": "Lê Anh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2023",
@@ -4434,6 +4803,7 @@ window.HR_DATA = {
     {
       "id": 3090544,
       "name": "Thạch Thị Bình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/03/2024",
@@ -4446,6 +4816,7 @@ window.HR_DATA = {
     {
       "id": 3091500,
       "name": "Sơn Thị Bé Hai",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/03/2024",
@@ -4458,6 +4829,7 @@ window.HR_DATA = {
     {
       "id": 3091495,
       "name": "Nguyễn Văn Kha",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/03/2024",
@@ -4470,6 +4842,7 @@ window.HR_DATA = {
     {
       "id": 3062503,
       "name": "Võ Quốc Việt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/07/2023",
@@ -4482,6 +4855,7 @@ window.HR_DATA = {
     {
       "id": 3088843,
       "name": "Nguyễn Hoàng Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/03/2024",
@@ -4494,6 +4868,7 @@ window.HR_DATA = {
     {
       "id": 3090486,
       "name": "Dương Thiên Tứ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/03/2024",
@@ -4506,6 +4881,7 @@ window.HR_DATA = {
     {
       "id": 3096177,
       "name": "Võ Hoàng Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/05/2024",
@@ -4518,6 +4894,7 @@ window.HR_DATA = {
     {
       "id": 3093873,
       "name": "Phạm Nhựt Dây",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/04/2024",
@@ -4530,6 +4907,7 @@ window.HR_DATA = {
     {
       "id": 2031935,
       "name": "Nguyễn Đạt",
+      "position": "Giám sát phân loại hàng hóa",
       "dept": "In/ Out Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "13/06/2020",
@@ -4542,6 +4920,7 @@ window.HR_DATA = {
     {
       "id": 3096173,
       "name": "Lê Tuấn Cảnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/05/2024",
@@ -4554,6 +4933,7 @@ window.HR_DATA = {
     {
       "id": 3057863,
       "name": "Phạm Minh Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/06/2022",
@@ -4566,6 +4946,7 @@ window.HR_DATA = {
     {
       "id": 3077278,
       "name": "Bùi Văn Toàn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2023",
@@ -4578,6 +4959,7 @@ window.HR_DATA = {
     {
       "id": 3093883,
       "name": "Hồ Cẩm Duyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/04/2024",
@@ -4590,6 +4972,7 @@ window.HR_DATA = {
     {
       "id": 3098352,
       "name": "Lê Thùy Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/05/2024",
@@ -4602,6 +4985,7 @@ window.HR_DATA = {
     {
       "id": 3079846,
       "name": "Lê Văn Bé Ba",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/12/2023",
@@ -4614,6 +4998,7 @@ window.HR_DATA = {
     {
       "id": 3079335,
       "name": "Bùi Tuấn Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/12/2023",
@@ -4626,6 +5011,7 @@ window.HR_DATA = {
     {
       "id": 3091483,
       "name": "Trần Hữu Luân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/03/2024",
@@ -4638,6 +5024,7 @@ window.HR_DATA = {
     {
       "id": 3095453,
       "name": "Lâm Minh Thuận",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/04/2024",
@@ -4650,6 +5037,7 @@ window.HR_DATA = {
     {
       "id": 3093265,
       "name": "Nguyễn Minh Tú",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/04/2024",
@@ -4662,6 +5050,7 @@ window.HR_DATA = {
     {
       "id": 3099330,
       "name": "Trần Bảo An",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/06/2024",
@@ -4674,6 +5063,7 @@ window.HR_DATA = {
     {
       "id": 3056914,
       "name": "Nguyễn Văn Út",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/05/2023",
@@ -4686,6 +5076,7 @@ window.HR_DATA = {
     {
       "id": 3079091,
       "name": "Nguyễn Minh Nhựt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/12/2023",
@@ -4698,6 +5089,7 @@ window.HR_DATA = {
     {
       "id": 3091667,
       "name": "Nguyễn Thị Cẩm Duyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/03/2024",
@@ -4710,6 +5102,7 @@ window.HR_DATA = {
     {
       "id": 3093868,
       "name": "Huỳnh Thanh Thiên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/04/2024",
@@ -4722,6 +5115,7 @@ window.HR_DATA = {
     {
       "id": 3098358,
       "name": "Bùi Minh Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/05/2024",
@@ -4734,6 +5128,7 @@ window.HR_DATA = {
     {
       "id": 3071162,
       "name": "Võ Huỳnh Trung Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/10/2023",
@@ -4746,6 +5141,7 @@ window.HR_DATA = {
     {
       "id": 3092650,
       "name": "Trần Minh Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "30/03/2024",
@@ -4758,6 +5154,7 @@ window.HR_DATA = {
     {
       "id": 3093759,
       "name": "Huỳnh Nguyễn Anh Khoa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/04/2024",
@@ -4770,6 +5167,7 @@ window.HR_DATA = {
     {
       "id": 3093777,
       "name": "Phạm Minh Thắng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/04/2024",
@@ -4782,6 +5180,7 @@ window.HR_DATA = {
     {
       "id": 3093898,
       "name": "Trần Thanh Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/04/2024",
@@ -4794,6 +5193,7 @@ window.HR_DATA = {
     {
       "id": 3095920,
       "name": "Lâm Gia Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/05/2024",
@@ -4806,6 +5206,7 @@ window.HR_DATA = {
     {
       "id": 3098182,
       "name": "Trương Quốc Kháng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/05/2024",
@@ -4818,6 +5219,7 @@ window.HR_DATA = {
     {
       "id": 3099023,
       "name": "Trần Dĩ Khang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/06/2024",
@@ -4830,6 +5232,7 @@ window.HR_DATA = {
     {
       "id": 3101723,
       "name": "Nguyễn Khánh An",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/07/2024",
@@ -4842,6 +5245,7 @@ window.HR_DATA = {
     {
       "id": 3103881,
       "name": "Huỳnh Quốc Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/07/2024",
@@ -4854,6 +5258,7 @@ window.HR_DATA = {
     {
       "id": 3081883,
       "name": "Trần Minh Vũ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/12/2023",
@@ -4866,6 +5271,7 @@ window.HR_DATA = {
     {
       "id": 3091681,
       "name": "Nguyễn Ngọc Nhung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/03/2024",
@@ -4878,6 +5284,7 @@ window.HR_DATA = {
     {
       "id": 3094106,
       "name": "Bùi Thị Nga",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/04/2024",
@@ -4890,6 +5297,7 @@ window.HR_DATA = {
     {
       "id": 3099899,
       "name": "Trần Thuyền Linh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/06/2024",
@@ -4902,6 +5310,7 @@ window.HR_DATA = {
     {
       "id": 3100425,
       "name": "Phan Văn Kiếm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/06/2024",
@@ -4914,6 +5323,7 @@ window.HR_DATA = {
     {
       "id": 3103312,
       "name": "Nguyễn Trường Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/07/2024",
@@ -4926,6 +5336,7 @@ window.HR_DATA = {
     {
       "id": 3103776,
       "name": "Nguyễn Quốc Khanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/07/2024",
@@ -4938,6 +5349,7 @@ window.HR_DATA = {
     {
       "id": 3104385,
       "name": "Nguyễn Văn Lâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/08/2024",
@@ -4950,6 +5362,7 @@ window.HR_DATA = {
     {
       "id": 3079449,
       "name": "Nguyễn Anh Tuấn",
+      "position": "Điều phối xuất nhập hàng hóa",
       "dept": "In/ Out Coordinator",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2023",
@@ -4962,6 +5375,7 @@ window.HR_DATA = {
     {
       "id": 3068999,
       "name": "Cừu Thị Hậu",
+      "position": "Điều phối xuất nhập hàng hóa",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/09/2023",
@@ -4974,6 +5388,7 @@ window.HR_DATA = {
     {
       "id": 3040956,
       "name": "Nguyễn Thạch Lâm",
+      "position": "Điều phối xuất nhập hàng hóa",
       "dept": "In/ Out Coordinator",
       "shift": "Ca 3",
       "joinDateStr": "18/10/2022",
@@ -4986,6 +5401,7 @@ window.HR_DATA = {
     {
       "id": 3068907,
       "name": "Nguyễn Ngọc Phương Như",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/09/2023",
@@ -4998,6 +5414,7 @@ window.HR_DATA = {
     {
       "id": 3076854,
       "name": "Nguyễn Thị Của",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/11/2023",
@@ -5010,6 +5427,7 @@ window.HR_DATA = {
     {
       "id": 3080113,
       "name": "Huỳnh Thanh Hà",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2023",
@@ -5022,6 +5440,7 @@ window.HR_DATA = {
     {
       "id": 3103575,
       "name": "Đặng Thành Phát",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/07/2024",
@@ -5034,6 +5453,7 @@ window.HR_DATA = {
     {
       "id": 3071231,
       "name": "Võ Thị Diễm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/10/2023",
@@ -5046,6 +5466,7 @@ window.HR_DATA = {
     {
       "id": 3077417,
       "name": "Huỳnh Ngọc Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2023",
@@ -5058,6 +5479,7 @@ window.HR_DATA = {
     {
       "id": 3086632,
       "name": "Nguyễn Thành Đắc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/02/2024",
@@ -5070,6 +5492,7 @@ window.HR_DATA = {
     {
       "id": 3090542,
       "name": "Tăng Thị Thanh Nguyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/03/2024",
@@ -5082,6 +5505,7 @@ window.HR_DATA = {
     {
       "id": 3100177,
       "name": "Hứa Thị Ngọc Đáng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/06/2024",
@@ -5094,6 +5518,7 @@ window.HR_DATA = {
     {
       "id": 3104689,
       "name": "Nguyễn Hoàng Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/08/2024",
@@ -5106,6 +5531,7 @@ window.HR_DATA = {
     {
       "id": 3081737,
       "name": "Nguyễn Thiên Lộc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/12/2023",
@@ -5118,6 +5544,7 @@ window.HR_DATA = {
     {
       "id": 3108221,
       "name": "Võ Thành Luân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/09/2024",
@@ -5130,6 +5557,7 @@ window.HR_DATA = {
     {
       "id": 3076825,
       "name": "Nguyễn Hoàng Thanh Trúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/11/2023",
@@ -5142,6 +5570,7 @@ window.HR_DATA = {
     {
       "id": 3097775,
       "name": "Nguyễn Thiên Lộc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/05/2024",
@@ -5154,6 +5583,7 @@ window.HR_DATA = {
     {
       "id": 3102580,
       "name": "Nguyễn Hồ Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/07/2024",
@@ -5166,6 +5596,7 @@ window.HR_DATA = {
     {
       "id": 3082174,
       "name": "Hồ Lê Quang Sơn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/12/2023",
@@ -5178,6 +5609,7 @@ window.HR_DATA = {
     {
       "id": 3103145,
       "name": "Hoàng Minh Thư",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/07/2024",
@@ -5190,6 +5622,7 @@ window.HR_DATA = {
     {
       "id": 3108879,
       "name": "Đinh Khánh Vương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/09/2024",
@@ -5202,6 +5635,7 @@ window.HR_DATA = {
     {
       "id": 3108558,
       "name": "Trần Anh Dũng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/09/2024",
@@ -5214,6 +5648,7 @@ window.HR_DATA = {
     {
       "id": 3108976,
       "name": "Nguyễn Văn Xiếm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/09/2024",
@@ -5226,6 +5661,7 @@ window.HR_DATA = {
     {
       "id": 3108557,
       "name": "Đoàn Quốc Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/09/2024",
@@ -5238,6 +5674,7 @@ window.HR_DATA = {
     {
       "id": 3033759,
       "name": "Nguyễn Nhựt Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/07/2022",
@@ -5250,6 +5687,7 @@ window.HR_DATA = {
     {
       "id": 3096002,
       "name": "Châu Vĩnh Thuận",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/05/2024",
@@ -5262,6 +5700,7 @@ window.HR_DATA = {
     {
       "id": 3104245,
       "name": "Phạm Thị Thủy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/07/2024",
@@ -5274,6 +5713,7 @@ window.HR_DATA = {
     {
       "id": 3109221,
       "name": "Đặng Văn Thà",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/09/2024",
@@ -5286,6 +5726,7 @@ window.HR_DATA = {
     {
       "id": 3109447,
       "name": "Trần Văn Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/09/2024",
@@ -5298,6 +5739,7 @@ window.HR_DATA = {
     {
       "id": 3098354,
       "name": "Cao Hoàng Nhật Long",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/05/2024",
@@ -5310,6 +5752,7 @@ window.HR_DATA = {
     {
       "id": 3109917,
       "name": "Nguyễn Văn Thương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/09/2024",
@@ -5322,6 +5765,7 @@ window.HR_DATA = {
     {
       "id": 3061952,
       "name": "Nguyễn Hoàng Triều",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/07/2023",
@@ -5334,6 +5778,7 @@ window.HR_DATA = {
     {
       "id": 3081882,
       "name": "Nguyễn Chí Công",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/12/2023",
@@ -5346,6 +5791,7 @@ window.HR_DATA = {
     {
       "id": 3100638,
       "name": "Trần Bảo Minh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/06/2024",
@@ -5358,6 +5804,7 @@ window.HR_DATA = {
     {
       "id": 3073475,
       "name": "La Văn Vui",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/10/2023",
@@ -5370,6 +5817,7 @@ window.HR_DATA = {
     {
       "id": 3026617,
       "name": "Hà Thị Thanh Hồng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/04/2022",
@@ -5382,6 +5830,7 @@ window.HR_DATA = {
     {
       "id": 3100091,
       "name": "Lê Minh Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/06/2024",
@@ -5394,6 +5843,7 @@ window.HR_DATA = {
     {
       "id": 3111246,
       "name": "Nguyễn Thị Thu Ngân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/10/2024",
@@ -5406,6 +5856,7 @@ window.HR_DATA = {
     {
       "id": 3112373,
       "name": "Lê Anh Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/10/2024",
@@ -5418,6 +5869,7 @@ window.HR_DATA = {
     {
       "id": 3113779,
       "name": "Trần Bình Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -5430,6 +5882,7 @@ window.HR_DATA = {
     {
       "id": 3111744,
       "name": "Phạm Thanh Tùng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/10/2024",
@@ -5442,6 +5895,7 @@ window.HR_DATA = {
     {
       "id": 3069400,
       "name": "Nguyễn Thành Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/09/2023",
@@ -5454,6 +5908,7 @@ window.HR_DATA = {
     {
       "id": 3108035,
       "name": "Đặng Hoàng Minh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/09/2024",
@@ -5466,6 +5921,7 @@ window.HR_DATA = {
     {
       "id": 3112152,
       "name": "Lâm Minh Luân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/10/2024",
@@ -5478,6 +5934,7 @@ window.HR_DATA = {
     {
       "id": 3111500,
       "name": "Trần Thị Ngọc Trâm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/10/2024",
@@ -5490,6 +5947,7 @@ window.HR_DATA = {
     {
       "id": 3114116,
       "name": "Nguyễn Chí Khanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -5502,6 +5960,7 @@ window.HR_DATA = {
     {
       "id": 3109906,
       "name": "Vũ Thị Hòa Nguyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/09/2024",
@@ -5514,6 +5973,7 @@ window.HR_DATA = {
     {
       "id": 3113168,
       "name": "Đặng Anh Nhựt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/10/2024",
@@ -5526,6 +5986,7 @@ window.HR_DATA = {
     {
       "id": 3113963,
       "name": "Dương Hoài Lâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -5538,6 +5999,7 @@ window.HR_DATA = {
     {
       "id": 3114453,
       "name": "Trần Hoàng Nam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/11/2024",
@@ -5550,6 +6012,7 @@ window.HR_DATA = {
     {
       "id": 3114752,
       "name": "Nguyễn Thanh Nam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2024",
@@ -5562,6 +6025,7 @@ window.HR_DATA = {
     {
       "id": 3115555,
       "name": "Trần Văn Tệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2024",
@@ -5574,6 +6038,7 @@ window.HR_DATA = {
     {
       "id": 3073775,
       "name": "Bùi Thị Thu Hiền",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/10/2023",
@@ -5586,6 +6051,7 @@ window.HR_DATA = {
     {
       "id": 3102474,
       "name": "La Minh Định",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/07/2024",
@@ -5598,6 +6064,7 @@ window.HR_DATA = {
     {
       "id": 3114707,
       "name": "Tống Khánh Linh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2024",
@@ -5610,6 +6077,7 @@ window.HR_DATA = {
     {
       "id": 3108125,
       "name": "La Minh Dự",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/09/2024",
@@ -5622,6 +6090,7 @@ window.HR_DATA = {
     {
       "id": 3114706,
       "name": "Nguyễn Thị Thu Ngân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2024",
@@ -5634,6 +6103,7 @@ window.HR_DATA = {
     {
       "id": 3115533,
       "name": "Đặng Trần Nam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2024",
@@ -5646,6 +6116,7 @@ window.HR_DATA = {
     {
       "id": 3116225,
       "name": "Phạm Thái Hào",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/11/2024",
@@ -5658,6 +6129,7 @@ window.HR_DATA = {
     {
       "id": 3112888,
       "name": "Nguyễn Thùy Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/10/2024",
@@ -5670,6 +6142,7 @@ window.HR_DATA = {
     {
       "id": 3113038,
       "name": "Trần Hoàng Oanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/10/2024",
@@ -5682,6 +6155,7 @@ window.HR_DATA = {
     {
       "id": 3115303,
       "name": "Nguyễn Vĩnh Phước",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/11/2024",
@@ -5694,6 +6168,7 @@ window.HR_DATA = {
     {
       "id": 3115771,
       "name": "Ngô Văn Long",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/11/2024",
@@ -5706,6 +6181,7 @@ window.HR_DATA = {
     {
       "id": 3108552,
       "name": "Lê Huỳnh Ngọc Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/09/2024",
@@ -5718,6 +6194,7 @@ window.HR_DATA = {
     {
       "id": 3112161,
       "name": "Phan Văn Bình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/10/2024",
@@ -5730,6 +6207,7 @@ window.HR_DATA = {
     {
       "id": 3113719,
       "name": "Đoàn Văn Thạnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -5742,6 +6220,7 @@ window.HR_DATA = {
     {
       "id": 3114131,
       "name": "Nguyễn Phi Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -5754,6 +6233,7 @@ window.HR_DATA = {
     {
       "id": 3117142,
       "name": "Đặng Văn Cần",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2024",
@@ -5766,6 +6246,7 @@ window.HR_DATA = {
     {
       "id": 3115998,
       "name": "Lê Anh Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/11/2024",
@@ -5778,6 +6259,7 @@ window.HR_DATA = {
     {
       "id": 3117076,
       "name": "Phan Thị Thúy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/12/2024",
@@ -5790,6 +6272,7 @@ window.HR_DATA = {
     {
       "id": 3117165,
       "name": "Nguyễn Hữu Khương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2024",
@@ -5802,6 +6285,7 @@ window.HR_DATA = {
     {
       "id": 3117169,
       "name": "Nguyễn Lâm Thành Được",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2024",
@@ -5814,6 +6298,7 @@ window.HR_DATA = {
     {
       "id": 3088666,
       "name": "Phan Duy Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/03/2024",
@@ -5826,6 +6311,7 @@ window.HR_DATA = {
     {
       "id": 3117149,
       "name": "Nguyễn Hoàng Lê Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2024",
@@ -5838,6 +6324,7 @@ window.HR_DATA = {
     {
       "id": 3117392,
       "name": "Bùi Thanh Danh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/12/2024",
@@ -5850,6 +6337,7 @@ window.HR_DATA = {
     {
       "id": 3115942,
       "name": "Cao Minh Ngọc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/11/2024",
@@ -5862,6 +6350,7 @@ window.HR_DATA = {
     {
       "id": 3116677,
       "name": "Nguyễn Thị Hậu",
+      "position": "CTV phân hàng cồng kềnh",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/12/2024",
@@ -5874,6 +6363,7 @@ window.HR_DATA = {
     {
       "id": 3117708,
       "name": "Lê Ái Tiền",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/12/2024",
@@ -5886,6 +6376,7 @@ window.HR_DATA = {
     {
       "id": 3117705,
       "name": "Nguyễn Thị Kim Y",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/12/2024",
@@ -5898,6 +6389,7 @@ window.HR_DATA = {
     {
       "id": 3110170,
       "name": "Lê Đình Chinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/09/2024",
@@ -5910,6 +6402,7 @@ window.HR_DATA = {
     {
       "id": 3111363,
       "name": "Nguyễn Trọng Nghĩa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/10/2024",
@@ -5922,6 +6415,7 @@ window.HR_DATA = {
     {
       "id": 3111796,
       "name": "Đỗ Trung Kiên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/10/2024",
@@ -5934,6 +6428,7 @@ window.HR_DATA = {
     {
       "id": 3115210,
       "name": "Lâm Nhựt Tiến",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/11/2024",
@@ -5946,6 +6441,7 @@ window.HR_DATA = {
     {
       "id": 3115407,
       "name": "Nguyễn Nhật Trường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2024",
@@ -5958,6 +6454,7 @@ window.HR_DATA = {
     {
       "id": 3115414,
       "name": "Võ Thanh Bình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/11/2024",
@@ -5970,6 +6467,7 @@ window.HR_DATA = {
     {
       "id": 3118598,
       "name": "Nguyễn Thị Thanh Nhàn",
+      "position": "CTV phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/12/2024",
@@ -5982,6 +6480,7 @@ window.HR_DATA = {
     {
       "id": 3113136,
       "name": "Phan Tấn Tài",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/10/2024",
@@ -5994,6 +6493,7 @@ window.HR_DATA = {
     {
       "id": 3113254,
       "name": "Huỳnh Anh Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/10/2024",
@@ -6006,6 +6506,7 @@ window.HR_DATA = {
     {
       "id": 3104523,
       "name": "Trần Thị Kim Ngân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/08/2024",
@@ -6018,6 +6519,7 @@ window.HR_DATA = {
     {
       "id": 3076395,
       "name": "Lê Thị Nữ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/11/2023",
@@ -6030,6 +6532,7 @@ window.HR_DATA = {
     {
       "id": 3089374,
       "name": "Nguyễn Thị Thơi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/03/2024",
@@ -6042,6 +6545,7 @@ window.HR_DATA = {
     {
       "id": 3102346,
       "name": "Trương Văn San",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/07/2024",
@@ -6054,6 +6558,7 @@ window.HR_DATA = {
     {
       "id": 3102694,
       "name": "Trần Đỗ Việt Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/07/2024",
@@ -6066,6 +6571,7 @@ window.HR_DATA = {
     {
       "id": 3110656,
       "name": "Trần Văn Tài",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/10/2024",
@@ -6078,6 +6584,7 @@ window.HR_DATA = {
     {
       "id": 3110783,
       "name": "Nguyễn Thị Ánh Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/10/2024",
@@ -6090,6 +6597,7 @@ window.HR_DATA = {
     {
       "id": 3113744,
       "name": "Tiên Hoàng Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -6102,6 +6610,7 @@ window.HR_DATA = {
     {
       "id": 3113724,
       "name": "Nguyễn Oanh Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -6114,6 +6623,7 @@ window.HR_DATA = {
     {
       "id": 3113966,
       "name": "Ngô Trường Thanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -6126,6 +6636,7 @@ window.HR_DATA = {
     {
       "id": 3116241,
       "name": "Nguyễn Bảo Thái",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/11/2024",
@@ -6138,6 +6649,7 @@ window.HR_DATA = {
     {
       "id": 3116533,
       "name": "Đào Hoàng Thông",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/11/2024",
@@ -6150,6 +6662,7 @@ window.HR_DATA = {
     {
       "id": 3118104,
       "name": "Huỳnh Tấn Kiệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/12/2024",
@@ -6162,6 +6675,7 @@ window.HR_DATA = {
     {
       "id": 3114222,
       "name": "Bùi Thị Huệ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -6174,6 +6688,7 @@ window.HR_DATA = {
     {
       "id": 3069882,
       "name": "Chung Thanh Huấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/09/2023",
@@ -6186,6 +6701,7 @@ window.HR_DATA = {
     {
       "id": 3113289,
       "name": "Huỳnh Minh Lê",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/10/2024",
@@ -6198,6 +6714,7 @@ window.HR_DATA = {
     {
       "id": 3118451,
       "name": "Vòng Thế Dũng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/12/2024",
@@ -6210,6 +6727,7 @@ window.HR_DATA = {
     {
       "id": 3111008,
       "name": "Nguyễn Thị Mỹ Xuyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/10/2024",
@@ -6222,6 +6740,7 @@ window.HR_DATA = {
     {
       "id": 3114751,
       "name": "Đặng Tấn Bình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2024",
@@ -6234,6 +6753,7 @@ window.HR_DATA = {
     {
       "id": 3107416,
       "name": "Lê Chí Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "30/08/2024",
@@ -6246,6 +6766,7 @@ window.HR_DATA = {
     {
       "id": 3113138,
       "name": "Nguyễn Tấn Duy Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/10/2024",
@@ -6258,6 +6779,7 @@ window.HR_DATA = {
     {
       "id": 3113472,
       "name": "Nguyễn Nhật Trường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "30/10/2024",
@@ -6270,6 +6792,7 @@ window.HR_DATA = {
     {
       "id": 3114864,
       "name": "Lê Nguyễn Đăng Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/11/2024",
@@ -6282,6 +6805,7 @@ window.HR_DATA = {
     {
       "id": 3118270,
       "name": "Trần Văn Quí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/12/2024",
@@ -6294,6 +6818,7 @@ window.HR_DATA = {
     {
       "id": 3110172,
       "name": "Ngô Thị Huyền Trân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/09/2024",
@@ -6306,6 +6831,7 @@ window.HR_DATA = {
     {
       "id": 3113703,
       "name": "Nguyễn Văn Sa Liêm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -6318,6 +6844,7 @@ window.HR_DATA = {
     {
       "id": 3113707,
       "name": "Nguyễn Văn Quí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -6330,6 +6857,7 @@ window.HR_DATA = {
     {
       "id": 3113630,
       "name": "Nguyễn Trọng Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/10/2024",
@@ -6342,6 +6870,7 @@ window.HR_DATA = {
     {
       "id": 3114458,
       "name": "Huỳnh Văn Tuấn Em",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/11/2024",
@@ -6354,6 +6883,7 @@ window.HR_DATA = {
     {
       "id": 3118707,
       "name": "Trương Bảo Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/12/2024",
@@ -6366,6 +6896,7 @@ window.HR_DATA = {
     {
       "id": 3118899,
       "name": "Vương Văn Bình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/12/2024",
@@ -6378,6 +6909,7 @@ window.HR_DATA = {
     {
       "id": 3113961,
       "name": "Nguyễn Hoàng Thượng Trí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -6390,6 +6922,7 @@ window.HR_DATA = {
     {
       "id": 3113055,
       "name": "Nguyễn Việt Cường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/10/2024",
@@ -6402,6 +6935,7 @@ window.HR_DATA = {
     {
       "id": 3107330,
       "name": "Phan Thanh Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/08/2024",
@@ -6414,6 +6948,7 @@ window.HR_DATA = {
     {
       "id": 3107490,
       "name": "Huỳnh Tấn Sang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/08/2024",
@@ -6426,6 +6961,7 @@ window.HR_DATA = {
     {
       "id": 3107485,
       "name": "Phan Bảo Long",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/08/2024",
@@ -6438,6 +6974,7 @@ window.HR_DATA = {
     {
       "id": 3115534,
       "name": "Đặng Quang Vinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2024",
@@ -6450,6 +6987,7 @@ window.HR_DATA = {
     {
       "id": 3118896,
       "name": "Đỗ Lê Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/12/2024",
@@ -6462,6 +7000,7 @@ window.HR_DATA = {
     {
       "id": 3116323,
       "name": "Nguyễn Tú Dương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/11/2024",
@@ -6474,6 +7013,7 @@ window.HR_DATA = {
     {
       "id": 3113255,
       "name": "Nguyễn Thị Trúc Ngân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/10/2024",
@@ -6486,6 +7026,7 @@ window.HR_DATA = {
     {
       "id": 3113737,
       "name": "Nguyễn Trung Kiên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -6498,6 +7039,7 @@ window.HR_DATA = {
     {
       "id": 3115309,
       "name": "Hồ Lê Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/11/2024",
@@ -6510,6 +7052,7 @@ window.HR_DATA = {
     {
       "id": 3116346,
       "name": "Phan Văn Nhựt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/11/2024",
@@ -6522,6 +7065,7 @@ window.HR_DATA = {
     {
       "id": 3117158,
       "name": "Phạm Văn Trí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2024",
@@ -6534,6 +7078,7 @@ window.HR_DATA = {
     {
       "id": 3118965,
       "name": "Đặng Hữu Tài",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/12/2024",
@@ -6546,6 +7091,7 @@ window.HR_DATA = {
     {
       "id": 3120522,
       "name": "Võ Trí Thông",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/01/2025",
@@ -6558,6 +7104,7 @@ window.HR_DATA = {
     {
       "id": 3110518,
       "name": "Nguyễn Đức Minh Hiếu",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/10/2024",
@@ -6570,6 +7117,7 @@ window.HR_DATA = {
     {
       "id": 3116522,
       "name": "Trần Phạm Minh Huân",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/11/2024",
@@ -6582,6 +7130,7 @@ window.HR_DATA = {
     {
       "id": 3105852,
       "name": "Nguyễn Tấn Đạt",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/08/2024",
@@ -6594,6 +7143,7 @@ window.HR_DATA = {
     {
       "id": 3068368,
       "name": "Trần Xuân Tịnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/09/2023",
@@ -6606,6 +7156,7 @@ window.HR_DATA = {
     {
       "id": 3090965,
       "name": "Trương Lê Ý Nhi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/03/2024",
@@ -6618,6 +7169,7 @@ window.HR_DATA = {
     {
       "id": 3092645,
       "name": "Huỳnh Đặng Tấn Phú",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "30/03/2024",
@@ -6630,6 +7182,7 @@ window.HR_DATA = {
     {
       "id": 3112740,
       "name": "Nguyễn Thị Thu Thảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/10/2024",
@@ -6642,6 +7195,7 @@ window.HR_DATA = {
     {
       "id": 3113867,
       "name": "Đồng Thị Kiều Oanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/11/2024",
@@ -6654,6 +7208,7 @@ window.HR_DATA = {
     {
       "id": 3113861,
       "name": "Lê Văn Quang Linh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/11/2024",
@@ -6666,6 +7221,7 @@ window.HR_DATA = {
     {
       "id": 3113899,
       "name": "Nguyễn Khánh Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -6678,6 +7234,7 @@ window.HR_DATA = {
     {
       "id": 3113897,
       "name": "Trần Kiên Cường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -6690,6 +7247,7 @@ window.HR_DATA = {
     {
       "id": 3114708,
       "name": "Nguyễn Phát Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2024",
@@ -6702,6 +7260,7 @@ window.HR_DATA = {
     {
       "id": 3116223,
       "name": "Trương Văn Hải",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/11/2024",
@@ -6714,6 +7273,7 @@ window.HR_DATA = {
     {
       "id": 3117831,
       "name": "Trần Văn Thành",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2024",
@@ -6726,6 +7286,7 @@ window.HR_DATA = {
     {
       "id": 3118715,
       "name": "Nguyễn Trung Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/12/2024",
@@ -6738,6 +7299,7 @@ window.HR_DATA = {
     {
       "id": 3120642,
       "name": "Phan Văn Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/01/2025",
@@ -6750,6 +7312,7 @@ window.HR_DATA = {
     {
       "id": 3024555,
       "name": "Nguyễn Minh Đức",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/03/2022",
@@ -6762,6 +7325,7 @@ window.HR_DATA = {
     {
       "id": 3115304,
       "name": "Võ Văn Sỹ Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/11/2024",
@@ -6774,6 +7338,7 @@ window.HR_DATA = {
     {
       "id": 3117455,
       "name": "Nguyễn Thanh Sang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/12/2024",
@@ -6786,6 +7351,7 @@ window.HR_DATA = {
     {
       "id": 3117816,
       "name": "Trương Văn Khôi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2024",
@@ -6798,6 +7364,7 @@ window.HR_DATA = {
     {
       "id": 3119066,
       "name": "Huỳnh Hữu Lý",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/12/2024",
@@ -6810,6 +7377,7 @@ window.HR_DATA = {
     {
       "id": 3112369,
       "name": "Võ Trần Anh Kiệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/10/2024",
@@ -6822,6 +7390,7 @@ window.HR_DATA = {
     {
       "id": 3112386,
       "name": "Đặng Minh Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/10/2024",
@@ -6834,6 +7403,7 @@ window.HR_DATA = {
     {
       "id": 3113775,
       "name": "Trần Thị Mai Trinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -6846,6 +7416,7 @@ window.HR_DATA = {
     {
       "id": 3114452,
       "name": "Trần Văn Tý",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/11/2024",
@@ -6858,6 +7429,7 @@ window.HR_DATA = {
     {
       "id": 3114449,
       "name": "Lương Hoàng Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/11/2024",
@@ -6870,6 +7442,7 @@ window.HR_DATA = {
     {
       "id": 3114219,
       "name": "Phạm Thị Minh Ngọc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/11/2024",
@@ -6882,6 +7455,7 @@ window.HR_DATA = {
     {
       "id": 3120448,
       "name": "Lâm Công Đoàn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/01/2025",
@@ -6894,6 +7468,7 @@ window.HR_DATA = {
     {
       "id": 3120778,
       "name": "Phạm Minh Tỷ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/01/2025",
@@ -6906,6 +7481,7 @@ window.HR_DATA = {
     {
       "id": 3120703,
       "name": "Vũ Huy Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/01/2025",
@@ -6918,6 +7494,7 @@ window.HR_DATA = {
     {
       "id": 3120934,
       "name": "Phạm Mỹ Ngọc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/01/2025",
@@ -6930,6 +7507,7 @@ window.HR_DATA = {
     {
       "id": 3109016,
       "name": "Vương Đức Phát",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/09/2024",
@@ -6942,6 +7520,7 @@ window.HR_DATA = {
     {
       "id": 3112775,
       "name": "Nguyễn Đức Cường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/10/2024",
@@ -6954,6 +7533,7 @@ window.HR_DATA = {
     {
       "id": 3115654,
       "name": "Nguyễn Thành Lợi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/11/2024",
@@ -6966,6 +7546,7 @@ window.HR_DATA = {
     {
       "id": 3117817,
       "name": "Nguyễn Thành Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2024",
@@ -6978,6 +7559,7 @@ window.HR_DATA = {
     {
       "id": 3118708,
       "name": "Từ Trọng Quân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/12/2024",
@@ -6990,6 +7572,7 @@ window.HR_DATA = {
     {
       "id": 3119983,
       "name": "Trần Tuấn Khiêm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/01/2025",
@@ -7002,6 +7585,7 @@ window.HR_DATA = {
     {
       "id": 3116081,
       "name": "Nguyễn Trung Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/11/2024",
@@ -7014,6 +7598,7 @@ window.HR_DATA = {
     {
       "id": 3121027,
       "name": "Nguyễn Văn Minh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/01/2025",
@@ -7026,6 +7611,7 @@ window.HR_DATA = {
     {
       "id": 3034471,
       "name": "Trương Tấn Linh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2022",
@@ -7038,6 +7624,7 @@ window.HR_DATA = {
     {
       "id": 3112472,
       "name": "Dương Văn Khện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/10/2024",
@@ -7050,6 +7637,7 @@ window.HR_DATA = {
     {
       "id": 3122724,
       "name": "Hà Anh Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/02/2025",
@@ -7062,6 +7650,7 @@ window.HR_DATA = {
     {
       "id": 3110924,
       "name": "Đặng Phước Lộc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/10/2024",
@@ -7074,6 +7663,7 @@ window.HR_DATA = {
     {
       "id": 3120002,
       "name": "Nguyễn Thị Ngọc Quyền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/01/2025",
@@ -7086,6 +7676,7 @@ window.HR_DATA = {
     {
       "id": 3124284,
       "name": "Nguyễn Văn Xem",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/02/2025",
@@ -7098,6 +7689,7 @@ window.HR_DATA = {
     {
       "id": 3056733,
       "name": "Ngô Quốc Thái",
+      "position": "Giám sát phân loại hàng hóa",
       "dept": "In/ Out Supervisor",
       "shift": "Ca 3",
       "joinDateStr": "23/05/2023",
@@ -7110,6 +7702,7 @@ window.HR_DATA = {
     {
       "id": 2041393,
       "name": "Lê Hoàng Duy",
+      "position": "Điều phối xuất nhập hàng hóa",
       "dept": "In/ Out Coordinator",
       "shift": "Ca 3",
       "joinDateStr": "13/10/2020",
@@ -7122,6 +7715,7 @@ window.HR_DATA = {
     {
       "id": 3077617,
       "name": "Mai Thanh Tú Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/11/2023",
@@ -7134,6 +7728,7 @@ window.HR_DATA = {
     {
       "id": 3123466,
       "name": "Hoàng Minh Toàn",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/02/2025",
@@ -7146,6 +7741,7 @@ window.HR_DATA = {
     {
       "id": 3111497,
       "name": "Nguyễn Sơn Tùng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/10/2024",
@@ -7158,6 +7754,7 @@ window.HR_DATA = {
     {
       "id": 3055783,
       "name": "Dương Thị Thuý Hằng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/05/2023",
@@ -7170,6 +7767,7 @@ window.HR_DATA = {
     {
       "id": 3049021,
       "name": "Nguyễn Thị Ý Nhi",
+      "position": "CTV phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/02/2023",
@@ -7182,6 +7780,7 @@ window.HR_DATA = {
     {
       "id": 3048775,
       "name": "Trương Thị Phấn",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/02/2023",
@@ -7194,6 +7793,7 @@ window.HR_DATA = {
     {
       "id": 3071242,
       "name": "Phan Tuấn Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/10/2023",
@@ -7206,6 +7806,7 @@ window.HR_DATA = {
     {
       "id": 3074675,
       "name": "Phan Thị Tường Vy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/11/2023",
@@ -7218,6 +7819,7 @@ window.HR_DATA = {
     {
       "id": 3076284,
       "name": "Đào Nhật Thảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2023",
@@ -7230,6 +7832,7 @@ window.HR_DATA = {
     {
       "id": 3076116,
       "name": "Phạm Văn Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "10/11/2023",
@@ -7242,6 +7845,7 @@ window.HR_DATA = {
     {
       "id": 3078949,
       "name": "Nguyễn Phước Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/12/2023",
@@ -7254,6 +7858,7 @@ window.HR_DATA = {
     {
       "id": 3079500,
       "name": "Chao Gian",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2023",
@@ -7266,6 +7871,7 @@ window.HR_DATA = {
     {
       "id": 3088161,
       "name": "Bùi Thanh Vũ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "28/02/2024",
@@ -7278,6 +7884,7 @@ window.HR_DATA = {
     {
       "id": 3088180,
       "name": "Thạch Dươl",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "28/02/2024",
@@ -7290,6 +7897,7 @@ window.HR_DATA = {
     {
       "id": 3088848,
       "name": "La Thị Thanh Thúy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/03/2024",
@@ -7302,6 +7910,7 @@ window.HR_DATA = {
     {
       "id": 3056366,
       "name": "Phạm Ngọc Liên",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/05/2023",
@@ -7314,6 +7923,7 @@ window.HR_DATA = {
     {
       "id": 3096065,
       "name": "Nguyễn Công Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/05/2024",
@@ -7326,6 +7936,7 @@ window.HR_DATA = {
     {
       "id": 3096609,
       "name": "Vũ Minh Hậu",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/05/2024",
@@ -7338,6 +7949,7 @@ window.HR_DATA = {
     {
       "id": 3100423,
       "name": "Lê Chí Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/06/2024",
@@ -7350,6 +7962,7 @@ window.HR_DATA = {
     {
       "id": 3103663,
       "name": "Nguyễn Hoài Tân Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/07/2024",
@@ -7362,6 +7975,7 @@ window.HR_DATA = {
     {
       "id": 3103785,
       "name": "Nguyễn Gia Văn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/07/2024",
@@ -7374,6 +7988,7 @@ window.HR_DATA = {
     {
       "id": 3104399,
       "name": "Trần Trọng Tình",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2024",
@@ -7386,6 +8001,7 @@ window.HR_DATA = {
     {
       "id": 3105632,
       "name": "Trần Hoàng Minh Thư",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/08/2024",
@@ -7398,6 +8014,7 @@ window.HR_DATA = {
     {
       "id": 3108186,
       "name": "Luyện Sĩ Thanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/09/2024",
@@ -7410,6 +8027,7 @@ window.HR_DATA = {
     {
       "id": 3108770,
       "name": "Lê Thị Kim Ngọc",
+      "position": "CTV phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/09/2024",
@@ -7422,6 +8040,7 @@ window.HR_DATA = {
     {
       "id": 3108778,
       "name": "Dương Minh Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/09/2024",
@@ -7434,6 +8053,7 @@ window.HR_DATA = {
     {
       "id": 3111364,
       "name": "Nguyễn Đình Tuấn Nhã",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/10/2024",
@@ -7446,6 +8066,7 @@ window.HR_DATA = {
     {
       "id": 3112711,
       "name": "Nguyễn Hữu Thiện",
+      "position": "Điều phối xuất nhập hàng hóa",
       "dept": "In/ Out Coordinator",
       "shift": "Ca 3",
       "joinDateStr": "22/10/2024",
@@ -7458,6 +8079,7 @@ window.HR_DATA = {
     {
       "id": 3100635,
       "name": "Hồ Ngọc Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "25/06/2024",
@@ -7470,6 +8092,7 @@ window.HR_DATA = {
     {
       "id": 3113120,
       "name": "Bùi Thị Ngọc Sương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/10/2024",
@@ -7482,6 +8105,7 @@ window.HR_DATA = {
     {
       "id": 3113723,
       "name": "Lâm Thành Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -7494,6 +8118,7 @@ window.HR_DATA = {
     {
       "id": 3113784,
       "name": "Nguyễn Thị Oanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/11/2024",
@@ -7506,6 +8131,7 @@ window.HR_DATA = {
     {
       "id": 3113967,
       "name": "Nguyễn Minh Tiến",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -7518,6 +8144,7 @@ window.HR_DATA = {
     {
       "id": 3114003,
       "name": "Quảng thị kim ngà",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -7530,6 +8157,7 @@ window.HR_DATA = {
     {
       "id": 3114006,
       "name": "Nguyễn Ngọc Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -7542,6 +8170,7 @@ window.HR_DATA = {
     {
       "id": 3113969,
       "name": "Nguyễn Quốc Việt Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2024",
@@ -7554,6 +8183,7 @@ window.HR_DATA = {
     {
       "id": 3114456,
       "name": "Nguyễn Thị Sợi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/11/2024",
@@ -7566,6 +8196,7 @@ window.HR_DATA = {
     {
       "id": 3114484,
       "name": "Lê Văn Cượng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/11/2024",
@@ -7578,6 +8209,7 @@ window.HR_DATA = {
     {
       "id": 3115417,
       "name": "Phạm Hữu Nghĩa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/11/2024",
@@ -7590,6 +8222,7 @@ window.HR_DATA = {
     {
       "id": 3116532,
       "name": "Lê Hửu Luân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/11/2024",
@@ -7602,6 +8235,7 @@ window.HR_DATA = {
     {
       "id": 3116690,
       "name": "Lê Hoàng Khang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/12/2024",
@@ -7614,6 +8248,7 @@ window.HR_DATA = {
     {
       "id": 3117144,
       "name": "Chung Nghĩa Phú Qúi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/12/2024",
@@ -7626,6 +8261,7 @@ window.HR_DATA = {
     {
       "id": 3117456,
       "name": "Nguyễn Minh Nhật",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/12/2024",
@@ -7638,6 +8274,7 @@ window.HR_DATA = {
     {
       "id": 3119253,
       "name": "Cái Trọng Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/12/2024",
@@ -7650,6 +8287,7 @@ window.HR_DATA = {
     {
       "id": 3120449,
       "name": "Phan Khánh Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/01/2025",
@@ -7662,6 +8300,7 @@ window.HR_DATA = {
     {
       "id": 3120770,
       "name": "Nguyễn Thị Cẩm Loan",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/01/2025",
@@ -7674,6 +8313,7 @@ window.HR_DATA = {
     {
       "id": 3121561,
       "name": "Nguyễn Mẫn Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/02/2025",
@@ -7686,6 +8326,7 @@ window.HR_DATA = {
     {
       "id": 3121610,
       "name": "Huỳnh Thị Bích Ngọc",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/02/2025",
@@ -7698,6 +8339,7 @@ window.HR_DATA = {
     {
       "id": 3122716,
       "name": "Lê Văn Vàng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/02/2025",
@@ -7710,6 +8352,7 @@ window.HR_DATA = {
     {
       "id": 3122761,
       "name": "Hồ Thị Sen",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/02/2025",
@@ -7722,6 +8365,7 @@ window.HR_DATA = {
     {
       "id": 3122762,
       "name": "Bùi Văn Thái",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/02/2025",
@@ -7734,6 +8378,7 @@ window.HR_DATA = {
     {
       "id": 3122760,
       "name": "Đặng Kim Liên",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/02/2025",
@@ -7746,6 +8391,7 @@ window.HR_DATA = {
     {
       "id": 3123598,
       "name": "Trần Đức Ý",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/02/2025",
@@ -7758,6 +8404,7 @@ window.HR_DATA = {
     {
       "id": 3123590,
       "name": "Lê Đức Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/02/2025",
@@ -7770,6 +8417,7 @@ window.HR_DATA = {
     {
       "id": 3124054,
       "name": "Nguyễn Vĩnh Khanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "19/02/2025",
@@ -7782,6 +8430,7 @@ window.HR_DATA = {
     {
       "id": 3124103,
       "name": "Ngô Nhật Ngọc Tài",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/02/2025",
@@ -7794,6 +8443,7 @@ window.HR_DATA = {
     {
       "id": 3124057,
       "name": "Nguyễn Bình Quang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/02/2025",
@@ -7806,6 +8456,7 @@ window.HR_DATA = {
     {
       "id": 3124461,
       "name": "Huỳnh Công Thắng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/02/2025",
@@ -7818,6 +8469,7 @@ window.HR_DATA = {
     {
       "id": 3124469,
       "name": "Đặng Hồng Vỹ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/02/2025",
@@ -7830,6 +8482,7 @@ window.HR_DATA = {
     {
       "id": 3124441,
       "name": "Võ Thanh Sang",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/02/2025",
@@ -7842,6 +8495,7 @@ window.HR_DATA = {
     {
       "id": 3124607,
       "name": "Nguyễn Thị Lan",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -7854,6 +8508,7 @@ window.HR_DATA = {
     {
       "id": 3124614,
       "name": "Huỳnh Thanh Khiết",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/02/2023",
@@ -7866,6 +8521,7 @@ window.HR_DATA = {
     {
       "id": 3124870,
       "name": "Phạm Hồng Điền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/02/2025",
@@ -7878,6 +8534,7 @@ window.HR_DATA = {
     {
       "id": 3124842,
       "name": "Thái Ngọc Hoàng Châu",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/02/2025",
@@ -7890,6 +8547,7 @@ window.HR_DATA = {
     {
       "id": 3124616,
       "name": "Nguyễn Trần Duy Khang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/02/2025",
@@ -7902,6 +8560,7 @@ window.HR_DATA = {
     {
       "id": 3124847,
       "name": "Đinh Mạnh Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/02/2025",
@@ -7914,6 +8573,7 @@ window.HR_DATA = {
     {
       "id": 3125238,
       "name": "Trần Văn Thẳng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/02/2025",
@@ -7926,6 +8586,7 @@ window.HR_DATA = {
     {
       "id": 3125682,
       "name": "Huỳnh Tấn Hoàng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/03/2025",
@@ -7938,6 +8599,7 @@ window.HR_DATA = {
     {
       "id": 3126057,
       "name": "Nguyễn Tấn Thông",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/03/2025",
@@ -7950,6 +8612,7 @@ window.HR_DATA = {
     {
       "id": 3126056,
       "name": "Trần Trọng An",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/03/2025",
@@ -7962,6 +8625,7 @@ window.HR_DATA = {
     {
       "id": 3126050,
       "name": "Trần Cẩm Huỳnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/03/2025",
@@ -7974,6 +8638,7 @@ window.HR_DATA = {
     {
       "id": 3126138,
       "name": "Triệu Thanh Giàu",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/03/2025",
@@ -7986,6 +8651,7 @@ window.HR_DATA = {
     {
       "id": 3126172,
       "name": "Ngô Thị Huyền Trân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/03/2025",
@@ -7998,6 +8664,7 @@ window.HR_DATA = {
     {
       "id": 3126197,
       "name": "Từ Ngọc Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/03/2025",
@@ -8010,6 +8677,7 @@ window.HR_DATA = {
     {
       "id": 3126164,
       "name": "Trần Minh Nhật",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/03/2025",
@@ -8022,6 +8690,7 @@ window.HR_DATA = {
     {
       "id": 3126596,
       "name": "Phạm Huỳnh Nhân",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/03/2025",
@@ -8034,6 +8703,7 @@ window.HR_DATA = {
     {
       "id": 3126516,
       "name": "Nguyễn Thị Thu Hồng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/03/2025",
@@ -8046,6 +8716,7 @@ window.HR_DATA = {
     {
       "id": 3126773,
       "name": "Trần Minh Trí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/03/2025",
@@ -8058,6 +8729,7 @@ window.HR_DATA = {
     {
       "id": 3126912,
       "name": "Nguyễn Ngọc Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/03/2025",
@@ -8070,6 +8742,7 @@ window.HR_DATA = {
     {
       "id": 3127164,
       "name": "Nguyễn Hoài Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/03/2025",
@@ -8082,6 +8755,7 @@ window.HR_DATA = {
     {
       "id": 3127270,
       "name": "Vũ Trường Thao",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/03/2025",
@@ -8094,6 +8768,7 @@ window.HR_DATA = {
     {
       "id": 3127312,
       "name": "Đỗ Lến",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/03/2025",
@@ -8106,6 +8781,7 @@ window.HR_DATA = {
     {
       "id": 3126528,
       "name": "Nguyễn Cao Thái Nguyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/03/2025",
@@ -8118,6 +8794,7 @@ window.HR_DATA = {
     {
       "id": 3127444,
       "name": "Đặng Hoàng Quy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/03/2025",
@@ -8130,6 +8807,7 @@ window.HR_DATA = {
     {
       "id": 3127664,
       "name": "Nguyễn Văn Thiệu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/03/2025",
@@ -8142,6 +8820,7 @@ window.HR_DATA = {
     {
       "id": 3127799,
       "name": "Nguyễn Trường Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/03/2025",
@@ -8154,6 +8833,7 @@ window.HR_DATA = {
     {
       "id": 3127917,
       "name": "Nguyễn Hoàng Nam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "20/03/2025",
@@ -8166,6 +8846,7 @@ window.HR_DATA = {
     {
       "id": 3127919,
       "name": "Võ Vỹ Khang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "20/03/2025",
@@ -8178,6 +8859,7 @@ window.HR_DATA = {
     {
       "id": 3127937,
       "name": "Huỳnh Như Triều",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/03/2025",
@@ -8190,6 +8872,7 @@ window.HR_DATA = {
     {
       "id": 3127943,
       "name": "Trương Tấn Thông",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/03/2025",
@@ -8202,6 +8885,7 @@ window.HR_DATA = {
     {
       "id": 3128016,
       "name": "Phan Quốc Bằng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/03/2025",
@@ -8214,6 +8898,7 @@ window.HR_DATA = {
     {
       "id": 3128258,
       "name": "Mai Đức Lộc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/03/2025",
@@ -8226,6 +8911,7 @@ window.HR_DATA = {
     {
       "id": 3128580,
       "name": "Huỳnh Thị Phương Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "27/03/2025",
@@ -8238,6 +8924,7 @@ window.HR_DATA = {
     {
       "id": 3128380,
       "name": "Nguyễn Thành Dương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/03/2025",
@@ -8250,6 +8937,7 @@ window.HR_DATA = {
     {
       "id": 3128379,
       "name": "Nguyễn Hoàng Thái",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/03/2025",
@@ -8262,6 +8950,7 @@ window.HR_DATA = {
     {
       "id": 3128577,
       "name": "Lê Vũ Đô",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/03/2025",
@@ -8274,6 +8963,7 @@ window.HR_DATA = {
     {
       "id": 3128670,
       "name": "Huỳnh Thanh Sơn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/03/2025",
@@ -8286,6 +8976,7 @@ window.HR_DATA = {
     {
       "id": 3128989,
       "name": "Phan Thị Ngọc Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/04/2025",
@@ -8298,6 +8989,7 @@ window.HR_DATA = {
     {
       "id": 3128987,
       "name": "Nguyễn Khánh An",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/04/2025",
@@ -8310,6 +9002,7 @@ window.HR_DATA = {
     {
       "id": 3129011,
       "name": "Nguyễn Văn Mạnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/04/2025",
@@ -8322,6 +9015,7 @@ window.HR_DATA = {
     {
       "id": 3129173,
       "name": "Ngô Thị Thu Loan",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/04/2025",
@@ -8334,6 +9028,7 @@ window.HR_DATA = {
     {
       "id": 3129675,
       "name": "Nguyễn Phương Thanh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/04/2025",
@@ -8346,6 +9041,7 @@ window.HR_DATA = {
     {
       "id": 3129184,
       "name": "Phan Công Hưng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/04/2025",
@@ -8358,6 +9054,7 @@ window.HR_DATA = {
     {
       "id": 3129879,
       "name": "Phạm Hữu Đại",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/04/2025",
@@ -8370,6 +9067,7 @@ window.HR_DATA = {
     {
       "id": 3130089,
       "name": "Thái Thị Ngọc Hà",
+      "position": "CTV phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/04/2025",
@@ -8382,6 +9080,7 @@ window.HR_DATA = {
     {
       "id": 3130409,
       "name": "Lê Thị Cẩm Tiên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/04/2025",
@@ -8394,6 +9093,7 @@ window.HR_DATA = {
     {
       "id": 3130411,
       "name": "Lâm Ngọc Trân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/04/2025",
@@ -8406,6 +9106,7 @@ window.HR_DATA = {
     {
       "id": 3130412,
       "name": "Nguyễn Văn Múa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/04/2025",
@@ -8418,6 +9119,7 @@ window.HR_DATA = {
     {
       "id": 3130463,
       "name": "Lâm Thanh Duy",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/04/2025",
@@ -8430,6 +9132,7 @@ window.HR_DATA = {
     {
       "id": 3129885,
       "name": "Phạm Tài Linh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/04/2025",
@@ -8442,6 +9145,7 @@ window.HR_DATA = {
     {
       "id": 3129996,
       "name": "Lương Văn Thao",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/04/2025",
@@ -8454,6 +9158,7 @@ window.HR_DATA = {
     {
       "id": 3130226,
       "name": "Lâm Trần Tấn Hưng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/04/2025",
@@ -8466,6 +9171,7 @@ window.HR_DATA = {
     {
       "id": 3130230,
       "name": "Võ Thị Diễm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/04/2025",
@@ -8478,6 +9184,7 @@ window.HR_DATA = {
     {
       "id": 3130228,
       "name": "Võ Huỳnh Ngọc Hạnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/04/2025",
@@ -8490,6 +9197,7 @@ window.HR_DATA = {
     {
       "id": 3131273,
       "name": "Nguyễn Thị Thu Nga",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/05/2025",
@@ -8502,6 +9210,7 @@ window.HR_DATA = {
     {
       "id": 3131711,
       "name": "Võ Nguyễn Huy Hoàng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/05/2025",
@@ -8514,6 +9223,7 @@ window.HR_DATA = {
     {
       "id": 3131794,
       "name": "Trần Quốc Nam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/05/2025",
@@ -8526,6 +9236,7 @@ window.HR_DATA = {
     {
       "id": 3131886,
       "name": "Ngô Ngọc Ánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/05/2025",
@@ -8538,6 +9249,7 @@ window.HR_DATA = {
     {
       "id": 3132084,
       "name": "Nguyễn Hoàng Phi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "12/05/2025",
@@ -8550,6 +9262,7 @@ window.HR_DATA = {
     {
       "id": 3132086,
       "name": "Trần Trọng Khôi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "12/05/2025",
@@ -8562,6 +9275,7 @@ window.HR_DATA = {
     {
       "id": 3132292,
       "name": "Lê Văn Minh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "14/05/2025",
@@ -8574,6 +9288,7 @@ window.HR_DATA = {
     {
       "id": 3132330,
       "name": "Nguyễn Thị Trúc Lam",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/05/2025",
@@ -8586,6 +9301,7 @@ window.HR_DATA = {
     {
       "id": 3132114,
       "name": "Tô Vĩnh Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/05/2025",
@@ -8598,6 +9314,7 @@ window.HR_DATA = {
     {
       "id": 3132851,
       "name": "Đinh Công Tấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/05/2025",
@@ -8610,6 +9327,7 @@ window.HR_DATA = {
     {
       "id": 3133206,
       "name": "Lê Hữu Nghĩa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "24/05/2025",
@@ -8622,6 +9340,7 @@ window.HR_DATA = {
     {
       "id": 3133209,
       "name": "Trương Phương Đông",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "24/05/2025",
@@ -8634,30 +9353,33 @@ window.HR_DATA = {
     {
       "id": 3134283,
       "name": "Nguyễn Thị Hồng Thắm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/06/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 394,
+      "daysWorked": 395,
       "monthsWorked": 13,
       "leaveReason": ""
     },
     {
       "id": 3134282,
       "name": "Bằng Thu Ngân",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/06/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 394,
+      "daysWorked": 395,
       "monthsWorked": 13,
       "leaveReason": ""
     },
     {
       "id": 3134412,
       "name": "Đỗ Thành Vinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/06/2025",
@@ -8670,6 +9392,7 @@ window.HR_DATA = {
     {
       "id": 3134131,
       "name": "Nguyễn Hồng Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/06/2025",
@@ -8682,6 +9405,7 @@ window.HR_DATA = {
     {
       "id": 3134393,
       "name": "Đặng Văn Trường",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/06/2025",
@@ -8694,6 +9418,7 @@ window.HR_DATA = {
     {
       "id": 3134549,
       "name": "Phan Minh Thảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/06/2025",
@@ -8706,6 +9431,7 @@ window.HR_DATA = {
     {
       "id": 3134991,
       "name": "Mai Công Tôn Thu Thúy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/06/2025",
@@ -8718,6 +9444,7 @@ window.HR_DATA = {
     {
       "id": 3134996,
       "name": "Nguyễn Thanh Tùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/06/2025",
@@ -8730,6 +9457,7 @@ window.HR_DATA = {
     {
       "id": 3135133,
       "name": "Trần Thanh Thương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/06/2025",
@@ -8742,6 +9470,7 @@ window.HR_DATA = {
     {
       "id": 3135134,
       "name": "San Phương Yến",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/06/2025",
@@ -8754,6 +9483,7 @@ window.HR_DATA = {
     {
       "id": 3135608,
       "name": "Phạm Thị Mỹ Như",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2025",
@@ -8766,6 +9496,7 @@ window.HR_DATA = {
     {
       "id": 3135618,
       "name": "Trương Khánh An",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2025",
@@ -8778,6 +9509,7 @@ window.HR_DATA = {
     {
       "id": 3135723,
       "name": "Võ Văn Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "18/06/2025",
@@ -8790,6 +9522,7 @@ window.HR_DATA = {
     {
       "id": 3135724,
       "name": "Thạch Thị Tha",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/06/2025",
@@ -8802,6 +9535,7 @@ window.HR_DATA = {
     {
       "id": 3135617,
       "name": "Võ Văn Long",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2025",
@@ -8814,6 +9548,7 @@ window.HR_DATA = {
     {
       "id": 3135508,
       "name": "Đinh Tuấn Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2025",
@@ -8826,6 +9561,7 @@ window.HR_DATA = {
     {
       "id": 3136033,
       "name": "Tạ Thành Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/06/2025",
@@ -8838,6 +9574,7 @@ window.HR_DATA = {
     {
       "id": 3135119,
       "name": "Tạ Văn Tài",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/06/2025",
@@ -8850,6 +9587,7 @@ window.HR_DATA = {
     {
       "id": 3136266,
       "name": "Lê Thị Quỳnh Trang",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/06/2025",
@@ -8862,6 +9600,7 @@ window.HR_DATA = {
     {
       "id": 3136377,
       "name": "Mai Tuấn Kiệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/06/2025",
@@ -8874,6 +9613,7 @@ window.HR_DATA = {
     {
       "id": 3136592,
       "name": "Lâm Tuấn Kiệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "28/06/2025",
@@ -8886,6 +9626,7 @@ window.HR_DATA = {
     {
       "id": 3136590,
       "name": "Đỗ Xuân Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/06/2025",
@@ -8898,6 +9639,7 @@ window.HR_DATA = {
     {
       "id": 3136771,
       "name": "Huỳnh Phúc Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/07/2025",
@@ -8910,6 +9652,7 @@ window.HR_DATA = {
     {
       "id": 3136786,
       "name": "Lê Nhựt Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/07/2025",
@@ -8922,6 +9665,7 @@ window.HR_DATA = {
     {
       "id": 3136789,
       "name": "Trương Thành Long",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/07/2025",
@@ -8934,6 +9678,7 @@ window.HR_DATA = {
     {
       "id": 3136768,
       "name": "Nguyễn Gia Văn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/07/2025",
@@ -8946,6 +9691,7 @@ window.HR_DATA = {
     {
       "id": 3136935,
       "name": "Lê Hoàng Nam",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/07/2025",
@@ -8958,6 +9704,7 @@ window.HR_DATA = {
     {
       "id": 3136936,
       "name": "Nguyễn Quốc Khánh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/07/2025",
@@ -8970,6 +9717,7 @@ window.HR_DATA = {
     {
       "id": 3137048,
       "name": "Nguyễn Anh Toàn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/07/2025",
@@ -8982,6 +9730,7 @@ window.HR_DATA = {
     {
       "id": 3137109,
       "name": "Lê Văn Thọ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/07/2025",
@@ -8994,6 +9743,7 @@ window.HR_DATA = {
     {
       "id": 3137110,
       "name": "Lang Thị Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/07/2025",
@@ -9006,6 +9756,7 @@ window.HR_DATA = {
     {
       "id": 3137153,
       "name": "Danh Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/07/2025",
@@ -9018,6 +9769,7 @@ window.HR_DATA = {
     {
       "id": 3137152,
       "name": "Danh Phụng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/07/2025",
@@ -9030,18 +9782,20 @@ window.HR_DATA = {
     {
       "id": 3137254,
       "name": "Hồ Anh Thư",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/07/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 361,
+      "daysWorked": 362,
       "monthsWorked": 12,
       "leaveReason": ""
     },
     {
       "id": 3137255,
       "name": "Hồ Thị Lan Hương",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/07/2025",
@@ -9054,6 +9808,7 @@ window.HR_DATA = {
     {
       "id": 3137443,
       "name": "Triệu Thành Luân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "09/07/2025",
@@ -9066,6 +9821,7 @@ window.HR_DATA = {
     {
       "id": 3137453,
       "name": "Nguyễn Tấn Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "09/07/2025",
@@ -9078,6 +9834,7 @@ window.HR_DATA = {
     {
       "id": 3137539,
       "name": "Nguyễn Minh Dương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "10/07/2025",
@@ -9090,6 +9847,7 @@ window.HR_DATA = {
     {
       "id": 3137618,
       "name": "Phạm Minh Tâm",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "11/07/2025",
@@ -9102,6 +9860,7 @@ window.HR_DATA = {
     {
       "id": 3137449,
       "name": "Lê Quốc Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/07/2025",
@@ -9114,6 +9873,7 @@ window.HR_DATA = {
     {
       "id": 3137783,
       "name": "Nguyễn Văn Hoá",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "14/07/2025",
@@ -9126,6 +9886,7 @@ window.HR_DATA = {
     {
       "id": 3137726,
       "name": "Nguyễn Văn Chật",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/07/2025",
@@ -9138,6 +9899,7 @@ window.HR_DATA = {
     {
       "id": 3138034,
       "name": "Y Nut",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "16/07/2025",
@@ -9150,6 +9912,7 @@ window.HR_DATA = {
     {
       "id": 3138026,
       "name": "Nguyễn Công Hùng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/07/2025",
@@ -9162,6 +9925,7 @@ window.HR_DATA = {
     {
       "id": 3138033,
       "name": "Lê Văn Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/07/2025",
@@ -9174,6 +9938,7 @@ window.HR_DATA = {
     {
       "id": 3138020,
       "name": "Lê Diểm Ngọc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/07/2025",
@@ -9186,6 +9951,7 @@ window.HR_DATA = {
     {
       "id": 3138040,
       "name": "Phạm Huỳnh Phúc Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/07/2025",
@@ -9198,6 +9964,7 @@ window.HR_DATA = {
     {
       "id": 3138108,
       "name": "Nguyễn Công Thành",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/07/2025",
@@ -9210,6 +9977,7 @@ window.HR_DATA = {
     {
       "id": 3138400,
       "name": "Nguyễn Minh Phương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/07/2025",
@@ -9222,6 +9990,7 @@ window.HR_DATA = {
     {
       "id": 3138336,
       "name": "Nhan Đức Thinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/07/2025",
@@ -9234,6 +10003,7 @@ window.HR_DATA = {
     {
       "id": 3137259,
       "name": "Vũ Thị Hiền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/07/2025",
@@ -9246,6 +10016,7 @@ window.HR_DATA = {
     {
       "id": 3137696,
       "name": "Hồ Nhựt Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "12/07/2025",
@@ -9258,6 +10029,7 @@ window.HR_DATA = {
     {
       "id": 3138848,
       "name": "Đào Thị Thanh Thúy",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/07/2025",
@@ -9270,6 +10042,7 @@ window.HR_DATA = {
     {
       "id": 3138939,
       "name": "Huỳnh Thị Bích Tuyền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "25/07/2025",
@@ -9282,6 +10055,7 @@ window.HR_DATA = {
     {
       "id": 3138957,
       "name": "Hồ Thị Ngọc Loan",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/07/2025",
@@ -9294,6 +10068,7 @@ window.HR_DATA = {
     {
       "id": 3138958,
       "name": "Hồng Văn Út",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "25/07/2025",
@@ -9306,6 +10081,7 @@ window.HR_DATA = {
     {
       "id": 3139057,
       "name": "Nguyễn Đức Thịnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/07/2025",
@@ -9318,6 +10094,7 @@ window.HR_DATA = {
     {
       "id": 3138870,
       "name": "Nguyễn Minh Trọng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/07/2025",
@@ -9330,6 +10107,7 @@ window.HR_DATA = {
     {
       "id": 3138851,
       "name": "Võ Thị Hoàng Oanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "24/07/2025",
@@ -9342,6 +10120,7 @@ window.HR_DATA = {
     {
       "id": 3138703,
       "name": "Đặng Minh Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/07/2025",
@@ -9354,6 +10133,7 @@ window.HR_DATA = {
     {
       "id": 3139214,
       "name": "Phạm Thị Chân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/07/2025",
@@ -9366,6 +10146,7 @@ window.HR_DATA = {
     {
       "id": 3139212,
       "name": "Võ Thị Mãi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/07/2025",
@@ -9378,6 +10159,7 @@ window.HR_DATA = {
     {
       "id": 3139320,
       "name": "Nguyễn Ngọc Đến",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "30/07/2025",
@@ -9390,6 +10172,7 @@ window.HR_DATA = {
     {
       "id": 3139166,
       "name": "Huỳnh Hà Thủy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/07/2025",
@@ -9402,6 +10185,7 @@ window.HR_DATA = {
     {
       "id": 3139551,
       "name": "Lê Đăng Quang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/08/2025",
@@ -9414,6 +10198,7 @@ window.HR_DATA = {
     {
       "id": 3139558,
       "name": "Tăng Văn Cảnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/08/2025",
@@ -9426,6 +10211,7 @@ window.HR_DATA = {
     {
       "id": 3139560,
       "name": "Bùi Ngọc Minh Quân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/08/2025",
@@ -9438,6 +10224,7 @@ window.HR_DATA = {
     {
       "id": 3139564,
       "name": "Thi Quốc Thái",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/08/2025",
@@ -9450,6 +10237,7 @@ window.HR_DATA = {
     {
       "id": 3139568,
       "name": "Nguyễn Tấn Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/08/2025",
@@ -9462,6 +10250,7 @@ window.HR_DATA = {
     {
       "id": 3139550,
       "name": "Công Ly Ly",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9474,6 +10263,7 @@ window.HR_DATA = {
     {
       "id": 3139548,
       "name": "Lê Tuấn Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9486,6 +10276,7 @@ window.HR_DATA = {
     {
       "id": 3139547,
       "name": "Đặng Quang Trinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9498,6 +10289,7 @@ window.HR_DATA = {
     {
       "id": 3139546,
       "name": "Nguyễn Thị Như Thuỷ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9510,6 +10302,7 @@ window.HR_DATA = {
     {
       "id": 3139545,
       "name": "Huỳnh Văn Nhật",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9522,6 +10315,7 @@ window.HR_DATA = {
     {
       "id": 3139571,
       "name": "Đinh Thị Thanh Thuý",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9534,6 +10328,7 @@ window.HR_DATA = {
     {
       "id": 3139575,
       "name": "Trần Thanh Vân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9546,6 +10341,7 @@ window.HR_DATA = {
     {
       "id": 3139541,
       "name": "Nguyễn Đăng Quang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/08/2025",
@@ -9558,6 +10354,7 @@ window.HR_DATA = {
     {
       "id": 3139657,
       "name": "Nguyễn Văn Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "02/08/2025",
@@ -9570,6 +10367,7 @@ window.HR_DATA = {
     {
       "id": 3139641,
       "name": "Nguyễn Nhựt Trường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "02/08/2025",
@@ -9582,6 +10380,7 @@ window.HR_DATA = {
     {
       "id": 3139647,
       "name": "Nguyễn Ngọc Được",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/08/2025",
@@ -9594,6 +10393,7 @@ window.HR_DATA = {
     {
       "id": 3137447,
       "name": "Nguyễn Hồ Hoàng Hạc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/07/2025",
@@ -9606,6 +10406,7 @@ window.HR_DATA = {
     {
       "id": 3139211,
       "name": "Trần Thị Kiều Thi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "29/07/2025",
@@ -9618,6 +10419,7 @@ window.HR_DATA = {
     {
       "id": 3139223,
       "name": "Lê Minh Bằng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "29/07/2025",
@@ -9630,6 +10432,7 @@ window.HR_DATA = {
     {
       "id": 3139224,
       "name": "Nguyễn Minh Quân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "29/07/2025",
@@ -9642,9 +10445,23 @@ window.HR_DATA = {
     {
       "id": 3139925,
       "name": "Lê Minh Tới",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/08/2025",
+      "leaveDateStr": "",
+      "status": "Đã nghỉ việc",
+      "daysWorked": 333,
+      "monthsWorked": 11,
+      "leaveReason": ""
+    },
+    {
+      "id": 3140013,
+      "name": "Mai Mỹ Nhung",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "06/08/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
       "daysWorked": 332,
@@ -9652,20 +10469,9 @@ window.HR_DATA = {
       "leaveReason": ""
     },
     {
-      "id": 3140013,
-      "name": "Mai Mỹ Nhung",
-      "dept": "Sorting Staff",
-      "shift": "Ca 3",
-      "joinDateStr": "06/08/2025",
-      "leaveDateStr": "",
-      "status": "Đã nghỉ việc",
-      "daysWorked": 331,
-      "monthsWorked": 11,
-      "leaveReason": ""
-    },
-    {
       "id": 3140199,
       "name": "Trần Thị Ngọc Trang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/08/2025",
@@ -9678,6 +10484,7 @@ window.HR_DATA = {
     {
       "id": 3139656,
       "name": "Đỗ Trường Giang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "03/08/2025",
@@ -9690,6 +10497,7 @@ window.HR_DATA = {
     {
       "id": 3140690,
       "name": "Nguyễn Trung Nghĩa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/08/2025",
@@ -9702,6 +10510,7 @@ window.HR_DATA = {
     {
       "id": 3140788,
       "name": "Nguyễn Văn Hậu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/08/2025",
@@ -9714,6 +10523,7 @@ window.HR_DATA = {
     {
       "id": 3140789,
       "name": "Trần Kim Ngân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/08/2025",
@@ -9726,6 +10536,7 @@ window.HR_DATA = {
     {
       "id": 3140910,
       "name": "Nguyễn Thành Hiếu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "14/08/2025",
@@ -9738,6 +10549,7 @@ window.HR_DATA = {
     {
       "id": 3141012,
       "name": "Trần Quốc Khôi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/08/2025",
@@ -9750,6 +10562,7 @@ window.HR_DATA = {
     {
       "id": 3141019,
       "name": "Đào Minh Hân Quang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/08/2025",
@@ -9762,6 +10575,7 @@ window.HR_DATA = {
     {
       "id": 3141018,
       "name": "Trần Thị Vàng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/08/2025",
@@ -9774,6 +10588,7 @@ window.HR_DATA = {
     {
       "id": 3141470,
       "name": "Đặng Thị Chanh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/08/2025",
@@ -9786,6 +10601,7 @@ window.HR_DATA = {
     {
       "id": 3141457,
       "name": "Nguyễn Thanh Tiền",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/08/2025",
@@ -9798,6 +10614,7 @@ window.HR_DATA = {
     {
       "id": 3141304,
       "name": "Phạm Hữu Thịnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/08/2025",
@@ -9810,6 +10627,7 @@ window.HR_DATA = {
     {
       "id": 3141462,
       "name": "Nguyễn Hoàng Đại Dương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/08/2025",
@@ -9822,6 +10640,7 @@ window.HR_DATA = {
     {
       "id": 3140101,
       "name": "Trần Quốc Thành",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/08/2025",
@@ -9834,6 +10653,7 @@ window.HR_DATA = {
     {
       "id": 3142575,
       "name": "Nguyễn Đăng Vinh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/09/2025",
@@ -9846,6 +10666,7 @@ window.HR_DATA = {
     {
       "id": 3142583,
       "name": "Đặng Thị Cẩm Nhung",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/09/2025",
@@ -9858,6 +10679,7 @@ window.HR_DATA = {
     {
       "id": 3142835,
       "name": "Đỗ Thanh Hải",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/09/2025",
@@ -9870,6 +10692,7 @@ window.HR_DATA = {
     {
       "id": 3142484,
       "name": "Trần Quốc Việt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "02/09/2025",
@@ -9882,6 +10705,7 @@ window.HR_DATA = {
     {
       "id": 3143728,
       "name": "Huỳnh Văn Quý",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/09/2025",
@@ -9894,6 +10718,7 @@ window.HR_DATA = {
     {
       "id": 3143983,
       "name": "Đặng Nguyễn Thúy Hạnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "13/09/2025",
@@ -9906,6 +10731,7 @@ window.HR_DATA = {
     {
       "id": 3143982,
       "name": "Lê Văn Danh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/09/2025",
@@ -9918,6 +10744,7 @@ window.HR_DATA = {
     {
       "id": 3144174,
       "name": "Nguyễn Thị Anh Đào",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "15/09/2025",
@@ -9930,6 +10757,7 @@ window.HR_DATA = {
     {
       "id": 3144192,
       "name": "Nguyễn Phước Lợi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "15/09/2025",
@@ -9942,6 +10770,7 @@ window.HR_DATA = {
     {
       "id": 3144406,
       "name": "Võ Hữu Nghĩa",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "16/09/2025",
@@ -9954,6 +10783,7 @@ window.HR_DATA = {
     {
       "id": 3144694,
       "name": "Nguyễn Ngọc Phước",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "18/09/2025",
@@ -9966,6 +10796,7 @@ window.HR_DATA = {
     {
       "id": 3144707,
       "name": "Nguyễn Quang Mỹ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "18/09/2025",
@@ -9978,6 +10809,7 @@ window.HR_DATA = {
     {
       "id": 3144805,
       "name": "Huỳnh Thị Thanh Tuyền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/09/2025",
@@ -9990,6 +10822,7 @@ window.HR_DATA = {
     {
       "id": 3144806,
       "name": "Trương Ngọc Vũ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/09/2025",
@@ -10002,6 +10835,7 @@ window.HR_DATA = {
     {
       "id": 3145248,
       "name": "Trần Thị Anh Khoa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "25/09/2025",
@@ -10014,6 +10848,7 @@ window.HR_DATA = {
     {
       "id": 3144398,
       "name": "Nguyễn Đức Tài",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "16/09/2025",
@@ -10026,6 +10861,7 @@ window.HR_DATA = {
     {
       "id": 3145950,
       "name": "Huỳnh Ngọc Gia Huy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/10/2025",
@@ -10038,6 +10874,7 @@ window.HR_DATA = {
     {
       "id": 3145958,
       "name": "Nguyễn Quý",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/10/2025",
@@ -10050,6 +10887,7 @@ window.HR_DATA = {
     {
       "id": 3146563,
       "name": "Thái Thanh Tùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "08/10/2025",
@@ -10062,6 +10900,7 @@ window.HR_DATA = {
     {
       "id": 3146574,
       "name": "Lê Minh Cảm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/10/2025",
@@ -10074,6 +10913,7 @@ window.HR_DATA = {
     {
       "id": 3147413,
       "name": "Huỳnh Phúc Tín",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "15/10/2025",
@@ -10086,6 +10926,7 @@ window.HR_DATA = {
     {
       "id": 3148136,
       "name": "Nguyễn Thị Kiều Trang",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/10/2025",
@@ -10098,6 +10939,7 @@ window.HR_DATA = {
     {
       "id": 3148227,
       "name": "Nguyễn Trần Như Thịnh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/10/2025",
@@ -10110,6 +10952,7 @@ window.HR_DATA = {
     {
       "id": 3148600,
       "name": "Nguyễn Văn Chiến",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/10/2025",
@@ -10122,6 +10965,7 @@ window.HR_DATA = {
     {
       "id": 3148812,
       "name": "Lý Quang Khải",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/10/2025",
@@ -10134,6 +10978,7 @@ window.HR_DATA = {
     {
       "id": 3148893,
       "name": "Võ Thị Huỳnh Như",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "28/10/2025",
@@ -10146,6 +10991,7 @@ window.HR_DATA = {
     {
       "id": 3149670,
       "name": "Nguyễn Trọng Khiêm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/11/2025",
@@ -10158,6 +11004,7 @@ window.HR_DATA = {
     {
       "id": 3149561,
       "name": "Trần Văn Hùng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/11/2025",
@@ -10170,6 +11017,7 @@ window.HR_DATA = {
     {
       "id": 3149820,
       "name": "Huỳnh Thanh Hoàng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "05/11/2025",
@@ -10182,6 +11030,7 @@ window.HR_DATA = {
     {
       "id": 3149832,
       "name": "Trần Văn Chúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/11/2025",
@@ -10194,6 +11043,7 @@ window.HR_DATA = {
     {
       "id": 3149809,
       "name": "Lê Văn Thế",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/11/2025",
@@ -10206,6 +11056,7 @@ window.HR_DATA = {
     {
       "id": 3150075,
       "name": "Lê Văn Qui",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/11/2025",
@@ -10218,6 +11069,7 @@ window.HR_DATA = {
     {
       "id": 3150557,
       "name": "Nguyễn Thanh Long",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2025",
@@ -10230,6 +11082,7 @@ window.HR_DATA = {
     {
       "id": 3150530,
       "name": "Nguyễn Hy Đằng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/11/2025",
@@ -10242,6 +11095,7 @@ window.HR_DATA = {
     {
       "id": 3150648,
       "name": "Nguyễn Nhựt Trường",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "12/11/2025",
@@ -10254,6 +11108,7 @@ window.HR_DATA = {
     {
       "id": 3150669,
       "name": "Lê Trung Kiên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "12/11/2025",
@@ -10266,6 +11121,7 @@ window.HR_DATA = {
     {
       "id": 3150781,
       "name": "Huỳnh Thanh Tuấn Em",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "13/11/2025",
@@ -10278,6 +11134,7 @@ window.HR_DATA = {
     {
       "id": 3151748,
       "name": "Võ Thị Quyên",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "21/11/2025",
@@ -10290,6 +11147,7 @@ window.HR_DATA = {
     {
       "id": 3151619,
       "name": "Lê Thị Cẩm Tú",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/11/2025",
@@ -10302,6 +11160,7 @@ window.HR_DATA = {
     {
       "id": 3151853,
       "name": "Nguyễn Ru Bi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/11/2025",
@@ -10314,6 +11173,7 @@ window.HR_DATA = {
     {
       "id": 3152435,
       "name": "Lê Thị Mỹ Hạnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "27/11/2025",
@@ -10326,6 +11186,7 @@ window.HR_DATA = {
     {
       "id": 3152436,
       "name": "Nguyễn Thị Mỹ Hằng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "27/11/2025",
@@ -10338,6 +11199,7 @@ window.HR_DATA = {
     {
       "id": 3152344,
       "name": "Nguyễn Thị Hồng Đào",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "26/11/2025",
@@ -10350,6 +11212,7 @@ window.HR_DATA = {
     {
       "id": 3152434,
       "name": "Nguyễn Trịnh Khánh An",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/11/2025",
@@ -10362,6 +11225,7 @@ window.HR_DATA = {
     {
       "id": 3152342,
       "name": "Trần Thanh Sang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/11/2025",
@@ -10374,6 +11238,7 @@ window.HR_DATA = {
     {
       "id": 3152952,
       "name": "Nguyễn Hữu Trí",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/12/2025",
@@ -10386,6 +11251,7 @@ window.HR_DATA = {
     {
       "id": 3153099,
       "name": "Trần Lệ Châu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "03/12/2025",
@@ -10398,6 +11264,7 @@ window.HR_DATA = {
     {
       "id": 3153279,
       "name": "Võ Văn Song",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/12/2025",
@@ -10410,6 +11277,7 @@ window.HR_DATA = {
     {
       "id": 3153445,
       "name": "Nguyễn Trọng Tín",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/12/2025",
@@ -10422,6 +11290,7 @@ window.HR_DATA = {
     {
       "id": 3153753,
       "name": "Nguyễn Thị Huyền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "09/12/2025",
@@ -10434,6 +11303,7 @@ window.HR_DATA = {
     {
       "id": 3153876,
       "name": "Nguyễn Thanh Tân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "10/12/2025",
@@ -10446,6 +11316,7 @@ window.HR_DATA = {
     {
       "id": 3154023,
       "name": "Nguyễn Lê Thiên Thanh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/12/2025",
@@ -10458,6 +11329,7 @@ window.HR_DATA = {
     {
       "id": 3154688,
       "name": "Triệu Thái Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/12/2025",
@@ -10470,6 +11342,7 @@ window.HR_DATA = {
     {
       "id": 3154131,
       "name": "Võ Minh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/12/2025",
@@ -10482,6 +11355,7 @@ window.HR_DATA = {
     {
       "id": 3154689,
       "name": "Bùi Minh Tú",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "18/12/2025",
@@ -10494,6 +11368,7 @@ window.HR_DATA = {
     {
       "id": 3154766,
       "name": "Nguyễn Hữu Toàn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "19/12/2025",
@@ -10506,6 +11381,7 @@ window.HR_DATA = {
     {
       "id": 3154983,
       "name": "Phạm Thanh Hồng Hạnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "22/12/2025",
@@ -10518,6 +11394,7 @@ window.HR_DATA = {
     {
       "id": 3155067,
       "name": "Phan Thị Thuý Phượng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "23/12/2025",
@@ -10530,6 +11407,7 @@ window.HR_DATA = {
     {
       "id": 3155155,
       "name": "Huỳnh Trung Dũng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "24/12/2025",
@@ -10542,6 +11420,7 @@ window.HR_DATA = {
     {
       "id": 3155153,
       "name": "Nguyễn Thị Mỹ Duyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "24/12/2025",
@@ -10554,6 +11433,7 @@ window.HR_DATA = {
     {
       "id": 3155236,
       "name": "Võ Minh Tú",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "25/12/2025",
@@ -10566,6 +11446,7 @@ window.HR_DATA = {
     {
       "id": 3155309,
       "name": "Phan Nguyễn Thái Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "26/12/2025",
@@ -10578,6 +11459,7 @@ window.HR_DATA = {
     {
       "id": 3155310,
       "name": "Nguyễn Trần Thanh Tuyền",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "26/12/2025",
@@ -10590,6 +11472,7 @@ window.HR_DATA = {
     {
       "id": 3155631,
       "name": "Nguyễn Minh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "31/12/2025",
@@ -10602,6 +11485,7 @@ window.HR_DATA = {
     {
       "id": 3155759,
       "name": "Nguyễn Minh Thuận",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "02/01/2026",
@@ -10614,6 +11498,7 @@ window.HR_DATA = {
     {
       "id": 3156071,
       "name": "Nguyễn Thị Như Ý",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/01/2026",
@@ -10626,6 +11511,7 @@ window.HR_DATA = {
     {
       "id": 3156084,
       "name": "Khưu Quốc Hưng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/01/2026",
@@ -10638,6 +11524,7 @@ window.HR_DATA = {
     {
       "id": 3156503,
       "name": "Hà Minh Khuê",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/01/2026",
@@ -10650,6 +11537,7 @@ window.HR_DATA = {
     {
       "id": 3156689,
       "name": "Ngô Thị Tuyết Mai",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "13/01/2026",
@@ -10662,6 +11550,7 @@ window.HR_DATA = {
     {
       "id": 3157257,
       "name": "Khang Văn Hoa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "19/01/2026",
@@ -10674,6 +11563,7 @@ window.HR_DATA = {
     {
       "id": 3157329,
       "name": "Phạm Thị Ngọc Hân",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/01/2026",
@@ -10686,6 +11576,7 @@ window.HR_DATA = {
     {
       "id": 3157738,
       "name": "Lê Thị Nhi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "26/01/2026",
@@ -10698,6 +11589,7 @@ window.HR_DATA = {
     {
       "id": 3157960,
       "name": "Lưu Minh Sang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "29/01/2026",
@@ -10710,6 +11602,7 @@ window.HR_DATA = {
     {
       "id": 3158158,
       "name": "Nguyễn Minh Ánh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/02/2026",
@@ -10722,6 +11615,7 @@ window.HR_DATA = {
     {
       "id": 3158473,
       "name": "Trịnh Hữu Lâm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/02/2026",
@@ -10734,6 +11628,7 @@ window.HR_DATA = {
     {
       "id": 3158472,
       "name": "Đỗ Thị Bích Chăm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/02/2026",
@@ -10746,6 +11641,7 @@ window.HR_DATA = {
     {
       "id": 3159760,
       "name": "Nguyễn Tuyết Nhi",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "01/03/2026",
@@ -10758,6 +11654,7 @@ window.HR_DATA = {
     {
       "id": 3159762,
       "name": "Bùi Văn Sang",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/03/2026",
@@ -10770,6 +11667,7 @@ window.HR_DATA = {
     {
       "id": 3160015,
       "name": "Nguyễn Lê Thiên Thanh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/03/2026",
@@ -10782,6 +11680,7 @@ window.HR_DATA = {
     {
       "id": 3160286,
       "name": "Lê Anh Tuấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/03/2026",
@@ -10794,6 +11693,7 @@ window.HR_DATA = {
     {
       "id": 3160488,
       "name": "Cao Tấn Phát",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/03/2026",
@@ -10806,6 +11706,7 @@ window.HR_DATA = {
     {
       "id": 3160454,
       "name": "Trương Trần Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "04/03/2026",
@@ -10818,6 +11719,7 @@ window.HR_DATA = {
     {
       "id": 3160725,
       "name": "Huỳnh Minh Thiện",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "05/03/2026",
@@ -10830,6 +11732,7 @@ window.HR_DATA = {
     {
       "id": 3160739,
       "name": "Nguyễn Thị Thanh",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/03/2026",
@@ -10842,6 +11745,7 @@ window.HR_DATA = {
     {
       "id": 3160731,
       "name": "Lưu Hiền Đức",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/03/2026",
@@ -10854,6 +11758,7 @@ window.HR_DATA = {
     {
       "id": 3160930,
       "name": "Tiêu Đằng Vũ",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "06/03/2026",
@@ -10866,6 +11771,7 @@ window.HR_DATA = {
     {
       "id": 3161078,
       "name": "Phùng Cẩm Đạt",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/03/2026",
@@ -10878,6 +11784,7 @@ window.HR_DATA = {
     {
       "id": 3161407,
       "name": "Nguyễn Tài Trung",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/03/2026",
@@ -10890,6 +11797,7 @@ window.HR_DATA = {
     {
       "id": 3161615,
       "name": "Huỳnh Phúc Tín",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "11/03/2026",
@@ -10902,6 +11810,7 @@ window.HR_DATA = {
     {
       "id": 3162069,
       "name": "Nguyễn Ngọc Trí",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/03/2026",
@@ -10914,6 +11823,7 @@ window.HR_DATA = {
     {
       "id": 3162066,
       "name": "Huỳnh Chí Kha",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "13/03/2026",
@@ -10926,6 +11836,7 @@ window.HR_DATA = {
     {
       "id": 3162389,
       "name": "Đỗ Nhựt Bình",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "15/03/2026",
@@ -10938,6 +11849,7 @@ window.HR_DATA = {
     {
       "id": 3163404,
       "name": "Nguyễn Chí Nhiều",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "21/03/2026",
@@ -10950,6 +11862,7 @@ window.HR_DATA = {
     {
       "id": 3163475,
       "name": "Nguyễn Thị Quỳnh Trâm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/03/2026",
@@ -10962,6 +11875,7 @@ window.HR_DATA = {
     {
       "id": 3164007,
       "name": "Nguyễn Văn Ngọc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "25/03/2026",
@@ -10974,6 +11888,7 @@ window.HR_DATA = {
     {
       "id": 3162993,
       "name": "Võ Văn Danh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "23/03/2026",
@@ -10986,6 +11901,7 @@ window.HR_DATA = {
     {
       "id": 3164521,
       "name": "Nguyễn Quang Trung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "29/03/2026",
@@ -10998,6 +11914,7 @@ window.HR_DATA = {
     {
       "id": 3164707,
       "name": "Lê Công Tấn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "31/03/2026",
@@ -11010,6 +11927,7 @@ window.HR_DATA = {
     {
       "id": 3165039,
       "name": "Bùi Thanh Châu",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "02/04/2026",
@@ -11022,6 +11940,7 @@ window.HR_DATA = {
     {
       "id": 3165618,
       "name": "Huỳnh Văn Bảo",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/04/2026",
@@ -11034,6 +11953,7 @@ window.HR_DATA = {
     {
       "id": 3165613,
       "name": "Khưu Hoàng Ở",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/04/2026",
@@ -11046,6 +11966,7 @@ window.HR_DATA = {
     {
       "id": 3166076,
       "name": "Trần Thanh Nguyên",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "10/04/2026",
@@ -11058,6 +11979,7 @@ window.HR_DATA = {
     {
       "id": 3166411,
       "name": "Trần Hoài Thanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "13/04/2026",
@@ -11070,6 +11992,7 @@ window.HR_DATA = {
     {
       "id": 3166381,
       "name": "Tô Thanh Trúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "12/04/2026",
@@ -11082,6 +12005,7 @@ window.HR_DATA = {
     {
       "id": 3167026,
       "name": "Bùi Thanh Danh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/04/2026",
@@ -11094,6 +12018,7 @@ window.HR_DATA = {
     {
       "id": 3167368,
       "name": "Lê Quốc Kiệt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "20/04/2026",
@@ -11106,6 +12031,7 @@ window.HR_DATA = {
     {
       "id": 3167666,
       "name": "Nguyễn Văn Hải",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "22/04/2026",
@@ -11118,6 +12044,7 @@ window.HR_DATA = {
     {
       "id": 3167332,
       "name": "Đổ Minh Thưởng",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "20/04/2026",
@@ -11130,6 +12057,7 @@ window.HR_DATA = {
     {
       "id": 3168217,
       "name": "Võ Ngọc Thùy Dương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "28/04/2026",
@@ -11142,6 +12070,7 @@ window.HR_DATA = {
     {
       "id": 3168269,
       "name": "Phan Lê An",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "28/04/2026",
@@ -11154,6 +12083,7 @@ window.HR_DATA = {
     {
       "id": 3168650,
       "name": "Lê Thị Thanh Ngân",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "04/05/2026",
@@ -11166,6 +12096,7 @@ window.HR_DATA = {
     {
       "id": 3168884,
       "name": "Huỳnh Thị Nguyên Nhung",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/05/2026",
@@ -11178,6 +12109,7 @@ window.HR_DATA = {
     {
       "id": 3168875,
       "name": "Nguyễn Ngọc Diễm",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/05/2026",
@@ -11190,6 +12122,7 @@ window.HR_DATA = {
     {
       "id": 3168896,
       "name": "Nguyễn Thị Bé Đào",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/05/2026",
@@ -11202,6 +12135,7 @@ window.HR_DATA = {
     {
       "id": 3168893,
       "name": "Lê Thị Thúy Hằng",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/05/2026",
@@ -11214,6 +12148,7 @@ window.HR_DATA = {
     {
       "id": 3168895,
       "name": "Nguyễn Thị Thái Bình",
+      "position": "Nhân viên phân hàng",
       "dept": "Sorting Staff",
       "shift": "Ca 3",
       "joinDateStr": "05/05/2026",
@@ -11226,6 +12161,7 @@ window.HR_DATA = {
     {
       "id": 3169130,
       "name": "Nguyễn Hùng Phong",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "06/05/2026",
@@ -11238,6 +12174,7 @@ window.HR_DATA = {
     {
       "id": 3169137,
       "name": "Nguyễn Thị Phượng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "06/05/2026",
@@ -11250,6 +12187,7 @@ window.HR_DATA = {
     {
       "id": 3169136,
       "name": "Nguyễn Phước Ngọc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "06/05/2026",
@@ -11262,6 +12200,7 @@ window.HR_DATA = {
     {
       "id": 3169133,
       "name": "Đỗ Tấn Đạt",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "06/05/2026",
@@ -11274,6 +12213,7 @@ window.HR_DATA = {
     {
       "id": 3169268,
       "name": "Trần Thị Ngọc Ánh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "07/05/2026",
@@ -11286,6 +12226,7 @@ window.HR_DATA = {
     {
       "id": 3169489,
       "name": "Nguyễn Hoàng Sơn",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/05/2026",
@@ -11298,6 +12239,7 @@ window.HR_DATA = {
     {
       "id": 3169490,
       "name": "Nguyễn Thị Diễm Phúc",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "08/05/2026",
@@ -11310,6 +12252,7 @@ window.HR_DATA = {
     {
       "id": 3169578,
       "name": "Nguyễn Văn Tư Duy",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "09/05/2026",
@@ -11322,6 +12265,7 @@ window.HR_DATA = {
     {
       "id": 3169571,
       "name": "Ngô Thị Thơ",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/05/2026",
@@ -11334,6 +12278,7 @@ window.HR_DATA = {
     {
       "id": 3169570,
       "name": "Bùi Văn Minh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/05/2026",
@@ -11346,6 +12291,7 @@ window.HR_DATA = {
     {
       "id": 3169847,
       "name": "Lữ Hào Lương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/05/2026",
@@ -11358,6 +12304,7 @@ window.HR_DATA = {
     {
       "id": 3169845,
       "name": "Võ Trọng Nghĩa",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "11/05/2026",
@@ -11370,6 +12317,7 @@ window.HR_DATA = {
     {
       "id": 3170233,
       "name": "Nguyễn Hoàng Khánh Mai",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "17/05/2026",
@@ -11382,6 +12330,7 @@ window.HR_DATA = {
     {
       "id": 3170015,
       "name": "Trần Hoàng Quốc Dương",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "18/05/2026",
@@ -11394,6 +12343,7 @@ window.HR_DATA = {
     {
       "id": 3170982,
       "name": "Nguyễn Hoàng Nhân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "19/05/2026",
@@ -11406,6 +12356,7 @@ window.HR_DATA = {
     {
       "id": 3171025,
       "name": "Lê Mạnh Lưu",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "19/05/2026",
@@ -11418,6 +12369,7 @@ window.HR_DATA = {
     {
       "id": 3171147,
       "name": "Hồ Thiện Thanh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "20/05/2026",
@@ -11430,6 +12382,7 @@ window.HR_DATA = {
     {
       "id": 3172001,
       "name": "Nguyễn Đức Bảo Ân",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "27/05/2026",
@@ -11442,6 +12395,7 @@ window.HR_DATA = {
     {
       "id": 3172675,
       "name": "Trần Nguyễn Gia Bảo",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/06/2026",
@@ -11454,6 +12408,7 @@ window.HR_DATA = {
     {
       "id": 3172662,
       "name": "Hoàng Nguyễn Phước Toàn",
+      "position": "Nhân viên phân hàng",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "01/06/2026",
@@ -11466,6 +12421,7 @@ window.HR_DATA = {
     {
       "id": 3172919,
       "name": "Nguyễn Ngọc Sáng",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "03/06/2026",
@@ -11478,6 +12434,7 @@ window.HR_DATA = {
     {
       "id": 3173081,
       "name": "Trịnh Hoàng Anh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "04/06/2026",
@@ -11490,6 +12447,7 @@ window.HR_DATA = {
     {
       "id": 3173574,
       "name": "Đoàn Thành Nghiệp",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 5",
       "joinDateStr": "08/06/2026",
@@ -11502,6 +12460,7 @@ window.HR_DATA = {
     {
       "id": 3173782,
       "name": "Nguyễn Quốc Thịnh",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/06/2026",
@@ -11514,6 +12473,7 @@ window.HR_DATA = {
     {
       "id": 3173783,
       "name": "Trần Bão An",
+      "position": "Nhân viên phân kiện",
       "dept": "In/ Out Staff",
       "shift": "Ca 3",
       "joinDateStr": "09/06/2026",
