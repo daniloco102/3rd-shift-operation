@@ -1248,6 +1248,11 @@
             const shift = document.getElementById('record-shift').value;
             const dateStr = document.getElementById('record-date').value;
             let fixedReqs = null;
+            let isSunday = false;
+            if (dateStr) {
+                const dateObj = new Date(dateStr);
+                isSunday = dateObj.getDay() === 0;
+            }
             
             if (shift === "Ca 20:00 - 6:00" || shift === "Ca 21:30 - 6:30") {
                 const siblingShift = shift === "Ca 20:00 - 6:00" ? "Ca 21:30 - 6:30" : "Ca 20:00 - 6:00";
@@ -1263,10 +1268,10 @@
                 if (siblingIsMain) {
                     fixedReqs = { "HOA ANH ĐÀO": 0, "VIECCO": 0, "SKT": 0 }; // Làm ca phụ
                 } else {
-                    fixedReqs = { "HOA ANH ĐÀO": 64, "VIECCO": 52, "SKT": 39 }; // Làm ca chính
+                    fixedReqs = isSunday ? { "HOA ANH ĐÀO": 29, "VIECCO": 21, "SKT": 20 } : { "HOA ANH ĐÀO": 64, "VIECCO": 52, "SKT": 39 }; // Làm ca chính
                 }
             } else if (shift === "Ca 21:00 - 6:00") {
-                fixedReqs = { "HOA ANH ĐÀO": 54, "VIECCO": 41, "SKT": 38 };
+                fixedReqs = isSunday ? { "HOA ANH ĐÀO": 29, "VIECCO": 21, "SKT": 20 } : { "HOA ANH ĐÀO": 54, "VIECCO": 41, "SKT": 38 };
             }
 
             const isGroupedContainer = document.getElementById('grouped-shift-container');
@@ -1981,7 +1986,9 @@
         function formatDate(dateStr) {
             const parts = dateStr.split('-');
             if(parts.length !== 3) return dateStr;
-            return `${parts[2]}/${parts[1]}/${parts[0]}`;
+            const dateObj = new Date(dateStr);
+            const suffix = dateObj.getDay() === 0 ? ' (CN)' : '';
+            return `${parts[2]}/${parts[1]}/${parts[0]}${suffix}`;
         }
 
         document.getElementById('btn-export-csv').addEventListener('click', () => {
@@ -2257,7 +2264,12 @@
             for (let i = 0; i < 7; i++) {
                 const d = new Date(startDate);
                 d.setDate(d.getDate() + i);
-                dates.push(`${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getFullYear()}`);
+                const isSunday = d.getDay() === 0;
+                let dateString = `${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getFullYear()}`;
+                if (isSunday) {
+                    dateString = `<span style="color:var(--danger); font-weight:bold;">${dateString} (CN)</span>`;
+                }
+                dates.push(dateString);
             }
 
             // Render Header & Body for SORT

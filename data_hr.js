@@ -10,7 +10,7 @@ window.HR_DATA = {
       "joinDateStr": "15/02/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1246,
+      "daysWorked": 1255,
       "monthsWorked": 41,
       "leaveReason": ""
     },
@@ -23,7 +23,7 @@ window.HR_DATA = {
       "joinDateStr": "02/10/2022",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1382,
+      "daysWorked": 1391,
       "monthsWorked": 45,
       "leaveReason": ""
     },
@@ -36,7 +36,7 @@ window.HR_DATA = {
       "joinDateStr": "02/10/2022",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1382,
+      "daysWorked": 1391,
       "monthsWorked": 45,
       "leaveReason": ""
     },
@@ -49,7 +49,7 @@ window.HR_DATA = {
       "joinDateStr": "27/06/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1114,
+      "daysWorked": 1123,
       "monthsWorked": 37,
       "leaveReason": ""
     },
@@ -62,7 +62,7 @@ window.HR_DATA = {
       "joinDateStr": "29/04/2019",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 2634,
+      "daysWorked": 2643,
       "monthsWorked": 87,
       "leaveReason": ""
     },
@@ -75,7 +75,7 @@ window.HR_DATA = {
       "joinDateStr": "23/12/2021",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1665,
+      "daysWorked": 1674,
       "monthsWorked": 55,
       "leaveReason": ""
     },
@@ -88,7 +88,7 @@ window.HR_DATA = {
       "joinDateStr": "02/03/2021",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1961,
+      "daysWorked": 1970,
       "monthsWorked": 64,
       "leaveReason": ""
     },
@@ -101,7 +101,7 @@ window.HR_DATA = {
       "joinDateStr": "15/02/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1246,
+      "daysWorked": 1255,
       "monthsWorked": 41,
       "leaveReason": ""
     },
@@ -114,7 +114,7 @@ window.HR_DATA = {
       "joinDateStr": "18/10/2022",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1366,
+      "daysWorked": 1375,
       "monthsWorked": 45,
       "leaveReason": ""
     },
@@ -127,7 +127,7 @@ window.HR_DATA = {
       "joinDateStr": "08/05/2020",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 2259,
+      "daysWorked": 2268,
       "monthsWorked": 74,
       "leaveReason": ""
     },
@@ -140,7 +140,7 @@ window.HR_DATA = {
       "joinDateStr": "05/09/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1044,
+      "daysWorked": 1053,
       "monthsWorked": 34,
       "leaveReason": ""
     },
@@ -153,7 +153,7 @@ window.HR_DATA = {
       "joinDateStr": "16/10/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 1003,
+      "daysWorked": 1012,
       "monthsWorked": 33,
       "leaveReason": ""
     },
@@ -166,7 +166,7 @@ window.HR_DATA = {
       "joinDateStr": "04/11/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 984,
+      "daysWorked": 993,
       "monthsWorked": 32,
       "leaveReason": ""
     },
@@ -179,7 +179,7 @@ window.HR_DATA = {
       "joinDateStr": "12/11/2023",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 976,
+      "daysWorked": 985,
       "monthsWorked": 32,
       "leaveReason": ""
     },
@@ -192,7 +192,7 @@ window.HR_DATA = {
       "joinDateStr": "04/01/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 923,
+      "daysWorked": 932,
       "monthsWorked": 30,
       "leaveReason": ""
     },
@@ -205,7 +205,7 @@ window.HR_DATA = {
       "joinDateStr": "06/01/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 921,
+      "daysWorked": 930,
       "monthsWorked": 30,
       "leaveReason": ""
     },
@@ -218,7 +218,7 @@ window.HR_DATA = {
       "joinDateStr": "11/01/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 916,
+      "daysWorked": 925,
       "monthsWorked": 30,
       "leaveReason": ""
     },
@@ -231,7 +231,7 @@ window.HR_DATA = {
       "joinDateStr": "12/01/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 915,
+      "daysWorked": 924,
       "monthsWorked": 30,
       "leaveReason": ""
     },
@@ -244,7 +244,7 @@ window.HR_DATA = {
       "joinDateStr": "01/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 866,
+      "daysWorked": 875,
       "monthsWorked": 28,
       "leaveReason": ""
     },
@@ -257,7 +257,7 @@ window.HR_DATA = {
       "joinDateStr": "29/02/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 867,
+      "daysWorked": 876,
       "monthsWorked": 29,
       "leaveReason": ""
     },
@@ -270,7 +270,7 @@ window.HR_DATA = {
       "joinDateStr": "13/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 854,
+      "daysWorked": 863,
       "monthsWorked": 28,
       "leaveReason": ""
     },
@@ -283,7 +283,7 @@ window.HR_DATA = {
       "joinDateStr": "16/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 851,
+      "daysWorked": 860,
       "monthsWorked": 28,
       "leaveReason": ""
     },
@@ -296,7 +296,7 @@ window.HR_DATA = {
       "joinDateStr": "14/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 853,
+      "daysWorked": 862,
       "monthsWorked": 28,
       "leaveReason": ""
     },
@@ -309,7 +309,7 @@ window.HR_DATA = {
       "joinDateStr": "23/03/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 844,
+      "daysWorked": 853,
       "monthsWorked": 28,
       "leaveReason": ""
     },
@@ -322,7 +322,7 @@ window.HR_DATA = {
       "joinDateStr": "04/04/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 832,
+      "daysWorked": 841,
       "monthsWorked": 27,
       "leaveReason": ""
     },
@@ -335,7 +335,7 @@ window.HR_DATA = {
       "joinDateStr": "19/04/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 817,
+      "daysWorked": 826,
       "monthsWorked": 27,
       "leaveReason": ""
     },
@@ -348,7 +348,7 @@ window.HR_DATA = {
       "joinDateStr": "05/05/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 801,
+      "daysWorked": 810,
       "monthsWorked": 26,
       "leaveReason": ""
     },
@@ -361,7 +361,7 @@ window.HR_DATA = {
       "joinDateStr": "30/05/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 776,
+      "daysWorked": 785,
       "monthsWorked": 26,
       "leaveReason": ""
     },
@@ -374,7 +374,7 @@ window.HR_DATA = {
       "joinDateStr": "03/06/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 772,
+      "daysWorked": 781,
       "monthsWorked": 25,
       "leaveReason": ""
     },
@@ -387,7 +387,7 @@ window.HR_DATA = {
       "joinDateStr": "21/06/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 754,
+      "daysWorked": 763,
       "monthsWorked": 25,
       "leaveReason": ""
     },
@@ -400,7 +400,7 @@ window.HR_DATA = {
       "joinDateStr": "26/06/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 749,
+      "daysWorked": 758,
       "monthsWorked": 25,
       "leaveReason": ""
     },
@@ -413,7 +413,7 @@ window.HR_DATA = {
       "joinDateStr": "14/07/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 731,
+      "daysWorked": 740,
       "monthsWorked": 24,
       "leaveReason": ""
     },
@@ -426,7 +426,7 @@ window.HR_DATA = {
       "joinDateStr": "14/09/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 669,
+      "daysWorked": 678,
       "monthsWorked": 22,
       "leaveReason": ""
     },
@@ -439,7 +439,7 @@ window.HR_DATA = {
       "joinDateStr": "09/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 644,
+      "daysWorked": 653,
       "monthsWorked": 21,
       "leaveReason": ""
     },
@@ -452,7 +452,7 @@ window.HR_DATA = {
       "joinDateStr": "11/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 642,
+      "daysWorked": 651,
       "monthsWorked": 21,
       "leaveReason": ""
     },
@@ -465,7 +465,7 @@ window.HR_DATA = {
       "joinDateStr": "11/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 642,
+      "daysWorked": 651,
       "monthsWorked": 21,
       "leaveReason": ""
     },
@@ -478,7 +478,7 @@ window.HR_DATA = {
       "joinDateStr": "14/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 639,
+      "daysWorked": 648,
       "monthsWorked": 21,
       "leaveReason": ""
     },
@@ -491,7 +491,7 @@ window.HR_DATA = {
       "joinDateStr": "29/10/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 624,
+      "daysWorked": 633,
       "monthsWorked": 21,
       "leaveReason": ""
     },
@@ -504,7 +504,7 @@ window.HR_DATA = {
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 621,
+      "daysWorked": 630,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -517,7 +517,7 @@ window.HR_DATA = {
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 621,
+      "daysWorked": 630,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -530,7 +530,7 @@ window.HR_DATA = {
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 621,
+      "daysWorked": 630,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -543,7 +543,7 @@ window.HR_DATA = {
       "joinDateStr": "01/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 621,
+      "daysWorked": 630,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -556,7 +556,7 @@ window.HR_DATA = {
       "joinDateStr": "04/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 618,
+      "daysWorked": 627,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -569,7 +569,7 @@ window.HR_DATA = {
       "joinDateStr": "04/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 618,
+      "daysWorked": 627,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -582,7 +582,7 @@ window.HR_DATA = {
       "joinDateStr": "09/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 613,
+      "daysWorked": 622,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -595,7 +595,7 @@ window.HR_DATA = {
       "joinDateStr": "12/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 610,
+      "daysWorked": 619,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -608,7 +608,7 @@ window.HR_DATA = {
       "joinDateStr": "24/11/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 598,
+      "daysWorked": 607,
       "monthsWorked": 20,
       "leaveReason": ""
     },
@@ -621,7 +621,7 @@ window.HR_DATA = {
       "joinDateStr": "26/12/2024",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 566,
+      "daysWorked": 575,
       "monthsWorked": 19,
       "leaveReason": ""
     },
@@ -634,7 +634,7 @@ window.HR_DATA = {
       "joinDateStr": "05/01/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 556,
+      "daysWorked": 565,
       "monthsWorked": 18,
       "leaveReason": ""
     },
@@ -647,7 +647,7 @@ window.HR_DATA = {
       "joinDateStr": "06/01/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 555,
+      "daysWorked": 564,
       "monthsWorked": 18,
       "leaveReason": ""
     },
@@ -660,7 +660,7 @@ window.HR_DATA = {
       "joinDateStr": "25/02/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 505,
+      "daysWorked": 514,
       "monthsWorked": 17,
       "leaveReason": ""
     },
@@ -673,7 +673,7 @@ window.HR_DATA = {
       "joinDateStr": "05/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 497,
+      "daysWorked": 506,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -686,7 +686,7 @@ window.HR_DATA = {
       "joinDateStr": "05/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 497,
+      "daysWorked": 506,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -699,7 +699,7 @@ window.HR_DATA = {
       "joinDateStr": "10/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 492,
+      "daysWorked": 501,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -712,7 +712,7 @@ window.HR_DATA = {
       "joinDateStr": "14/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 488,
+      "daysWorked": 497,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -725,7 +725,7 @@ window.HR_DATA = {
       "joinDateStr": "20/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 482,
+      "daysWorked": 491,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -738,7 +738,7 @@ window.HR_DATA = {
       "joinDateStr": "21/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 481,
+      "daysWorked": 490,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -751,7 +751,7 @@ window.HR_DATA = {
       "joinDateStr": "20/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 482,
+      "daysWorked": 491,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -764,7 +764,7 @@ window.HR_DATA = {
       "joinDateStr": "27/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 475,
+      "daysWorked": 484,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -777,7 +777,7 @@ window.HR_DATA = {
       "joinDateStr": "26/03/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 476,
+      "daysWorked": 485,
       "monthsWorked": 16,
       "leaveReason": ""
     },
@@ -790,7 +790,7 @@ window.HR_DATA = {
       "joinDateStr": "18/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 453,
+      "daysWorked": 462,
       "monthsWorked": 15,
       "leaveReason": ""
     },
@@ -803,7 +803,7 @@ window.HR_DATA = {
       "joinDateStr": "18/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 453,
+      "daysWorked": 462,
       "monthsWorked": 15,
       "leaveReason": ""
     },
@@ -816,7 +816,7 @@ window.HR_DATA = {
       "joinDateStr": "12/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 459,
+      "daysWorked": 468,
       "monthsWorked": 15,
       "leaveReason": ""
     },
@@ -829,7 +829,7 @@ window.HR_DATA = {
       "joinDateStr": "23/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 448,
+      "daysWorked": 457,
       "monthsWorked": 15,
       "leaveReason": ""
     },
@@ -842,7 +842,7 @@ window.HR_DATA = {
       "joinDateStr": "24/04/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 447,
+      "daysWorked": 456,
       "monthsWorked": 15,
       "leaveReason": ""
     },
@@ -855,7 +855,7 @@ window.HR_DATA = {
       "joinDateStr": "06/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 435,
+      "daysWorked": 444,
       "monthsWorked": 14,
       "leaveReason": ""
     },
@@ -868,7 +868,7 @@ window.HR_DATA = {
       "joinDateStr": "06/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 435,
+      "daysWorked": 444,
       "monthsWorked": 14,
       "leaveReason": ""
     },
@@ -881,7 +881,7 @@ window.HR_DATA = {
       "joinDateStr": "15/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 426,
+      "daysWorked": 435,
       "monthsWorked": 14,
       "leaveReason": ""
     },
@@ -894,7 +894,7 @@ window.HR_DATA = {
       "joinDateStr": "11/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 430,
+      "daysWorked": 439,
       "monthsWorked": 14,
       "leaveReason": ""
     },
@@ -907,7 +907,7 @@ window.HR_DATA = {
       "joinDateStr": "23/05/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 418,
+      "daysWorked": 427,
       "monthsWorked": 14,
       "leaveReason": ""
     },
@@ -920,7 +920,7 @@ window.HR_DATA = {
       "joinDateStr": "21/06/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 389,
+      "daysWorked": 398,
       "monthsWorked": 13,
       "leaveReason": ""
     },
@@ -933,7 +933,7 @@ window.HR_DATA = {
       "joinDateStr": "20/06/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 390,
+      "daysWorked": 399,
       "monthsWorked": 13,
       "leaveReason": ""
     },
@@ -946,7 +946,7 @@ window.HR_DATA = {
       "joinDateStr": "02/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 378,
+      "daysWorked": 387,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -959,7 +959,7 @@ window.HR_DATA = {
       "joinDateStr": "11/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 369,
+      "daysWorked": 378,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -972,7 +972,7 @@ window.HR_DATA = {
       "joinDateStr": "10/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 370,
+      "daysWorked": 379,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -985,7 +985,7 @@ window.HR_DATA = {
       "joinDateStr": "13/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 367,
+      "daysWorked": 376,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -998,7 +998,7 @@ window.HR_DATA = {
       "joinDateStr": "13/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 367,
+      "daysWorked": 376,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -1011,7 +1011,7 @@ window.HR_DATA = {
       "joinDateStr": "17/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 363,
+      "daysWorked": 372,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -1024,7 +1024,7 @@ window.HR_DATA = {
       "joinDateStr": "18/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 362,
+      "daysWorked": 371,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -1037,7 +1037,7 @@ window.HR_DATA = {
       "joinDateStr": "13/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 367,
+      "daysWorked": 376,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -1050,7 +1050,7 @@ window.HR_DATA = {
       "joinDateStr": "22/07/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 358,
+      "daysWorked": 367,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -1063,7 +1063,7 @@ window.HR_DATA = {
       "joinDateStr": "01/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 348,
+      "daysWorked": 357,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1076,7 +1076,7 @@ window.HR_DATA = {
       "joinDateStr": "06/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 343,
+      "daysWorked": 352,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1089,7 +1089,7 @@ window.HR_DATA = {
       "joinDateStr": "11/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 338,
+      "daysWorked": 347,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1102,7 +1102,7 @@ window.HR_DATA = {
       "joinDateStr": "11/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 338,
+      "daysWorked": 347,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1115,7 +1115,7 @@ window.HR_DATA = {
       "joinDateStr": "14/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 335,
+      "daysWorked": 344,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1128,7 +1128,7 @@ window.HR_DATA = {
       "joinDateStr": "14/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 335,
+      "daysWorked": 344,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1141,7 +1141,7 @@ window.HR_DATA = {
       "joinDateStr": "15/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 334,
+      "daysWorked": 343,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1154,7 +1154,7 @@ window.HR_DATA = {
       "joinDateStr": "15/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 334,
+      "daysWorked": 343,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1167,7 +1167,7 @@ window.HR_DATA = {
       "joinDateStr": "15/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 334,
+      "daysWorked": 343,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1180,7 +1180,7 @@ window.HR_DATA = {
       "joinDateStr": "20/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 329,
+      "daysWorked": 338,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1193,7 +1193,7 @@ window.HR_DATA = {
       "joinDateStr": "07/08/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 342,
+      "daysWorked": 351,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -1206,7 +1206,7 @@ window.HR_DATA = {
       "joinDateStr": "05/09/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 313,
+      "daysWorked": 322,
       "monthsWorked": 10,
       "leaveReason": ""
     },
@@ -1219,7 +1219,7 @@ window.HR_DATA = {
       "joinDateStr": "24/09/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 294,
+      "daysWorked": 303,
       "monthsWorked": 10,
       "leaveReason": ""
     },
@@ -1232,7 +1232,7 @@ window.HR_DATA = {
       "joinDateStr": "25/09/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 293,
+      "daysWorked": 302,
       "monthsWorked": 10,
       "leaveReason": ""
     },
@@ -1245,7 +1245,7 @@ window.HR_DATA = {
       "joinDateStr": "16/09/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 302,
+      "daysWorked": 311,
       "monthsWorked": 10,
       "leaveReason": ""
     },
@@ -1258,7 +1258,7 @@ window.HR_DATA = {
       "joinDateStr": "04/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 284,
+      "daysWorked": 293,
       "monthsWorked": 9,
       "leaveReason": ""
     },
@@ -1271,7 +1271,7 @@ window.HR_DATA = {
       "joinDateStr": "17/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 271,
+      "daysWorked": 280,
       "monthsWorked": 9,
       "leaveReason": ""
     },
@@ -1284,7 +1284,7 @@ window.HR_DATA = {
       "joinDateStr": "19/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 269,
+      "daysWorked": 278,
       "monthsWorked": 9,
       "leaveReason": ""
     },
@@ -1297,7 +1297,7 @@ window.HR_DATA = {
       "joinDateStr": "23/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 265,
+      "daysWorked": 274,
       "monthsWorked": 9,
       "leaveReason": ""
     },
@@ -1310,7 +1310,7 @@ window.HR_DATA = {
       "joinDateStr": "25/10/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 263,
+      "daysWorked": 272,
       "monthsWorked": 9,
       "leaveReason": ""
     },
@@ -1323,7 +1323,7 @@ window.HR_DATA = {
       "joinDateStr": "03/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 254,
+      "daysWorked": 263,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1336,7 +1336,7 @@ window.HR_DATA = {
       "joinDateStr": "06/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 251,
+      "daysWorked": 260,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1349,7 +1349,7 @@ window.HR_DATA = {
       "joinDateStr": "14/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 243,
+      "daysWorked": 252,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1362,7 +1362,7 @@ window.HR_DATA = {
       "joinDateStr": "18/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 239,
+      "daysWorked": 248,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1375,7 +1375,7 @@ window.HR_DATA = {
       "joinDateStr": "20/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 237,
+      "daysWorked": 246,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1388,7 +1388,7 @@ window.HR_DATA = {
       "joinDateStr": "21/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 236,
+      "daysWorked": 245,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1401,7 +1401,7 @@ window.HR_DATA = {
       "joinDateStr": "19/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 238,
+      "daysWorked": 247,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1414,7 +1414,7 @@ window.HR_DATA = {
       "joinDateStr": "22/11/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 235,
+      "daysWorked": 244,
       "monthsWorked": 8,
       "leaveReason": ""
     },
@@ -1427,7 +1427,7 @@ window.HR_DATA = {
       "joinDateStr": "03/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 224,
+      "daysWorked": 233,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1440,7 +1440,7 @@ window.HR_DATA = {
       "joinDateStr": "04/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 223,
+      "daysWorked": 232,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1453,7 +1453,7 @@ window.HR_DATA = {
       "joinDateStr": "04/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 223,
+      "daysWorked": 232,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1466,7 +1466,7 @@ window.HR_DATA = {
       "joinDateStr": "05/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 222,
+      "daysWorked": 231,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1479,7 +1479,7 @@ window.HR_DATA = {
       "joinDateStr": "09/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 218,
+      "daysWorked": 227,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1492,7 +1492,7 @@ window.HR_DATA = {
       "joinDateStr": "10/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 217,
+      "daysWorked": 226,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1505,7 +1505,7 @@ window.HR_DATA = {
       "joinDateStr": "18/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 209,
+      "daysWorked": 218,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1518,7 +1518,7 @@ window.HR_DATA = {
       "joinDateStr": "22/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 205,
+      "daysWorked": 214,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1531,7 +1531,7 @@ window.HR_DATA = {
       "joinDateStr": "22/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 205,
+      "daysWorked": 214,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1544,7 +1544,7 @@ window.HR_DATA = {
       "joinDateStr": "25/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 202,
+      "daysWorked": 211,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1557,7 +1557,7 @@ window.HR_DATA = {
       "joinDateStr": "23/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 204,
+      "daysWorked": 213,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1570,7 +1570,7 @@ window.HR_DATA = {
       "joinDateStr": "31/12/2025",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 196,
+      "daysWorked": 205,
       "monthsWorked": 7,
       "leaveReason": ""
     },
@@ -1583,7 +1583,7 @@ window.HR_DATA = {
       "joinDateStr": "02/01/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 194,
+      "daysWorked": 203,
       "monthsWorked": 6,
       "leaveReason": ""
     },
@@ -1596,7 +1596,7 @@ window.HR_DATA = {
       "joinDateStr": "20/01/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 176,
+      "daysWorked": 185,
       "monthsWorked": 6,
       "leaveReason": ""
     },
@@ -1609,7 +1609,7 @@ window.HR_DATA = {
       "joinDateStr": "20/02/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 145,
+      "daysWorked": 154,
       "monthsWorked": 5,
       "leaveReason": ""
     },
@@ -1622,7 +1622,7 @@ window.HR_DATA = {
       "joinDateStr": "26/02/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 139,
+      "daysWorked": 148,
       "monthsWorked": 5,
       "leaveReason": ""
     },
@@ -1635,7 +1635,7 @@ window.HR_DATA = {
       "joinDateStr": "01/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 136,
+      "daysWorked": 145,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1648,7 +1648,7 @@ window.HR_DATA = {
       "joinDateStr": "01/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 136,
+      "daysWorked": 145,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1661,7 +1661,7 @@ window.HR_DATA = {
       "joinDateStr": "04/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 133,
+      "daysWorked": 142,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1674,7 +1674,7 @@ window.HR_DATA = {
       "joinDateStr": "14/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 123,
+      "daysWorked": 132,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1687,7 +1687,7 @@ window.HR_DATA = {
       "joinDateStr": "16/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 121,
+      "daysWorked": 130,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1700,7 +1700,7 @@ window.HR_DATA = {
       "joinDateStr": "16/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 121,
+      "daysWorked": 130,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1713,7 +1713,7 @@ window.HR_DATA = {
       "joinDateStr": "17/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 120,
+      "daysWorked": 129,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1726,7 +1726,7 @@ window.HR_DATA = {
       "joinDateStr": "16/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 121,
+      "daysWorked": 130,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1739,7 +1739,7 @@ window.HR_DATA = {
       "joinDateStr": "18/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 119,
+      "daysWorked": 128,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1752,7 +1752,7 @@ window.HR_DATA = {
       "joinDateStr": "20/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 117,
+      "daysWorked": 126,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1765,7 +1765,7 @@ window.HR_DATA = {
       "joinDateStr": "20/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 117,
+      "daysWorked": 126,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1778,7 +1778,7 @@ window.HR_DATA = {
       "joinDateStr": "25/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 112,
+      "daysWorked": 121,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1791,7 +1791,7 @@ window.HR_DATA = {
       "joinDateStr": "23/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 114,
+      "daysWorked": 123,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1804,7 +1804,7 @@ window.HR_DATA = {
       "joinDateStr": "27/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 110,
+      "daysWorked": 119,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1817,7 +1817,7 @@ window.HR_DATA = {
       "joinDateStr": "27/03/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 110,
+      "daysWorked": 119,
       "monthsWorked": 4,
       "leaveReason": ""
     },
@@ -1830,7 +1830,7 @@ window.HR_DATA = {
       "joinDateStr": "01/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 105,
+      "daysWorked": 114,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1843,7 +1843,7 @@ window.HR_DATA = {
       "joinDateStr": "02/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 104,
+      "daysWorked": 113,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1856,7 +1856,7 @@ window.HR_DATA = {
       "joinDateStr": "05/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 101,
+      "daysWorked": 110,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1869,7 +1869,7 @@ window.HR_DATA = {
       "joinDateStr": "08/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 98,
+      "daysWorked": 107,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1882,7 +1882,7 @@ window.HR_DATA = {
       "joinDateStr": "08/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 98,
+      "daysWorked": 107,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1895,7 +1895,7 @@ window.HR_DATA = {
       "joinDateStr": "08/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 98,
+      "daysWorked": 107,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1908,7 +1908,7 @@ window.HR_DATA = {
       "joinDateStr": "14/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 92,
+      "daysWorked": 101,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1921,7 +1921,7 @@ window.HR_DATA = {
       "joinDateStr": "14/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 92,
+      "daysWorked": 101,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1934,7 +1934,7 @@ window.HR_DATA = {
       "joinDateStr": "18/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 88,
+      "daysWorked": 97,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1947,7 +1947,7 @@ window.HR_DATA = {
       "joinDateStr": "19/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 87,
+      "daysWorked": 96,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1960,7 +1960,7 @@ window.HR_DATA = {
       "joinDateStr": "19/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 87,
+      "daysWorked": 96,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1973,7 +1973,7 @@ window.HR_DATA = {
       "joinDateStr": "17/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 89,
+      "daysWorked": 98,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1986,7 +1986,7 @@ window.HR_DATA = {
       "joinDateStr": "23/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 83,
+      "daysWorked": 92,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -1999,7 +1999,7 @@ window.HR_DATA = {
       "joinDateStr": "24/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 82,
+      "daysWorked": 91,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -2012,7 +2012,7 @@ window.HR_DATA = {
       "joinDateStr": "24/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 82,
+      "daysWorked": 91,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -2025,7 +2025,7 @@ window.HR_DATA = {
       "joinDateStr": "27/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 79,
+      "daysWorked": 88,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -2038,7 +2038,7 @@ window.HR_DATA = {
       "joinDateStr": "27/04/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 79,
+      "daysWorked": 88,
       "monthsWorked": 3,
       "leaveReason": ""
     },
@@ -2051,7 +2051,7 @@ window.HR_DATA = {
       "joinDateStr": "06/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 70,
+      "daysWorked": 79,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2064,7 +2064,7 @@ window.HR_DATA = {
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 69,
+      "daysWorked": 78,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2077,7 +2077,7 @@ window.HR_DATA = {
       "joinDateStr": "06/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 70,
+      "daysWorked": 79,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2090,7 +2090,7 @@ window.HR_DATA = {
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 69,
+      "daysWorked": 78,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2103,7 +2103,7 @@ window.HR_DATA = {
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 69,
+      "daysWorked": 78,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2116,7 +2116,7 @@ window.HR_DATA = {
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 69,
+      "daysWorked": 78,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2129,7 +2129,7 @@ window.HR_DATA = {
       "joinDateStr": "07/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 69,
+      "daysWorked": 78,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2142,7 +2142,7 @@ window.HR_DATA = {
       "joinDateStr": "11/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 65,
+      "daysWorked": 74,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2155,7 +2155,7 @@ window.HR_DATA = {
       "joinDateStr": "12/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 64,
+      "daysWorked": 73,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2168,7 +2168,7 @@ window.HR_DATA = {
       "joinDateStr": "12/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 64,
+      "daysWorked": 73,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2181,7 +2181,7 @@ window.HR_DATA = {
       "joinDateStr": "15/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 61,
+      "daysWorked": 70,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2194,7 +2194,7 @@ window.HR_DATA = {
       "joinDateStr": "29/05/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 47,
+      "daysWorked": 56,
       "monthsWorked": 2,
       "leaveReason": ""
     },
@@ -2207,7 +2207,7 @@ window.HR_DATA = {
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 44,
+      "daysWorked": 53,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2220,7 +2220,7 @@ window.HR_DATA = {
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 44,
+      "daysWorked": 53,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2233,7 +2233,7 @@ window.HR_DATA = {
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 44,
+      "daysWorked": 53,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2246,7 +2246,7 @@ window.HR_DATA = {
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 44,
+      "daysWorked": 53,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2259,7 +2259,7 @@ window.HR_DATA = {
       "joinDateStr": "01/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 44,
+      "daysWorked": 53,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2272,7 +2272,7 @@ window.HR_DATA = {
       "joinDateStr": "02/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 43,
+      "daysWorked": 52,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2285,7 +2285,7 @@ window.HR_DATA = {
       "joinDateStr": "04/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 41,
+      "daysWorked": 50,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2298,7 +2298,7 @@ window.HR_DATA = {
       "joinDateStr": "06/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 39,
+      "daysWorked": 48,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2311,7 +2311,7 @@ window.HR_DATA = {
       "joinDateStr": "08/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 37,
+      "daysWorked": 46,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2324,7 +2324,7 @@ window.HR_DATA = {
       "joinDateStr": "14/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 31,
+      "daysWorked": 40,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2337,7 +2337,7 @@ window.HR_DATA = {
       "joinDateStr": "14/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 31,
+      "daysWorked": 40,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2350,7 +2350,7 @@ window.HR_DATA = {
       "joinDateStr": "12/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 33,
+      "daysWorked": 42,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2363,7 +2363,7 @@ window.HR_DATA = {
       "joinDateStr": "12/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 33,
+      "daysWorked": 42,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2376,7 +2376,7 @@ window.HR_DATA = {
       "joinDateStr": "17/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 28,
+      "daysWorked": 37,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2389,7 +2389,7 @@ window.HR_DATA = {
       "joinDateStr": "17/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 28,
+      "daysWorked": 37,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2402,7 +2402,7 @@ window.HR_DATA = {
       "joinDateStr": "17/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 28,
+      "daysWorked": 37,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2415,7 +2415,7 @@ window.HR_DATA = {
       "joinDateStr": "20/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 25,
+      "daysWorked": 34,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2428,7 +2428,7 @@ window.HR_DATA = {
       "joinDateStr": "21/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 24,
+      "daysWorked": 33,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2441,7 +2441,7 @@ window.HR_DATA = {
       "joinDateStr": "22/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 23,
+      "daysWorked": 32,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2454,7 +2454,7 @@ window.HR_DATA = {
       "joinDateStr": "24/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 21,
+      "daysWorked": 30,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2467,7 +2467,7 @@ window.HR_DATA = {
       "joinDateStr": "25/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 20,
+      "daysWorked": 29,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2480,7 +2480,7 @@ window.HR_DATA = {
       "joinDateStr": "27/06/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 18,
+      "daysWorked": 27,
       "monthsWorked": 1,
       "leaveReason": ""
     },
@@ -2493,7 +2493,7 @@ window.HR_DATA = {
       "joinDateStr": "01/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 14,
+      "daysWorked": 23,
       "monthsWorked": 0,
       "leaveReason": ""
     },
@@ -2506,7 +2506,7 @@ window.HR_DATA = {
       "joinDateStr": "01/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 14,
+      "daysWorked": 23,
       "monthsWorked": 0,
       "leaveReason": ""
     },
@@ -2519,7 +2519,7 @@ window.HR_DATA = {
       "joinDateStr": "02/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 13,
+      "daysWorked": 22,
       "monthsWorked": 0,
       "leaveReason": ""
     },
@@ -2532,7 +2532,7 @@ window.HR_DATA = {
       "joinDateStr": "06/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 9,
+      "daysWorked": 18,
       "monthsWorked": 0,
       "leaveReason": ""
     },
@@ -2545,7 +2545,7 @@ window.HR_DATA = {
       "joinDateStr": "07/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 8,
+      "daysWorked": 17,
       "monthsWorked": 0,
       "leaveReason": ""
     },
@@ -2558,7 +2558,7 @@ window.HR_DATA = {
       "joinDateStr": "07/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 8,
+      "daysWorked": 17,
       "monthsWorked": 0,
       "leaveReason": ""
     },
@@ -2571,7 +2571,241 @@ window.HR_DATA = {
       "joinDateStr": "10/07/2026",
       "leaveDateStr": "",
       "status": "Đang làm việc",
-      "daysWorked": 5,
+      "daysWorked": 14,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178350,
+      "name": "Huỳnh Phước Trung",
+      "position": "Nhân viên phân hàng",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "11/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 13,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178457,
+      "name": "Nguyễn Minh Sang",
+      "position": "Nhân viên phân hàng",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "12/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 12,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178614,
+      "name": "Lương Bội Vân",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "13/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 11,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178628,
+      "name": "Trần Thị Kim Cương",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "13/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 11,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178616,
+      "name": "Lê Thị Ái Huỳnh",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "13/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 11,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178619,
+      "name": "Lê Anh Võ",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "13/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 11,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178700,
+      "name": "Hồ Bích Huyền",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "13/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 11,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178621,
+      "name": "Lê Diểm Ngọc",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "13/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 11,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3178863,
+      "name": "Lê Văn Tình",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "14/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 10,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179207,
+      "name": "Nguyễn Thanh Tìm",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "16/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 8,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179317,
+      "name": "Nguyễn Tấn Thành",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "17/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 7,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179484,
+      "name": "Mai Đoàn Tấn Đạt",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "18/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 6,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179692,
+      "name": "Nguyễn Ngọc Trí",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "20/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 4,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179837,
+      "name": "Đoàn Thị Thu Kết",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "21/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 3,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179847,
+      "name": "Đặng Nguyễn Thúy Hạnh",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "21/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 3,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179915,
+      "name": "Thạch Kô Sol",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "21/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 3,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3179950,
+      "name": "Phạm Minh Qui",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "22/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 2,
+      "monthsWorked": 0,
+      "leaveReason": ""
+    },
+    {
+      "id": 3180036,
+      "name": "Trần Văn Trung",
+      "position": "Nhân viên phân hàng",
+      "dept": "Sorting Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "22/07/2026",
+      "leaveDateStr": "",
+      "status": "Đang làm việc",
+      "daysWorked": 2,
       "monthsWorked": 0,
       "leaveReason": ""
     }
@@ -9229,7 +9463,7 @@ window.HR_DATA = {
       "joinDateStr": "04/06/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 406,
+      "daysWorked": 415,
       "monthsWorked": 13,
       "leaveReason": ""
     },
@@ -9242,7 +9476,7 @@ window.HR_DATA = {
       "joinDateStr": "04/06/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 406,
+      "daysWorked": 415,
       "monthsWorked": 13,
       "leaveReason": ""
     },
@@ -9658,7 +9892,7 @@ window.HR_DATA = {
       "joinDateStr": "07/07/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 373,
+      "daysWorked": 382,
       "monthsWorked": 12,
       "leaveReason": ""
     },
@@ -10334,7 +10568,7 @@ window.HR_DATA = {
       "joinDateStr": "05/08/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 344,
+      "daysWorked": 353,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -10347,7 +10581,7 @@ window.HR_DATA = {
       "joinDateStr": "06/08/2025",
       "leaveDateStr": "",
       "status": "Đã nghỉ việc",
-      "daysWorked": 343,
+      "daysWorked": 352,
       "monthsWorked": 11,
       "leaveReason": ""
     },
@@ -12558,6 +12792,32 @@ window.HR_DATA = {
       "leaveDateStr": "07/07/2026",
       "status": "Đã nghỉ việc",
       "daysWorked": 4,
+      "monthsWorked": 0,
+      "leaveReason": "Nghỉ ngang"
+    },
+    {
+      "id": 3178623,
+      "name": "Trần Trọng Thoại",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 5",
+      "joinDateStr": "14/07/2026",
+      "leaveDateStr": "16/07/2026",
+      "status": "Đã nghỉ việc",
+      "daysWorked": 2,
+      "monthsWorked": 0,
+      "leaveReason": "Không phù hợp"
+    },
+    {
+      "id": 3178866,
+      "name": "Nguyễn Duy Khang",
+      "position": "Nhân viên phân kiện",
+      "dept": "In/ Out Staff",
+      "shift": "Ca 3",
+      "joinDateStr": "14/07/2026",
+      "leaveDateStr": "19/07/2026",
+      "status": "Đã nghỉ việc",
+      "daysWorked": 5,
       "monthsWorked": 0,
       "leaveReason": "Nghỉ ngang"
     }
