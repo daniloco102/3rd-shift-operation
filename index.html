@@ -106,6 +106,23 @@
 
         .header-controls { display: flex; gap: 1rem; align-items: center; }
 
+        /* Real-time Tracker Widget */
+        .shift-tracker {
+            background: rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            min-width: 280px;
+        }
+        html.dark .shift-tracker { background: rgba(255,255,255,0.02); }
+        .tracker-top { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--primary); }
+        .tracker-bottom { font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between; }
+        .progress-bar-bg { width: 100%; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden; margin: 2px 0; }
+        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--info)); width: 0%; transition: width 1s linear; }
+
         /* Buttons */
         button, .btn-secondary {
             cursor: pointer; border: none; outline: none; font-weight: 600;
@@ -313,7 +330,18 @@
                     <p class="subtitle">Hệ thống theo dõi và phân tích tỷ lệ đáp ứng của các nhà cung cấp</p>
                 </div>
             </div>
-            
+            <div class="shift-tracker" id="realtime-tracker">
+                <div class="tracker-top">
+                    <span id="tracker-shift-name"><i class="fa-regular fa-clock"></i> Đang tính toán...</span>
+                    <span id="tracker-time-left">--:--</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" id="tracker-progress"></div></div>
+                <div class="tracker-bottom">
+                    <span id="tracker-current-time">--:--:--</span>
+                    <span id="tracker-percent">0%</span>
+                </div>
+            </div>
+
             <div class="header-controls">
                 <div style="font-size: 0.8rem; color: var(--text-muted);">Trạng thái dữ liệu: 
                     <span id="sync-status" class="badge badge-warning"><i class="fa-solid fa-cloud"></i> Local Storage</span>
@@ -322,6 +350,7 @@
                     <i class="fa-solid fa-user-circle"></i> <span id="display-username"></span>
                     <button class="btn-logout" onclick="logout()" title="Đăng xuất"><i class="fa-solid fa-right-from-bracket"></i></button>
                 </div>
+                <button class="btn-success" onclick="exportDashboardPDF()" title="Tạo báo cáo PDF"><i class="fa-solid fa-file-pdf"></i> Xuất Báo Cáo PDF</button>
                 <button id="theme-toggle" class="btn-theme" title="Chuyển đổi giao diện">
                     <i class="fa-solid fa-moon dark-icon"></i>
                     <i class="fa-solid fa-sun light-icon"></i>
@@ -2859,6 +2888,49 @@
 
             analysis += `<p><strong>👉 Phân tích INOUT:</strong> ${inoutAnalysis || 'Chưa có đủ dữ liệu để phân tích.'}</p>`;
 
+            // AI Forecasting Logic
+            try {
+                const allWeeks = Object.keys(opsData?.targetMetrics || {})
+                    .map(w => {
+                        const num = parseInt(w.replace(/[^\d]/g, ''));
+                        return { key: w, num: num };
+                    })
+                    .filter(w => !isNaN(w.num))
+                    .sort((a,b) => a.num - b.num);
+                
+                if (allWeeks.length >= 2) {
+                    const lastWeeks = allWeeks.slice(-4);
+                    const volumes = lastWeeks.map(w => opsData.targetMetrics[w.key]?.sort?.volume || 0);
+                    
+                    if (volumes.length > 1 && volumes[volumes.length-1] > 0) {
+                        const n = volumes.length;
+                        let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
+                        for (let i = 0; i < n; i++) {
+                            sumX += i;
+                            sumY += volumes[i];
+                            sumXY += i * volumes[i];
+                            sumXX += i * i;
+                        }
+                        const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+                        const intercept = (sumY - slope * sumX) / n;
+                        
+                        let nextVolume = Math.round(slope * n + intercept);
+                        if (nextVolume < 0) nextVolume = 0;
+                        const trend = slope > 0 ? "TĂNG" : "GIẢM";
+                        let percent = (Math.abs(slope) / volumes[n-1] * 100).toFixed(1);
+                        if (percent > 100) percent = ">100";
+                        
+                        let trendColor = slope > 0 ? "var(--warning)" : "var(--success)";
+                        
+                        analysis += `<div style="margin-top: 1rem; padding: 0.75rem; background: rgba(99, 102, 241, 0.05); border-left: 4px solid var(--primary); border-radius: var(--radius-md);">
+                            <strong style="color: var(--primary);"><i class="fa-solid fa-wand-magic-sparkles"></i> DỰ BÁO AI TUẦN TỚI:</strong><br>
+                            Dựa trên đà phát triển của ${n} tuần qua, thuật toán hồi quy Linear Regression dự đoán Volume SORT tuần tới sẽ <span style="color:${trendColor}; font-weight:bold;">${trend} khoảng ${percent}%</span> (Ước tính: ${formatNumber(nextVolume)} đơn).
+                            <div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-lightbulb" style="color:var(--warning)"></i> Hành động: Vui lòng điều chỉnh định biên nhân sự ca 3 để đáp ứng sự biến động này!</div>
+                        </div>`;
+                    }
+                }
+            } catch(e) { console.error("AI Forecast Error:", e); }
+
             document.getElementById('ops-target-analysis-content').innerHTML = analysis;
         }
 
@@ -3469,6 +3541,146 @@
             }
 
             XLSX.writeFile(wb, "Bao_Cao_Nhan_Su_Kho.xlsx");
+        }
+
+        // ==========================================
+        // REAL-TIME SHIFT TRACKER
+        // ==========================================
+        function updateTracker() {
+            const now = new Date();
+            const h = now.getHours();
+            const m = now.getMinutes();
+            const s = now.getSeconds();
+            const timeStr = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            const timeEl = document.getElementById('tracker-current-time');
+            if(timeEl) timeEl.textContent = timeStr;
+
+            let shiftName = "Ngoài giờ hành chính";
+            let startH = 0, startM = 0;
+            let endH = 0, endM = 0;
+            let isActive = false;
+            
+            const currentMins = h * 60 + m;
+            const ca5Start = 20 * 60;
+            const ca3Start = 22 * 60;
+            const ca5End = 6 * 60;
+            const ca3End = 7 * 60;
+
+            if (currentMins >= ca3Start || currentMins < ca3End) {
+                shiftName = "Ca 3 (22:00 - 07:00)";
+                startH = 22; endH = 7;
+                isActive = true;
+            } else if (currentMins >= ca5Start || currentMins < ca5End) {
+                shiftName = "Ca 5 (20:00 - 06:00)";
+                startH = 20; endH = 6;
+                isActive = true;
+            }
+
+            const shiftNameEl = document.getElementById('tracker-shift-name');
+            const timeLeftEl = document.getElementById('tracker-time-left');
+            const progressFillEl = document.getElementById('tracker-progress');
+            const percentEl = document.getElementById('tracker-percent');
+
+            if (!shiftNameEl) return;
+
+            if (!isActive) {
+                shiftNameEl.innerHTML = `<i class="fa-solid fa-mug-hot"></i> Đang ngoài ca`;
+                timeLeftEl.textContent = "Hệ thống chờ";
+                progressFillEl.style.width = "0%";
+                percentEl.textContent = "0%";
+                return;
+            }
+
+            shiftNameEl.innerHTML = `<i class="fa-solid fa-bolt" style="color:var(--warning)"></i> Đang chạy: ${shiftName}`;
+
+            let startMs = new Date(now).setHours(startH, startM, 0, 0);
+            let endMs = new Date(now).setHours(endH, endM, 0, 0);
+            
+            if (startH > endH) {
+                if (h >= startH) {
+                    endMs += 24 * 60 * 60 * 1000;
+                } else {
+                    startMs -= 24 * 60 * 60 * 1000;
+                }
+            }
+
+            const totalMs = endMs - startMs;
+            const elapsedMs = now.getTime() - startMs;
+            let percent = (elapsedMs / totalMs) * 100;
+            if (percent < 0) percent = 0;
+            if (percent > 100) percent = 100;
+
+            progressFillEl.style.width = percent.toFixed(1) + "%";
+            percentEl.textContent = percent.toFixed(1) + "%";
+
+            const leftMs = endMs - now.getTime();
+            if (leftMs > 0) {
+                const leftH = Math.floor(leftMs / (1000 * 60 * 60));
+                const leftM = Math.floor((leftMs % (1000 * 60 * 60)) / (1000 * 60));
+                timeLeftEl.textContent = `Còn lại: ${leftH}h ${leftM}m`;
+            } else {
+                timeLeftEl.textContent = "Sắp kết thúc ca";
+            }
+        }
+        setInterval(updateTracker, 1000);
+        setTimeout(updateTracker, 100);
+
+        // ==========================================
+        // EXPORT PDF TÍNH NĂNG MỚI
+        // ==========================================
+        async function exportDashboardPDF() {
+            try {
+                const btn = document.querySelector('button[onclick="exportDashboardPDF()"]');
+                const oldContent = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tạo PDF...';
+                
+                let targetEl = null;
+                if (document.getElementById('tab-operations').classList.contains('active')) {
+                    targetEl = document.getElementById('tab-operations');
+                } else if (document.getElementById('tab-freelancer').classList.contains('active')) {
+                    targetEl = document.getElementById('tab-freelancer');
+                } else if (document.getElementById('tab-hr').classList.contains('active')) {
+                    targetEl = document.getElementById('tab-hr');
+                } else {
+                    alert("Tính năng Xuất PDF hỗ trợ cho tab Nhân Sự, Vận Hành và Freelancer.");
+                    btn.innerHTML = oldContent;
+                    return;
+                }
+
+                const inputs = targetEl.querySelectorAll('input, select');
+                const origBorders = [];
+                inputs.forEach(i => {
+                    origBorders.push(i.style.border);
+                    i.style.border = 'none';
+                });
+
+                const canvas = await html2canvas(targetEl, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: document.documentElement.classList.contains('dark') ? '#0f172a' : '#f3f4f6'
+                });
+
+                inputs.forEach((i, idx) => i.style.border = origBorders[idx]);
+
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                
+                pdf.text("BAO CAO PHAN TICH - NGAN AI", 14, 15);
+                pdf.setFontSize(10);
+                pdf.text("Time: " + new Date().toLocaleString('vi-VN'), 14, 22);
+                
+                pdf.addImage(imgData, 'PNG', 0, 25, pdfWidth, pdfHeight);
+                pdf.save(`Bao_Cao_Ngan_AI_${new Date().getTime()}.pdf`);
+                
+                btn.innerHTML = oldContent;
+            } catch (e) {
+                console.error(e);
+                alert("Lỗi khi xuất PDF. Vui lòng kiểm tra kết nối mạng để tải thư viện html2canvas.");
+            }
         }
 
     </script>
