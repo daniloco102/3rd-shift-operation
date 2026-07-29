@@ -1057,11 +1057,33 @@
         let db = null;
         const syncStatusEl = document.getElementById('sync-status');
 
-        if (firebaseConfig.apiKey) {
-            firebase.initializeApp(firebaseConfig);
-            db = firebase.database();
-            syncStatusEl.className = 'badge badge-success';
-            syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
+        if (typeof firebase !== 'undefined' && firebaseConfig.apiKey) {
+            try {
+                if (!firebase.apps.length) {
+                    firebase.initializeApp(firebaseConfig);
+                }
+                db = firebase.database();
+                
+                db.ref('.info/connected').on('value', (snap) => {
+                    if (snap.val() === true) {
+                        if (syncStatusEl) {
+                            syncStatusEl.className = 'badge badge-success';
+                            syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
+                        }
+                    } else {
+                        if (syncStatusEl) {
+                            syncStatusEl.className = 'badge badge-warning';
+                            syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud"></i> Local Storage (Mất kết nối)';
+                        }
+                    }
+                });
+            } catch(e) {
+                console.error("Firebase init error:", e);
+                if (syncStatusEl) {
+                    syncStatusEl.className = 'badge badge-warning';
+                    syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud"></i> Local Storage';
+                }
+            }
         }
 
         // ==========================================
