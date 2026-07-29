@@ -2767,11 +2767,15 @@
                 </tr>`;
             };
 
+            const formatW = (w) => w ? w.toString().replace(/Tuần\s*/i, '').trim() : '';
+            const pWStr = prevWeek ? formatW(prevWeek) : 'Tuần trước';
+            const wStr = formatW(week);
+
             const headerHTML = `<tr>
                 <th>Chỉ số</th>
                 <th>Ca làm việc</th>
-                <th>${prevWeek || 'Tuần trước'}</th>
-                <th>${week}</th>
+                <th>${pWStr}</th>
+                <th>${wStr}</th>
                 <th>So sánh</th>
                 <th>Target</th>
                 <th>So sánh với target</th>
