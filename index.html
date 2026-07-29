@@ -110,12 +110,12 @@
         .shift-tracker {
             background: rgba(0,0,0,0.03);
             border: 1px solid var(--border-color);
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             border-radius: var(--radius-md);
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
-            min-width: 280px;
+            gap: 0.25rem;
+            min-width: 220px;
         }
         html.dark .shift-tracker { background: rgba(255,255,255,0.02); }
         .tracker-top { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--primary); }
@@ -330,15 +330,31 @@
                     <p class="subtitle">Hệ thống theo dõi và phân tích tỷ lệ đáp ứng của các nhà cung cấp</p>
                 </div>
             </div>
-            <div class="shift-tracker" id="realtime-tracker">
-                <div class="tracker-top">
-                    <span id="tracker-shift-name"><i class="fa-regular fa-clock"></i> Đang tính toán...</span>
-                    <span id="tracker-time-left">--:--</span>
+            <div class="trackers-container" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <!-- Tracker Ca 3 -->
+                <div class="shift-tracker" id="realtime-tracker-ca3">
+                    <div class="tracker-top">
+                        <span id="tracker-ca3-name"><i class="fa-solid fa-bolt" style="color:var(--warning)"></i> Ca 3 (22:00 - 07:00)</span>
+                        <span id="tracker-ca3-time-left" style="font-size:0.75rem;">--:--</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" id="tracker-ca3-progress"></div></div>
+                    <div class="tracker-bottom">
+                        <span id="tracker-current-time">--:--:--</span>
+                        <span id="tracker-ca3-percent">0%</span>
+                    </div>
                 </div>
-                <div class="progress-bar-bg"><div class="progress-bar-fill" id="tracker-progress"></div></div>
-                <div class="tracker-bottom">
-                    <span id="tracker-current-time">--:--:--</span>
-                    <span id="tracker-percent">0%</span>
+
+                <!-- Tracker Ca 5 -->
+                <div class="shift-tracker" id="realtime-tracker-ca5">
+                    <div class="tracker-top">
+                        <span id="tracker-ca5-name"><i class="fa-solid fa-moon" style="color:var(--info)"></i> Ca 5 (20:00 - 06:00)</span>
+                        <span id="tracker-ca5-time-left" style="font-size:0.75rem;">--:--</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" id="tracker-ca5-progress" style="background: linear-gradient(90deg, #10b981, #06b6d4);"></div></div>
+                    <div class="tracker-bottom">
+                        <span style="font-size:0.7rem; color:var(--text-muted);">Tiến độ Ca 5</span>
+                        <span id="tracker-ca5-percent">0%</span>
+                    </div>
                 </div>
             </div>
 
@@ -3544,55 +3560,27 @@
         // ==========================================
         // REAL-TIME SHIFT TRACKER
         // ==========================================
-        function updateTracker() {
-            const now = new Date();
+        function calcShiftProgress(startH, endH, now) {
             const h = now.getHours();
             const m = now.getMinutes();
-            const s = now.getSeconds();
-            const timeStr = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-            const timeEl = document.getElementById('tracker-current-time');
-            if(timeEl) timeEl.textContent = timeStr;
-
-            let shiftName = "Ngoài giờ hành chính";
-            let startH = 0, startM = 0;
-            let endH = 0, endM = 0;
-            let isActive = false;
-            
             const currentMins = h * 60 + m;
-            const ca5Start = 20 * 60;
-            const ca3Start = 22 * 60;
-            const ca5End = 6 * 60;
-            const ca3End = 7 * 60;
-
-            if (currentMins >= ca3Start || currentMins < ca3End) {
-                shiftName = "Ca 3 (22:00 - 07:00)";
-                startH = 22; endH = 7;
-                isActive = true;
-            } else if (currentMins >= ca5Start || currentMins < ca5End) {
-                shiftName = "Ca 5 (20:00 - 06:00)";
-                startH = 20; endH = 6;
-                isActive = true;
+            
+            const startMins = startH * 60;
+            const endMins = endH * 60;
+            
+            let isActive = false;
+            if (startH > endH) {
+                if (currentMins >= startMins || currentMins < endMins) isActive = true;
+            } else {
+                if (currentMins >= startMins && currentMins < endMins) isActive = true;
             }
-
-            const shiftNameEl = document.getElementById('tracker-shift-name');
-            const timeLeftEl = document.getElementById('tracker-time-left');
-            const progressFillEl = document.getElementById('tracker-progress');
-            const percentEl = document.getElementById('tracker-percent');
-
-            if (!shiftNameEl) return;
 
             if (!isActive) {
-                shiftNameEl.innerHTML = `<i class="fa-solid fa-mug-hot"></i> Đang ngoài ca`;
-                timeLeftEl.textContent = "Hệ thống chờ";
-                progressFillEl.style.width = "0%";
-                percentEl.textContent = "0%";
-                return;
+                return { isActive: false, percent: 0, leftStr: "Ngoài ca" };
             }
 
-            shiftNameEl.innerHTML = `<i class="fa-solid fa-bolt" style="color:var(--warning)"></i> Đang chạy: ${shiftName}`;
-
-            let startMs = new Date(now).setHours(startH, startM, 0, 0);
-            let endMs = new Date(now).setHours(endH, endM, 0, 0);
+            let startMs = new Date(now).setHours(startH, 0, 0, 0);
+            let endMs = new Date(now).setHours(endH, 0, 0, 0);
             
             if (startH > endH) {
                 if (h >= startH) {
@@ -3608,16 +3596,59 @@
             if (percent < 0) percent = 0;
             if (percent > 100) percent = 100;
 
-            progressFillEl.style.width = percent.toFixed(1) + "%";
-            percentEl.textContent = percent.toFixed(1) + "%";
-
             const leftMs = endMs - now.getTime();
+            let leftStr = "Sắp xong";
             if (leftMs > 0) {
                 const leftH = Math.floor(leftMs / (1000 * 60 * 60));
                 const leftM = Math.floor((leftMs % (1000 * 60 * 60)) / (1000 * 60));
-                timeLeftEl.textContent = `Còn lại: ${leftH}h ${leftM}m`;
-            } else {
-                timeLeftEl.textContent = "Sắp kết thúc ca";
+                leftStr = `Còn: ${leftH}h${leftM}m`;
+            }
+
+            return { isActive: true, percent, leftStr };
+        }
+
+        function updateTracker() {
+            const now = new Date();
+            const h = now.getHours();
+            const m = now.getMinutes();
+            const s = now.getSeconds();
+            const timeStr = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            
+            const timeEl = document.getElementById('tracker-current-time');
+            if(timeEl) timeEl.textContent = timeStr;
+
+            // Ca 3: 22:00 - 07:00
+            const ca3 = calcShiftProgress(22, 7, now);
+            const ca3Progress = document.getElementById('tracker-ca3-progress');
+            const ca3Percent = document.getElementById('tracker-ca3-percent');
+            const ca3TimeLeft = document.getElementById('tracker-ca3-time-left');
+            const ca3Name = document.getElementById('tracker-ca3-name');
+            if (ca3Progress) {
+                ca3Progress.style.width = ca3.percent.toFixed(1) + "%";
+                ca3Percent.textContent = ca3.percent.toFixed(1) + "%";
+                ca3TimeLeft.textContent = ca3.leftStr;
+                if (!ca3.isActive) {
+                    ca3Name.innerHTML = `<i class="fa-regular fa-clock" style="color:var(--text-muted)"></i> Ca 3 (22:00 - 07:00)`;
+                } else {
+                    ca3Name.innerHTML = `<i class="fa-solid fa-bolt" style="color:var(--warning)"></i> Ca 3 (22:00 - 07:00)`;
+                }
+            }
+
+            // Ca 5: 20:00 - 06:00
+            const ca5 = calcShiftProgress(20, 6, now);
+            const ca5Progress = document.getElementById('tracker-ca5-progress');
+            const ca5Percent = document.getElementById('tracker-ca5-percent');
+            const ca5TimeLeft = document.getElementById('tracker-ca5-time-left');
+            const ca5Name = document.getElementById('tracker-ca5-name');
+            if (ca5Progress) {
+                ca5Progress.style.width = ca5.percent.toFixed(1) + "%";
+                ca5Percent.textContent = ca5.percent.toFixed(1) + "%";
+                ca5TimeLeft.textContent = ca5.leftStr;
+                if (!ca5.isActive) {
+                    ca5Name.innerHTML = `<i class="fa-regular fa-clock" style="color:var(--text-muted)"></i> Ca 5 (20:00 - 06:00)`;
+                } else {
+                    ca5Name.innerHTML = `<i class="fa-solid fa-moon" style="color:var(--info)"></i> Ca 5 (20:00 - 06:00)`;
+                }
             }
         }
         setInterval(updateTracker, 1000);
