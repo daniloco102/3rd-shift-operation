@@ -1,0 +1,14 @@
+*.xlsx
+*.xls
+*.csv
+*.docx
+.firebase/
+.firebaserc
+firebase.json
+node_modules/
+package.json
+package-lock.json
+*.py
+__pycache__/
+*.txt
+*.bat
