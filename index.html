@@ -3351,30 +3351,37 @@
             const overviewFilter = document.getElementById('hr-overview-filter') ? document.getElementById('hr-overview-filter').value : 'all';
             let allDatasetsOverview = [];
             
+            const allDeptLabels = Array.from(deptShiftsOverview).sort();
+            const chartColors = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#06b6d4', '#ec4899', '#f97316'];
+            
             if (overviewFilter === 'all') {
-                allDatasetsOverview = [
-                    { type: 'line', label: 'Tuyển mới (Tổng)', data: totalNewData, borderColor: '#06b6d4', backgroundColor: '#06b6d4', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 },
-                    { type: 'line', label: 'Nghỉ việc (Tổng)', data: totalResignData, borderColor: '#ef4444', backgroundColor: '#ef4444', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 }
-                ];
-                
-                let totalNs = [0,0,0,0];
-                let totalGc = [0,0,0,0];
-                Object.values(activeDataByDeptShift).forEach(v => {
-                    for(let i=0; i<4; i++) { totalNs[i]+=v.ns[i]; totalGc[i]+=v.gc[i]; }
-                });
-                
-                if (totalNs.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: 'Tổng Năng Suất', data: totalNs, backgroundColor: '#3b82f6', stack: 'all', yAxisID: 'y' });
-                if (totalGc.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: 'Tổng Giờ Công', data: totalGc, backgroundColor: '#93c5fd', stack: 'all', yAxisID: 'y' });
+                allDatasetsOverview = allDeptLabels.map((deptLabel, idx) => {
+                    const v = activeDataByDeptShift[deptLabel];
+                    const deptTotalData = [0, 1, 2, 3].map(i => (v ? (v.ns[i] + v.gc[i]) : 0));
+                    return {
+                        type: 'bar',
+                        label: deptLabel,
+                        data: deptTotalData,
+                        backgroundColor: chartColors[idx % chartColors.length],
+                        borderRadius: 4,
+                        stack: 'total'
+                    };
+                }).filter(ds => ds.data.some(val => val > 0));
             } else {
                 const lbl = overviewFilter;
                 if (activeDataByDeptShift[lbl]) {
                     const v = activeDataByDeptShift[lbl];
-                    allDatasetsOverview = [
-                        { type: 'line', label: `Tuyển mới (${lbl})`, data: v.new, borderColor: '#06b6d4', backgroundColor: '#06b6d4', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 },
-                        { type: 'line', label: `Nghỉ việc (${lbl})`, data: v.resign, borderColor: '#ef4444', backgroundColor: '#ef4444', borderWidth: 3, yAxisID: 'y1', pointRadius: 5 }
-                    ];
-                    if (v.ns.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: `${lbl} NS`, data: v.ns, backgroundColor: '#3b82f6', stack: lbl, yAxisID: 'y' });
-                    if (v.gc.some(val => val > 0)) allDatasetsOverview.push({ type: 'bar', label: `${lbl} GC`, data: v.gc, backgroundColor: '#93c5fd', stack: lbl, yAxisID: 'y' });
+                    const deptTotalData = [0, 1, 2, 3].map(i => v.ns[i] + v.gc[i]);
+                    const idx = allDeptLabels.indexOf(lbl);
+                    const color = idx >= 0 ? chartColors[idx % chartColors.length] : '#3b82f6';
+                    allDatasetsOverview = [{
+                        type: 'bar',
+                        label: `Tổng Nhân Sự (${lbl})`,
+                        data: deptTotalData,
+                        backgroundColor: color,
+                        borderRadius: 4,
+                        stack: 'total'
+                    }];
                 }
             }
             
@@ -3387,24 +3394,15 @@
                     responsive: true, maintainAspectRatio: false,
                     interaction: { mode: 'index', intersect: false },
                     scales: {
-                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Tổng nhân sự', color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' }, stacked: true, ticks: { color: '#9ca3af' } },
-                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Tuyển mới / Nghỉ việc', color: '#9ca3af' }, grid: { drawOnChartArea: false }, stacked: false, ticks: { color: '#9ca3af', stepSize: 1 } },
+                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Tổng số nhân viên', color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' }, stacked: true, ticks: { color: '#9ca3af' } },
                         x: { stacked: true, ticks: { color: '#9ca3af', font: {weight: 'bold'} }, grid: { display: false } }
                     },
                     plugins: {
                         legend: { position: 'top', labels: { color: '#e5e7eb', usePointStyle: true, boxWidth: 10 } },
                         datalabels: {
                             color: '#ffffff', textStrokeColor: 'rgba(0,0,0,0.6)', textStrokeWidth: 3,
-                            font: { weight: 'bold', size: 12 },
-                            anchor: 'center', 
-                            align: (ctx) => {
-                                if (ctx.dataset.type === 'line') return ctx.datasetIndex === 0 ? 'top' : 'bottom';
-                                return 'center';
-                            },
-                            offset: (ctx) => ctx.dataset.type === 'line' ? 6 : 0,
-                            backgroundColor: (ctx) => (ctx.dataset.type === 'line' && ctx.dataset.data[ctx.dataIndex] > 0) ? ctx.dataset.backgroundColor : 'transparent',
-                            borderRadius: 3,
-                            padding: { top: 2, bottom: 2, left: 4, right: 4 },
+                            font: { weight: 'bold', size: 11 },
+                            anchor: 'center', align: 'center',
                             formatter: (val) => val > 0 ? val : ''
                         }
                     }
