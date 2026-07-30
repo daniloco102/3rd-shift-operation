@@ -20197,7 +20197,7 @@ window.SALARY_DATA = {
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
     "salary": 9919717.105519421,
-    "pin": "091302010887",
+    "pin": "0357793103",
     "dailyDetails": [
       {
         "date": "01/07/2026",
@@ -21492,7 +21492,7 @@ window.SALARY_DATA = {
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
     "salary": 5538528.151371761,
-    "pin": "079088008379",
+    "pin": "123456",
     "dailyDetails": [
       {
         "date": "11/07/2026",
@@ -21654,7 +21654,7 @@ window.SALARY_DATA = {
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
     "salary": 5931250,
-    "pin": "099999999999",
+    "pin": "123456",
     "dailyDetails": [
       {
         "date": "13/07/2026",
@@ -22173,7 +22173,7 @@ window.SALARY_DATA = {
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
     "salary": 5475000,
-    "pin": "095075013897",
+    "pin": "123456",
     "dailyDetails": [
       {
         "date": "16/07/2026",
@@ -22291,7 +22291,7 @@ window.SALARY_DATA = {
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
     "salary": 4562500,
-    "pin": "123456789123",
+    "pin": "123456",
     "dailyDetails": [
       {
         "date": "19/07/2026",
@@ -22475,7 +22475,7 @@ window.SALARY_DATA = {
     "dept": "In/ Out Staff",
     "shift": "Ca 3",
     "salary": 2573058.9520535483,
-    "pin": "123456",
+    "pin": "084093003957",
     "dailyDetails": [
       {
         "date": "21/07/2026",
@@ -22630,7 +22630,7 @@ window.SALARY_DATA = {
     "dept": "In/ Out Staff",
     "shift": "Ca 5",
     "salary": 2281250,
-    "pin": "136284413021",
+    "pin": "123456",
     "dailyDetails": [
       {
         "date": "24/07/2026",
