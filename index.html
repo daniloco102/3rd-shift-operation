@@ -1399,23 +1399,28 @@
             "Ca 21:00 - 6:00": { "HOA ANH ĐÀO": 54, "VIECCO": 41, "SKT": 38 }
         };
         
-        let records = JSON.parse(localStorage.getItem('freelancer_records_v2')) || [];
-        let customShifts = JSON.parse(localStorage.getItem('custom_shifts')) || [];
+        function ensureArray(val) {
+            if (!val) return [];
+            if (Array.isArray(val)) return val.filter(Boolean);
+            if (typeof val === 'object') return Object.values(val).filter(Boolean);
+            return [];
+        }
+
+        let records = ensureArray(JSON.parse(localStorage.getItem('freelancer_records_v2')));
+        let customShifts = ensureArray(JSON.parse(localStorage.getItem('custom_shifts')));
         let currentHistoryPage = 1;
         const HISTORY_PER_PAGE = 30;
 
-        // Migrate old data if any exists to the new array to avoid clashes (optional, handled gracefully)
         if (records.length === 0) {
-            const oldRecords = JSON.parse(localStorage.getItem('freelancer_records'));
-            if (oldRecords && oldRecords.length > 0) {
+            const oldRecords = ensureArray(JSON.parse(localStorage.getItem('freelancer_records')));
+            if (oldRecords.length > 0) {
                 records = oldRecords;
                 localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
             }
         }
         
-        // Migrate KIẾN VÀNG -> HOA SEN
         records.forEach(r => {
-            if (r.data["KIẾN VÀNG"]) {
+            if (r && r.data && r.data["KIẾN VÀNG"]) {
                 r.data["HOA SEN"] = r.data["KIẾN VÀNG"];
                 delete r.data["KIẾN VÀNG"];
             }
@@ -1437,25 +1442,27 @@
             initTheme();
             loadCustomShifts();
             generateSupplierRows();
-            document.getElementById('record-date').valueAsDate = new Date();
+            const recDateInput = document.getElementById('record-date');
+            if (recDateInput) recDateInput.valueAsDate = new Date();
             
+            // Render local data immediately on page load
+            updateDashboard();
+
             if (db) {
-                // Listen to Firebase data changes
-                loadOpsData(); // Load Operations Data
+                loadOpsData();
                 db.ref('freelancer_records').on('value', (snapshot) => {
                     const data = snapshot.val();
                     if (data) {
-                        records = data;
-                        // MIGRATION: Chuyển đổi lv cũ sang lvM/lvF và KIẾN VÀNG sang HOA SEN
+                        records = ensureArray(data);
                         records.forEach(r => {
+                            if (!r || !r.data) return;
                             if (r.data["KIẾN VÀNG"]) {
                                 r.data["HOA SEN"] = r.data["KIẾN VÀNG"];
                                 delete r.data["KIẾN VÀNG"];
                             }
                             Object.values(r.data).forEach(d => {
-                                if (d.lv > 0 && d.lvM === undefined && d.lvF === undefined) {
-                                    // Chia tỷ lệ rớt nam/nữ theo tỷ lệ hiện diện
-                                    const totalPresent = d.m + d.f;
+                                if (d && d.lv > 0 && d.lvM === undefined && d.lvF === undefined) {
+                                    const totalPresent = (d.m || 0) + (d.f || 0);
                                     if (totalPresent > 0) {
                                         d.lvM = Math.round((d.m / totalPresent) * d.lv);
                                         d.lvF = d.lv - d.lvM;
@@ -1465,23 +1472,21 @@
                                 }
                             });
                         });
-                        // Backup to local
                         localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
-                    } else {
-                        // DB rỗng, không làm mất dữ liệu local
                     }
+                    updateDashboard();
+                }, (err) => {
+                    console.error("Firebase read error:", err);
                     updateDashboard();
                 });
                 
-                // Also upload local data to Firebase if Firebase is empty (Migration phase)
                 db.ref('freelancer_records').once('value').then(snapshot => {
                     if (!snapshot.exists() && records.length > 0) {
                         saveToCloud();
                     }
                 });
-            } else {
-                updateDashboard();
             }
+        });
 
             document.getElementById('btn-prev-page').addEventListener('click', () => {
                 if (currentHistoryPage > 1) {
