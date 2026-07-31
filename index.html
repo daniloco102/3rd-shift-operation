@@ -1437,6 +1437,47 @@
         let genderPieChart = null;
         let trendLineChart = null;
 
+        async function fetchCloudData() {
+            try {
+                const res = await fetch('https://check-luong-daily-default-rtdb.firebaseio.com/freelancer_records.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data) {
+                        const parsed = ensureArray(data);
+                        if (parsed.length > 0) {
+                            records = parsed;
+                            records.forEach(r => {
+                                if (!r || !r.data) return;
+                                if (r.data["KIẾN VÀNG"]) {
+                                    r.data["HOA SEN"] = r.data["KIẾN VÀNG"];
+                                    delete r.data["KIẾN VÀNG"];
+                                }
+                                Object.values(r.data).forEach(d => {
+                                    if (d && d.lv > 0 && d.lvM === undefined && d.lvF === undefined) {
+                                        const totalPresent = (d.m || 0) + (d.f || 0);
+                                        if (totalPresent > 0) {
+                                            d.lvM = Math.round((d.m / totalPresent) * d.lv);
+                                            d.lvF = d.lv - d.lvM;
+                                        } else {
+                                            d.lvM = 0; d.lvF = 0;
+                                        }
+                                    }
+                                });
+                            });
+                            localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+                            if (syncStatusEl) {
+                                syncStatusEl.className = 'badge badge-success';
+                                syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
+                            }
+                            updateDashboard();
+                        }
+                    }
+                }
+            } catch (err) {
+                console.warn("HTTP Fallback fetch error:", err);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             checkLoginState();
             initTheme();
@@ -1447,6 +1488,9 @@
             
             // Render local data immediately on page load
             updateDashboard();
+
+            // Fast REST API sync fallback
+            fetchCloudData();
 
             if (db) {
                 loadOpsData();
@@ -1473,6 +1517,10 @@
                             });
                         });
                         localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+                        if (syncStatusEl) {
+                            syncStatusEl.className = 'badge badge-success';
+                            syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
+                        }
                     }
                     updateDashboard();
                 }, (err) => {
@@ -1504,13 +1552,17 @@
         });
 
         function saveToCloud() {
-            // Luôn lưu local trước để chống mất dữ liệu khi F5
             localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
-            if(db) {
+            if (db) {
                 db.ref('freelancer_records').set(records).catch(err => {
-                    console.error("Lỗi lưu Firebase:", err);
+                    console.error("Lỗi lưu Firebase WebSocket:", err);
                 });
             }
+            fetch('https://check-luong-daily-default-rtdb.firebaseio.com/freelancer_records.json', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(records)
+            }).catch(e => console.warn("Lỗi lưu Firebase REST:", e));
         }
 
         function loadCustomShifts() {
