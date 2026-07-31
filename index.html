@@ -1571,6 +1571,8 @@
         function updateFormForShift() {
             const shift = document.getElementById('record-shift').value;
             const dateStr = document.getElementById('record-date').value;
+            const normDate = normalizeDate(dateStr);
+
             let fixedReqs = null;
             let isSunday = false;
             if (dateStr) {
@@ -1581,18 +1583,17 @@
             if (shift === "Ca 20:00 - 6:00" || shift === "Ca 21:30 - 6:30") {
                 const siblingShift = shift === "Ca 20:00 - 6:00" ? "Ca 21:30 - 6:30" : "Ca 20:00 - 6:00";
                 
-                // Kiểm tra xem ca kia (sibling) đã tồn tại trong ngày và đã lấy số yêu cầu chưa?
                 let siblingIsMain = false;
-                const siblingRec = records.find(r => r.date === dateStr && r.shift === siblingShift);
+                const siblingRec = records.find(r => normalizeDate(r.date) === normDate && r.shift === siblingShift);
                 if (siblingRec) {
-                    const tReq = Object.values(siblingRec.data).reduce((acc, d) => acc + d.req, 0);
+                    const tReq = Object.values(siblingRec.data).reduce((acc, d) => acc + (d.req || 0), 0);
                     if (tReq > 0) siblingIsMain = true;
                 }
                 
                 if (siblingIsMain) {
-                    fixedReqs = { "HOA ANH ĐÀO": 0, "VIECCO": 0, "SKT": 0 }; // Làm ca phụ
+                    fixedReqs = { "HOA ANH ĐÀO": 0, "VIECCO": 0, "SKT": 0 };
                 } else {
-                    fixedReqs = isSunday ? { "HOA ANH ĐÀO": 29, "VIECCO": 21, "SKT": 20 } : { "HOA ANH ĐÀO": 64, "VIECCO": 52, "SKT": 39 }; // Làm ca chính
+                    fixedReqs = isSunday ? { "HOA ANH ĐÀO": 29, "VIECCO": 21, "SKT": 20 } : { "HOA ANH ĐÀO": 64, "VIECCO": 52, "SKT": 39 };
                 }
             } else if (shift === "Ca 21:00 - 6:00") {
                 fixedReqs = isSunday ? { "HOA ANH ĐÀO": 29, "VIECCO": 21, "SKT": 20 } : { "HOA ANH ĐÀO": 54, "VIECCO": 41, "SKT": 38 };
@@ -1600,23 +1601,47 @@
 
             const isGroupedContainer = document.getElementById('grouped-shift-container');
             const isGroupedCheckbox = document.getElementById('is-grouped-shift');
-            
+
+            // Existing record check for date and shift
+            const existingRec = records.find(r => normalizeDate(r.date) === normDate && r.shift === shift);
+
+            SUPPLIERS.forEach(sup => {
+                const reqInput = document.querySelector(`input[data-supplier="${sup}"][data-field="req"]`);
+                const resInput = document.querySelector(`input[data-supplier="${sup}"][data-field="res"]`);
+                const mInput = document.querySelector(`input[data-supplier="${sup}"][data-field="m"]`);
+                const fInput = document.querySelector(`input[data-supplier="${sup}"][data-field="f"]`);
+
+                if (existingRec && existingRec.data && existingRec.data[sup]) {
+                    const dData = existingRec.data[sup];
+                    if (reqInput) reqInput.value = dData.req || 0;
+                    if (resInput) resInput.value = dData.res || 0;
+                    if (mInput) mInput.value = dData.m || 0;
+                    if (fInput) fInput.value = dData.f || 0;
+                } else {
+                    if (resInput) resInput.value = '';
+                    if (mInput) mInput.value = '';
+                    if (fInput) fInput.value = '';
+                    if (fixedReqs) {
+                        if (reqInput) reqInput.value = fixedReqs[sup] || 0;
+                    } else {
+                        if (reqInput) reqInput.value = '';
+                    }
+                }
+            });
+
             if (fixedReqs) {
                 if (isGroupedContainer) isGroupedContainer.style.display = 'none';
-                isGroupedCheckbox.checked = false;
-                
+                if (isGroupedCheckbox) isGroupedCheckbox.checked = false;
                 SUPPLIERS.forEach(sup => {
                     const reqInput = document.querySelector(`input[data-supplier="${sup}"][data-field="req"]`);
                     if (reqInput) {
-                        reqInput.value = fixedReqs[sup] || 0;
                         reqInput.disabled = true;
                         reqInput.style.backgroundColor = 'rgba(0,0,0,0.05)';
                     }
                 });
             } else {
-                if (isGroupedContainer) isGroupedContainer.style.display = 'grid';
-                
-                const isGrouped = isGroupedCheckbox.checked;
+                if (isGroupedContainer) isGroupedContainer.style.display = 'block';
+                const isGrouped = isGroupedCheckbox ? isGroupedCheckbox.checked : false;
                 SUPPLIERS.forEach(sup => {
                     const reqInput = document.querySelector(`input[data-supplier="${sup}"][data-field="req"]`);
                     if (reqInput) {
@@ -1631,6 +1656,8 @@
                     }
                 });
             }
+
+            updateAutoShiftStats();
         }
 
         function generateSupplierRows() {
@@ -1649,7 +1676,7 @@
             updateFormForShift();
         }
 
-        // Tự động tính số Nam/Nữ
+        // Tự động tính số Nam/Nữ & cập nhật Thống Kê Ca Tự Động
         tbody.addEventListener('input', (e) => {
             if(e.target.tagName === 'INPUT') {
                 const field = e.target.getAttribute('data-field');
@@ -1666,6 +1693,7 @@
                         }
                     }
                 }
+                updateAutoShiftStats();
             }
         });
 
