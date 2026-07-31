@@ -1804,6 +1804,31 @@
         let globalWeekDates = [];
         let globalChartLabels = [];
 
+        function normalizeDate(dStr) {
+            if (!dStr) return '';
+            dStr = String(dStr).trim();
+            if (dStr.includes('/')) {
+                const parts = dStr.split('/');
+                if (parts.length === 3) {
+                    let p0 = parts[0].padStart(2, '0');
+                    let p1 = parts[1].padStart(2, '0');
+                    let p2 = parts[2];
+                    if (p0.length === 4) return `${p0}-${p1}-${parts[2].padStart(2, '0')}`;
+                    return `${p2}-${p1}-${p0}`;
+                }
+            } else if (dStr.includes('-')) {
+                const parts = dStr.split('-');
+                if (parts.length === 3) {
+                    let p0 = parts[0].padStart(2, '0');
+                    let p1 = parts[1].padStart(2, '0');
+                    let p2 = parts[2].padStart(2, '0');
+                    if (parts[0].length === 4) return `${parts[0]}-${p1}-${p2}`;
+                    if (parts[2].length === 4) return `${parts[2]}-${p1}-${p0}`;
+                }
+            }
+            return dStr;
+        }
+
         function getWeekInfo(dStr) {
             let date;
             if (dStr instanceof Date) {
@@ -2048,19 +2073,20 @@
             const timeframe = document.getElementById('chart-filter-timeframe')?.value || 'week';
 
             return records.filter(r => {
+                const normRDate = normalizeDate(r.date);
                 if (w !== 'all') {
-                    const wInfo = getWeekInfo(r.date);
+                    const wInfo = getWeekInfo(normRDate);
                     if (!wInfo || wInfo.sundayStr !== w) return false;
                 }
 
                 if (d !== 'all') {
                     if (timeframe === 'week') {
-                        const wInfo = getWeekInfo(r.date);
+                        const wInfo = getWeekInfo(normRDate);
                         if (!wInfo || wInfo.sundayStr !== d) return false;
                     } else if (timeframe === 'month') {
-                        if (!r.date.startsWith(d)) return false;
+                        if (!normRDate.startsWith(d)) return false;
                     } else {
-                        if (r.date !== d) return false;
+                        if (normRDate !== d) return false;
                     }
                 }
 
@@ -2451,15 +2477,16 @@
             });
             
             filtered.forEach(r => {
-                if (supplierStats[r.date] !== undefined) {
+                const normRDate = normalizeDate(r.date);
+                if (supplierStats[normRDate] !== undefined) {
                     SUPPLIERS.forEach(s => {
                         if(r.data[s]) {
-                            supplierStats[r.date][s].req += r.data[s].req; 
-                            supplierStats[r.date][s].res += r.data[s].res;
-                            supplierStats[r.date][s].m += r.data[s].m;
-                            supplierStats[r.date][s].f += r.data[s].f;
+                            supplierStats[normRDate][s].req += (r.data[s].req || 0); 
+                            supplierStats[normRDate][s].res += (r.data[s].res || 0);
+                            supplierStats[normRDate][s].m += (r.data[s].m || 0);
+                            supplierStats[normRDate][s].f += (r.data[s].f || 0);
                             const lv = (r.data[s].lvM || 0) + (r.data[s].lvF || 0);
-                            supplierStats[r.date][s].lv += lv;
+                            supplierStats[normRDate][s].lv += lv;
                         }
                     });
                 }
@@ -2644,7 +2671,7 @@
             });
 
             records.forEach(r => {
-                const rDate = r.date;
+                const rDate = normalizeDate(r.date);
                 const isMatchShift = isAllShift || r.shift === filterShiftVal;
 
                 // Only process if the record's date is in our current global timeframe
@@ -2652,9 +2679,9 @@
                 if (!wd) return;
 
                 // Table 1: Supplier
-                if (isMatchShift) {
+                if (isMatchShift && supData[SUPPLIERS[0]] && supData[SUPPLIERS[0]][rDate]) {
                     SUPPLIERS.forEach(s => {
-                        if (r.data[s]) {
+                        if (r.data[s] && supData[s][rDate]) {
                             supData[s][rDate].m += (r.data[s].m || 0);
                             supData[s][rDate].f += (r.data[s].f || 0);
                         }
@@ -2662,7 +2689,7 @@
                 }
 
                 // Table 2: Shift
-                if (shfData[r.shift]) {
+                if (shfData[r.shift] && shfData[r.shift][rDate]) {
                     let rM=0, rF=0;
                     Object.values(r.data).forEach(d => { rM += (d.m||0); rF += (d.f||0); });
                     shfData[r.shift][rDate].m += rM;
