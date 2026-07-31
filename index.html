@@ -131,6 +131,141 @@
         .progress-bar-bg { width: 100%; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden; margin: 2px 0; }
         .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--info)); width: 0%; transition: width 1s linear; }
 
+        /* Freelancer Supplier Detail Cards & Shift View (Matching User Design) */
+        .supplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .supplier-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+        .supplier-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .supplier-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .supplier-card-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+        .supplier-card-subtitle {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .rate-badge {
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+        .rate-badge.emerald {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        .rate-badge.danger {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+        .supplier-stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .supplier-stat-box {
+            background: rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 0.6rem;
+            text-align: center;
+        }
+        html.dark .supplier-stat-box {
+            background: rgba(255,255,255,0.02);
+        }
+        .supplier-stat-box .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+        .supplier-stat-box .val {
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+        .gender-breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .gender-breakdown-row b {
+            color: var(--text-main);
+        }
+        .supplier-mini-chart-container {
+            height: 210px;
+            position: relative;
+        }
+        .date-tag-bottom {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #f59e0b;
+        }
+        .shift-detail-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            margin-top: 1.5rem;
+            overflow: hidden;
+        }
+        .shift-detail-header {
+            padding: 1rem 1.25rem;
+            background: rgba(0,0,0,0.02);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        html.dark .shift-detail-header {
+            background: rgba(255,255,255,0.02);
+        }
+        .shift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.25rem;
+            padding: 1.25rem;
+        }
+        .shift-chart-card {
+            background: rgba(0,0,0,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+        }
+        html.dark .shift-chart-card {
+            background: rgba(255,255,255,0.02);
+        }
+
         /* Buttons */
         button, .btn-secondary {
             cursor: pointer; border: none; outline: none; font-weight: 600;
@@ -467,7 +602,13 @@
                 <!-- Global Filters -->
                 <div class="card" style="margin-bottom: 1.5rem;">
                     <div class="card-body" style="padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <h2 style="margin: 0;"><i class="fa-solid fa-filter"></i> Báo Cáo Phân Tích</h2>
+                        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                            <h2 style="margin: 0;"><i class="fa-solid fa-filter"></i> Báo Cáo Phân Tích</h2>
+                            <select id="freelancer-view-mode" onchange="updateCharts()" style="padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid var(--primary); font-weight: 600; font-size: 0.85rem; background: rgba(99, 102, 241, 0.1); color: var(--text-main); cursor: pointer;">
+                                <option value="detail" selected>Chế độ hiển thị: Chi tiết theo nhà</option>
+                                <option value="summary">Chế độ hiển thị: Tổng quan</option>
+                            </select>
+                        </div>
                         <div class="chart-filters" style="margin: 0; display: flex; gap: 10px;">
                             <select id="chart-filter-timeframe">
                                 <option value="day">Ngày</option>
@@ -512,8 +653,26 @@
                     </div>
                 </div>
 
-                <!-- Charts Area -->
-                <div class="charts-container">
+                <!-- Detailed Supplier Cards Grid (New Design) -->
+                <div id="supplier-detail-section">
+                    <div id="supplier-cards-grid" class="supplier-grid">
+                        <!-- JS gen supplier cards -->
+                    </div>
+
+                    <!-- Collapsible Shift Performance Details -->
+                    <div class="shift-detail-panel">
+                        <div class="shift-detail-header" onclick="toggleShiftDetailsSection()">
+                            <h3 style="margin:0; font-size:1.1rem; color:#f59e0b; font-weight:700;"><i class="fa-solid fa-clock"></i> Chi tiết đáp ứng theo ca</h3>
+                            <i class="fa-solid fa-chevron-down" id="shift-detail-chevron" style="color:var(--text-muted); font-size:1.2rem;"></i>
+                        </div>
+                        <div id="shift-details-body" class="shift-grid">
+                            <!-- JS gen shift cards -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Area (Summary Mode) -->
+                <div class="charts-container" id="summary-charts-container" style="display:none;">
                     <!-- LINE CHART: TREND OVER TIME -->
                     <div class="card chart-card full-width">
                         <div class="card-header">
@@ -1669,21 +1828,299 @@
             });
         }
 
-        function updateStats() {
-            let tReq = 0, tRes = 0, tLv = 0;
-            const filtered = getFilteredRecords();
-            filtered.forEach(r => {
-                Object.values(r.data).forEach(d => { tReq += d.req; tRes += d.res; tLv += (d.lv || 0); });
+        let supplierMiniChartInstances = {};
+        let shiftChartInstances = {};
+
+        const SUPPLIER_DISPLAY_NAMES = {
+            "HOA ANH ĐÀO": "GHN Express - Hoa Anh Đào",
+            "VIECCO": "GHN Express - Viecco",
+            "SKT": "SKT",
+            "THÀNH TÍN": "Thành Tín",
+            "HOA SEN": "Hoa Sen"
+        };
+
+        function toggleShiftDetailsSection() {
+            const body = document.getElementById('shift-details-body');
+            const chevron = document.getElementById('shift-detail-chevron');
+            if (body.style.display === 'none') {
+                body.style.display = 'grid';
+                if(chevron) chevron.className = 'fa-solid fa-chevron-down';
+            } else {
+                body.style.display = 'none';
+                if(chevron) chevron.className = 'fa-solid fa-chevron-right';
+            }
+        }
+
+        function renderSupplierDetailCards(filtered) {
+            const grid = document.getElementById('supplier-cards-grid');
+            if (!grid) return;
+
+            Object.values(supplierMiniChartInstances).forEach(c => { if(c) c.destroy(); });
+            supplierMiniChartInstances = {};
+
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#f8fafc' : '#1f2937';
+            const gridColor = isDark ? '#334155' : '#e5e7eb';
+
+            const stats = {};
+            SUPPLIERS.forEach(s => {
+                stats[s] = { req: 0, res: 0, m: 0, f: 0, lv: 0 };
             });
-            document.getElementById('total-req').innerText = tReq;
-            document.getElementById('total-res').innerText = tRes - tLv;
-            document.getElementById('total-lv').innerText = tLv;
-            const rate = tReq === 0 ? 0 : Math.round(((tRes-tLv)/tReq)*100);
-            document.getElementById('avg-rate').innerText = `${rate}%`;
+
+            filtered.forEach(r => {
+                SUPPLIERS.forEach(s => {
+                    if (r.data[s]) {
+                        stats[s].req += (r.data[s].req || 0);
+                        stats[s].res += (r.data[s].res || 0);
+                        stats[s].m += (r.data[s].m || 0);
+                        stats[s].f += (r.data[s].f || 0);
+                        stats[s].lv += ((r.data[s].lvM || 0) + (r.data[s].lvF || 0));
+                    }
+                });
+            });
+
+            let dateTag = '★ Hóa Đơn Chu Kỳ';
+            if (globalWeekDates && globalWeekDates.length > 0) {
+                const first = globalWeekDates[0].dateStr.slice(0, 5);
+                const last = globalWeekDates[globalWeekDates.length - 1].dateStr.slice(0, 5);
+                dateTag = `★ ${first} - ${last}`;
+            }
+
+            let cardsHtml = '';
+            SUPPLIERS.forEach(s => {
+                const st = stats[s];
+                const activeRes = st.res - st.lv;
+                const rate = st.req === 0 ? 0 : Math.round((activeRes / st.req) * 100);
+                const totalGender = st.m + st.f || 1;
+                const mPct = Math.round((st.m / totalGender) * 100);
+                const fPct = 100 - mPct;
+                const dispName = SUPPLIER_DISPLAY_NAMES[s] || s;
+                const color = SUPPLIER_COLORS[s] || '#3b82f6';
+                const sId = s.replace(/\s+/g, '_');
+
+                cardsHtml += `
+                    <div class="supplier-card">
+                        <div class="supplier-card-header">
+                            <div>
+                                <div class="supplier-card-title" style="color: ${color};">${escapeHTML(dispName)}</div>
+                                <div class="supplier-card-subtitle">Hiệu suất trong chu kỳ</div>
+                            </div>
+                            <div class="rate-badge ${rate >= 80 ? 'emerald' : (rate < 60 ? 'danger' : '')}">${rate}% Đạt</div>
+                        </div>
+
+                        <div class="supplier-stats-row">
+                            <div class="supplier-stat-box">
+                                <div class="label">Tổng Yêu Cầu</div>
+                                <div class="val">${st.req}</div>
+                            </div>
+                            <div class="supplier-stat-box">
+                                <div class="label">Thực Tế Đến</div>
+                                <div class="val" style="color:var(--success);">${activeRes}</div>
+                            </div>
+                        </div>
+
+                        <div class="gender-breakdown-row">
+                            <span>Nam: <b>${st.m} (${mPct}%)</b></span>
+                            <span>Nữ: <b>${st.f} (${fPct}%)</b></span>
+                        </div>
+
+                        <div class="supplier-mini-chart-container">
+                            <canvas id="supplier-mini-chart-${sId}"></canvas>
+                        </div>
+
+                        <div class="date-tag-bottom">${dateTag}</div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = cardsHtml;
+
+            if (typeof ChartDataLabels !== 'undefined') Chart.register(ChartDataLabels);
+
+            SUPPLIERS.forEach(s => {
+                const st = stats[s];
+                const sId = s.replace(/\s+/g, '_');
+                const canvasEl = document.getElementById(`supplier-mini-chart-${sId}`);
+                if (!canvasEl) return;
+
+                const ctx = canvasEl.getContext('2d');
+                supplierMiniChartInstances[s] = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Chỉ Số'],
+                        datasets: [
+                            {
+                                label: 'Yêu cầu',
+                                data: [st.req],
+                                backgroundColor: '#475569',
+                                borderRadius: 4,
+                                barThickness: 35,
+                                stack: 'req'
+                            },
+                            {
+                                label: 'Nam',
+                                data: [st.m],
+                                backgroundColor: '#38bdf8',
+                                borderRadius: 0,
+                                barThickness: 35,
+                                stack: 'res'
+                            },
+                            {
+                                label: 'Nữ',
+                                data: [st.f],
+                                backgroundColor: '#ec4899',
+                                borderRadius: 4,
+                                barThickness: 35,
+                                stack: 'res'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { color: textColor, font: { size: 10 }, usePointStyle: true, boxWidth: 8 }
+                            },
+                            datalabels: {
+                                color: '#ffffff',
+                                font: { weight: 'bold', size: 11 },
+                                formatter: (val) => val > 0 ? val : ''
+                            }
+                        },
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor, font: { size: 10 } } },
+                            x: { display: false }
+                        }
+                    }
+                });
+            });
+        }
+
+        function renderShiftDetailCharts(filtered) {
+            const grid = document.getElementById('shift-details-body');
+            if (!grid) return;
+
+            Object.values(shiftChartInstances).forEach(c => { if(c) c.destroy(); });
+            shiftChartInstances = {};
+
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#f8fafc' : '#1f2937';
+            const gridColor = isDark ? '#334155' : '#e5e7eb';
+
+            const shiftMap = {};
+            filtered.forEach(r => {
+                const shiftName = r.shift || 'Ca không xác định';
+                if (!shiftMap[shiftName]) shiftMap[shiftName] = {};
+                SUPPLIERS.forEach(s => {
+                    if (!shiftMap[shiftName][s]) shiftMap[shiftName][s] = { req: 0, res: 0, lv: 0 };
+                    if (r.data[s]) {
+                        shiftMap[shiftName][s].req += (r.data[s].req || 0);
+                        shiftMap[shiftName][s].res += (r.data[s].res || 0);
+                        shiftMap[shiftName][s].lv += ((r.data[s].lvM || 0) + (r.data[s].lvF || 0));
+                    }
+                });
+            });
+
+            const shiftNames = Object.keys(shiftMap);
+            if (shiftNames.length === 0) {
+                grid.innerHTML = '<div style="color:var(--text-muted); text-align:center; grid-column:1/-1; padding:2rem;">Chưa có dữ liệu theo ca</div>';
+                return;
+            }
+
+            let dateTag = '★ Hóa Đơn Chu Kỳ';
+            if (globalWeekDates && globalWeekDates.length > 0) {
+                dateTag = `★ ${globalWeekDates[0].dateStr.slice(0, 5)}`;
+            }
+
+            let html = '';
+            shiftNames.forEach((shiftName, idx) => {
+                const shiftId = 'shift_' + idx;
+                html += `
+                    <div class="shift-chart-card">
+                        <div class="shift-chart-header">
+                            <div>
+                                <div class="shift-chart-title">| Ca: ${escapeHTML(shiftName)}</div>
+                                <div class="shift-chart-subtitle">Chi tiết tỉ lệ đáp ứng (%)</div>
+                            </div>
+                        </div>
+                        <div style="height: 190px; position: relative;">
+                            <canvas id="shift-chart-canvas-${shiftId}"></canvas>
+                        </div>
+                        <div class="date-tag-bottom">${dateTag}</div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+
+            shiftNames.forEach((shiftName, idx) => {
+                const shiftId = 'shift_' + idx;
+                const canvasEl = document.getElementById(`shift-chart-canvas-${shiftId}`);
+                if (!canvasEl) return;
+
+                const sData = shiftMap[shiftName];
+                const labels = SUPPLIERS.map(s => s.replace("HOA ANH ĐÀO", "HAD"));
+                const rates = SUPPLIERS.map(s => {
+                    const st = sData[s];
+                    const activeRes = st.res - st.lv;
+                    if (st.req === 0) return activeRes > 0 ? 100 : 0;
+                    return Math.round((activeRes / st.req) * 100);
+                });
+
+                const bgColors = SUPPLIERS.map(s => SUPPLIER_COLORS[s] || '#3b82f6');
+
+                const ctx = canvasEl.getContext('2d');
+                shiftChartInstances[shiftId] = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Tỷ lệ đáp ứng (%)',
+                            data: rates,
+                            backgroundColor: bgColors,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            datalabels: {
+                                color: '#ffffff',
+                                font: { weight: 'bold', size: 11 },
+                                formatter: (val) => val > 0 ? `${val}%` : '0%'
+                            }
+                        },
+                        scales: {
+                            y: { max: 100, beginAtZero: true, grid: { color: gridColor }, ticks: { color: textColor, callback: v => v + '%' } },
+                            x: { grid: { display: false }, ticks: { color: textColor, font: { weight: 'bold', size: 10 } } }
+                        }
+                    }
+                });
+            });
         }
 
         function updateCharts() {
             const filtered = getFilteredRecords();
+            const viewMode = document.getElementById('freelancer-view-mode')?.value || 'detail';
+            
+            const detailSec = document.getElementById('supplier-detail-section');
+            const summarySec = document.getElementById('summary-charts-container');
+            
+            if (viewMode === 'detail') {
+                if (detailSec) detailSec.style.display = 'block';
+                if (summarySec) summarySec.style.display = 'none';
+                renderSupplierDetailCards(filtered);
+                renderShiftDetailCharts(filtered);
+                return;
+            } else {
+                if (detailSec) detailSec.style.display = 'none';
+                if (summarySec) summarySec.style.display = 'grid';
+            }
+
             const isDark = document.documentElement.classList.contains('dark');
             const textColor = isDark ? '#f8fafc' : '#1f2937';
             const gridColor = isDark ? '#334155' : '#e5e7eb';
