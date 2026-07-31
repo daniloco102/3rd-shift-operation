@@ -634,50 +634,52 @@
                     </div>
                 </div>
 
-                <!-- Automatic Shift Stats Card -->
+                <!-- Overview Banner Card (Replaces Automatic Shift Stats) -->
                 <div class="card" style="display: flex; flex-direction: column;">
-                    <div class="card-body" style="padding: 1.25rem; display: flex; flex-direction: column; height: 100%;">
-                        <h3 style="color: #38bdf8; margin: 0 0 1.25rem 0; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fa-solid fa-chart-pie"></i> Thống Kê Ca Tự Động
-                        </h3>
-                        <div style="display: flex; flex-direction: column; gap: 1rem; flex: 1; justify-content: center;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Tỉ lệ Đáp ứng</span>
-                                <b id="auto-shift-rate" style="color: #38bdf8; font-size: 1.4rem; font-weight: 800;">0%</b>
+                    <div class="card-body" style="padding: 1.25rem; display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
+                        <div>
+                            <h3 style="color: #f59e0b; margin: 0 0 1rem 0; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                                <i class="fa-solid fa-layer-group"></i> TỔNG QUAN TẤT CẢ ĐỐI TÁC
+                            </h3>
+
+                            <!-- Filters inside Overview Card -->
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <select id="overview-filter-timeframe" onchange="updateOverviewCard(true)" style="flex: 1; padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.8rem; background: var(--bg-main); color: var(--text-main);">
+                                        <option value="week" selected>Tuần</option>
+                                        <option value="month">Tháng</option>
+                                        <option value="day">Ngày</option>
+                                    </select>
+                                    <select id="overview-filter-shift" onchange="updateOverviewCard(false)" style="flex: 1; padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.8rem; background: var(--bg-main); color: var(--text-main);"></select>
+                                </div>
+                                <select id="overview-filter-period" onchange="updateOverviewCard(false)" style="width: 100%; padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.8rem; background: var(--bg-main); color: var(--text-main);"></select>
                             </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Tỉ lệ Nam</span>
-                                <b id="auto-shift-male" style="color: #10b981; font-size: 1.4rem; font-weight: 800;">0%</b>
+                        </div>
+
+                        <!-- Stat blocks inside Overview Card -->
+                        <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Tổng Yêu Cầu</span>
+                                <b id="banner-req-val" style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">0</b>
                             </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Tỉ lệ Nữ</span>
-                                <b id="auto-shift-female" style="color: #ec4899; font-size: 1.4rem; font-weight: 800;">0%</b>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Thực Tế Đến</span>
+                                <b id="banner-res-val" style="font-size: 1.25rem; font-weight: 800; color: var(--success);">0</b>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Tỉ Lệ Đạt</span>
+                                <span id="banner-rate-val" class="rate-badge" style="font-size: 1rem; font-weight: 800;">0%</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Tỷ lệ Nam</span>
+                                <b id="banner-male-val" style="font-size: 1rem; font-weight: 800; color: #38bdf8;">0 (0%)</b>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Tỷ lệ Nữ</span>
+                                <b id="banner-female-val" style="font-size: 1rem; font-weight: 800; color: #ec4899;">0 (0%)</b>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Summary Banner (Bottom of Middle Section) -->
-            <div class="card" style="margin-bottom: 1.5rem; padding: 1rem; text-align: center;">
-                <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-bottom: 0.5rem; align-items: center;">
-                    <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Xem theo:</span>
-                    <select id="banner-view-type" style="padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.8rem; background: var(--bg-card); color: var(--text-main);">
-                        <option value="day">Xem theo ngày</option>
-                    </select>
-                    <select id="banner-date-select" style="padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.8rem; background: var(--bg-card); color: var(--text-main);"></select>
-                </div>
-                <h3 id="banner-title" style="color: #f59e0b; margin: 0 0 0.5rem 0; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.5px;">
-                    TỔNG QUAN TẤT CẢ ĐỐI TÁC - HÔM NAY
-                </h3>
-                <div style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">
-                    Tổng Yêu cầu: <b id="banner-req-val" style="color:var(--text-main);">0</b> &nbsp;|&nbsp; 
-                    Tổng Thực tế: <b id="banner-res-val" style="color:var(--success);">0</b> &nbsp;|&nbsp; 
-                    Tỉ Lệ Đạt: <span id="banner-rate-val" class="rate-badge">0%</span>
-                </div>
-                <div style="font-size: 0.9rem; font-weight: 600;">
-                    Nam: <b id="banner-male-val" style="color: #38bdf8;">0 (0%)</b> &nbsp;|&nbsp; 
-                    Nữ: <b id="banner-female-val" style="color: #ec4899;">0 (0%)</b>
                 </div>
             </div>
 
@@ -1986,6 +1988,7 @@
             updateCharts();
             renderGenderRatioTables();
             renderHistoryTable();
+            updateOverviewCard();
         }
 
         function updateFilters() {
@@ -2122,6 +2125,128 @@
 
                 return true;
             });
+        }
+
+        function updateOverviewCard(resetPeriod = false) {
+            const timeframeEl = document.getElementById('overview-filter-timeframe');
+            const periodEl = document.getElementById('overview-filter-period');
+            const shiftEl = document.getElementById('overview-filter-shift');
+
+            if (!timeframeEl || !periodEl || !shiftEl) return;
+
+            const timeframe = timeframeEl.value;
+            const uniqueDates = [...new Set(records.map(r => r.date))].sort((a,b) => b.localeCompare(a));
+            const uniqueShifts = [...new Set(records.map(r => r.shift))];
+
+            if (shiftEl.options.length === 0) {
+                let shiftHtml = '<option value="all">Tất cả các ca</option>';
+                uniqueShifts.forEach(s => shiftHtml += `<option value="${s}">${s}</option>`);
+                shiftEl.innerHTML = shiftHtml;
+            }
+
+            if (resetPeriod || periodEl.options.length === 0) {
+                let periodHtml = '';
+                if (timeframe === 'week') {
+                    periodHtml = '<option value="all">Tất cả các tuần</option>';
+                    const weekMap = {};
+                    const nowWeek = getWeekInfo(new Date());
+                    weekMap[nowWeek.sundayStr] = nowWeek.label;
+
+                    uniqueDates.forEach(dStr => {
+                        const wInfo = getWeekInfo(dStr);
+                        if (wInfo) weekMap[wInfo.sundayStr] = wInfo.label;
+                    });
+
+                    const sortedSundayStrs = Object.keys(weekMap).sort((a,b) => b.localeCompare(a));
+                    sortedSundayStrs.forEach(sunStr => {
+                        periodHtml += `<option value="${sunStr}">${weekMap[sunStr]}</option>`;
+                    });
+                } else if (timeframe === 'month') {
+                    periodHtml = '<option value="all">Tất cả các tháng</option>';
+                    const monthMap = {};
+                    uniqueDates.forEach(dStr => {
+                        const parts = dStr.split('-');
+                        if (parts.length === 3) {
+                            const yyyy = parts[0];
+                            const mm = parts[1];
+                            const key = `${yyyy}-${mm}`;
+                            const lastDay = new Date(yyyy, mm, 0).getDate();
+                            const label = `Tháng ${mm}/${yyyy} (01/${mm} - ${lastDay}/${mm}/${yyyy})`;
+                            monthMap[key] = label;
+                        }
+                    });
+
+                    const now = new Date();
+                    const nowYYYY = now.getFullYear();
+                    const nowMM = String(now.getMonth() + 1).padStart(2, '0');
+                    const nowKey = `${nowYYYY}-${nowMM}`;
+                    if (!monthMap[nowKey]) {
+                        const lastDay = new Date(nowYYYY, now.getMonth() + 1, 0).getDate();
+                        monthMap[nowKey] = `Tháng ${nowMM}/${nowYYYY} (01/${nowMM} - ${lastDay}/${nowMM}/${nowYYYY})`;
+                    }
+
+                    const sortedMonthKeys = Object.keys(monthMap).sort((a,b) => b.localeCompare(a));
+                    sortedMonthKeys.forEach(mKey => {
+                        periodHtml += `<option value="${mKey}">${monthMap[mKey]}</option>`;
+                    });
+                } else {
+                    periodHtml = '<option value="all">Tất cả các ngày</option>';
+                    uniqueDates.forEach(dStr => {
+                        periodHtml += `<option value="${dStr}">${formatDate(dStr)}</option>`;
+                    });
+                }
+                periodEl.innerHTML = periodHtml;
+            }
+
+            const periodVal = periodEl.value;
+            const shiftVal = shiftEl.value;
+
+            let tReq = 0, tRes = 0, tLv = 0, tM = 0, tF = 0;
+            records.forEach(r => {
+                const normRDate = normalizeDate(r.date);
+
+                if (periodVal !== 'all') {
+                    if (timeframe === 'week') {
+                        const wInfo = getWeekInfo(normRDate);
+                        if (!wInfo || wInfo.sundayStr !== periodVal) return;
+                    } else if (timeframe === 'month') {
+                        if (!normRDate.startsWith(periodVal)) return;
+                    } else {
+                        if (normRDate !== periodVal) return;
+                    }
+                }
+
+                if (shiftVal !== 'all' && r.shift !== shiftVal) return;
+
+                Object.values(r.data).forEach(d => {
+                    tReq += (d.req || 0);
+                    tRes += (d.res || 0);
+                    tM += (d.m || 0);
+                    tF += (d.f || 0);
+                    tLv += ((d.lvM || 0) + (d.lvF || 0));
+                });
+            });
+
+            const activeRes = tRes - tLv;
+            const rate = tReq === 0 ? 0 : Math.round((activeRes / tReq) * 100);
+            const totalGender = tM + tF || 1;
+            const mPct = Math.round((tM / totalGender) * 100);
+            const fPct = 100 - mPct;
+
+            const bReq = document.getElementById('banner-req-val');
+            const bRes = document.getElementById('banner-res-val');
+            const bRate = document.getElementById('banner-rate-val');
+            const bMale = document.getElementById('banner-male-val');
+            const bFem = document.getElementById('banner-female-val');
+
+            if (bReq) bReq.innerText = tReq.toLocaleString('vi-VN');
+            if (bRes) bRes.innerText = activeRes.toLocaleString('vi-VN');
+            if (bRate) {
+                bRate.innerText = `${rate}%`;
+                bRate.className = `rate-badge ${rate >= 80 ? 'emerald' : (rate < 60 ? 'danger' : '')}`;
+            }
+            if (bMale) bMale.innerText = `${tM} (${mPct}%)`;
+            if (bFem) bFem.innerText = `${tF} (${fPct}%)`;
         }
 
         function updateAutoShiftStats() {
