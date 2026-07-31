@@ -541,21 +541,21 @@
                 <div class="stat-card">
                     <div class="stat-icon" style="color: #0284c7; background: rgba(2, 132, 199, 0.1);"><i class="fa-solid fa-file-lines"></i></div>
                     <div class="stat-content">
-                        <h3 id="total-req">0</h3>
+                        <h3 id="top-total-req" class="stat-total-req">0</h3>
                         <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">TỔNG BOOK (NGƯỜI)</p>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon text-emerald"><i class="fa-solid fa-circle-check"></i></div>
                     <div class="stat-content">
-                        <h3 id="total-res">0</h3>
+                        <h3 id="top-total-res" class="stat-total-res">0</h3>
                         <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">THỰC TẾ ĐẾN</p>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon text-amber"><i class="fa-solid fa-clock"></i></div>
                     <div class="stat-content">
-                        <h3 id="avg-rate">0%</h3>
+                        <h3 id="top-avg-rate" class="stat-avg-rate">0%</h3>
                         <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">TỶ LỆ ĐÁP ỨNG</p>
                     </div>
                 </div>
@@ -718,28 +718,28 @@
                     <div class="stat-card">
                         <div class="stat-icon text-indigo"><i class="fa-solid fa-clipboard-list"></i></div>
                         <div class="stat-content">
-                            <h3 id="total-req">0</h3>
+                            <h3 class="stat-total-req">0</h3>
                             <p class="dynamic-time-label">Tổng Yêu Cầu</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon text-emerald"><i class="fa-solid fa-check-double"></i></div>
                         <div class="stat-content">
-                            <h3 id="total-res">0</h3>
+                            <h3 class="stat-total-res">0</h3>
                             <p class="dynamic-time-label">Tổng Đáp Ứng</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon text-amber"><i class="fa-solid fa-percent"></i></div>
                         <div class="stat-content">
-                            <h3 id="avg-rate">0%</h3>
+                            <h3 class="stat-avg-rate">0%</h3>
                             <p class="dynamic-time-label">Tỷ Lệ Đáp Ứng TB</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon" style="color: #ef4444;"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
                         <div class="stat-content">
-                            <h3 id="total-lv">0</h3>
+                            <h3 class="stat-total-lv">0</h3>
                             <p class="dynamic-time-label">Tổng Xin Về</p>
                         </div>
                     </div>
@@ -2165,15 +2165,13 @@
             const mPct = Math.round((tM / totalGender) * 100);
             const fPct = 100 - mPct;
 
-            const elReq = document.getElementById('total-req');
-            const elRes = document.getElementById('total-res');
-            const elRate = document.getElementById('avg-rate');
-            const elGender = document.getElementById('total-gender-ratio');
+            document.querySelectorAll('.stat-total-req').forEach(el => el.innerText = tReq.toLocaleString('vi-VN'));
+            document.querySelectorAll('.stat-total-res').forEach(el => el.innerText = activeRes.toLocaleString('vi-VN'));
+            document.querySelectorAll('.stat-avg-rate').forEach(el => el.innerText = `${rate}%`);
+            document.querySelectorAll('.stat-total-lv').forEach(el => el.innerText = tLv.toLocaleString('vi-VN'));
 
-            if(elReq) elReq.innerText = tReq.toLocaleString('vi-VN');
-            if(elRes) elRes.innerText = activeRes.toLocaleString('vi-VN');
-            if(elRate) elRate.innerText = `${rate}%`;
-            if(elGender) elGender.innerText = `${mPct}% (${fPct}%)`;
+            const elGender = document.getElementById('total-gender-ratio');
+            if (elGender) elGender.innerText = `${mPct}% (${fPct}%)`;
 
             // Update Banner
             const bReq = document.getElementById('banner-req-val');
