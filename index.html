@@ -1972,21 +1972,58 @@
             };
         }
 
-        function updateDashboard() {
-            checkLeaveWarnings();
+        function updateDashboard(evt) {
+            if (evt && evt.target && evt.target.id === 'top-week-filter') {
+                const chartFilterDate = document.getElementById('chart-filter-date');
+                if (chartFilterDate) chartFilterDate.value = evt.target.value;
+            } else if (evt && evt.target && evt.target.id === 'chart-filter-date') {
+                const topWeekFilter = document.getElementById('top-week-filter');
+                if (topWeekFilter) topWeekFilter.value = evt.target.value;
+            }
+
             updateFilters();
-            
-            const filterDateVal = document.getElementById('chart-filter-date')?.value || 'all';
+
+            const filterDateVal = document.getElementById('chart-filter-date')?.value || document.getElementById('top-week-filter')?.value || 'all';
             const filterTimeframe = document.getElementById('chart-filter-timeframe')?.value || 'week';
             
             globalWeekDates = [];
             globalChartLabels = [];
 
-            if (filterTimeframe === 'week') {
+            if (filterDateVal === 'all') {
+                const uniqueDates = [...new Set(records.map(r => r && r.date ? normalizeDate(r.date) : ''))].filter(Boolean).sort((a,b) => a.localeCompare(b));
+                if (uniqueDates.length > 0) {
+                    uniqueDates.forEach(dStr => {
+                        globalWeekDates.push({
+                            dateStr: dStr,
+                            label: formatDate(dStr)
+                        });
+                        globalChartLabels.push(formatDate(dStr));
+                    });
+                } else {
+                    const refDate = new Date();
+                    const dayOfWeek = refDate.getDay();
+                    const sunday = new Date(refDate);
+                    sunday.setDate(refDate.getDate() - dayOfWeek);
+                    for (let i = 0; i < 7; i++) {
+                        const d = new Date(sunday);
+                        d.setDate(sunday.getDate() + i);
+                        const yyyy = d.getFullYear();
+                        const mm = String(d.getMonth() + 1).padStart(2, '0');
+                        const dd = String(d.getDate()).padStart(2, '0');
+                        globalWeekDates.push({
+                            dateStr: `${yyyy}-${mm}-${dd}`,
+                            label: `${['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][i]} (${dd}/${mm})`
+                        });
+                        globalChartLabels.push(globalWeekDates[i].label);
+                    }
+                }
+            } else if (filterTimeframe === 'week') {
                 let refDate = new Date();
-                if (filterDateVal && filterDateVal !== 'all' && filterDateVal.includes('-')) {
+                if (filterDateVal && filterDateVal.includes('-')) {
                     const parts = filterDateVal.split('-');
-                    if (parts.length === 3) refDate = new Date(parts[0], parts[1] - 1, parts[2]);
+                    if (parts.length === 3) {
+                        refDate = new Date(parts[0], parts[1] - 1, parts[2]);
+                    }
                 }
                 const dayOfWeek = refDate.getDay();
                 const sunday = new Date(refDate);
@@ -2007,7 +2044,7 @@
             } else if (filterTimeframe === 'month') {
                 let yyyy = new Date().getFullYear();
                 let mm = new Date().getMonth();
-                if (filterDateVal && filterDateVal !== 'all' && filterDateVal.includes('-')) {
+                if (filterDateVal && filterDateVal.includes('-')) {
                     const parts = filterDateVal.split('-');
                     if (parts.length >= 2) {
                         yyyy = parseInt(parts[0]);
@@ -2166,16 +2203,12 @@
 
         function getFilteredRecords() {
             const s = document.getElementById('chart-filter-shift')?.value || 'all';
-            const d = document.getElementById('chart-filter-date')?.value || 'all';
-            const w = document.getElementById('top-week-filter')?.value || 'all';
+            const d = document.getElementById('chart-filter-date')?.value || document.getElementById('top-week-filter')?.value || 'all';
             const timeframe = document.getElementById('chart-filter-timeframe')?.value || 'week';
 
             return records.filter(r => {
+                if (!r || !r.date) return false;
                 const normRDate = normalizeDate(r.date);
-                if (w !== 'all') {
-                    const wInfo = getWeekInfo(normRDate);
-                    if (!wInfo || wInfo.sundayStr !== w) return false;
-                }
 
                 if (d !== 'all') {
                     if (timeframe === 'week') {
