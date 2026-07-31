@@ -24,6 +24,10 @@
     <!-- SheetJS (xlsx) for reading Excel files -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     
+    <!-- html2canvas & jsPDF for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
     <style>
         /* Premium Design Variables */
         :root {
@@ -3710,28 +3714,51 @@
         setInterval(updateTracker, 1000);
         setTimeout(updateTracker, 100);
 
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const existing = document.querySelector(`script[src="${src}"]`);
+                if (existing) return resolve();
+                const s = document.createElement('script');
+                s.src = src;
+                s.onload = resolve;
+                s.onerror = () => reject(new Error(`Không thể tải thư viện từ: ${src}`));
+                document.head.appendChild(s);
+            });
+        }
+
         // ==========================================
-        // EXPORT PDF TÍNH NĂNG MỚI
+        // EXPORT PDF TÍNH NĂNG MỚI (Đa trang & Tự động nạp thư viện)
         // ==========================================
         async function exportDashboardPDF() {
+            const btn = document.querySelector('button[onclick="exportDashboardPDF()"]');
+            const oldContent = btn ? btn.innerHTML : '';
+            if(btn) btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang chuẩn bị thư viện...';
+            
             try {
-                const btn = document.querySelector('button[onclick="exportDashboardPDF()"]');
-                const oldContent = btn.innerHTML;
-                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tạo PDF...';
-                
+                // Tự động nạp thư viện nếu chưa có
+                if (typeof html2canvas === 'undefined') {
+                    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
+                }
+                if (typeof window.jspdf === 'undefined') {
+                    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
+                }
+
+                if(btn) btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang chụp báo cáo...';
+
                 let targetEl = null;
-                if (document.getElementById('tab-operations').classList.contains('active')) {
+                if (document.getElementById('tab-operations') && document.getElementById('tab-operations').classList.contains('active')) {
                     targetEl = document.getElementById('tab-operations');
-                } else if (document.getElementById('tab-freelancer').classList.contains('active')) {
+                } else if (document.getElementById('tab-freelancer') && document.getElementById('tab-freelancer').classList.contains('active')) {
                     targetEl = document.getElementById('tab-freelancer');
-                } else if (document.getElementById('tab-hr').classList.contains('active')) {
+                } else if (document.getElementById('tab-hr') && document.getElementById('tab-hr').classList.contains('active')) {
                     targetEl = document.getElementById('tab-hr');
                 } else {
-                    alert("Tính năng Xuất PDF hỗ trợ cho tab Nhân Sự, Vận Hành và Freelancer.");
-                    btn.innerHTML = oldContent;
+                    alert("Tính năng Xuất PDF hỗ trợ cho các tab Nhân Sự, Vận Hành và Freelancer.");
+                    if(btn) btn.innerHTML = oldContent;
                     return;
                 }
 
+                // Tạm thời bỏ viền input cho ảnh chụp đẹp hơn
                 const inputs = targetEl.querySelectorAll('input, select');
                 const origBorders = [];
                 inputs.forEach(i => {
@@ -3739,32 +3766,46 @@
                     i.style.border = 'none';
                 });
 
+                const isDark = document.documentElement.classList.contains('dark');
                 const canvas = await html2canvas(targetEl, {
                     scale: 2,
                     useCORS: true,
-                    backgroundColor: document.documentElement.classList.contains('dark') ? '#0f172a' : '#f3f4f6'
+                    allowTaint: true,
+                    backgroundColor: isDark ? '#0f172a' : '#f3f4f6',
+                    windowWidth: document.documentElement.offsetWidth
                 });
 
                 inputs.forEach((i, idx) => i.style.border = origBorders[idx]);
+
+                if(btn) btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xuất file PDF...';
 
                 const imgData = canvas.toDataURL('image/png');
                 const { jsPDF } = window.jspdf;
                 
                 const pdf = new jsPDF('p', 'mm', 'a4');
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-                
-                pdf.text("BAO CAO PHAN TICH - NGAN AI", 14, 15);
-                pdf.setFontSize(10);
-                pdf.text("Time: " + new Date().toLocaleString('vi-VN'), 14, 22);
-                
-                pdf.addImage(imgData, 'PNG', 0, 25, pdfWidth, pdfHeight);
+                const imgWidth = 210;
+                const pageHeight = 295;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
                 pdf.save(`Bao_Cao_Ngan_AI_${new Date().getTime()}.pdf`);
                 
-                btn.innerHTML = oldContent;
+                if(btn) btn.innerHTML = oldContent;
             } catch (e) {
-                console.error(e);
-                alert("Lỗi khi xuất PDF. Vui lòng kiểm tra kết nối mạng để tải thư viện html2canvas.");
+                console.error("Lỗi xuất PDF:", e);
+                alert("Lỗi xuất PDF: " + (e.message || "Không thể chụp màn hình. Vui lòng kiểm tra kết nối mạng."));
+                if(btn) btn.innerHTML = oldContent;
             }
         }
 
