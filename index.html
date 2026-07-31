@@ -526,24 +526,66 @@
         </div>
 
         <div id="tab-freelancer" class="tab-content active">
-            <main class="dashboard-layout">
-            <!-- Left Panel: Data Entry -->
-            <section class="panel-left">
-                <div class="card form-card">
-                    <div class="card-header">
-                        <h2><i class="fa-solid fa-keyboard"></i> Nhập Dữ Liệu</h2>
+            <!-- Top Section Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                <h2 style="margin: 0; font-weight: 800; font-size: 1.3rem; color: var(--text-main);"><i class="fa-solid fa-users-viewfinder"></i> Theo Dõi Freelancer (Cập nhật từ file Excel)</h2>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <select id="top-week-filter" onchange="renderFreelancerDashboard()" style="padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem; background: var(--bg-card); color: var(--text-main);">
+                        <option value="all">Tất cả các tuần</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Top 4 Summary KPI Cards -->
+            <div class="stats-grid" style="margin-bottom: 1.5rem;">
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #0284c7; background: rgba(2, 132, 199, 0.1);"><i class="fa-solid fa-file-lines"></i></div>
+                    <div class="stat-content">
+                        <h3 id="total-req">0</h3>
+                        <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">TỔNG BOOK (NGƯỜI)</p>
                     </div>
-                    <div class="card-body">
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon text-emerald"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="stat-content">
+                        <h3 id="total-res">0</h3>
+                        <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">THỰC TẾ ĐẾN</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon text-amber"><i class="fa-solid fa-clock"></i></div>
+                    <div class="stat-content">
+                        <h3 id="avg-rate">0%</h3>
+                        <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">TỶ LỆ ĐÁP ỨNG</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #8b5cf6; background: rgba(139, 92, 246, 0.1);"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-content">
+                        <h3 id="total-gender-ratio">0%</h3>
+                        <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">TỶ LỆ NAM (NỮ)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Grid: Form & Auto Shift Stats -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;" class="middle-entry-grid">
+                <!-- Data Entry Form -->
+                <div class="card form-card">
+                    <div class="card-body" style="padding: 1.25rem;">
+                        <h3 style="color: #f59e0b; margin: 0 0 1rem 0; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-pen-to-square"></i> Nhập Dữ Liệu Phân Bổ Ca Freelancer
+                        </h3>
                         <form id="data-entry-form">
-                            <div class="form-row">
+                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.75rem;">
                                 <div class="form-group">
-                                    <label for="record-date">Ngày:</label>
-                                    <input type="date" id="record-date" required>
+                                    <label for="record-date" style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Ngày làm việc:</label>
+                                    <input type="date" id="record-date" required style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-main); color: var(--text-main);">
                                 </div>
                                 <div class="form-group">
-                                    <label for="record-shift">Ca / Khung giờ:</label>
+                                    <label for="record-shift" style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Ca làm việc:</label>
                                     <div style="display: flex; gap: 0.5rem;">
-                                        <select id="record-shift" required style="flex: 1;">
+                                        <select id="record-shift" required style="flex: 1; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-main); color: var(--text-main);">
                                             <option value="Ca 20:00 - 6:00">Ca 20:00 - 6:00</option>
                                             <option value="Ca 21:00 - 6:00">Ca 21:00 - 6:00</option>
                                             <option value="Ca 21:30 - 6:30">Ca 21:30 - 6:30</option>
@@ -557,22 +599,21 @@
                                 </div>
                             </div>
                             
-                            <div id="grouped-shift-container" class="form-row" style="grid-template-columns: 1fr; margin-top: -0.5rem; margin-bottom: 1.5rem;">
-                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--info); font-weight: 600; font-size: 0.9rem;">
-                                    <input type="checkbox" id="is-grouped-shift" style="width: 18px; height: 18px; cursor: pointer;">
-                                    Đánh dấu đây là "Ca Phụ" (Gộp chung Yêu Cầu với ca trước đó trong ngày)
+                            <div id="grouped-shift-container" style="margin-bottom: 1rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--info); font-weight: 600; font-size: 0.85rem;">
+                                    <input type="checkbox" id="is-grouped-shift" style="width: 16px; height: 16px; cursor: pointer;">
+                                    Ca ghép (Chung số book & gộp tỉ lệ)
                                 </label>
                             </div>
                             
-                            <div class="supplier-table-container">
-                                <table class="supplier-input-table">
+                            <div class="supplier-table-container" style="margin-bottom: 1rem;">
+                                <table class="supplier-input-table" style="width: 100%; font-size: 0.85rem;">
                                     <thead>
                                         <tr>
-                                            <th>Nhà Cung Cấp</th>
-                                            <th title="Số book yêu cầu">Yêu Cầu</th>
-                                            <th title="Số đáp ứng thực tế">Đáp Ứng</th>
-                                            <th>Nam</th>
-                                            <th>Nữ</th>
+                                            <th>Đối Tác (Nhà cung cấp)</th>
+                                            <th title="Số book yêu cầu">Số Book</th>
+                                            <th title="Số đáp ứng thực tế">Số Nhận (Đáp Ứng)</th>
+                                            <th>Số FL Nam</th>
                                         </tr>
                                     </thead>
                                     <tbody id="supplier-input-body">
@@ -581,16 +622,67 @@
                                 </table>
                             </div>
 
-                            <div class="form-actions">
-                                <button type="submit" class="btn-primary w-full"><i class="fa-solid fa-floppy-disk"></i> Lưu Dữ Liệu</button>
+                            <div style="display: flex; gap: 0.5rem; flex-direction: column;">
+                                <button type="button" onclick="addNewSupplierRow()" class="btn-secondary" style="align-self: flex-start; padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                                    <i class="fa-solid fa-plus"></i> Thêm đối tác mới
+                                </button>
+                                <button type="submit" class="btn-primary w-full" style="padding: 0.75rem; font-size: 1rem; font-weight: 700; background: linear-gradient(135deg, #6366f1, #4f46e5); margin-top: 0.5rem;">
+                                    Lưu Số Liệu Phân Bổ Ca 💾
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
-            </section>
+
+                <!-- Automatic Shift Stats Card -->
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <div class="card-body" style="padding: 1.25rem; display: flex; flex-direction: column; height: 100%;">
+                        <h3 style="color: #38bdf8; margin: 0 0 1.25rem 0; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-chart-pie"></i> Thống Kê Ca Tự Động
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem; flex: 1; justify-content: center;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Tỉ lệ Đáp ứng</span>
+                                <b id="auto-shift-rate" style="color: #38bdf8; font-size: 1.4rem; font-weight: 800;">0%</b>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Tỉ lệ Nam</span>
+                                <b id="auto-shift-male" style="color: #10b981; font-size: 1.4rem; font-weight: 800;">0%</b>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Tỉ lệ Nữ</span>
+                                <b id="auto-shift-female" style="color: #ec4899; font-size: 1.4rem; font-weight: 800;">0%</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Banner (Bottom of Middle Section) -->
+            <div class="card" style="margin-bottom: 1.5rem; padding: 1rem; text-align: center;">
+                <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-bottom: 0.5rem; align-items: center;">
+                    <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Xem theo:</span>
+                    <select id="banner-view-type" style="padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.8rem; background: var(--bg-card); color: var(--text-main);">
+                        <option value="day">Xem theo ngày</option>
+                    </select>
+                    <select id="banner-date-select" style="padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.8rem; background: var(--bg-card); color: var(--text-main);"></select>
+                </div>
+                <h3 id="banner-title" style="color: #f59e0b; margin: 0 0 0.5rem 0; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.5px;">
+                    TỔNG QUAN TẤT CẢ ĐỐI TÁC - HÔM NAY
+                </h3>
+                <div style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">
+                    Tổng Yêu cầu: <b id="banner-req-val" style="color:var(--text-main);">0</b> &nbsp;|&nbsp; 
+                    Tổng Thực tế: <b id="banner-res-val" style="color:var(--success);">0</b> &nbsp;|&nbsp; 
+                    Tỉ Lệ Đạt: <span id="banner-rate-val" class="rate-badge">0%</span>
+                </div>
+                <div style="font-size: 0.9rem; font-weight: 600;">
+                    Nam: <b id="banner-male-val" style="color: #38bdf8;">0 (0%)</b> &nbsp;|&nbsp; 
+                    Nữ: <b id="banner-female-val" style="color: #ec4899;">0 (0%)</b>
+                </div>
+            </div>
 
             <!-- Right Panel: Analytics Dashboard -->
-            <section class="panel-right">
+            <section class="panel-right" style="width: 100%;">
                 <!-- Cảnh Báo Xin Về -->
                 <div id="warning-container" class="card" style="display: none; border-left: 4px solid var(--danger); margin-bottom: 1.5rem; background: rgba(239, 68, 68, 0.05);">
                     <div class="card-body" style="padding: 1rem 1.5rem;">
@@ -1826,6 +1918,73 @@
                 if(s !== 'all' && r.shift !== s) return false;
                 return true;
             });
+        }
+
+        function updateAutoShiftStats() {
+            let req = 0, res = 0, m = 0;
+            const rows = document.querySelectorAll('#supplier-input-body tr');
+            rows.forEach(tr => {
+                const inputs = tr.querySelectorAll('input[type="number"]');
+                if (inputs.length >= 3) {
+                    req += Number(inputs[0].value) || 0;
+                    res += Number(inputs[1].value) || 0;
+                    m += Number(inputs[2].value) || 0;
+                }
+            });
+            const rate = req === 0 ? 0 : Math.round((res / req) * 100);
+            const mPct = res === 0 ? 0 : Math.round((m / res) * 100);
+            const fPct = res === 0 ? 0 : (100 - mPct);
+
+            const elRate = document.getElementById('auto-shift-rate');
+            const elMale = document.getElementById('auto-shift-male');
+            const elFem = document.getElementById('auto-shift-female');
+            if (elRate) elRate.innerText = `${rate}%`;
+            if (elMale) elMale.innerText = `${mPct}%`;
+            if (elFem) elFem.innerText = `${fPct}%`;
+        }
+
+        function updateStats() {
+            let tReq = 0, tRes = 0, tLv = 0, tM = 0, tF = 0;
+            const filtered = getFilteredRecords();
+            filtered.forEach(r => {
+                Object.values(r.data).forEach(d => {
+                    tReq += (d.req || 0);
+                    tRes += (d.res || 0);
+                    tM += (d.m || 0);
+                    tF += (d.f || 0);
+                    tLv += ((d.lvM || 0) + (d.lvF || 0));
+                });
+            });
+            const activeRes = tRes - tLv;
+            const rate = tReq === 0 ? 0 : Math.round((activeRes / tReq) * 100);
+            const totalGender = tM + tF || 1;
+            const mPct = Math.round((tM / totalGender) * 100);
+            const fPct = 100 - mPct;
+
+            const elReq = document.getElementById('total-req');
+            const elRes = document.getElementById('total-res');
+            const elRate = document.getElementById('avg-rate');
+            const elGender = document.getElementById('total-gender-ratio');
+
+            if(elReq) elReq.innerText = tReq.toLocaleString('vi-VN');
+            if(elRes) elRes.innerText = activeRes.toLocaleString('vi-VN');
+            if(elRate) elRate.innerText = `${rate}%`;
+            if(elGender) elGender.innerText = `${mPct}% (${fPct}%)`;
+
+            // Update Banner
+            const bReq = document.getElementById('banner-req-val');
+            const bRes = document.getElementById('banner-res-val');
+            const bRate = document.getElementById('banner-rate-val');
+            const bMale = document.getElementById('banner-male-val');
+            const bFem = document.getElementById('banner-female-val');
+            if (bReq) bReq.innerText = tReq.toLocaleString('vi-VN');
+            if (bRes) bRes.innerText = activeRes.toLocaleString('vi-VN');
+            if (bRate) {
+                bRate.innerText = `${rate}%`;
+                bRate.className = `rate-badge ${rate>=80?'emerald':(rate<60?'danger':'')}`;
+            }
+            if (bMale) bMale.innerText = `${tM} (${mPct}%)`;
+            if (bFem) bFem.innerText = `${tF} (${fPct}%)`;
         }
 
         let supplierMiniChartInstances = {};
