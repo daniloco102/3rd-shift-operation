@@ -530,8 +530,8 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
                 <h2 style="margin: 0; font-weight: 800; font-size: 1.3rem; color: var(--text-main);"><i class="fa-solid fa-users-viewfinder"></i> Theo Dõi Freelancer (Cập nhật từ file Excel)</h2>
                 <div style="display: flex; gap: 0.5rem; align-items: center;">
-                    <select id="top-week-filter" onchange="renderFreelancerDashboard()" style="padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem; background: var(--bg-card); color: var(--text-main);">
-                        <option value="all">Tất cả các tuần</option>
+                    <select id="top-week-filter" onchange="updateDashboard()" style="padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem; background: var(--bg-card); color: var(--text-main);">
+                        <option value="all" selected>Tất cả các tuần</option>
                     </select>
                 </div>
             </div>
@@ -2017,6 +2017,7 @@
                 filterDate.addEventListener('change', updateDashboard);
                 filterShift.addEventListener('change', updateDashboard);
                 if (filterTimeframe) filterTimeframe.addEventListener('change', updateDashboard);
+                if (topWeekFilter) topWeekFilter.addEventListener('change', updateDashboard);
             }
             
             const currTimeframe = filterTimeframe ? filterTimeframe.value : 'week';
