@@ -1912,10 +1912,22 @@
 
         function getFilteredRecords() {
             const s = document.getElementById('chart-filter-shift')?.value || 'all';
-            const allowedDates = globalWeekDates.map(wd => wd.dateStr);
+            const d = document.getElementById('chart-filter-date')?.value || 'all';
+            const w = document.getElementById('top-week-filter')?.value || 'all';
+
             return records.filter(r => {
-                if(!allowedDates.includes(r.date)) return false;
-                if(s !== 'all' && r.shift !== s) return false;
+                // Single specific date filter
+                if (d !== 'all' && r.date !== d) return false;
+
+                // Week filter active
+                if (d === 'all' && w !== 'all') {
+                    const allowedDates = globalWeekDates.map(wd => wd.dateStr);
+                    if (!allowedDates.includes(r.date)) return false;
+                }
+
+                // Shift filter
+                if (s !== 'all' && r.shift !== s) return false;
+
                 return true;
             });
         }
