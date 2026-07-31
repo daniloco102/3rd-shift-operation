@@ -1406,16 +1406,35 @@
             return [];
         }
 
-        let records = ensureArray(JSON.parse(localStorage.getItem('freelancer_records_v2')));
-        let customShifts = ensureArray(JSON.parse(localStorage.getItem('custom_shifts')));
+        function safeGetLocalArray(key) {
+            try {
+                const val = localStorage.getItem(key);
+                if (!val || val === 'undefined' || val === 'null') return [];
+                return ensureArray(JSON.parse(val));
+            } catch (e) {
+                console.warn("localStorage read error:", e);
+                return [];
+            }
+        }
+
+        function safeSetLocal(key, valObj) {
+            try {
+                localStorage.setItem(key, JSON.stringify(valObj));
+            } catch (e) {
+                console.warn("localStorage write error:", e);
+            }
+        }
+
+        let records = safeGetLocalArray('freelancer_records_v2');
+        let customShifts = safeGetLocalArray('custom_shifts');
         let currentHistoryPage = 1;
         const HISTORY_PER_PAGE = 30;
 
         if (records.length === 0) {
-            const oldRecords = ensureArray(JSON.parse(localStorage.getItem('freelancer_records')));
+            const oldRecords = safeGetLocalArray('freelancer_records');
             if (oldRecords.length > 0) {
                 records = oldRecords;
-                localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+                safeSetLocal('freelancer_records_v2', records);
             }
         }
         
@@ -1464,7 +1483,7 @@
                                     }
                                 });
                             });
-                            localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+                            safeSetLocal('freelancer_records_v2', records);
                             if (syncStatusEl) {
                                 syncStatusEl.className = 'badge badge-success';
                                 syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
@@ -1516,7 +1535,7 @@
                                 }
                             });
                         });
-                        localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+                        safeSetLocal('freelancer_records_v2', records);
                         if (syncStatusEl) {
                             syncStatusEl.className = 'badge badge-success';
                             syncStatusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Đã kết nối Cloud';
@@ -1552,7 +1571,7 @@
         });
 
         function saveToCloud() {
-            localStorage.setItem('freelancer_records_v2', JSON.stringify(records));
+            safeSetLocal('freelancer_records_v2', records);
             if (db) {
                 db.ref('freelancer_records').set(records).catch(err => {
                     console.error("Lỗi lưu Firebase WebSocket:", err);
@@ -1592,7 +1611,7 @@
                 
                 if(!exists) {
                     customShifts.push(shiftName);
-                    localStorage.setItem('custom_shifts', JSON.stringify(customShifts));
+                    safeSetLocal('custom_shifts', customShifts);
                     
                     const opt = document.createElement('option');
                     opt.value = shiftName;
