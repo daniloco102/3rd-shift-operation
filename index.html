@@ -1270,10 +1270,12 @@
                     <!-- Detail Table Section -->
                     <div class="table-scroll-wrapper" id="hr-table-container" style="display: none; max-height: 500px; overflow-y: auto; margin-top: 1.5rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-card);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                            <h3 style="color: var(--primary); margin: 0;"><i class="fa-solid fa-list-check"></i> Danh Sách Chi Tiết</h3>
+                            <h3 style="color: var(--primary); margin: 0;"><i class="fa-solid fa-list-check"></i> Dữ Liệu Toàn Bộ Nhân Sự (Danh Sách Chi Tiết)</h3>
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <input type="text" id="hr-search-input" onkeyup="searchHRTable()" placeholder="Tìm tên, mã NV..." style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); font-size: 0.85rem; width: 200px; background: var(--bg-main); color: var(--text-main);">
                                 <select id="hr-filter-criteria" onchange="document.getElementById('hr-filter-week').style.display = (this.value==='new_this_week' || this.value==='resigned_this_week') ? 'inline-block' : 'none'; renderHRDashboard()" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--primary); font-weight: 600; font-size: 0.85rem; background: rgba(139, 92, 246, 0.1); color: var(--text-main);">
-                                    <option value="all">Tất cả tiêu chí</option>
+                                    <option value="all">Toàn bộ nhân sự (Tất cả)</option>
+                                    <option value="active_only">Nhân sự đang làm việc</option>
                                     <option value="new_this_week">Tuyển mới</option>
                                     <option value="resigned_this_week">Nghỉ việc</option>
                                     <option value="under_60_days">Làm việc ≤ 60 ngày</option>
@@ -4655,6 +4657,8 @@
                     const w = parseInt(selWeek);
                     combined = combined.filter(e => e.joinDateStr && getWeekOfMonthFromStr(e.joinDateStr) === w);
                 }
+            } else if (selCriteria === 'active_only') {
+                combined = activeList;
             } else if (selCriteria === 'under_60_days') {
                 combined = [...activeList, ...resignedList].filter(e => (e.daysWorked || 0) <= 60);
             } else {
