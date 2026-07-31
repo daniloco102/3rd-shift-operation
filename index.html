@@ -978,7 +978,7 @@
                                         <p>Tổng Nhân Sự Thuộc Nhóm</p>
                                     </div>
                                 </div>
-                                <div class="stat-card">
+                                <div class="stat-card" style="cursor: pointer; border: 2px solid transparent; transition: 0.3s;" onmouseover="this.style.borderColor='var(--success)'" onmouseout="this.style.borderColor='transparent'" onclick="showActiveModal()" title="Bấm vào để xem danh sách chi tiết nhân sự đang làm việc tại kho">
                                     <div class="stat-icon text-emerald"><i class="fa-solid fa-user-check"></i></div>
                                     <div class="stat-content">
                                         <h3 id="hr-active">0</h3>
@@ -3139,6 +3139,7 @@
         let hrActiveData = [];
         let hrResignedData = [];
         let currentFilteredResigned = [];
+        let currentFilteredActive = [];
         let hrResignChartInstance = null;
         let hrNewChartInstance = null;
         let hrOverviewChartInstance = null;
@@ -3240,7 +3241,8 @@
             const activeCount = filteredData.filter(e => e.status !== 'Đã nghỉ việc').length;
             const resignedCount = filteredData.filter(e => e.status === 'Đã nghỉ việc').length;
             
-            // Lưu lại danh sách nghỉ việc đã lọc để hiện lên Modal khi bấm vào
+            // Lưu lại danh sách đang làm việc và nghỉ việc đã lọc để hiện lên Modal khi bấm vào
+            currentFilteredActive = filteredData.filter(e => e.status !== 'Đã nghỉ việc');
             currentFilteredResigned = filteredData.filter(e => e.status === 'Đã nghỉ việc');
 
             // Update UI
@@ -3511,6 +3513,35 @@
                 `;
             });
             document.getElementById('hr-table-body').innerHTML = html;
+        }
+
+        function showActiveModal() {
+            if (!currentFilteredActive || currentFilteredActive.length === 0) {
+                alert("Hiện không có nhân sự nào đang làm việc (theo bộ lọc hiện tại).");
+                return;
+            }
+            
+            let html = '';
+            const sorted = [...currentFilteredActive].sort((a,b) => b.daysWorked - a.daysWorked);
+            
+            sorted.forEach(e => {
+                html += `
+                    <tr>
+                        <td style="font-weight:600;">${escapeHTML(e.id)}</td>
+                        <td style="font-weight:600;">${escapeHTML(e.name)}</td>
+                        <td>${escapeHTML(e.dept)} <br> <small style="color:var(--text-muted);">${escapeHTML(e.shift)}</small></td>
+                        <td style="color: var(--success); font-weight:600;">${e.joinDateStr}</td>
+                        <td style="color: var(--primary); font-weight: 800; font-size: 1.1rem;">${e.daysWorked} ngày</td>
+                    </tr>
+                `;
+            });
+            
+            document.getElementById('hr-active-modal-body').innerHTML = html;
+            document.getElementById('hr-active-modal').classList.add('active');
+        }
+
+        function closeActiveModal() {
+            document.getElementById('hr-active-modal').classList.remove('active');
         }
 
         function showResignedModal() {
@@ -3793,6 +3824,34 @@
             <div class="modal-footer">
                 <button class="btn-secondary" onclick="closeLeaveModal()" style="padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Hủy</button>
                 <button class="btn-primary" onclick="saveLeaveData()" style="padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-floppy-disk"></i> Lưu Xin Về</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Đang Làm Việc HR -->
+    <div id="hr-active-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-user-check" style="color:var(--success);"></i> Danh Sách Nhân Sự Đang Làm Việc Tại Kho</h2>
+                <button class="btn-close" onclick="closeActiveModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="padding: 1rem 1.5rem;">
+                <div class="table-scroll-wrapper">
+                    <table class="data-table" style="min-width: 700px;">
+                        <thead>
+                            <tr>
+                                <th>Mã NV</th>
+                                <th>Họ Tên</th>
+                                <th>Phòng Ban / Ca</th>
+                                <th>Ngày Vào Làm</th>
+                                <th>Thâm Niên</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hr-active-modal-body">
+                            <!-- JS gen rows -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
