@@ -1750,8 +1750,7 @@
                 });
             }
 
-            updateAutoShiftStats();
-        }
+            }
 
         function generateSupplierRows() {
             tbody.innerHTML = '';
@@ -1786,8 +1785,7 @@
                         }
                     }
                 }
-                updateAutoShiftStats();
-            }
+                }
         });
 
         form.addEventListener('submit', (e) => {
@@ -2393,16 +2391,7 @@
             if (bFem) bFem.innerText = `${tF} (${fPct}%)`;
         }
 
-        function updateAutoShiftStats() {
-            let req = 0, res = 0, m = 0;
-            const rows = document.querySelectorAll('#supplier-input-body tr');
-            rows.forEach(tr => {
-                const inputs = tr.querySelectorAll('input[type="number"]');
-                if (inputs.length >= 3) {
-                    req += Number(inputs[0].value) || 0;
-                    res += Number(inputs[1].value) || 0;
-                    m += Number(inputs[2].value) || 0;
-                }
+        
             });
             const rate = req === 0 ? 0 : Math.round((res / req) * 100);
             const mPct = res === 0 ? 0 : Math.round((m / res) * 100);
