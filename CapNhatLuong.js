@@ -42,8 +42,14 @@ function formatExcelDate(dateCode) {
 }
 
 try {
-    const workbook = xlsx.readFile(path.join(__dirname, targetFile));
     const sheetName = 'Tổng hợp lương';
+    const workbook = xlsx.readFile(path.join(__dirname, targetFile), {
+        sheets: [sheetName],
+        cellFormula: false,
+        cellHTML: false,
+        cellStyles: false,
+        cellText: false
+    });
     
     if (!workbook.Sheets[sheetName]) {
         console.error(`❌ LỖI: File Excel không có sheet mang tên "${sheetName}"!`);
