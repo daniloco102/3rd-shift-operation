@@ -2103,7 +2103,8 @@
             const timeLabels = document.querySelectorAll('.dynamic-time-label');
             const timeText = filterTimeframe === 'day' ? '(Ngày)' : (filterTimeframe === 'month' ? '(Tháng)' : '(Tuần)');
             timeLabels.forEach(el => {
-                const baseText = el.innerText.split('(')[0].trim();
+                const text = el.innerText || el.textContent || "";
+                const baseText = text.split('(')[0].trim();
                 el.innerText = `${baseText} ${timeText}`;
             });
             const chartTimeLabels = document.querySelectorAll('.chart-time-label');
