@@ -2390,21 +2390,6 @@
             if (bMale) bMale.innerText = `${tM} (${mPct}%)`;
             if (bFem) bFem.innerText = `${tF} (${fPct}%)`;
         }
-
-        
-            });
-            const rate = req === 0 ? 0 : Math.round((res / req) * 100);
-            const mPct = res === 0 ? 0 : Math.round((m / res) * 100);
-            const fPct = res === 0 ? 0 : (100 - mPct);
-
-            const elRate = document.getElementById('auto-shift-rate');
-            const elMale = document.getElementById('auto-shift-male');
-            const elFem = document.getElementById('auto-shift-female');
-            if (elRate) elRate.innerText = `${rate}%`;
-            if (elMale) elMale.innerText = `${mPct}%`;
-            if (elFem) elFem.innerText = `${fPct}%`;
-        }
-
         function updateStats() {
             let tReq = 0, tRes = 0, tLv = 0, tM = 0, tF = 0;
             const filtered = getFilteredRecords();
