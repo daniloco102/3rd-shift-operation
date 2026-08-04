@@ -974,44 +974,37 @@
 
                             <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--primary);">4. Chỉ số Tuần (So sánh Target)</h3>
                             <div class="table-scroll-wrapper">
-                                <table class="supplier-input-table" style="margin-bottom: 1.5rem; min-width: 600px;">
+                                <table class="supplier-input-table" style="margin-bottom: 1.5rem; min-width: 400px;">
                                 <thead>
                                     <tr>
                                         <th>Chỉ số</th>
-                                        <th>Thực Tế SORT</th>
-                                        <th>Thực Tế INOUT</th>
+                                        <th>Thực Tế</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td style="font-weight:600; text-align:left;">Volume (DRNX/4)</td>
                                         <td><input type="number" step="any" id="ops-target-sort-vol"></td>
-                                        <td><input type="number" step="any" id="ops-target-inout-vol"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight:600; text-align:left;">Chi phí cost/đơn (Thực tế VNĐ)</td>
                                         <td><input type="number" step="any" id="ops-target-sort-cost"></td>
-                                        <td><input type="number" step="any" id="ops-target-inout-cost"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight:600; text-align:left;">Năng suất (DRNX/4)</td>
                                         <td><input type="number" step="any" id="ops-target-sort-ns"></td>
-                                        <td><input type="number" step="any" id="ops-target-inout-ns"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight:600; text-align:left;">Tỉ lệ xuất hàng > 24h (Thực tế)</td>
                                         <td><input type="number" step="any" id="ops-target-sort-xh"></td>
-                                        <td><input type="number" step="any" id="ops-target-inout-xh"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight:600; text-align:left;">Tỷ lệ nghỉ việc (%)</td>
                                         <td><input type="number" step="any" id="ops-target-sort-nv"></td>
-                                        <td><input type="number" step="any" id="ops-target-inout-nv"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight:600; text-align:left; color: var(--success);">KPI đạt được (%)</td>
                                         <td><input type="number" step="any" id="ops-target-sort-kpi"></td>
-                                        <td><input type="number" step="any" id="ops-target-inout-kpi"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -3313,11 +3306,8 @@
 
             // Target theo docx
             document.getElementById('ops-target-sort-xh').value = 0.9;
-            document.getElementById('ops-target-inout-xh').value = 0.9;
             document.getElementById('ops-target-sort-nv').value = 4.24;
-            document.getElementById('ops-target-inout-nv').value = 4.24;
             document.getElementById('ops-target-sort-kpi').value = 102.4;
-            document.getElementById('ops-target-inout-kpi').value = 102.4;
             
             // Random Daily SORT data
             const sortRa = [11020, 10500, 12050, 9800, 10700, 11400, 10100];
@@ -3464,22 +3454,29 @@
             }
 
             // Thu thập Target
+            const sortVol = Number(document.getElementById('ops-target-sort-vol').value) || null;
+            const sortCost = Number(document.getElementById('ops-target-sort-cost').value) || null;
+            const sortNs = Number(document.getElementById('ops-target-sort-ns').value) || null;
+            const sortXh = Number(document.getElementById('ops-target-sort-xh').value) || null;
+            const sortNv = Number(document.getElementById('ops-target-sort-nv').value) || null;
+            const sortKpi = Number(document.getElementById('ops-target-sort-kpi').value) || null;
+            
             const targetMetrics = {
                 sort: {
-                    vol: Number(document.getElementById('ops-target-sort-vol').value) || null,
-                    cost: Number(document.getElementById('ops-target-sort-cost').value) || null,
-                    ns: Number(document.getElementById('ops-target-sort-ns').value) || null,
-                    xh: Number(document.getElementById('ops-target-sort-xh').value) || null,
-                    nv: Number(document.getElementById('ops-target-sort-nv').value) || null,
-                    kpi: Number(document.getElementById('ops-target-sort-kpi').value) || null,
+                    vol: sortVol,
+                    cost: sortCost,
+                    ns: sortNs,
+                    xh: sortXh,
+                    nv: sortNv,
+                    kpi: sortKpi,
                 },
                 inout: {
-                    vol: Number(document.getElementById('ops-target-inout-vol').value) || null,
-                    cost: Number(document.getElementById('ops-target-inout-cost').value) || null,
-                    ns: Number(document.getElementById('ops-target-inout-ns').value) || null,
-                    xh: Number(document.getElementById('ops-target-inout-xh').value) || null,
-                    nv: Number(document.getElementById('ops-target-inout-nv').value) || null,
-                    kpi: Number(document.getElementById('ops-target-inout-kpi').value) || null,
+                    vol: sortVol,
+                    cost: sortCost,
+                    ns: sortNs,
+                    xh: sortXh,
+                    nv: sortNv,
+                    kpi: sortKpi,
                 }
             };
 
@@ -3535,13 +3532,6 @@
                 document.getElementById('ops-target-sort-xh').value = data.targetMetrics.sort.xh || '';
                 document.getElementById('ops-target-sort-nv').value = data.targetMetrics.sort.nv || '';
                 document.getElementById('ops-target-sort-kpi').value = data.targetMetrics.sort.kpi || '';
-
-                document.getElementById('ops-target-inout-vol').value = data.targetMetrics.inout.vol || '';
-                document.getElementById('ops-target-inout-cost').value = data.targetMetrics.inout.cost || '';
-                document.getElementById('ops-target-inout-ns').value = data.targetMetrics.inout.ns || '';
-                document.getElementById('ops-target-inout-xh').value = data.targetMetrics.inout.xh || '';
-                document.getElementById('ops-target-inout-nv').value = data.targetMetrics.inout.nv || '';
-                document.getElementById('ops-target-inout-kpi').value = data.targetMetrics.inout.kpi || '';
             }
 
             // Fill personnel
