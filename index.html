@@ -1104,16 +1104,9 @@
                     <div class="card chart-card full-width">
                         <div class="card-header"><h2><i class="fa-solid fa-table"></i> Bảng So Sánh Chỉ Số Tuần</h2></div>
                         <div class="card-body" style="overflow-x: auto; padding: 1.5rem;">
-                            <h3 style="font-size:1rem; margin-bottom: 0.5rem; color: var(--primary);">1. Sort</h3>
                             <table class="data-table" style="font-size: 0.85rem; text-align: center; width: 100%; margin-bottom: 2rem;">
-                                <thead id="ops-compare-sort-head"></thead>
-                                <tbody id="ops-compare-sort-body"></tbody>
-                            </table>
-
-                            <h3 style="font-size:1rem; margin-bottom: 0.5rem; color: var(--primary);">2. InOut</h3>
-                            <table class="data-table" style="font-size: 0.85rem; text-align: center; width: 100%;">
-                                <thead id="ops-compare-inout-head"></thead>
-                                <tbody id="ops-compare-inout-body"></tbody>
+                                <thead id="ops-compare-head"></thead>
+                                <tbody id="ops-compare-body"></tbody>
                             </table>
                             <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success); border-radius: 4px;">
                                 <h3 style="font-size: 1.05rem; color: var(--success); margin-bottom: 0.5rem;"><i class="fa-solid fa-robot"></i> AI Phân Tích Hiệu Quả Vận Hành</h3>
@@ -3887,13 +3880,13 @@
                 <th>So sánh với target</th>
             </tr>`;
 
-            // Sort
-            document.getElementById('ops-compare-sort-head').innerHTML = headerHTML;
-            document.getElementById('ops-compare-sort-body').innerHTML = metrics.map(m => renderRow(m, 'sort')).join('');
-            
-            // InOut
-            document.getElementById('ops-compare-inout-head').innerHTML = headerHTML;
-            document.getElementById('ops-compare-inout-body').innerHTML = metrics.map(m => renderRow(m, 'inout')).join('');
+            // Merge Sort and InOut
+            document.getElementById('ops-compare-head').innerHTML = headerHTML;
+            document.getElementById('ops-compare-body').innerHTML = 
+                `<tr><td colspan="7" style="background:#f3f4f6;font-weight:bold;text-align:left;padding-left:1rem;color:var(--primary);">1. Sort</td></tr>` +
+                metrics.map(m => renderRow(m, 'sort')).join('') +
+                `<tr><td colspan="7" style="background:#f3f4f6;font-weight:bold;text-align:left;padding-left:1rem;color:var(--primary);">2. InOut</td></tr>` +
+                metrics.map(m => renderRow(m, 'inout')).join('');
 
             generateTargetAnalysis(currData, prevData, targetFixed);
         }
